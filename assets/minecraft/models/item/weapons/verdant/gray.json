@@ -3,8 +3,8 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [64, 64],
 	"textures": {
-		"0": "item/weapons/verdant",
-		"particle": "item/weapons/verdant"
+		"0": "item/weapons/gray/verdant",
+		"particle": "item/weapons/gray/verdant"
 	},
 	"elements": [
 		{
@@ -160,8 +160,7 @@
 		},
 		"gui": {
 			"rotation": [41.49, 43.05, -25.92],
-			"translation": [-0.25, 0, 0],
-			"scale": [0.68, 0.68, 0.68]
+			"scale": [0.76, 0.76, 0.76]
 		}
 	}
 }

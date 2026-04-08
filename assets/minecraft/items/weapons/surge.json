@@ -13,13 +13,13 @@
               "when": ["gray"],
               "model": {
                 "type": "minecraft:model",
-                "model": "minecraft:item/weapons/verdant/gray"
+                "model": "minecraft:item/weapons/surge/gray"
               }
             }
           ],
           "fallback": {
             "type": "minecraft:model",
-            "model": "minecraft:item/weapons/verdant/base"
+            "model": "minecraft:item/weapons/surge/base"
           }
         }
       }
@@ -32,34 +32,34 @@
           "when": ["gray"],
           "model": {
             "type": "minecraft:model",
-            "model": "minecraft:item/weapons/verdant/gray"
+            "model": "minecraft:item/weapons/surge/gray"
           }
         },
         {
           "when": ["reload"],
           "model": {
             "type": "minecraft:model",
-            "model": "minecraft:item/weapons/verdant/reload"
+            "model": "minecraft:item/weapons/surge/reload"
           }
         },
         {
           "when": ["equip"],
           "model": {
             "type": "minecraft:model",
-            "model": "minecraft:item/weapons/verdant/equip"
+            "model": "minecraft:item/weapons/surge/equip"
           }
         },
         {
           "when": ["firing"],
           "model": {
             "type": "minecraft:model",
-            "model": "minecraft:item/weapons/verdant/firing"
+            "model": "minecraft:item/weapons/surge/firing"
           }
         }
       ],
       "fallback": {
         "type": "minecraft:model",
-        "model": "minecraft:item/weapons/verdant/base"
+        "model": "minecraft:item/weapons/surge/base"
       }
     }
   },
