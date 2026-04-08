@@ -6,10 +6,7 @@
                 "when": ["head", "gui", "ground", "fixed", "on_shelf"],
                 "model": {
                     "type": "minecraft:model",
-                    "model": "minecraft:item/weapons/verdant/base",
-                    "tints": [{
-                            "type": "minecraft:custom_model_data",
-                        }]
+                    "model": "minecraft:item/weapons/verdant/base"
                 }
             }
         ],
