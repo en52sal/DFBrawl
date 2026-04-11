@@ -1,0 +1,13 @@
+{
+    "providers": [
+        {
+            "type": "bitmap",
+            "file": "font/numbers.png",
+            "ascent": -16,
+            "height": 8,
+            "chars": ["0123456789+"]
+        },
+        { "type": "space", "advances": { "-": -2 } },
+		{ "type": "space", "advances": { "+": 1 } }
+    ]
+}

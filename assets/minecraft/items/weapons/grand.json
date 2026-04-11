@@ -1,0 +1,68 @@
+{
+  "model": {
+    "type": "minecraft:select",
+    "property": "minecraft:display_context",
+    "cases": [
+      {
+        "when": ["head", "gui", "ground", "fixed", "on_shelf"],
+        "model": {
+          "type": "minecraft:select",
+          "property": "minecraft:custom_model_data",
+          "cases": [
+            {
+              "when": ["gray"],
+              "model": {
+                "type": "minecraft:model",
+                "model": "minecraft:item/weapons/grand/gray"
+              }
+            }
+          ],
+          "fallback": {
+            "type": "minecraft:model",
+            "model": "minecraft:item/weapons/grand/base"
+          }
+        }
+      }
+    ],
+    "fallback": {
+      "type": "minecraft:select",
+      "property": "minecraft:custom_model_data",
+      "cases": [
+        {
+          "when": ["gray"],
+          "model": {
+            "type": "minecraft:model",
+            "model": "minecraft:item/weapons/grand/gray"
+          }
+        },
+        {
+          "when": ["reload"],
+          "model": {
+            "type": "minecraft:model",
+            "model": "minecraft:item/weapons/grand/reload"
+          }
+        },
+        {
+          "when": ["equip"],
+          "model": {
+            "type": "minecraft:model",
+            "model": "minecraft:item/weapons/grand/equip"
+          }
+        },
+        {
+          "when": ["firing"],
+          "model": {
+            "type": "minecraft:model",
+            "model": "minecraft:item/weapons/grand/firing"
+          }
+        }
+      ],
+      "fallback": {
+        "type": "minecraft:model",
+        "model": "minecraft:item/weapons/grand/base"
+      }
+    }
+  },
+  "swap_animation_scale": 0,
+  "hand_animation_on_swap": false
+}

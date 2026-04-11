@@ -112,12 +112,12 @@
 			"scale": [0.75, 0.75, 0.75]
 		},
 		"firstperson_righthand": {
-			"rotation": [-17.33, 22.69, 42.12],
-			"translation": [-2.75, -0.75, -3.5]
+			"rotation": [-0.57, -27.73, -26.11],
+			"translation": [2.25, -0.25, -4]
 		},
 		"firstperson_lefthand": {
-			"rotation": [-17.33, 22.69, 42.12],
-			"translation": [-2.75, -0.75, -3.5]
+			"rotation": [-0.57, -27.73, -26.11],
+			"translation": [2.25, -0.25, -4]
 		}
 	}
 }
