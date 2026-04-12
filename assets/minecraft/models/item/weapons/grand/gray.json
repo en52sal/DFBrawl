@@ -3,7 +3,7 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [64, 64],
 	"textures": {
-		"0": "item/weapons/grand",
+		"0": "item/weapons/gray/grand",
 		"particle": "item/weapons/gray/grand"
 	},
 	"elements": [
