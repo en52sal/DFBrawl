@@ -39,6 +39,13 @@
                 "\uf3c0\uf3c1\uf3c2\uf3c3\uf3c4\uf3c5\uf3c6\uf3c7\uf3c8\uf3c9\uf3ca\uf3cb\uf3cc\uf3cd\uf3ce\uf3cf\uf3d0\uf3d1\uf3d2\uf3d3\uf3d4\uf3d5\uf3d6\uf3d7\uf3d8\uf3d9\uf3da\uf3db\uf3dc\uf3dd\uf3de\uf3df",
                 "\uf3e0\uf3e1\uf3e2\uf3e3\uf3e4\uf3e5\uf3e6\uf3e7\uf3e8\uf3e9\uf3ea\uf3eb\uf3ec\uf3ed\uf3ee\uf3ef\uf3f0\uf3f1\uf3f2\uf3f3\uf3f4\uf3f5\uf3f6\uf3f7\uf3f8\uf3f9\uf3fa\uf3fb\uf3fc\uf3fd\uf3fe\uf3ff"
             ]
+        },
+		{
+            "type": "bitmap",
+            "file": "font/long_custom.png",
+            "ascent": 7,
+            "height": 8,
+            "chars": ["☙"]
         }
     ]
 }
