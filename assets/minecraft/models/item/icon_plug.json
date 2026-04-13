@@ -1,0 +1,7 @@
+{
+	"format_version": "1.21.11",
+	"parent": "minecraft:item/icon",
+	"textures": {
+		"layer0": "item/icon_plug"
+	}
+}
