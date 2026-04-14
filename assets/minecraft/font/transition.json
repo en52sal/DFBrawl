@@ -1,0 +1,11 @@
+{
+    "providers": [
+        {
+            "type": "bitmap",
+            "file": "font/transition.png",
+            "ascent": 0,
+            "height": 1,
+            "chars": ["T"]
+        }
+    ]
+}
