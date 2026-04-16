@@ -1,3 +1,4 @@
+
 {
   "model": {
     "type": "minecraft:select",
@@ -10,10 +11,26 @@
           "property": "minecraft:custom_model_data",
           "cases": [
             {
-              "when": ["gray"],
+              "when": ["gui"],
               "model": {
-                "type": "minecraft:model",
-                "model": "minecraft:item/weapons/betty/gray"
+                "type": "minecraft:composite",
+                "models": [
+                  {
+                    "type": "minecraft:model",
+                    "model": "minecraft:item/weapons/betty/base"
+                  },
+                  {
+                    "type": "minecraft:model",
+                    "model": "minecraft:item/background_gradient",
+                    "tints": [
+                      {
+                        "type": "minecraft:custom_model_data",
+                        "index": 0,
+                        "default": 0
+                      }
+                    ]
+                  }
+                ]
               }
             }
           ],
@@ -29,10 +46,26 @@
       "property": "minecraft:custom_model_data",
       "cases": [
         {
-          "when": ["gray"],
+          "when": ["gui"],
           "model": {
-            "type": "minecraft:model",
-            "model": "minecraft:item/weapons/betty/gray"
+            "type": "minecraft:composite",
+            "models": [
+              {
+                "type": "minecraft:model",
+                "model": "minecraft:item/weapons/betty/base"
+              },
+              {
+                "type": "minecraft:model",
+                "model": "minecraft:item/background_gradient",
+                "tints": [
+                  {
+                    "type": "minecraft:custom_model_data",
+                    "index": 0,
+                    "default": 0
+                  }
+                ]
+              }
+            ]
           }
         },
         {
