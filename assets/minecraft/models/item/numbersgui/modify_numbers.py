@@ -5,10 +5,10 @@ import json
 ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
 
 # ===== USER INPUT VARIABLES =====
-NEW_TRANSLATION = [-7, -2, 10]   # X, Y, Z
-NEW_SCALE = [1, 1, 1]  # X, Y, Z
+NEW_TRANSLATION = [-7, 0.5, 10]   # X, Y, Z
+NEW_SCALE = [1.05, 1.05, 1.05]  # X, Y, Z
 # ==============================2
-
+    
 def update_gui_display(data):
     """
     Updates display.gui translation and scale.
