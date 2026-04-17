@@ -2,97 +2,373 @@
 {
   "model": {
     "type": "minecraft:select",
-    "property": "minecraft:display_context",
+    "property": "minecraft:custom_model_data",
     "cases": [
       {
-        "when": ["head", "gui", "ground", "fixed", "on_shelf"],
+        "when": ["gray"],
         "model": {
-          "type": "minecraft:select",
-          "property": "minecraft:custom_model_data",
-          "cases": [
+          "type": "minecraft:composite",
+          "models": [
             {
-              "when": ["gui"],
-              "model": {
-                "type": "minecraft:composite",
-                "models": [
-                  {
-                    "type": "minecraft:model",
-                    "model": "minecraft:item/weapons/chopper/base"
-                  },
-                  {
-                    "type": "minecraft:model",
-                    "model": "minecraft:item/background_gradient",
-                    "tints": [
-                      {
-                        "type": "minecraft:custom_model_data",
-                        "index": 0,
-                        "default": 0
-                      }
-                    ]
-                  }
-                ]
-              }
+              "type": "minecraft:model",
+              "model": "minecraft:item/weapons/chopper/gray",
+              "tints": [
+                {
+                  "type": "minecraft:custom_model_data",
+                  "index": 1,
+                  "default": 16777215
+                }
+              ]
+            },
+
+            
+{
+  "type": "minecraft:range_dispatch",
+  "property": "minecraft:custom_model_data",
+  "index": 0,
+  "entries": [
+    {"threshold": 0.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/0"}},
+{"threshold": 1.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/1"}},
+{"threshold": 2.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/2"}},
+{"threshold": 3.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/3"}},
+{"threshold": 4.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/4"}},
+{"threshold": 5.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/5"}},
+{"threshold": 6.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/6"}},
+{"threshold": 7.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/7"}},
+{"threshold": 8.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/8"}},
+{"threshold": 9.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/9"}}
+  ],
+  "fallback": { "type": "minecraft:model", "model": "minecraft:item/air" }
+},
+{
+  "type": "minecraft:range_dispatch",
+  "property": "minecraft:custom_model_data",
+  "index": 1,
+  "entries": [
+    {"threshold": 0.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/0"}},
+{"threshold": 1.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/1"}},
+{"threshold": 2.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/2"}},
+{"threshold": 3.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/3"}},
+{"threshold": 4.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/4"}},
+{"threshold": 5.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/5"}},
+{"threshold": 6.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/6"}},
+{"threshold": 7.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/7"}},
+{"threshold": 8.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/8"}},
+{"threshold": 9.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/9"}}
+  ],
+  "fallback": { "type": "minecraft:model", "model": "minecraft:item/air" }
+},
+{
+  "type": "minecraft:range_dispatch",
+  "property": "minecraft:custom_model_data",
+  "index": 2,
+  "entries": [
+    {"threshold": 0.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/0"}},
+{"threshold": 1.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/1"}},
+{"threshold": 2.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/2"}},
+{"threshold": 3.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/3"}},
+{"threshold": 4.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/4"}},
+{"threshold": 5.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/5"}},
+{"threshold": 6.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/6"}},
+{"threshold": 7.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/7"}},
+{"threshold": 8.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/8"}},
+{"threshold": 9.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/9"}}
+  ],
+  "fallback": { "type": "minecraft:model", "model": "minecraft:item/air" }
+}
+,
+
+            {
+              "type": "minecraft:model",
+              "model": "minecraft:item/background_gradient",
+              "tints": [
+                {
+                  "type": "minecraft:custom_model_data",
+                  "index": 0,
+                  "default": 16777215
+                }
+              ]
             }
-          ],
-          "fallback": {
-            "type": "minecraft:model",
-            "model": "minecraft:item/weapons/chopper/base"
-          }
+          ]
         }
       }
     ],
+
     "fallback": {
       "type": "minecraft:select",
-      "property": "minecraft:custom_model_data",
+      "property": "minecraft:display_context",
       "cases": [
         {
-          "when": ["gui"],
+          "when": ["head", "gui", "ground", "fixed", "on_shelf"],
           "model": {
-            "type": "minecraft:composite",
-            "models": [
+            "type": "minecraft:select",
+            "property": "minecraft:custom_model_data",
+            "cases": [
               {
-                "type": "minecraft:model",
-                "model": "minecraft:item/weapons/chopper/base"
-              },
-              {
-                "type": "minecraft:model",
-                "model": "minecraft:item/background_gradient",
-                "tints": [
-                  {
-                    "type": "minecraft:custom_model_data",
-                    "index": 0,
-                    "default": 0
-                  }
-                ]
+                "when": ["gui"],
+                "model": {
+                  "type": "minecraft:composite",
+                  "models": [
+                    {
+                      "type": "minecraft:model",
+                      "model": "minecraft:item/weapons/chopper/base"
+                    },
+
+                    
+{
+  "type": "minecraft:range_dispatch",
+  "property": "minecraft:custom_model_data",
+  "index": 0,
+  "entries": [
+    {"threshold": 0.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/0"}},
+{"threshold": 1.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/1"}},
+{"threshold": 2.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/2"}},
+{"threshold": 3.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/3"}},
+{"threshold": 4.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/4"}},
+{"threshold": 5.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/5"}},
+{"threshold": 6.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/6"}},
+{"threshold": 7.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/7"}},
+{"threshold": 8.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/8"}},
+{"threshold": 9.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/9"}}
+  ],
+  "fallback": { "type": "minecraft:model", "model": "minecraft:item/air" }
+},
+{
+  "type": "minecraft:range_dispatch",
+  "property": "minecraft:custom_model_data",
+  "index": 1,
+  "entries": [
+    {"threshold": 0.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/0"}},
+{"threshold": 1.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/1"}},
+{"threshold": 2.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/2"}},
+{"threshold": 3.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/3"}},
+{"threshold": 4.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/4"}},
+{"threshold": 5.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/5"}},
+{"threshold": 6.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/6"}},
+{"threshold": 7.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/7"}},
+{"threshold": 8.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/8"}},
+{"threshold": 9.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/9"}}
+  ],
+  "fallback": { "type": "minecraft:model", "model": "minecraft:item/air" }
+},
+{
+  "type": "minecraft:range_dispatch",
+  "property": "minecraft:custom_model_data",
+  "index": 2,
+  "entries": [
+    {"threshold": 0.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/0"}},
+{"threshold": 1.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/1"}},
+{"threshold": 2.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/2"}},
+{"threshold": 3.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/3"}},
+{"threshold": 4.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/4"}},
+{"threshold": 5.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/5"}},
+{"threshold": 6.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/6"}},
+{"threshold": 7.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/7"}},
+{"threshold": 8.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/8"}},
+{"threshold": 9.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/9"}}
+  ],
+  "fallback": { "type": "minecraft:model", "model": "minecraft:item/air" }
+}
+,
+
+                    {
+                      "type": "minecraft:model",
+                      "model": "minecraft:item/background_gradient",
+                      "tints": [
+                        {
+                          "type": "minecraft:custom_model_data",
+                          "index": 0,
+                          "default": 0
+                        }
+                      ]
+                    }
+                  ]
+                }
               }
-            ]
-          }
-        },
-        {
-          "when": ["reload"],
-          "model": {
-            "type": "minecraft:model",
-            "model": "minecraft:item/weapons/chopper/reload"
-          }
-        },
-        {
-          "when": ["equip"],
-          "model": {
-            "type": "minecraft:model",
-            "model": "minecraft:item/weapons/chopper/equip"
-          }
-        },
-        {
-          "when": ["firing"],
-          "model": {
-            "type": "minecraft:model",
-            "model": "minecraft:item/weapons/chopper/firing"
+            ],
+            "fallback": {
+              "type": "minecraft:composite",
+              "models": [
+                {
+                  "type": "minecraft:model",
+                  "model": "minecraft:item/weapons/chopper/base"
+                },
+
+                
+{
+  "type": "minecraft:range_dispatch",
+  "property": "minecraft:custom_model_data",
+  "index": 0,
+  "entries": [
+    {"threshold": 0.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/0"}},
+{"threshold": 1.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/1"}},
+{"threshold": 2.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/2"}},
+{"threshold": 3.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/3"}},
+{"threshold": 4.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/4"}},
+{"threshold": 5.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/5"}},
+{"threshold": 6.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/6"}},
+{"threshold": 7.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/7"}},
+{"threshold": 8.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/8"}},
+{"threshold": 9.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/9"}}
+  ],
+  "fallback": { "type": "minecraft:model", "model": "minecraft:item/air" }
+},
+{
+  "type": "minecraft:range_dispatch",
+  "property": "minecraft:custom_model_data",
+  "index": 1,
+  "entries": [
+    {"threshold": 0.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/0"}},
+{"threshold": 1.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/1"}},
+{"threshold": 2.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/2"}},
+{"threshold": 3.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/3"}},
+{"threshold": 4.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/4"}},
+{"threshold": 5.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/5"}},
+{"threshold": 6.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/6"}},
+{"threshold": 7.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/7"}},
+{"threshold": 8.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/8"}},
+{"threshold": 9.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/9"}}
+  ],
+  "fallback": { "type": "minecraft:model", "model": "minecraft:item/air" }
+},
+{
+  "type": "minecraft:range_dispatch",
+  "property": "minecraft:custom_model_data",
+  "index": 2,
+  "entries": [
+    {"threshold": 0.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/0"}},
+{"threshold": 1.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/1"}},
+{"threshold": 2.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/2"}},
+{"threshold": 3.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/3"}},
+{"threshold": 4.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/4"}},
+{"threshold": 5.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/5"}},
+{"threshold": 6.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/6"}},
+{"threshold": 7.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/7"}},
+{"threshold": 8.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/8"}},
+{"threshold": 9.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/9"}}
+  ],
+  "fallback": { "type": "minecraft:model", "model": "minecraft:item/air" }
+}
+
+
+              ]
+            }
           }
         }
       ],
+
       "fallback": {
-        "type": "minecraft:model",
-        "model": "minecraft:item/weapons/chopper/base"
+        "type": "minecraft:select",
+        "property": "minecraft:custom_model_data",
+        "cases": [
+          {
+            "when": ["gui"],
+            "model": {
+              "type": "minecraft:composite",
+              "models": [
+                {
+                  "type": "minecraft:model",
+                  "model": "minecraft:item/weapons/chopper/base"
+                },
+
+                
+{
+  "type": "minecraft:range_dispatch",
+  "property": "minecraft:custom_model_data",
+  "index": 0,
+  "entries": [
+    {"threshold": 0.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/0"}},
+{"threshold": 1.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/1"}},
+{"threshold": 2.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/2"}},
+{"threshold": 3.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/3"}},
+{"threshold": 4.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/4"}},
+{"threshold": 5.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/5"}},
+{"threshold": 6.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/6"}},
+{"threshold": 7.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/7"}},
+{"threshold": 8.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/8"}},
+{"threshold": 9.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/9"}}
+  ],
+  "fallback": { "type": "minecraft:model", "model": "minecraft:item/air" }
+},
+{
+  "type": "minecraft:range_dispatch",
+  "property": "minecraft:custom_model_data",
+  "index": 1,
+  "entries": [
+    {"threshold": 0.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/0"}},
+{"threshold": 1.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/1"}},
+{"threshold": 2.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/2"}},
+{"threshold": 3.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/3"}},
+{"threshold": 4.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/4"}},
+{"threshold": 5.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/5"}},
+{"threshold": 6.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/6"}},
+{"threshold": 7.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/7"}},
+{"threshold": 8.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/8"}},
+{"threshold": 9.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/9"}}
+  ],
+  "fallback": { "type": "minecraft:model", "model": "minecraft:item/air" }
+},
+{
+  "type": "minecraft:range_dispatch",
+  "property": "minecraft:custom_model_data",
+  "index": 2,
+  "entries": [
+    {"threshold": 0.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/0"}},
+{"threshold": 1.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/1"}},
+{"threshold": 2.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/2"}},
+{"threshold": 3.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/3"}},
+{"threshold": 4.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/4"}},
+{"threshold": 5.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/5"}},
+{"threshold": 6.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/6"}},
+{"threshold": 7.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/7"}},
+{"threshold": 8.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/8"}},
+{"threshold": 9.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/9"}}
+  ],
+  "fallback": { "type": "minecraft:model", "model": "minecraft:item/air" }
+}
+,
+
+                {
+                  "type": "minecraft:model",
+                  "model": "minecraft:item/background_gradient",
+                  "tints": [
+                    {
+                      "type": "minecraft:custom_model_data",
+                      "index": 0,
+                      "default": 0
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "when": ["reload"],
+            "model": {
+              "type": "minecraft:model",
+              "model": "minecraft:item/weapons/chopper/reload"
+            }
+          },
+          {
+            "when": ["equip"],
+            "model": {
+              "type": "minecraft:model",
+              "model": "minecraft:item/weapons/chopper/equip"
+            }
+          },
+          {
+            "when": ["firing"],
+            "model": {
+              "type": "minecraft:model",
+              "model": "minecraft:item/weapons/chopper/firing"
+            }
+          }
+        ],
+
+        "fallback": {
+              "type": "minecraft:model",
+              "model": "minecraft:item/weapons/chopper/base"
+        }
       }
     }
   },
