@@ -2,10 +2,17 @@
     "providers": [
         {
             "type": "bitmap",
-            "file": "font/numbers.png",
-            "ascent": -16,
-            "height": 8,
-            "chars": ["0123456789+"]
+            "file": "font/letters.png",
+            "ascent": 7,
+			"height": 7,
+            "chars": ["0123456789","ABCDEFGHIJ","KLMNOPQRST","UVWXYZabcd","efghijklmn","opqrstuvwx","yz\uf3f8\uf3f9\uf3fa\uf3fb\uf3fc\uf3fd\uf3fe\uf3ff"]
+        },
+		{
+            "type": "bitmap",
+            "file": "font/menu/armory.png",
+            "ascent": 12,
+            "height": 256,
+            "chars": ["⁌⁍"]
         },
         { "type": "space", "advances": { "-": -2 } },
 		{ "type": "space", "advances": { "+": 1 } }

@@ -4,7 +4,7 @@
 #moj_import <minecraft:dynamictransforms.glsl>
 #moj_import <minecraft:projection.glsl>
 
-uniform sampler2D Sampler0;
+#define PI 3.14159265
 
 in vec3 Position;
 in vec4 Color;
@@ -12,6 +12,7 @@ in vec2 UV0;
 in ivec2 UV2;
 
 uniform sampler2D Sampler2;
+uniform sampler2D Sampler0;
 
 out float sphericalVertexDistance;
 out float cylindricalVertexDistance;

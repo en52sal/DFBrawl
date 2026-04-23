@@ -54,31 +54,6 @@
             }
           ]
         }
-      },
-      {
-        "type": "minecraft:select",
-        "property": "minecraft:custom_model_data",
-        "index": 1,
-        "cases": [
-          {
-            "when": "flag",
-            "model": {
-              "type": "minecraft:model",
-              "model": "minecraft:item/icon_flag"
-            }
-          },
-          {
-            "when": "question",
-            "model": {
-              "type": "minecraft:model",
-              "model": "minecraft:item/icon_question"
-            }
-          }
-        ],
-        "fallback": {
-          "type": "minecraft:model",
-          "model": "minecraft:item/none"
-        }
       }
     ]
   }

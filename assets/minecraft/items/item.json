@@ -1,0 +1,30 @@
+{
+  "model": {
+    "type": "minecraft:composite",
+    "models": [
+      {
+        "type": "minecraft:select",
+        "property": "minecraft:custom_model_data",
+        "index": 0,
+        "cases": [
+          {
+            "when": "timeritem",
+            "model": {"type": "minecraft:model",
+              "model": "minecraft:item/timeritem",
+              "tints": [{"type": "minecraft:custom_model_data","index": 0,"default": 4294967295}]}
+		  },
+		  {
+            "when": "weightitem",
+            "model": {"type": "minecraft:model",
+              "model": "minecraft:item/weightitem",
+              "tints": [{"type": "minecraft:custom_model_data","index": 0,"default": 4294967295}]}
+		  }
+        ],
+		  "fallback": {
+		"type": "minecraft:model",
+        "model": "minecraft:item/none"
+        }
+      }
+    ]
+  }
+}
