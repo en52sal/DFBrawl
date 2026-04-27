@@ -1,6 +1,6 @@
 {
-	"parent": "minecraft:item/generated",
-	"textures": {
-		"layer0": "item/relics/quick_reload"
-	}
+    "parent": "minecraft:item/generated",
+    "textures": {
+        "layer0": "item/relics/quick_reload"
+    }
 }

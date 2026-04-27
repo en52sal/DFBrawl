@@ -18,6 +18,12 @@
             "model": {"type": "minecraft:model",
               "model": "minecraft:item/guielements/weightitem",
               "tints": [{"type": "minecraft:custom_model_data","index": 0,"default": 4294967295}]}
+		  },
+		  		  {
+            "when": "staritem",
+            "model": {"type": "minecraft:model",
+              "model": "minecraft:item/guielements/staritem",
+              "tints": [{"type": "minecraft:custom_model_data","index": 0,"default": 4294967295}]}
 		  }
         ],
 		  "fallback": {
