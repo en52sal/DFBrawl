@@ -1,0 +1,7 @@
+{
+	"format_version": "1.21.11",
+	"parent": "minecraft:item/guielements/small_icon",
+	"textures": {
+		"layer0": "item/guielements/small_ammo"
+	}
+}

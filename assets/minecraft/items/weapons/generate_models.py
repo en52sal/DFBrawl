@@ -187,7 +187,54 @@ numbers_block = '''
     {ENTRIES3}
   ],
   "fallback": { "type": "minecraft:model", "model": "minecraft:item/air" }
-}
+},
+{
+  "type": "minecraft:range_dispatch",
+  "property": "minecraft:custom_model_data",
+  "index": 3,
+  "entries": [
+    {ENTRIES4}
+  ],
+  "fallback": { "type": "minecraft:model", "model": "minecraft:item/air" }
+},
+	{
+		"type": "minecraft:select",
+        "property": "minecraft:custom_model_data",
+        "index": 1,
+        "cases": [
+			{
+            "when": "cart",
+            "model": {
+			"type": "minecraft:model",
+			"model": "minecraft:item/guielements/small_cart",
+              "tints": [{"type": "minecraft:custom_model_data","index": 2,"default": 4294967295}]}
+		  },
+			{
+            "when": "stars",
+            "model": {
+			"type": "minecraft:model",
+			"model": "minecraft:item/guielements/small_stars",
+              "tints": [{"type": "minecraft:custom_model_data","index": 2,"default": 4294967295}]}
+		  },
+          			{
+            "when": "weight",
+            "model": {
+			"type": "minecraft:model",
+			"model": "minecraft:item/guielements/small_weight",
+              "tints": [{"type": "minecraft:custom_model_data","index": 2,"default": 4294967295}]}
+		  },          			{
+            "when": "ammo",
+            "model": {
+			"type": "minecraft:model",
+			"model": "minecraft:item/guielements/small_ammo",
+              "tints": [{"type": "minecraft:custom_model_data","index": 2,"default": 4294967295}]}
+		  }
+	  ],
+		  "fallback": {
+		"type": "minecraft:model",
+        "model": "minecraft:item/none"
+        }
+	}
 '''
 
 # === ENTRY GENERATION ===
@@ -206,9 +253,15 @@ entries3 = ",\n".join([
     for i in range(10)
 ])
 
+entries4 = ",\n".join([
+    f'''{{"threshold": {i}.1, "model": {{"type":"minecraft:model","model":"minecraft:item/numbersgui/d/{i}"}}}}'''
+    for i in range(10)
+])
+
 numbers_block = numbers_block.replace("{ENTRIES1}", entries1)
 numbers_block = numbers_block.replace("{ENTRIES2}", entries2)
 numbers_block = numbers_block.replace("{ENTRIES3}", entries3)
+numbers_block = numbers_block.replace("{ENTRIES4}", entries4)
 
 template = template.replace("{NUMBERS_BLOCK}", numbers_block)
 

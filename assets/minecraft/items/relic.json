@@ -133,6 +133,26 @@
 			"type": "minecraft:model",
 			"model": "minecraft:item/guielements/small_cart",
               "tints": [{"type": "minecraft:custom_model_data","index": 2,"default": 4294967295}]}
+		  },
+			{
+            "when": "stars",
+            "model": {
+			"type": "minecraft:model",
+			"model": "minecraft:item/guielements/small_stars",
+              "tints": [{"type": "minecraft:custom_model_data","index": 2,"default": 4294967295}]}
+		  },
+		  			{
+            "when": "weight",
+            "model": {
+			"type": "minecraft:model",
+			"model": "minecraft:item/guielements/small_weight",
+              "tints": [{"type": "minecraft:custom_model_data","index": 2,"default": 4294967295}]}
+		  },		  			{
+            "when": "ammo",
+            "model": {
+			"type": "minecraft:model",
+			"model": "minecraft:item/guielements/small_ammo",
+              "tints": [{"type": "minecraft:custom_model_data","index": 2,"default": 4294967295}]}
 		  }
 	  ],
 		  "fallback": {
@@ -191,6 +211,24 @@
 {"threshold": 7.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/7"}},
 {"threshold": 8.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/8"}},
 {"threshold": 9.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/9"}}
+  ],
+  "fallback": { "type": "minecraft:model", "model": "minecraft:item/air" }
+},
+{
+  "type": "minecraft:range_dispatch",
+  "property": "minecraft:custom_model_data",
+  "index": 3,
+  "entries": [
+    {"threshold": 0.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/d/0"}},
+{"threshold": 1.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/d/1"}},
+{"threshold": 2.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/d/2"}},
+{"threshold": 3.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/d/3"}},
+{"threshold": 4.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/d/4"}},
+{"threshold": 5.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/d/5"}},
+{"threshold": 6.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/d/6"}},
+{"threshold": 7.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/d/7"}},
+{"threshold": 8.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/d/8"}},
+{"threshold": 9.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/d/9"}}
   ],
   "fallback": { "type": "minecraft:model", "model": "minecraft:item/air" }
 },
