@@ -122,6 +122,24 @@
         "model": "minecraft:item/none"
         }
 	  },
+	  	  {
+		"type": "minecraft:select",
+        "property": "minecraft:custom_model_data",
+        "index": 2,
+        "cases": [
+			{
+            "when": "cart",
+            "model": {
+			"type": "minecraft:model",
+			"model": "minecraft:item/guielements/small_cart",
+              "tints": [{"type": "minecraft:custom_model_data","index": 2,"default": 4294967295}]}
+		  }
+	  ],
+		  "fallback": {
+		"type": "minecraft:model",
+        "model": "minecraft:item/none"
+        }
+	},
 	  {
   "type": "minecraft:range_dispatch",
   "property": "minecraft:custom_model_data",
