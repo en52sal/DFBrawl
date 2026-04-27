@@ -9,52 +9,17 @@
           "type": "minecraft:player_head"
         }
       },
-      {
-        "type": "minecraft:select",
-        "property": "minecraft:custom_model_data",
-        "index": 0,
-        "cases": [
-          {
-            "when": "outline",
-            "model": {
-              "type": "minecraft:model",
-              "model": "minecraft:item/background_outline",
-              "tints": [
-                {
-                  "type": "minecraft:custom_model_data",
-                  "index": 0,
-                  "default": 0
-                }
-              ]
-            }
-          },
-          {
-            "when": "circle",
-            "model": {
-              "type": "minecraft:model",
-              "model": "minecraft:item/background_circle",
-              "tints": [
-                {
-                  "type": "minecraft:custom_model_data",
-                  "index": 0,
-                  "default": 0
-                }
-              ]
-            }
-          }
-        ],
-        "fallback": {
+	  {
           "type": "minecraft:model",
-          "model": "minecraft:item/background_gradient",
+          "model": "minecraft:item/guielements/background_gradient",
           "tints": [
             {
               "type": "minecraft:custom_model_data",
               "index": 0,
-              "default": 0
+              "default": 4294967295
             }
           ]
         }
-      }
     ]
   }
 }

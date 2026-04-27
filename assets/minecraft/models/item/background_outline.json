@@ -1,7 +1,0 @@
-{
-	"format_version": "1.21.11",
-	"parent": "minecraft:item/background",
-	"textures": {
-		"layer0": "item/background_outline"
-	}
-}

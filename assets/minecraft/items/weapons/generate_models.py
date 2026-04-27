@@ -27,7 +27,7 @@ template = r'''
 
             {
               "type": "minecraft:model",
-              "model": "minecraft:item/background_gradient",
+              "model": "minecraft:item/guielements/background_gradient",
               "tints": [
                 {
                   "type": "minecraft:custom_model_data",
@@ -65,7 +65,7 @@ template = r'''
 
                     {
                       "type": "minecraft:model",
-                      "model": "minecraft:item/background_gradient",
+                      "model": "minecraft:item/guielements/background_gradient",
                       "tints": [
                         {
                           "type": "minecraft:custom_model_data",
@@ -112,7 +112,7 @@ template = r'''
 
                 {
                   "type": "minecraft:model",
-                  "model": "minecraft:item/background_gradient",
+                  "model": "minecraft:item/guielements/background_gradient",
                   "tints": [
                     {
                       "type": "minecraft:custom_model_data",

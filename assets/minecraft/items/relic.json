@@ -1,0 +1,110 @@
+{
+  "model": {
+    "type": "minecraft:composite",
+    "models": [
+      {
+        "type": "minecraft:select",
+        "property": "minecraft:custom_model_data",
+        "index": 0,
+        "cases": [
+          {
+            "when": "quick_reload",
+            "model": {
+			"type": "minecraft:model",
+			"model": "minecraft:item/relics/quick_reload",
+              "tints": [{"type": "minecraft:custom_model_data","index": 1,"default": 4294967295}]}
+		  },
+		  {
+            "when": "speed",
+            "model": {
+			"type": "minecraft:model",
+			"model": "minecraft:item/relics/speed",
+              "tints": [{"type": "minecraft:custom_model_data","index": 1,"default": 4294967295}]}
+		  },
+		  {
+			"when": "springboard",
+            "model": {
+			"type": "minecraft:model",
+			"model": "minecraft:item/relics/springboard",
+              "tints": [{"type": "minecraft:custom_model_data","index": 1,"default": 4294967295}]}
+		  },
+		  {
+			"when": "taco_time",
+            "model": {
+			"type": "minecraft:model",
+			"model": "minecraft:item/relics/taco_time",
+              "tints": [{"type": "minecraft:custom_model_data","index": 1,"default": 4294967295}]}
+		  },
+		  {
+			"when": "superball",
+            "model": {
+			"type": "minecraft:model",
+			"model": "minecraft:item/relics/superball",
+              "tints": [{"type": "minecraft:custom_model_data","index": 1,"default": 4294967295}]}
+		  }
+        ],
+		  "fallback": {
+		"type": "minecraft:model",
+        "model": "minecraft:item/none"
+        }
+      },
+	  {
+		"type": "minecraft:select",
+        "property": "minecraft:custom_model_data",
+        "index": 1,
+        "cases": [
+			{
+            "when": "diamond",
+            "model": {
+			"type": "minecraft:model",
+			"model": "minecraft:item/guielements/add_diamond",
+              "tints": [{"type": "minecraft:custom_model_data","index": 2,"default": 4294967295}]}
+		  },
+		  {
+            "when": "square",
+            "model": {
+			"type": "minecraft:model",
+			"model": "minecraft:item/guielements/add_square",
+              "tints": [{"type": "minecraft:custom_model_data","index": 2,"default": 4294967295}]}
+		  },
+		  {
+            "when": "slash",
+            "model": {
+			"type": "minecraft:model",
+			"model": "minecraft:item/guielements/add_slash",
+              "tints": [{"type": "minecraft:custom_model_data","index": 2,"default": 4294967295}]}
+		  },
+		  {
+            "when": "minus",
+            "model": {
+			"type": "minecraft:model",
+			"model": "minecraft:item/guielements/add_minus",
+              "tints": [{"type": "minecraft:custom_model_data","index": 2,"default": 4294967295}]}
+		  },
+		  {
+            "when": "triangle",
+            "model": {
+			"type": "minecraft:model",
+			"model": "minecraft:item/guielements/add_triangle",
+              "tints": [{"type": "minecraft:custom_model_data","index": 2,"default": 4294967295}]}
+		  }
+	  ],
+		  "fallback": {
+		"type": "minecraft:model",
+        "model": "minecraft:item/none"
+        }
+	  },
+	  {
+          "type": "minecraft:model",
+          "model": "minecraft:item/guielements/background_gradient",
+          "tints": [
+            {
+              "type": "minecraft:custom_model_data",
+              "index": 0,
+              "default": 4294967295
+            }
+          ]
+        }
+    ]
+  }
+}

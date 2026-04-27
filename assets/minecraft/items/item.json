@@ -10,13 +10,13 @@
           {
             "when": "timeritem",
             "model": {"type": "minecraft:model",
-              "model": "minecraft:item/timeritem",
+              "model": "minecraft:item/guielements/timeritem",
               "tints": [{"type": "minecraft:custom_model_data","index": 0,"default": 4294967295}]}
 		  },
 		  {
             "when": "weightitem",
             "model": {"type": "minecraft:model",
-              "model": "minecraft:item/weightitem",
+              "model": "minecraft:item/guielements/weightitem",
               "tints": [{"type": "minecraft:custom_model_data","index": 0,"default": 4294967295}]}
 		  }
         ],
