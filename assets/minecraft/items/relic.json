@@ -113,20 +113,6 @@
             "tints": [{"type": "minecraft:custom_model_data","index": 2,"default": 4294967295}]}
 		  },
 		  {
-            "when": "slash",
-            "model": {
-			"type": "minecraft:model",
-			"model": "minecraft:item/guielements/add_slash",
-            "tints": [{"type": "minecraft:custom_model_data","index": 2,"default": 4294967295}]}
-		  },
-		  {
-            "when": "minus",
-            "model": {
-			"type": "minecraft:model",
-			"model": "minecraft:item/guielements/add_minus",
-            "tints": [{"type": "minecraft:custom_model_data","index": 2,"default": 4294967295}]}
-		  },
-		  {
             "when": "triangle",
             "model": {
 			"type": "minecraft:model",
