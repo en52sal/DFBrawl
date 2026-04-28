@@ -85,6 +85,18 @@
             "model": {"type": "minecraft:model",
 			"model": "minecraft:item/guielements/timeritem",
 			"tints": [{"type": "minecraft:custom_model_data","index": 1,"default": 4294967295}]}
+		  },
+		  		  		  {
+			"when": "weapon_slot",
+            "model": {"type": "minecraft:model",
+			"model": "minecraft:item/guielements/weapon_slot",
+			"tints": [{"type": "minecraft:custom_model_data","index": 1,"default": 4294967295}]}
+		  },
+		  		  		  {
+			"when": "relic_slot",
+            "model": {"type": "minecraft:model",
+			"model": "minecraft:item/guielements/relic_slot",
+			"tints": [{"type": "minecraft:custom_model_data","index": 1,"default": 4294967295}]}
 		  }
 
         ],
