@@ -1,13 +1,9 @@
 import os
 
-
-# Folder names
 folders = ["a", "b", "c", "d","e"]
 letters = ["0","1","2","3","4","5","6","7","8","9","stars","weight","ammo","cart","pound"]
 
-# Use the script's directory
 base_output_dir = os.path.dirname(os.path.abspath(__file__))
-
 
 for folder in folders:
     folder_path = os.path.join(base_output_dir, folder)  # <-- no "number_"

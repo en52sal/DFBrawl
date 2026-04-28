@@ -1,9 +1,8 @@
 import os
 
-# === BASE DIRECTORY (where the script is located) ===
 script_dir = os.path.dirname(os.path.abspath(__file__))
 
-# Go up 3 levels: relics -> item -> models -> minecraft
+# Go up 3 levels
 base_dir = os.path.abspath(os.path.join(script_dir, "..", "..", ".."))
 
 # Target texture directory
@@ -15,7 +14,7 @@ output_dir = script_dir
 # Supported texture extensions
 valid_extensions = (".png", ".jpg", ".jpeg")
 
-# === PROCESS FILES ===
+
 if not os.path.exists(texture_dir):
     print(f"Texture directory not found: {texture_dir}")
     exit()

@@ -2,129 +2,48 @@ import os
 
 template = r'''
 {
+  "swap_animation_scale": 0,
+  "hand_animation_on_swap": false,
   "model": {
-    "type": "minecraft:select",
-    "property": "minecraft:custom_model_data",
-    "cases": [
+    "type": "minecraft:composite",
+    "models": [
       {
-        "when": ["gray"],
-        "model": {
-          "type": "minecraft:composite",
-          "models": [
-            {
-              "type": "minecraft:model",
-              "model": "minecraft:item/weapons/tgun/gray",
-              "tints": [
-                {
-                  "type": "minecraft:custom_model_data",
-                  "index": 1,
-                  "default": 16777215
-                }
-              ]
-            },
-
-            {NUMBERS_BLOCK},
-
-            {
-              "type": "minecraft:model",
-              "model": "minecraft:item/guielements/background_gradient",
-              "tints": [
-                {
-                  "type": "minecraft:custom_model_data",
-                  "index": 0,
-                  "default": 16777215
-                }
-              ]
-            }
-          ]
-        }
-      }
-    ],
-
-    "fallback": {
-      "type": "minecraft:select",
-      "property": "minecraft:display_context",
-      "cases": [
-        {
-          "when": ["head", "gui", "ground", "fixed", "on_shelf"],
-          "model": {
-            "type": "minecraft:select",
-            "property": "minecraft:custom_model_data",
-            "cases": [
-              {
-                "when": ["gui"],
-                "model": {
-                  "type": "minecraft:composite",
-                  "models": [
-                    {
-                      "type": "minecraft:model",
-                      "model": "minecraft:item/weapons/tgun/base"
-                    },
-
-                    {NUMBERS_BLOCK},
-
-                    {
-                      "type": "minecraft:model",
-                      "model": "minecraft:item/guielements/background_gradient",
-                      "tints": [
-                        {
-                          "type": "minecraft:custom_model_data",
-                          "index": 0,
-                          "default": 0
-                        }
-                      ]
-                    }
-                  ]
-                }
-              }
-            ],
-            "fallback": {
-              "type": "minecraft:composite",
-              "models": [
-                {
-                  "type": "minecraft:model",
-                  "model": "minecraft:item/weapons/tgun/base"
-                },
-
-                {NUMBERS_BLOCK}
-
-              ]
-            }
-          }
-        }
-      ],
-
-      "fallback": {
         "type": "minecraft:select",
-        "property": "minecraft:custom_model_data",
+        "property": "minecraft:display_context",
         "cases": [
           {
-            "when": ["gui"],
+            "when": ["head", "gui", "ground", "fixed", "on_shelf"],
             "model": {
-              "type": "minecraft:composite",
-              "models": [
+              "type": "minecraft:select",
+              "property": "minecraft:custom_model_data",
+              "cases": [
                 {
-                  "type": "minecraft:model",
-                  "model": "minecraft:item/weapons/tgun/base"
-                },
-
-                {NUMBERS_BLOCK},
-
-                {
-                  "type": "minecraft:model",
-                  "model": "minecraft:item/guielements/background_gradient",
-                  "tints": [
-                    {
-                      "type": "minecraft:custom_model_data",
-                      "index": 0,
-                      "default": 0
-                    }
-                  ]
+                  "when": ["gray"],
+                  "model": {
+                    "type": "minecraft:model",
+                    "model": "minecraft:item/weapons/tgun/gray",
+                    "tints": [
+                      {
+                        "type": "minecraft:custom_model_data",
+                        "index": 1,
+                        "default": 16777215
+                      }
+                    ]
+                  }
                 }
-              ]
+              ],
+		  "fallback": {
+          "type": "minecraft:model",
+          "model": "minecraft:item/weapons/tgun/base"
+					  }
             }
-          },
-          {
+          }
+        ],
+        "fallback": {
+          "type": "minecraft:select",
+		  "property": "minecraft:custom_model_data",
+		  "cases": [
+		            {
             "when": ["reload"],
             "model": {
               "type": "minecraft:model",
@@ -145,17 +64,35 @@ template = r'''
               "model": "minecraft:item/weapons/tgun/firing"
             }
           }
-        ],
-
-        "fallback": {
-              "type": "minecraft:model",
-              "model": "minecraft:item/weapons/tgun/base"
+		  ],
+		  		  "fallback": {
+          "type": "minecraft:model",
+          "model": "minecraft:item/weapons/tgun/base"
+					  }
         }
-      }
-    }
-  },
-  "swap_animation_scale": 0,
-  "hand_animation_on_swap": false
+      },
+      {
+        "type": "minecraft:condition",
+        "property": "minecraft:custom_model_data",
+        "on_true": {
+          "type": "minecraft:model",
+          "model": "minecraft:item/guielements/background_gradient",
+          "tints": [
+            {
+              "type": "minecraft:custom_model_data",
+              "index": 0,
+              "default": 4294967295
+            }
+          ]
+        },
+        "on_false": {
+          "type": "minecraft:model",
+          "model": "minecraft:item/none"
+        }
+      },
+      {NUMBERS_BLOCK}
+    ]
+  }
 }
 '''
 

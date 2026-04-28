@@ -1,472 +1,47 @@
 
 {
+  "swap_animation_scale": 0,
+  "hand_animation_on_swap": false,
   "model": {
-    "type": "minecraft:select",
-    "property": "minecraft:custom_model_data",
-    "cases": [
+    "type": "minecraft:composite",
+    "models": [
       {
-        "when": ["gray"],
-        "model": {
-          "type": "minecraft:composite",
-          "models": [
-            {
-              "type": "minecraft:model",
-              "model": "minecraft:item/weapons/striker/gray",
-              "tints": [
-                {
-                  "type": "minecraft:custom_model_data",
-                  "index": 1,
-                  "default": 16777215
-                }
-              ]
-            },
-
-            
-{
-  "type": "minecraft:range_dispatch","property": "minecraft:custom_model_data","index": 0,"entries": [{"threshold": 0.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/0"}},
-{"threshold": 1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/1"}},
-{"threshold": 2, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/2"}},
-{"threshold": 3, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/3"}},
-{"threshold": 4, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/4"}},
-{"threshold": 5, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/5"}},
-{"threshold": 6, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/6"}},
-{"threshold": 7, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/7"}},
-{"threshold": 8, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/8"}},
-{"threshold": 9, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/9"}},
-{"threshold": 10, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/stars"}},
-{"threshold": 11, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/weight"}},
-{"threshold": 12, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/ammo"}},
-{"threshold": 13, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/cart"}},
-{"threshold": 14, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/pound"}}],"fallback": { "type": "minecraft:model", "model": "minecraft:item/air" }
-},
-{
-  "type": "minecraft:range_dispatch","property": "minecraft:custom_model_data","index": 1,"entries": [{"threshold": 0.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/0"}},
-{"threshold": 1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/1"}},
-{"threshold": 2, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/2"}},
-{"threshold": 3, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/3"}},
-{"threshold": 4, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/4"}},
-{"threshold": 5, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/5"}},
-{"threshold": 6, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/6"}},
-{"threshold": 7, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/7"}},
-{"threshold": 8, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/8"}},
-{"threshold": 9, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/9"}},
-{"threshold": 10, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/stars"}},
-{"threshold": 11, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/weight"}},
-{"threshold": 12, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/ammo"}},
-{"threshold": 13, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/cart"}},
-{"threshold": 14, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/pound"}}],"fallback": { "type": "minecraft:model", "model": "minecraft:item/air" }
-},
-{
-  "type": "minecraft:range_dispatch","property": "minecraft:custom_model_data","index": 2,"entries": [{"threshold": 0.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/0"}},
-{"threshold": 1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/1"}},
-{"threshold": 2, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/2"}},
-{"threshold": 3, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/3"}},
-{"threshold": 4, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/4"}},
-{"threshold": 5, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/5"}},
-{"threshold": 6, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/6"}},
-{"threshold": 7, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/7"}},
-{"threshold": 8, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/8"}},
-{"threshold": 9, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/9"}},
-{"threshold": 10, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/stars"}},
-{"threshold": 11, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/weight"}},
-{"threshold": 12, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/ammo"}},
-{"threshold": 13, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/cart"}},
-{"threshold": 14, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/pound"}}],"fallback": { "type": "minecraft:model", "model": "minecraft:item/air" }
-},
-{
-  "type": "minecraft:range_dispatch","property": "minecraft:custom_model_data","index": 3,"entries": [{"threshold": 0.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/d/0"}},
-{"threshold": 1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/d/1"}},
-{"threshold": 2, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/d/2"}},
-{"threshold": 3, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/d/3"}},
-{"threshold": 4, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/d/4"}},
-{"threshold": 5, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/d/5"}},
-{"threshold": 6, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/d/6"}},
-{"threshold": 7, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/d/7"}},
-{"threshold": 8, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/d/8"}},
-{"threshold": 9, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/d/9"}},
-{"threshold": 10, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/d/stars"}},
-{"threshold": 11, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/d/weight"}},
-{"threshold": 12, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/d/ammo"}},
-{"threshold": 13, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/d/cart"}},
-{"threshold": 14, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/d/pound"}}],"fallback": { "type": "minecraft:model", "model": "minecraft:item/air" }
-},
-{
-  "type": "minecraft:range_dispatch","property": "minecraft:custom_model_data","index": 4,"entries": [{"threshold": 0.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/e/0"}},
-{"threshold": 1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/e/1"}},
-{"threshold": 2, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/e/2"}},
-{"threshold": 3, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/e/3"}},
-{"threshold": 4, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/e/4"}},
-{"threshold": 5, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/e/5"}},
-{"threshold": 6, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/e/6"}},
-{"threshold": 7, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/e/7"}},
-{"threshold": 8, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/e/8"}},
-{"threshold": 9, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/e/9"}},
-{"threshold": 10, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/e/stars"}},
-{"threshold": 11, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/e/weight"}},
-{"threshold": 12, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/e/ammo"}},
-{"threshold": 13, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/e/cart"}},
-{"threshold": 14, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/e/pound"}}],"fallback": { "type": "minecraft:model", "model": "minecraft:item/air" }
-}
-,
-
-            {
-              "type": "minecraft:model",
-              "model": "minecraft:item/guielements/background_gradient",
-              "tints": [
-                {
-                  "type": "minecraft:custom_model_data",
-                  "index": 0,
-                  "default": 16777215
-                }
-              ]
-            }
-          ]
-        }
-      }
-    ],
-
-    "fallback": {
-      "type": "minecraft:select",
-      "property": "minecraft:display_context",
-      "cases": [
-        {
-          "when": ["head", "gui", "ground", "fixed", "on_shelf"],
-          "model": {
-            "type": "minecraft:select",
-            "property": "minecraft:custom_model_data",
-            "cases": [
-              {
-                "when": ["gui"],
-                "model": {
-                  "type": "minecraft:composite",
-                  "models": [
-                    {
-                      "type": "minecraft:model",
-                      "model": "minecraft:item/weapons/striker/base"
-                    },
-
-                    
-{
-  "type": "minecraft:range_dispatch","property": "minecraft:custom_model_data","index": 0,"entries": [{"threshold": 0.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/0"}},
-{"threshold": 1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/1"}},
-{"threshold": 2, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/2"}},
-{"threshold": 3, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/3"}},
-{"threshold": 4, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/4"}},
-{"threshold": 5, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/5"}},
-{"threshold": 6, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/6"}},
-{"threshold": 7, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/7"}},
-{"threshold": 8, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/8"}},
-{"threshold": 9, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/9"}},
-{"threshold": 10, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/stars"}},
-{"threshold": 11, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/weight"}},
-{"threshold": 12, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/ammo"}},
-{"threshold": 13, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/cart"}},
-{"threshold": 14, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/pound"}}],"fallback": { "type": "minecraft:model", "model": "minecraft:item/air" }
-},
-{
-  "type": "minecraft:range_dispatch","property": "minecraft:custom_model_data","index": 1,"entries": [{"threshold": 0.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/0"}},
-{"threshold": 1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/1"}},
-{"threshold": 2, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/2"}},
-{"threshold": 3, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/3"}},
-{"threshold": 4, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/4"}},
-{"threshold": 5, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/5"}},
-{"threshold": 6, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/6"}},
-{"threshold": 7, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/7"}},
-{"threshold": 8, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/8"}},
-{"threshold": 9, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/9"}},
-{"threshold": 10, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/stars"}},
-{"threshold": 11, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/weight"}},
-{"threshold": 12, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/ammo"}},
-{"threshold": 13, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/cart"}},
-{"threshold": 14, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/pound"}}],"fallback": { "type": "minecraft:model", "model": "minecraft:item/air" }
-},
-{
-  "type": "minecraft:range_dispatch","property": "minecraft:custom_model_data","index": 2,"entries": [{"threshold": 0.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/0"}},
-{"threshold": 1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/1"}},
-{"threshold": 2, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/2"}},
-{"threshold": 3, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/3"}},
-{"threshold": 4, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/4"}},
-{"threshold": 5, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/5"}},
-{"threshold": 6, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/6"}},
-{"threshold": 7, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/7"}},
-{"threshold": 8, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/8"}},
-{"threshold": 9, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/9"}},
-{"threshold": 10, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/stars"}},
-{"threshold": 11, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/weight"}},
-{"threshold": 12, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/ammo"}},
-{"threshold": 13, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/cart"}},
-{"threshold": 14, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/pound"}}],"fallback": { "type": "minecraft:model", "model": "minecraft:item/air" }
-},
-{
-  "type": "minecraft:range_dispatch","property": "minecraft:custom_model_data","index": 3,"entries": [{"threshold": 0.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/d/0"}},
-{"threshold": 1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/d/1"}},
-{"threshold": 2, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/d/2"}},
-{"threshold": 3, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/d/3"}},
-{"threshold": 4, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/d/4"}},
-{"threshold": 5, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/d/5"}},
-{"threshold": 6, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/d/6"}},
-{"threshold": 7, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/d/7"}},
-{"threshold": 8, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/d/8"}},
-{"threshold": 9, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/d/9"}},
-{"threshold": 10, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/d/stars"}},
-{"threshold": 11, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/d/weight"}},
-{"threshold": 12, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/d/ammo"}},
-{"threshold": 13, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/d/cart"}},
-{"threshold": 14, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/d/pound"}}],"fallback": { "type": "minecraft:model", "model": "minecraft:item/air" }
-},
-{
-  "type": "minecraft:range_dispatch","property": "minecraft:custom_model_data","index": 4,"entries": [{"threshold": 0.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/e/0"}},
-{"threshold": 1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/e/1"}},
-{"threshold": 2, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/e/2"}},
-{"threshold": 3, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/e/3"}},
-{"threshold": 4, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/e/4"}},
-{"threshold": 5, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/e/5"}},
-{"threshold": 6, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/e/6"}},
-{"threshold": 7, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/e/7"}},
-{"threshold": 8, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/e/8"}},
-{"threshold": 9, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/e/9"}},
-{"threshold": 10, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/e/stars"}},
-{"threshold": 11, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/e/weight"}},
-{"threshold": 12, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/e/ammo"}},
-{"threshold": 13, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/e/cart"}},
-{"threshold": 14, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/e/pound"}}],"fallback": { "type": "minecraft:model", "model": "minecraft:item/air" }
-}
-,
-
-                    {
-                      "type": "minecraft:model",
-                      "model": "minecraft:item/guielements/background_gradient",
-                      "tints": [
-                        {
-                          "type": "minecraft:custom_model_data",
-                          "index": 0,
-                          "default": 0
-                        }
-                      ]
-                    }
-                  ]
-                }
-              }
-            ],
-            "fallback": {
-              "type": "minecraft:composite",
-              "models": [
-                {
-                  "type": "minecraft:model",
-                  "model": "minecraft:item/weapons/striker/base"
-                },
-
-                
-{
-  "type": "minecraft:range_dispatch","property": "minecraft:custom_model_data","index": 0,"entries": [{"threshold": 0.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/0"}},
-{"threshold": 1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/1"}},
-{"threshold": 2, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/2"}},
-{"threshold": 3, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/3"}},
-{"threshold": 4, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/4"}},
-{"threshold": 5, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/5"}},
-{"threshold": 6, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/6"}},
-{"threshold": 7, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/7"}},
-{"threshold": 8, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/8"}},
-{"threshold": 9, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/9"}},
-{"threshold": 10, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/stars"}},
-{"threshold": 11, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/weight"}},
-{"threshold": 12, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/ammo"}},
-{"threshold": 13, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/cart"}},
-{"threshold": 14, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/pound"}}],"fallback": { "type": "minecraft:model", "model": "minecraft:item/air" }
-},
-{
-  "type": "minecraft:range_dispatch","property": "minecraft:custom_model_data","index": 1,"entries": [{"threshold": 0.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/0"}},
-{"threshold": 1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/1"}},
-{"threshold": 2, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/2"}},
-{"threshold": 3, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/3"}},
-{"threshold": 4, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/4"}},
-{"threshold": 5, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/5"}},
-{"threshold": 6, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/6"}},
-{"threshold": 7, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/7"}},
-{"threshold": 8, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/8"}},
-{"threshold": 9, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/9"}},
-{"threshold": 10, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/stars"}},
-{"threshold": 11, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/weight"}},
-{"threshold": 12, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/ammo"}},
-{"threshold": 13, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/cart"}},
-{"threshold": 14, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/pound"}}],"fallback": { "type": "minecraft:model", "model": "minecraft:item/air" }
-},
-{
-  "type": "minecraft:range_dispatch","property": "minecraft:custom_model_data","index": 2,"entries": [{"threshold": 0.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/0"}},
-{"threshold": 1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/1"}},
-{"threshold": 2, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/2"}},
-{"threshold": 3, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/3"}},
-{"threshold": 4, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/4"}},
-{"threshold": 5, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/5"}},
-{"threshold": 6, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/6"}},
-{"threshold": 7, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/7"}},
-{"threshold": 8, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/8"}},
-{"threshold": 9, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/9"}},
-{"threshold": 10, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/stars"}},
-{"threshold": 11, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/weight"}},
-{"threshold": 12, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/ammo"}},
-{"threshold": 13, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/cart"}},
-{"threshold": 14, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/pound"}}],"fallback": { "type": "minecraft:model", "model": "minecraft:item/air" }
-},
-{
-  "type": "minecraft:range_dispatch","property": "minecraft:custom_model_data","index": 3,"entries": [{"threshold": 0.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/d/0"}},
-{"threshold": 1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/d/1"}},
-{"threshold": 2, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/d/2"}},
-{"threshold": 3, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/d/3"}},
-{"threshold": 4, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/d/4"}},
-{"threshold": 5, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/d/5"}},
-{"threshold": 6, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/d/6"}},
-{"threshold": 7, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/d/7"}},
-{"threshold": 8, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/d/8"}},
-{"threshold": 9, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/d/9"}},
-{"threshold": 10, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/d/stars"}},
-{"threshold": 11, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/d/weight"}},
-{"threshold": 12, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/d/ammo"}},
-{"threshold": 13, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/d/cart"}},
-{"threshold": 14, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/d/pound"}}],"fallback": { "type": "minecraft:model", "model": "minecraft:item/air" }
-},
-{
-  "type": "minecraft:range_dispatch","property": "minecraft:custom_model_data","index": 4,"entries": [{"threshold": 0.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/e/0"}},
-{"threshold": 1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/e/1"}},
-{"threshold": 2, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/e/2"}},
-{"threshold": 3, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/e/3"}},
-{"threshold": 4, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/e/4"}},
-{"threshold": 5, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/e/5"}},
-{"threshold": 6, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/e/6"}},
-{"threshold": 7, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/e/7"}},
-{"threshold": 8, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/e/8"}},
-{"threshold": 9, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/e/9"}},
-{"threshold": 10, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/e/stars"}},
-{"threshold": 11, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/e/weight"}},
-{"threshold": 12, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/e/ammo"}},
-{"threshold": 13, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/e/cart"}},
-{"threshold": 14, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/e/pound"}}],"fallback": { "type": "minecraft:model", "model": "minecraft:item/air" }
-}
-
-
-              ]
-            }
-          }
-        }
-      ],
-
-      "fallback": {
         "type": "minecraft:select",
-        "property": "minecraft:custom_model_data",
+        "property": "minecraft:display_context",
         "cases": [
           {
-            "when": ["gui"],
+            "when": ["head", "gui", "ground", "fixed", "on_shelf"],
             "model": {
-              "type": "minecraft:composite",
-              "models": [
+              "type": "minecraft:select",
+              "property": "minecraft:custom_model_data",
+              "cases": [
                 {
-                  "type": "minecraft:model",
-                  "model": "minecraft:item/weapons/striker/base"
-                },
-
-                
-{
-  "type": "minecraft:range_dispatch","property": "minecraft:custom_model_data","index": 0,"entries": [{"threshold": 0.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/0"}},
-{"threshold": 1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/1"}},
-{"threshold": 2, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/2"}},
-{"threshold": 3, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/3"}},
-{"threshold": 4, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/4"}},
-{"threshold": 5, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/5"}},
-{"threshold": 6, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/6"}},
-{"threshold": 7, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/7"}},
-{"threshold": 8, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/8"}},
-{"threshold": 9, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/9"}},
-{"threshold": 10, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/stars"}},
-{"threshold": 11, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/weight"}},
-{"threshold": 12, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/ammo"}},
-{"threshold": 13, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/cart"}},
-{"threshold": 14, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/pound"}}],"fallback": { "type": "minecraft:model", "model": "minecraft:item/air" }
-},
-{
-  "type": "minecraft:range_dispatch","property": "minecraft:custom_model_data","index": 1,"entries": [{"threshold": 0.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/0"}},
-{"threshold": 1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/1"}},
-{"threshold": 2, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/2"}},
-{"threshold": 3, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/3"}},
-{"threshold": 4, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/4"}},
-{"threshold": 5, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/5"}},
-{"threshold": 6, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/6"}},
-{"threshold": 7, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/7"}},
-{"threshold": 8, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/8"}},
-{"threshold": 9, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/9"}},
-{"threshold": 10, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/stars"}},
-{"threshold": 11, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/weight"}},
-{"threshold": 12, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/ammo"}},
-{"threshold": 13, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/cart"}},
-{"threshold": 14, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/pound"}}],"fallback": { "type": "minecraft:model", "model": "minecraft:item/air" }
-},
-{
-  "type": "minecraft:range_dispatch","property": "minecraft:custom_model_data","index": 2,"entries": [{"threshold": 0.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/0"}},
-{"threshold": 1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/1"}},
-{"threshold": 2, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/2"}},
-{"threshold": 3, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/3"}},
-{"threshold": 4, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/4"}},
-{"threshold": 5, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/5"}},
-{"threshold": 6, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/6"}},
-{"threshold": 7, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/7"}},
-{"threshold": 8, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/8"}},
-{"threshold": 9, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/9"}},
-{"threshold": 10, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/stars"}},
-{"threshold": 11, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/weight"}},
-{"threshold": 12, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/ammo"}},
-{"threshold": 13, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/cart"}},
-{"threshold": 14, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/pound"}}],"fallback": { "type": "minecraft:model", "model": "minecraft:item/air" }
-},
-{
-  "type": "minecraft:range_dispatch","property": "minecraft:custom_model_data","index": 3,"entries": [{"threshold": 0.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/d/0"}},
-{"threshold": 1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/d/1"}},
-{"threshold": 2, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/d/2"}},
-{"threshold": 3, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/d/3"}},
-{"threshold": 4, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/d/4"}},
-{"threshold": 5, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/d/5"}},
-{"threshold": 6, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/d/6"}},
-{"threshold": 7, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/d/7"}},
-{"threshold": 8, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/d/8"}},
-{"threshold": 9, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/d/9"}},
-{"threshold": 10, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/d/stars"}},
-{"threshold": 11, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/d/weight"}},
-{"threshold": 12, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/d/ammo"}},
-{"threshold": 13, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/d/cart"}},
-{"threshold": 14, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/d/pound"}}],"fallback": { "type": "minecraft:model", "model": "minecraft:item/air" }
-},
-{
-  "type": "minecraft:range_dispatch","property": "minecraft:custom_model_data","index": 4,"entries": [{"threshold": 0.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/e/0"}},
-{"threshold": 1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/e/1"}},
-{"threshold": 2, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/e/2"}},
-{"threshold": 3, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/e/3"}},
-{"threshold": 4, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/e/4"}},
-{"threshold": 5, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/e/5"}},
-{"threshold": 6, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/e/6"}},
-{"threshold": 7, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/e/7"}},
-{"threshold": 8, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/e/8"}},
-{"threshold": 9, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/e/9"}},
-{"threshold": 10, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/e/stars"}},
-{"threshold": 11, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/e/weight"}},
-{"threshold": 12, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/e/ammo"}},
-{"threshold": 13, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/e/cart"}},
-{"threshold": 14, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/e/pound"}}],"fallback": { "type": "minecraft:model", "model": "minecraft:item/air" }
-}
-,
-
-                {
-                  "type": "minecraft:model",
-                  "model": "minecraft:item/guielements/background_gradient",
-                  "tints": [
-                    {
-                      "type": "minecraft:custom_model_data",
-                      "index": 0,
-                      "default": 0
-                    }
-                  ]
+                  "when": ["gray"],
+                  "model": {
+                    "type": "minecraft:model",
+                    "model": "minecraft:item/weapons/striker/gray",
+                    "tints": [
+                      {
+                        "type": "minecraft:custom_model_data",
+                        "index": 1,
+                        "default": 16777215
+                      }
+                    ]
+                  }
                 }
-              ]
+              ],
+		  "fallback": {
+          "type": "minecraft:model",
+          "model": "minecraft:item/weapons/striker/base"
+					  }
             }
-          },
-          {
+          }
+        ],
+        "fallback": {
+          "type": "minecraft:select",
+		  "property": "minecraft:custom_model_data",
+		  "cases": [
+		            {
             "when": ["reload"],
             "model": {
               "type": "minecraft:model",
@@ -487,15 +62,119 @@
               "model": "minecraft:item/weapons/striker/firing"
             }
           }
-        ],
-
-        "fallback": {
-              "type": "minecraft:model",
-              "model": "minecraft:item/weapons/striker/base"
+		  ],
+		  		  "fallback": {
+          "type": "minecraft:model",
+          "model": "minecraft:item/weapons/striker/base"
+					  }
         }
-      }
-    }
-  },
-  "swap_animation_scale": 0,
-  "hand_animation_on_swap": false
+      },
+      {
+        "type": "minecraft:condition",
+        "property": "minecraft:custom_model_data",
+        "on_true": {
+          "type": "minecraft:model",
+          "model": "minecraft:item/guielements/background_gradient",
+          "tints": [
+            {
+              "type": "minecraft:custom_model_data",
+              "index": 0,
+              "default": 4294967295
+            }
+          ]
+        },
+        "on_false": {
+          "type": "minecraft:model",
+          "model": "minecraft:item/none"
+        }
+      },
+      
+{
+  "type": "minecraft:range_dispatch","property": "minecraft:custom_model_data","index": 0,"entries": [{"threshold": 0.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/0"}},
+{"threshold": 1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/1"}},
+{"threshold": 2, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/2"}},
+{"threshold": 3, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/3"}},
+{"threshold": 4, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/4"}},
+{"threshold": 5, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/5"}},
+{"threshold": 6, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/6"}},
+{"threshold": 7, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/7"}},
+{"threshold": 8, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/8"}},
+{"threshold": 9, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/9"}},
+{"threshold": 10, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/stars"}},
+{"threshold": 11, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/weight"}},
+{"threshold": 12, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/ammo"}},
+{"threshold": 13, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/cart"}},
+{"threshold": 14, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/pound"}}],"fallback": { "type": "minecraft:model", "model": "minecraft:item/air" }
+},
+{
+  "type": "minecraft:range_dispatch","property": "minecraft:custom_model_data","index": 1,"entries": [{"threshold": 0.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/0"}},
+{"threshold": 1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/1"}},
+{"threshold": 2, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/2"}},
+{"threshold": 3, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/3"}},
+{"threshold": 4, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/4"}},
+{"threshold": 5, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/5"}},
+{"threshold": 6, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/6"}},
+{"threshold": 7, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/7"}},
+{"threshold": 8, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/8"}},
+{"threshold": 9, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/9"}},
+{"threshold": 10, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/stars"}},
+{"threshold": 11, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/weight"}},
+{"threshold": 12, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/ammo"}},
+{"threshold": 13, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/cart"}},
+{"threshold": 14, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/b/pound"}}],"fallback": { "type": "minecraft:model", "model": "minecraft:item/air" }
+},
+{
+  "type": "minecraft:range_dispatch","property": "minecraft:custom_model_data","index": 2,"entries": [{"threshold": 0.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/0"}},
+{"threshold": 1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/1"}},
+{"threshold": 2, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/2"}},
+{"threshold": 3, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/3"}},
+{"threshold": 4, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/4"}},
+{"threshold": 5, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/5"}},
+{"threshold": 6, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/6"}},
+{"threshold": 7, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/7"}},
+{"threshold": 8, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/8"}},
+{"threshold": 9, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/9"}},
+{"threshold": 10, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/stars"}},
+{"threshold": 11, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/weight"}},
+{"threshold": 12, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/ammo"}},
+{"threshold": 13, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/cart"}},
+{"threshold": 14, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/c/pound"}}],"fallback": { "type": "minecraft:model", "model": "minecraft:item/air" }
+},
+{
+  "type": "minecraft:range_dispatch","property": "minecraft:custom_model_data","index": 3,"entries": [{"threshold": 0.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/d/0"}},
+{"threshold": 1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/d/1"}},
+{"threshold": 2, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/d/2"}},
+{"threshold": 3, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/d/3"}},
+{"threshold": 4, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/d/4"}},
+{"threshold": 5, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/d/5"}},
+{"threshold": 6, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/d/6"}},
+{"threshold": 7, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/d/7"}},
+{"threshold": 8, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/d/8"}},
+{"threshold": 9, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/d/9"}},
+{"threshold": 10, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/d/stars"}},
+{"threshold": 11, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/d/weight"}},
+{"threshold": 12, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/d/ammo"}},
+{"threshold": 13, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/d/cart"}},
+{"threshold": 14, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/d/pound"}}],"fallback": { "type": "minecraft:model", "model": "minecraft:item/air" }
+},
+{
+  "type": "minecraft:range_dispatch","property": "minecraft:custom_model_data","index": 4,"entries": [{"threshold": 0.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/e/0"}},
+{"threshold": 1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/e/1"}},
+{"threshold": 2, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/e/2"}},
+{"threshold": 3, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/e/3"}},
+{"threshold": 4, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/e/4"}},
+{"threshold": 5, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/e/5"}},
+{"threshold": 6, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/e/6"}},
+{"threshold": 7, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/e/7"}},
+{"threshold": 8, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/e/8"}},
+{"threshold": 9, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/e/9"}},
+{"threshold": 10, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/e/stars"}},
+{"threshold": 11, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/e/weight"}},
+{"threshold": 12, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/e/ammo"}},
+{"threshold": 13, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/e/cart"}},
+{"threshold": 14, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/e/pound"}}],"fallback": { "type": "minecraft:model", "model": "minecraft:item/air" }
+}
+
+    ]
+  }
 }
