@@ -1,0 +1,144 @@
+{
+    "when": "quick_reload",
+    "model": {
+        "type": "minecraft:model",
+        "model": "minecraft:item/relics/quick_reload",
+        "tints": [{"type": "minecraft:custom_model_data","index": 1,"default": 4294967295}]
+    }
+},
+{
+    "when": "gray_quick_reload",
+    "model": {
+        "type": "minecraft:model",
+        "model": "minecraft:item/relics/gray/quick_reload",
+        "tints": [{"type": "minecraft:custom_model_data","index": 1,"default": 4294967295}]
+    }
+},
+{
+    "when": "speed",
+    "model": {
+        "type": "minecraft:model",
+        "model": "minecraft:item/relics/speed",
+        "tints": [{"type": "minecraft:custom_model_data","index": 1,"default": 4294967295}]
+    }
+},
+{
+    "when": "gray_speed",
+    "model": {
+        "type": "minecraft:model",
+        "model": "minecraft:item/relics/gray/speed",
+        "tints": [{"type": "minecraft:custom_model_data","index": 1,"default": 4294967295}]
+    }
+},
+{
+    "when": "springboard",
+    "model": {
+        "type": "minecraft:model",
+        "model": "minecraft:item/relics/springboard",
+        "tints": [{"type": "minecraft:custom_model_data","index": 1,"default": 4294967295}]
+    }
+},
+{
+    "when": "gray_springboard",
+    "model": {
+        "type": "minecraft:model",
+        "model": "minecraft:item/relics/gray/springboard",
+        "tints": [{"type": "minecraft:custom_model_data","index": 1,"default": 4294967295}]
+    }
+},
+{
+    "when": "taco_time",
+    "model": {
+        "type": "minecraft:model",
+        "model": "minecraft:item/relics/taco_time",
+        "tints": [{"type": "minecraft:custom_model_data","index": 1,"default": 4294967295}]
+    }
+},
+{
+    "when": "gray_taco_time",
+    "model": {
+        "type": "minecraft:model",
+        "model": "minecraft:item/relics/gray/taco_time",
+        "tints": [{"type": "minecraft:custom_model_data","index": 1,"default": 4294967295}]
+    }
+},
+{
+    "when": "superball",
+    "model": {
+        "type": "minecraft:model",
+        "model": "minecraft:item/relics/superball",
+        "tints": [{"type": "minecraft:custom_model_data","index": 1,"default": 4294967295}]
+    }
+},
+{
+    "when": "gray_superball",
+    "model": {
+        "type": "minecraft:model",
+        "model": "minecraft:item/relics/gray/superball",
+        "tints": [{"type": "minecraft:custom_model_data","index": 1,"default": 4294967295}]
+    }
+},
+{
+    "when": "hearty",
+    "model": {
+        "type": "minecraft:model",
+        "model": "minecraft:item/relics/hearty",
+        "tints": [{"type": "minecraft:custom_model_data","index": 1,"default": 4294967295}]
+    }
+},
+{
+    "when": "gray_hearty",
+    "model": {
+        "type": "minecraft:model",
+        "model": "minecraft:item/relics/gray/hearty",
+        "tints": [{"type": "minecraft:custom_model_data","index": 1,"default": 4294967295}]
+    }
+},
+{
+    "when": "bomb",
+    "model": {
+        "type": "minecraft:model",
+        "model": "minecraft:item/relics/bomb",
+        "tints": [{"type": "minecraft:custom_model_data","index": 1,"default": 4294967295}]
+    }
+},
+{
+    "when": "gray_bomb",
+    "model": {
+        "type": "minecraft:model",
+        "model": "minecraft:item/relics/gray/bomb",
+        "tints": [{"type": "minecraft:custom_model_data","index": 1,"default": 4294967295}]
+    }
+},
+{
+    "when": "big_border",
+    "model": {
+        "type": "minecraft:model",
+        "model": "minecraft:item/relics/big_border",
+        "tints": [{"type": "minecraft:custom_model_data","index": 1,"default": 4294967295}]
+    }
+},
+{
+    "when": "gray_big_border",
+    "model": {
+        "type": "minecraft:model",
+        "model": "minecraft:item/relics/gray/big_border",
+        "tints": [{"type": "minecraft:custom_model_data","index": 1,"default": 4294967295}]
+    }
+},
+{
+    "when": "entrapped",
+    "model": {
+        "type": "minecraft:model",
+        "model": "minecraft:item/relics/entrapped",
+        "tints": [{"type": "minecraft:custom_model_data","index": 1,"default": 4294967295}]
+    }
+},
+{
+    "when": "gray_entrapped",
+    "model": {
+        "type": "minecraft:model",
+        "model": "minecraft:item/relics/gray/entrapped",
+        "tints": [{"type": "minecraft:custom_model_data","index": 1,"default": 4294967295}]
+    }
+}

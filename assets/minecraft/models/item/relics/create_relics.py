@@ -19,22 +19,37 @@ if not os.path.exists(texture_dir):
     print(f"Texture directory not found: {texture_dir}")
     exit()
 
-for file in os.listdir(texture_dir):
-    if file.lower().endswith(valid_extensions):
-        name = os.path.splitext(file)[0]
+# Walk through ALL folders and files
+for root, dirs, files in os.walk(texture_dir):
+    # Get relative path from relics folder
+    rel_path = os.path.relpath(root, texture_dir)
 
-        json_content = f'''{{
+    # Build matching output folder
+    if rel_path == ".":
+        current_output_dir = output_dir
+        texture_prefix = "item/relics"
+    else:
+        current_output_dir = os.path.join(output_dir, rel_path)
+        texture_prefix = f"item/relics/{rel_path.replace(os.sep, '/')}"
+
+    os.makedirs(current_output_dir, exist_ok=True)
+
+    for file in files:
+        if file.lower().endswith(valid_extensions):
+            name = os.path.splitext(file)[0]
+
+            json_content = f'''{{
     "parent": "minecraft:item/generated",
     "textures": {{
-        "layer0": "item/relics/{name}"
+        "layer0": "{texture_prefix}/{name}"
     }}
 }}'''
 
-        output_path = os.path.join(output_dir, f"{name}.json")
+            output_path = os.path.join(current_output_dir, f"{name}.json")
 
-        with open(output_path, "w", encoding="utf-8") as f:
-            f.write(json_content)
+            with open(output_path, "w", encoding="utf-8") as f:
+                f.write(json_content)
 
-        print(f"Created: {output_path}")
+            print(f"Created: {output_path}")
 
 print("Done.")
