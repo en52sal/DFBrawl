@@ -3,5 +3,9 @@
   "key.mouse.middle": "⍤",
   "key.mouse.left": "⍥",
   "key.keyboard.left.shift": "☙",
-    "key.keyboard.right.shift": "☙"
+  "key.keyboard.right.shift": "☙",
+  "container.inventory": "",
+  "soundCategory.music": "Vanilla Music",
+  "soundCategory.record": "Plot Music"
+
 }
