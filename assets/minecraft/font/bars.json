@@ -3,7 +3,7 @@
         {
             "type": "bitmap",
             "file": "bars:bars.png",
-            "ascent": -26,
+            "ascent": 9,
             "height": 16,
             "chars": [
                 "\u0026\u0010",

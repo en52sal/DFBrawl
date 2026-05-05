@@ -3,7 +3,7 @@
         {
             "type": "bitmap",
             "file": "font/letters.png",
-            "ascent": 7,
+            "ascent": -22,
 			"height": 7,
             "chars": ["0123456789","ABCDEFGHIJ","KLMNOPQRST","UVWXYZabcd","efghijklmn","opqrstuvwx","yz\uf3f8\uf3f9\uf3fa\uf3fb\uf3fc\uf3fd\uf3fe\uf3ff"]
         },
