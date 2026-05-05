@@ -1,12 +1,5 @@
 {
     "providers": [
-        {
-            "type": "bitmap",
-            "file": "font/letters.png",
-            "ascent": -22,
-			"height": 7,
-            "chars": ["0123456789","ABCDEFGHIJ","KLMNOPQRST","UVWXYZabcd","efghijklmn","opqrstuvwx","yz\uf3f8\uf3f9\uf3fa\uf3fb\uf3fc\uf3fd\uf3fe\uf3ff"]
-        },
 		{
             "type": "bitmap",
             "file": "font/menu/armory.png",
@@ -14,7 +7,16 @@
             "height": 256,
             "chars": ["⁌⁍"]
         },
+		{
+            "type": "bitmap",
+            "file": "font/elements.png",
+            "ascent": 9,
+            "height": 10,
+            "chars": ["a"]
+        },
         { "type": "space", "advances": { "-": -2 } },
-		{ "type": "space", "advances": { "+": 1 } }
+		{ "type": "space", "advances": { "_": -1 } },
+		{ "type": "space", "advances": { "+": 1 } },
+		{ "type": "space", "advances": { "=": 2 } }
     ]
 }
