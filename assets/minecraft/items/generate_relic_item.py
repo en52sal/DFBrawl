@@ -9,41 +9,25 @@ relics = [
     "hearty",
     "bomb",
     "big_border",
-    "entrapped"
+    "entrapped",
+    "flaregun",
+    "snack"
 ]
 
-template = '''{{
-    "when": "{when}",
-    "model": {{
-        "type": "minecraft:model",
-        "model": "{path}",
-        "tints": [{{"type": "minecraft:custom_model_data","index": 1,"default": 4294967295}}]
-    }}
-}}'''
+
+template = '''{{"when": "{when}","model": {{"type": "minecraft:condition","on_false": {{"type": "minecraft:model","model": "minecraft:item/relics/{when}","tints": [{{"type": "minecraft:custom_model_data","index": 1,"default": 4294967295}}]}},"on_true": {{"type": "minecraft:model","model": "minecraft:item/relics/gray/{when}","tints": [{{"type": "minecraft:custom_model_data","index": 1,"default": 4294967295}}]}},"property": "minecraft:custom_model_data","index": 1}}}}'''
 
 entries = []
 
 for r in relics:
-    # normal
     entries.append(template.format(
         when=r,
-        path=f"minecraft:item/relics/{r}"
     ))
 
-    # gray
-    entries.append(template.format(
-        when=f"gray_{r}",
-        path=f"minecraft:item/relics/gray/{r}"
-    ))
-
-# Join WITHOUT wrapping in []
 output = ",\n".join(entries)
 
-# Save next to script
 script_dir = os.path.dirname(os.path.abspath(__file__))
 output_path = os.path.join(script_dir, "result.json")
 
 with open(output_path, "w", encoding="utf-8") as f:
     f.write(output)
-
-print(f"Done! Wrote paste-ready relic cases to {output_path}")

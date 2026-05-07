@@ -5,37 +5,37 @@ script_dir = os.path.dirname(os.path.abspath(__file__))
 # Go up 3 levels
 base_dir = os.path.abspath(os.path.join(script_dir, "..", "..", ".."))
 
-# Target texture directory
+# Base relics texture directory
 texture_dir = os.path.join(base_dir, "textures", "item", "relics")
 
-# Output directory (same as script location)
+# Output directory
 output_dir = script_dir
 
 # Supported texture extensions
 valid_extensions = (".png", ".jpg", ".jpeg")
 
+# ONLY these folders
+target_folders = [
+    ("", "item/relics"),
+    ("gray", "item/relics/gray")
+]
 
-if not os.path.exists(texture_dir):
-    print(f"Texture directory not found: {texture_dir}")
-    exit()
+for folder_name, texture_prefix in target_folders:
 
-# Walk through ALL folders and files
-for root, dirs, files in os.walk(texture_dir):
-    # Get relative path from relics folder
-    rel_path = os.path.relpath(root, texture_dir)
+    current_texture_dir = os.path.join(texture_dir, folder_name)
 
-    # Build matching output folder
-    if rel_path == ".":
-        current_output_dir = output_dir
-        texture_prefix = "item/relics"
-    else:
-        current_output_dir = os.path.join(output_dir, rel_path)
-        texture_prefix = f"item/relics/{rel_path.replace(os.sep, '/')}"
+    if not os.path.exists(current_texture_dir):
+        print(f"Missing folder: {current_texture_dir}")
+        continue
 
+    # Match output structure
+    current_output_dir = os.path.join(output_dir, folder_name)
     os.makedirs(current_output_dir, exist_ok=True)
 
-    for file in files:
+    for file in os.listdir(current_texture_dir):
+
         if file.lower().endswith(valid_extensions):
+
             name = os.path.splitext(file)[0]
 
             json_content = f'''{{

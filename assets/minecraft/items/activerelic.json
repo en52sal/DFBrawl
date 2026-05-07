@@ -1,4 +1,6 @@
 {
+  "swap_animation_scale": 2,
+  "hand_animation_on_swap": false,
   "model": {
     "type": "minecraft:composite",
     "models": [
@@ -7,48 +9,96 @@
         "property": "minecraft:custom_model_data",
         "index": 0,
         "cases": [
-{"when": "quick_reload","model": {"type": "minecraft:condition","on_false": {"type": "minecraft:model","model": "minecraft:item/relics/quick_reload","tints": [{"type": "minecraft:custom_model_data","index": 1,"default": 4294967295}]},"on_true": {"type": "minecraft:model","model": "minecraft:item/relics/gray/quick_reload","tints": [{"type": "minecraft:custom_model_data","index": 1,"default": 4294967295}]},"property": "minecraft:custom_model_data","index": 1}},
-{"when": "speed","model": {"type": "minecraft:condition","on_false": {"type": "minecraft:model","model": "minecraft:item/relics/speed","tints": [{"type": "minecraft:custom_model_data","index": 1,"default": 4294967295}]},"on_true": {"type": "minecraft:model","model": "minecraft:item/relics/gray/speed","tints": [{"type": "minecraft:custom_model_data","index": 1,"default": 4294967295}]},"property": "minecraft:custom_model_data","index": 1}},
-{"when": "springboard","model": {"type": "minecraft:condition","on_false": {"type": "minecraft:model","model": "minecraft:item/relics/springboard","tints": [{"type": "minecraft:custom_model_data","index": 1,"default": 4294967295}]},"on_true": {"type": "minecraft:model","model": "minecraft:item/relics/gray/springboard","tints": [{"type": "minecraft:custom_model_data","index": 1,"default": 4294967295}]},"property": "minecraft:custom_model_data","index": 1}},
-{"when": "taco_time","model": {"type": "minecraft:condition","on_false": {"type": "minecraft:model","model": "minecraft:item/relics/taco_time","tints": [{"type": "minecraft:custom_model_data","index": 1,"default": 4294967295}]},"on_true": {"type": "minecraft:model","model": "minecraft:item/relics/gray/taco_time","tints": [{"type": "minecraft:custom_model_data","index": 1,"default": 4294967295}]},"property": "minecraft:custom_model_data","index": 1}},
-{"when": "superball","model": {"type": "minecraft:condition","on_false": {"type": "minecraft:model","model": "minecraft:item/relics/superball","tints": [{"type": "minecraft:custom_model_data","index": 1,"default": 4294967295}]},"on_true": {"type": "minecraft:model","model": "minecraft:item/relics/gray/superball","tints": [{"type": "minecraft:custom_model_data","index": 1,"default": 4294967295}]},"property": "minecraft:custom_model_data","index": 1}},
-{"when": "hearty","model": {"type": "minecraft:condition","on_false": {"type": "minecraft:model","model": "minecraft:item/relics/hearty","tints": [{"type": "minecraft:custom_model_data","index": 1,"default": 4294967295}]},"on_true": {"type": "minecraft:model","model": "minecraft:item/relics/gray/hearty","tints": [{"type": "minecraft:custom_model_data","index": 1,"default": 4294967295}]},"property": "minecraft:custom_model_data","index": 1}},
-{"when": "bomb","model": {"type": "minecraft:condition","on_false": {"type": "minecraft:model","model": "minecraft:item/relics/bomb","tints": [{"type": "minecraft:custom_model_data","index": 1,"default": 4294967295}]},"on_true": {"type": "minecraft:model","model": "minecraft:item/relics/gray/bomb","tints": [{"type": "minecraft:custom_model_data","index": 1,"default": 4294967295}]},"property": "minecraft:custom_model_data","index": 1}},
-{"when": "big_border","model": {"type": "minecraft:condition","on_false": {"type": "minecraft:model","model": "minecraft:item/relics/big_border","tints": [{"type": "minecraft:custom_model_data","index": 1,"default": 4294967295}]},"on_true": {"type": "minecraft:model","model": "minecraft:item/relics/gray/big_border","tints": [{"type": "minecraft:custom_model_data","index": 1,"default": 4294967295}]},"property": "minecraft:custom_model_data","index": 1}},
-{"when": "entrapped","model": {"type": "minecraft:condition","on_false": {"type": "minecraft:model","model": "minecraft:item/relics/entrapped","tints": [{"type": "minecraft:custom_model_data","index": 1,"default": 4294967295}]},"on_true": {"type": "minecraft:model","model": "minecraft:item/relics/gray/entrapped","tints": [{"type": "minecraft:custom_model_data","index": 1,"default": 4294967295}]},"property": "minecraft:custom_model_data","index": 1}},
-{"when": "flaregun","model": {"type": "minecraft:condition","on_false": {"type": "minecraft:model","model": "minecraft:item/relics/flaregun","tints": [{"type": "minecraft:custom_model_data","index": 1,"default": 4294967295}]},"on_true": {"type": "minecraft:model","model": "minecraft:item/relics/gray/flaregun","tints": [{"type": "minecraft:custom_model_data","index": 1,"default": 4294967295}]},"property": "minecraft:custom_model_data","index": 1}},
-{"when": "snack","model": {"type": "minecraft:condition","on_false": {"type": "minecraft:model","model": "minecraft:item/relics/snack","tints": [{"type": "minecraft:custom_model_data","index": 1,"default": 4294967295}]},"on_true": {"type": "minecraft:model","model": "minecraft:item/relics/gray/snack","tints": [{"type": "minecraft:custom_model_data","index": 1,"default": 4294967295}]},"property": "minecraft:custom_model_data","index": 1}}
-
-		  ,{
-			"when": "starsitem",
-            "model": {"type": "minecraft:model",
-			"model": "minecraft:item/guielements/staritem",
-			"tints": [{"type": "minecraft:custom_model_data","index": 1,"default": 4294967295}]}
-		  },
-		  		  {
-			"when": "weightitem",
-            "model": {"type": "minecraft:model",
-			"model": "minecraft:item/guielements/weightitem",
-			"tints": [{"type": "minecraft:custom_model_data","index": 1,"default": 4294967295}]}
-		  },
-		  		  {
-			"when": "timeritem",
-            "model": {"type": "minecraft:model",
-			"model": "minecraft:item/guielements/timeritem",
-			"tints": [{"type": "minecraft:custom_model_data","index": 1,"default": 4294967295}]}
-		  },
-		  		  		  {
-			"when": "weapon_slot",
-            "model": {"type": "minecraft:model",
-			"model": "minecraft:item/guielements/weapon_slot",
-			"tints": [{"type": "minecraft:custom_model_data","index": 1,"default": 4294967295}]}
-		  },
-		  		  		  {
-			"when": "relic_slot",
-            "model": {"type": "minecraft:model",
-			"model": "minecraft:item/guielements/relic_slot",
-			"tints": [{"type": "minecraft:custom_model_data","index": 1,"default": 4294967295}]}
-		  }
+{
+"when": "superball",
+	"model": {
+		"type": "minecraft:select","property": "minecraft:display_context",
+        "cases": [{
+		"when": ["thirdperson_lefthand","thirdperson_righthand","firstperson_lefthand","firstperson_righthand","ground","none"],
+         "model": {
+			"type": "minecraft:model",
+			"model": "minecraft:item/relics/extra/superball","tints": [{"type": "minecraft:custom_model_data","index": 0,"default": 4294967295}]
+		}}],
+	"fallback": {
+		"type": "minecraft:condition","property": "minecraft:custom_model_data","index": 1,
+		"on_false": {"type": "minecraft:model","model": "minecraft:item/relics/superball"},
+		"on_true": {"type": "minecraft:model","model": "minecraft:item/relics/gray/superball"}
+	}
+}
+},
+{
+"when": "springboard",
+	"model": {
+		"type": "minecraft:select","property": "minecraft:display_context",
+        "cases": [{
+		"when": ["thirdperson_lefthand","thirdperson_righthand","firstperson_lefthand","firstperson_righthand","ground","none"],
+         "model": {
+			"type": "minecraft:model",
+			"model": "minecraft:item/relics/extra/springboard","tints": [{"type": "minecraft:custom_model_data","index": 0,"default": 4294967295}]
+		}}],
+	"fallback": {
+		"type": "minecraft:condition","property": "minecraft:custom_model_data","index": 1,
+		"on_false": {"type": "minecraft:model","model": "minecraft:item/relics/springboard"},
+		"on_true": {"type": "minecraft:model","model": "minecraft:item/relics/gray/springboard"}
+	}
+}
+},
+{
+	"when": "bomb",
+	"model": {
+		"type": "minecraft:select","property": "minecraft:display_context",
+        "cases": [{
+		"when": ["thirdperson_lefthand","thirdperson_righthand","firstperson_lefthand","firstperson_righthand","ground","none"],
+         "model": {
+			"type": "minecraft:model",
+			"model": "minecraft:item/relics/extra/bomb","tints": [{"type": "minecraft:custom_model_data","index": 0,"default": 4294967295}]
+		}}],
+	"fallback": {
+		"type": "minecraft:condition","property": "minecraft:custom_model_data","index": 1,
+		"on_false": {"type": "minecraft:model","model": "minecraft:item/relics/bomb"},
+		"on_true": {"type": "minecraft:model","model": "minecraft:item/relics/gray/bomb"}
+	}
+}
+},
+{
+	"when": "flaregun",
+	"model": {
+		"type": "minecraft:select","property": "minecraft:display_context",
+        "cases": [{
+		"when": ["thirdperson_lefthand","thirdperson_righthand","firstperson_lefthand","firstperson_righthand","ground","none"],
+         "model": {
+			"type": "minecraft:model",
+			"model": "minecraft:item/relics/extra/flaregun","tints": [{"type": "minecraft:custom_model_data","index": 0,"default": 4294967295}]
+		}},
+		{
+		"when": ["head"],
+         "model": {
+			"type": "minecraft:model",
+			"model": "minecraft:item/relics/extra/flare","tints": [{"type": "minecraft:custom_model_data","index": 0,"default": 4294967295}]
+		}}],
+	"fallback": {
+		"type": "minecraft:condition","property": "minecraft:custom_model_data","index": 1,
+		"on_false": {"type": "minecraft:model","model": "minecraft:item/relics/flaregun"},
+		"on_true": {"type": "minecraft:model","model": "minecraft:item/relics/gray/flaregun"}
+	}
+}
+},
+{
+	"when": "snack",
+	"model": {
+	"type": "minecraft:condition",
+	"on_false": {
+		"type": "minecraft:model",
+		"model": "minecraft:item/relics/snack"
+		},
+	"on_true": {
+		"type": "minecraft:model",
+		"model": "minecraft:item/relics/gray/snack"
+		},
+	"property": "minecraft:custom_model_data",
+	"index": 1
+	}
+}
 
         ],
 		  "fallback": {
