@@ -1,0 +1,6 @@
+{
+    "parent": "minecraft:item/bar/bar",
+    "textures": {
+        "layer0": "item/bar/11"
+    }
+}
