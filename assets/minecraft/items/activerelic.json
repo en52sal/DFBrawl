@@ -72,7 +72,7 @@
          "model": {
 			"type": "minecraft:condition","property": "minecraft:custom_model_data","index": 2,
 		"on_false": {"type": "minecraft:model","model": "minecraft:item/relics/extra/flaregun","tints": [{"type": "minecraft:custom_model_data","index": 0,"default": 4294967295}]},
-		"on_true": {"type": "minecraft:model","model": "minecraft:item/relics/extra/inactive/flaregun"}
+		"on_true": {"type": "minecraft:model","model": "minecraft:item/relics/extra/inactive/flaregun","tints": [{"type": "minecraft:custom_model_data","index": 0,"default": 4294967295}]}
 		}},
 		{
 		"when": ["head"],
