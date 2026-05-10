@@ -15,21 +15,22 @@
 			"scale": [0, 0, 0]
 		},
 		"ground": {
-			"translation": [0, 2, 0],
-			"scale": [0.5, 0.5, 0.5]
+			"scale": [0, 0, 0]
 		},
 		"gui": {
 			"translation": [0, 0, -4.5]
 		},
 		"head": {
-			"rotation": [0, -180, 0],
-			"translation": [0, 13, 7]
+			"scale": [0, 0, 0]
 		},
 		"fixed": {
 			"rotation": [0, -180, 0]
 		},
 		"on_shelf": {
-			"rotation": [0, -180, 0]
+			"scale": [0, 0, 0]
+		},
+		"fixed": {
+			"scale": [0, 0, 0]
 		}
 	}
 }

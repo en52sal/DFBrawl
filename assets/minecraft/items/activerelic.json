@@ -1,6 +1,7 @@
 {
   "swap_animation_scale": 2,
   "hand_animation_on_swap": false,
+  "oversized_in_gui": true,
   "model": {
     "type": "minecraft:composite",
     "models": [
@@ -35,7 +36,7 @@
 		"when": ["thirdperson_lefthand","thirdperson_righthand","firstperson_lefthand","firstperson_righthand","ground","none"],
          "model": {
 			"type": "minecraft:condition","property": "minecraft:custom_model_data","index": 2,
-		"on_false": {"type": "minecraft:model","model": "minecraft:item/relics/extra/springboard","tints": [{"type": "minecraft:custom_model_data","index": 0,"default": 4294967295}]},
+		"on_false": {"type": "minecraft:model","model": "minecraft:item/relics/extra/springboard/held","tints": [{"type": "minecraft:custom_model_data","index": 0,"default": 4294967295}]},
 		"on_true": {"type": "minecraft:model","model": "minecraft:item/none"}
 		}}],
 	"fallback": {
@@ -68,17 +69,21 @@
 	"model": {
 		"type": "minecraft:select","property": "minecraft:display_context",
         "cases": [{
-		"when": ["thirdperson_lefthand","thirdperson_righthand","firstperson_lefthand","firstperson_righthand","ground","none"],
+		"when": ["thirdperson_lefthand","thirdperson_righthand","firstperson_lefthand","firstperson_righthand","ground","head","none"],
          "model": {
 			"type": "minecraft:condition","property": "minecraft:custom_model_data","index": 2,
-		"on_false": {"type": "minecraft:model","model": "minecraft:item/relics/extra/flaregun","tints": [{"type": "minecraft:custom_model_data","index": 0,"default": 4294967295}]},
-		"on_true": {"type": "minecraft:model","model": "minecraft:item/relics/extra/inactive/flaregun","tints": [{"type": "minecraft:custom_model_data","index": 0,"default": 4294967295}]}
+		"on_false": {
+			"type": "minecraft:condition","property": "minecraft:custom_model_data","index": 3,
+			"on_false":{"type": "minecraft:model","model": "minecraft:item/relics/extra/flaregun/held","tints": [{"type": "minecraft:custom_model_data","index": 0,"default": 4294967295}]},
+			"on_true":{"type": "minecraft:model","model": "minecraft:item/relics/extra/flaregun/shooting","tints": [{"type": "minecraft:custom_model_data","index": 0,"default": 4294967295}]}
+		},
+		"on_true": {"type": "minecraft:model","model": "minecraft:item/relics/extra/flaregun/inactive","tints": [{"type": "minecraft:custom_model_data","index": 0,"default": 4294967295}]}
 		}},
 		{
-		"when": ["head"],
+		"when": ["fixed"],
          "model": {
 			"type": "minecraft:model",
-			"model": "minecraft:item/relics/extra/flare","tints": [{"type": "minecraft:custom_model_data","index": 0,"default": 4294967295}]
+			"model": "minecraft:item/relics/extra/flaregun/flare","tints": [{"type": "minecraft:custom_model_data","index": 0,"default": 4294967295}]
 		}}],
 	"fallback": {
 		"type": "minecraft:condition","property": "minecraft:custom_model_data","index": 1,
