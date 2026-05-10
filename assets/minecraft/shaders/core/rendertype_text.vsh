@@ -61,18 +61,18 @@ void main() {
 
     
     // ANCHOR CODE ////////////////////////////////////////////
-    int anchorCheck = int(Color.b * 255);
-    int anchor = anchorCheck - 16 * 15; // #f1 -> #f9
-
-    if (anchor >= 0 && anchor < 9) {
-        vec2 offset = vec2(Color.r - 0.5, Color.g - 0.5);
-        offset *= guiPixel(ProjMat) * 255.;
-        gl_Position.xy += anchors[anchor-1];
-        gl_Position.xy += offset;
-
-        color = vec4(1, 1, 1, 1);
-    }
-    ///////////////////////////////////////////////////////////
+//    int anchorCheck = int(Color.b * 255);
+//    int anchor = anchorCheck - 16 * 15; // #f1 -> #f9
+//
+//    if (anchor >= 0 && anchor < 9) {
+//        vec2 offset = vec2(Color.r - 0.5, Color.g - 0.5);
+//        offset *= guiPixel(ProjMat) * 255.;
+//        gl_Position.xy += anchors[anchor-1];
+//        gl_Position.xy += offset;
+//
+//        color = vec4(1, 1, 1, 1);
+//    }
+//    ///////////////////////////////////////////////////////////
 
 
     sphericalVertexDistance = fog_spherical_distance(Position);
