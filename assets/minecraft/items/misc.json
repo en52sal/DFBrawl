@@ -1,0 +1,30 @@
+{
+  "swap_animation_scale": 2,
+  "hand_animation_on_swap": false,
+  "oversized_in_gui": true,
+  "model": {
+    "type": "minecraft:composite",
+    "models": [
+      {
+        "type": "minecraft:select",
+        "property": "minecraft:custom_model_data",
+        "index": 0,
+        "cases": [
+		{
+		"when": "springboard",
+		"model":{"type": "minecraft:condition","property": "minecraft:custom_model_data",
+		"on_true": {"type": "minecraft:model","model": "minecraft:item/relics/extra/springboard/1","tints": [{"type": "minecraft:custom_model_data","index": 0,"default": 4294967295}]},
+		"on_false": {"type": "minecraft:model","model": "minecraft:item/relics/extra/springboard/0","tints": [{"type": "minecraft:custom_model_data","index": 0,"default": 4294967295}]}
+		}
+		}
+		
+		
+        ],
+		  "fallback": {
+		"type": "minecraft:model",
+        "model": "minecraft:item/none"
+        }
+      }
+    ]
+  }
+}
