@@ -51,7 +51,7 @@
 	"model": {
 		"type": "minecraft:select","property": "minecraft:display_context",
         "cases": [{
-		"when": ["thirdperson_lefthand","thirdperson_righthand","firstperson_lefthand","firstperson_righthand","ground","none"],
+		"when": ["thirdperson_lefthand","thirdperson_righthand","firstperson_lefthand","firstperson_righthand","ground","none","fixed"],
           "model": {
 			"type": "minecraft:condition","property": "minecraft:custom_model_data","index": 2,
 		"on_false": {"type": "minecraft:model","model": "minecraft:item/relics/extra/bomb","tints": [{"type": "minecraft:custom_model_data","index": 0,"default": 4294967295}]},
