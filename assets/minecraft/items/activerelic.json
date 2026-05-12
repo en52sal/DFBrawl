@@ -29,15 +29,22 @@
 }
 },
 {
-"when": "springboard",
+	"when": "springboard",
 	"model": {
 		"type": "minecraft:select","property": "minecraft:display_context",
         "cases": [{
-		"when": ["thirdperson_lefthand","thirdperson_righthand","firstperson_lefthand","firstperson_righthand","ground","none"],
-         "model": {
+		"when": ["thirdperson_lefthand","thirdperson_righthand","firstperson_lefthand","firstperson_righthand","ground","none","fixed"],
+          "model": {
 			"type": "minecraft:condition","property": "minecraft:custom_model_data","index": 2,
-		"on_false": {"type": "minecraft:model","model": "minecraft:item/relics/extra/springboard/held","tints": [{"type": "minecraft:custom_model_data","index": 0,"default": 4294967295}]},
+		"on_false": {"type": "minecraft:model","model": "minecraft:item/relics/extra/springboard/0","tints": [{"type": "minecraft:custom_model_data","index": 0,"default": 4294967295}]},
 		"on_true": {"type": "minecraft:model","model": "minecraft:item/none"}
+		}
+		},
+		{
+		"when": ["head"],
+         "model": {
+			"type": "minecraft:model",
+			"model": "minecraft:item/relics/extra/springboard/1","tints": [{"type": "minecraft:custom_model_data","index": 0,"default": 4294967295}]
 		}}],
 	"fallback": {
 		"type": "minecraft:condition","property": "minecraft:custom_model_data","index": 1,
