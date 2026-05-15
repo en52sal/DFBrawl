@@ -6,8 +6,8 @@
     64
   ],
   "textures": {
-    "0": "item/weapons/striker",
-    "particle": "item/weapons/striker"
+    "0": "item/weapons/striker/base",
+    "particle": "item/weapons/striker/base"
   },
   "elements": [
     {

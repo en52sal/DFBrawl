@@ -6,8 +6,8 @@
     64
   ],
   "textures": {
-    "0": "item/weapons/gray/surge",
-    "particle": "item/weapons/gray/surge"
+    "0": "item/weapons/surge/gray",
+    "particle": "item/weapons/surge/gray"
   },
   "elements": [
     {

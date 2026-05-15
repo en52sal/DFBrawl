@@ -6,8 +6,8 @@
     64
   ],
   "textures": {
-    "0": "item/weapons/gray/quasar",
-    "particle": "item/weapons/gray/quasar"
+    "0": "item/weapons/quasar/gray",
+    "particle": "item/weapons/quasar/gray"
   },
   "elements": [
     {

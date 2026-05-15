@@ -6,8 +6,8 @@
     64
   ],
   "textures": {
-    "0": "item/weapons/gray/grand",
-    "particle": "item/weapons/gray/grand"
+    "0": "item/weapons/grand/gray",
+    "particle": "item/weapons/grand/gray"
   },
   "elements": [
     {

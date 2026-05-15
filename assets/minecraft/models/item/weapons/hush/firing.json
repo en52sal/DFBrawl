@@ -3,8 +3,8 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [32, 32],
 	"textures": {
-		"0": "item/weapons/hush",
-		"particle": "item/weapons/hush"
+		"0": "item/weapons/hush/base",
+		"particle": "item/weapons/hush/base"
 	},
 	"elements": [
 		{

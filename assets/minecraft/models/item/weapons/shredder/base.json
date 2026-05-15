@@ -6,7 +6,7 @@
     32
   ],
   "textures": {
-    "2": "item/weapons/shredder"
+    "2": "item/weapons/shredder/base"
   },
   "elements": [
     {

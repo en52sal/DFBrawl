@@ -6,8 +6,8 @@
     32
   ],
   "textures": {
-    "0": "item/weapons/gray/hush",
-    "particle": "item/weapons/gray/hush"
+    "0": "item/weapons/hush/gray",
+    "particle": "item/weapons/hush/gray"
   },
   "elements": [
     {

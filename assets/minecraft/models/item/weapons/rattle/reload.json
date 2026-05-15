@@ -6,8 +6,8 @@
     32
   ],
   "textures": {
-    "0": "item/weapons/rattle",
-    "particle": "item/weapons/rattle"
+    "0": "item/weapons/rattle/base",
+    "particle": "item/weapons/rattle/base"
   },
   "elements": [
     {
