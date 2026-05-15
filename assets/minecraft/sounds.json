@@ -49,6 +49,21 @@
 		"replace":true,
 		"sounds":[{"name":"empty"}]
 	},
+		"entity.player.small_fall":
+	{
+		"replace":true,
+		"sounds":[{"name":"empty"}]
+	},
+		"entity.player.big_fall":
+	{
+		"replace":true,
+		"sounds":[{"name":"empty"}]
+	},
+		"block.glass.step":
+	{
+		"replace":true,
+		"sounds":[{"name":"empty"}]
+	},
 		"wood_step":
 	{
 		"replace":true,
