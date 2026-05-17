@@ -114,6 +114,40 @@
 	"property": "minecraft:custom_model_data",
 	"index": 1
 	}
+},
+{
+	"when": "rocketlauncher",
+	"model": {
+		"type": "minecraft:select","property": "minecraft:display_context",
+        "cases": [{
+		"when": ["thirdperson_lefthand","thirdperson_righthand","firstperson_lefthand","firstperson_righthand","ground","head","none"],
+         "model": {
+			"type": "minecraft:condition","property": "minecraft:custom_model_data","index": 2,
+		"on_false": {
+			"type": "minecraft:condition","property": "minecraft:custom_model_data","index": 3,
+			"on_false":{"type": "minecraft:range_dispatch","property": "minecraft:custom_model_data","index": 0,"entries": [
+			{"threshold": 0, "model": {"type":"minecraft:model","model":"minecraft:item/relics/extra/rocketlauncher/held_0","tints": [{"type": "minecraft:custom_model_data","index": 0,"default": 4294967295}]}},
+			{"threshold": 1, "model": {"type":"minecraft:model","model":"minecraft:item/relics/extra/rocketlauncher/held_1","tints": [{"type": "minecraft:custom_model_data","index": 0,"default": 4294967295}]}}
+			]},
+			"on_true":{"type": "minecraft:model","model": "minecraft:item/relics/extra/rocketlauncher/shooting","tints": [{"type": "minecraft:custom_model_data","index": 0,"default": 4294967295}]}
+		},
+		"on_true": {"type": "minecraft:range_dispatch","property": "minecraft:custom_model_data","index": 0,"entries": [
+			{"threshold": 0, "model": {"type":"minecraft:model","model":"minecraft:item/relics/extra/rocketlauncher/inactive_0","tints": [{"type": "minecraft:custom_model_data","index": 0,"default": 4294967295}]}},
+			{"threshold": 1, "model": {"type":"minecraft:model","model":"minecraft:item/relics/extra/rocketlauncher/inactive_1","tints": [{"type": "minecraft:custom_model_data","index": 0,"default": 4294967295}]}}
+			]}
+		}},
+		{
+		"when": ["fixed"],
+         "model": {
+			"type": "minecraft:model",
+			"model": "minecraft:item/relics/extra/rocketlauncher/rocket","tints": [{"type": "minecraft:custom_model_data","index": 0,"default": 4294967295}]
+		}}],
+	"fallback": {
+		"type": "minecraft:condition","property": "minecraft:custom_model_data","index": 1,
+		"on_false": {"type": "minecraft:model","model": "minecraft:item/relics/rocketlauncher"},
+		"on_true": {"type": "minecraft:model","model": "minecraft:item/relics/gray/rocketlauncher"}
+	}
+}
 }
 
         ],
