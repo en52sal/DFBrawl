@@ -121,8 +121,26 @@
             "on_false": {"type": "minecraft:model","model": "minecraft:item/weapons/winger/base"},
             "on_true": {"type": "minecraft:model","model": "minecraft:item/weapons/winger/gray"}}}
 },			
-
-
+{
+    "when": "hush","model": {"type": "minecraft:select","property": "minecraft:display_context","cases": [{"when": ["thirdperson_lefthand","thirdperson_righthand","firstperson_lefthand","firstperson_righthand","ground","none","fixed" ],"model": {"type": "minecraft:select","property": "minecraft:custom_model_data","index": 1,"cases": [
+                    {"when": "reload","model": {"type": "minecraft:model","model": "minecraft:item/weapons/hush/reload","tints": [{"type": "minecraft:custom_model_data","index": 0,"default": 4294967295}]}},
+					{"when": "equip","model": {"type": "minecraft:model","model": "minecraft:item/weapons/hush/equip","tints": [{"type": "minecraft:custom_model_data","index": 1,"default": 4294967295}]}},
+					{"when": "firing","model": {"type": "minecraft:model","model": "minecraft:item/weapons/hush/firing","tints": [{"type": "minecraft:custom_model_data","index": 0,"default": 4294967295}]}}
+                    ], "fallback": {"type": "minecraft:model","model": "minecraft:item/weapons/hush/base","tints": [{"type": "minecraft:custom_model_data","index": 0,"default": 4294967295}]}}}
+        ],"fallback": {"type": "minecraft:condition","property": "minecraft:custom_model_data","index": 1,
+            "on_false": {"type": "minecraft:model","model": "minecraft:item/weapons/hush/base"},
+            "on_true": {"type": "minecraft:model","model": "minecraft:item/weapons/hush/gray"}}}
+},		
+{
+    "when": "quasar","model": {"type": "minecraft:select","property": "minecraft:display_context","cases": [{"when": ["thirdperson_lefthand","thirdperson_righthand","firstperson_lefthand","firstperson_righthand","ground","none","fixed" ],"model": {"type": "minecraft:select","property": "minecraft:custom_model_data","index": 1,"cases": [
+                    {"when": "reload","model": {"type": "minecraft:model","model": "minecraft:item/weapons/quasar/reload","tints": [{"type": "minecraft:custom_model_data","index": 0,"default": 4294967295}]}},
+					{"when": "equip","model": {"type": "minecraft:model","model": "minecraft:item/weapons/quasar/equip","tints": [{"type": "minecraft:custom_model_data","index": 1,"default": 4294967295}]}},
+					{"when": "firing","model": {"type": "minecraft:model","model": "minecraft:item/weapons/quasar/firing","tints": [{"type": "minecraft:custom_model_data","index": 0,"default": 4294967295}]}}
+                    ], "fallback": {"type": "minecraft:model","model": "minecraft:item/weapons/quasar/base","tints": [{"type": "minecraft:custom_model_data","index": 0,"default": 4294967295}]}}}
+        ],"fallback": {"type": "minecraft:condition","property": "minecraft:custom_model_data","index": 1,
+            "on_false": {"type": "minecraft:model","model": "minecraft:item/weapons/quasar/base"},
+            "on_true": {"type": "minecraft:model","model": "minecraft:item/weapons/quasar/gray"}}}
+},		
 {"when": "cases_below_this_line_are_melees_____________________________________________________","model": {"type": "minecraft:model","model": "cases_below_this_line_are_melees"}},
 {
     "when": "bat","model": {"type": "minecraft:select","property": "minecraft:display_context","cases": [{"when": ["thirdperson_lefthand","thirdperson_righthand","firstperson_lefthand","firstperson_righthand","ground","none","fixed" ],"model": {"type": "minecraft:select","property": "minecraft:custom_model_data","index": 1,"cases": [

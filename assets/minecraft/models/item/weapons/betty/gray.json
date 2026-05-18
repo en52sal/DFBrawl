@@ -6,8 +6,8 @@
     32
   ],
   "textures": {
-    "0": "item/weapons/betty/gray",
-    "particle": "item/weapons/betty/gray"
+    "0": "item/weapons/gray/betty/base",
+    "particle": "item/weapons/gray/betty/base"
   },
   "elements": [
     {
