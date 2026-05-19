@@ -11,11 +11,7 @@
         "index": 0,
         "cases": [
 		{
-		"when": "springboard",
-		"model":{"type": "minecraft:condition","property": "minecraft:custom_model_data",
-		"on_true": {"type": "minecraft:model","model": "minecraft:item/relics/extra/springboard/1","tints": [{"type": "minecraft:custom_model_data","index": 0,"default": 4294967295}]},
-		"on_false": {"type": "minecraft:model","model": "minecraft:item/relics/extra/springboard/0","tints": [{"type": "minecraft:custom_model_data","index": 0,"default": 4294967295}]}
-		}
+		"when": "cryptid","model":{"type": "minecraft:model","model": "minecraft:item/relics/extra/cryptidhead"}
 		}
 		
 		
