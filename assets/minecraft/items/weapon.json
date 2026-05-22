@@ -194,8 +194,8 @@
 },			
 {
     "when": "hammer","model": {"type": "minecraft:select","property": "minecraft:display_context","cases": [{"when": ["thirdperson_lefthand","thirdperson_righthand","firstperson_lefthand","firstperson_righthand","ground","none","fixed" ],"model": {"type": "minecraft:select","property": "minecraft:custom_model_data","index": 1,"cases": [
-					{"when": "animation","model": {"type": "minecraft:model","model": "minecraft:item/weapons/hammer/animation","tints": [{"type": "minecraft:custom_model_data","index": 0,"default": 4294967295}]}}
-                    ], "fallback": {"type": "minecraft:model","model": "minecraft:item/weapons/hammer/base","tints": [{"type": "minecraft:custom_model_data","index": 0,"default": 4294967295}]}}}
+					{"when": "charging","model": {"type": "minecraft:model","model": "minecraft:item/weapons/hammer/charging","tints": [{"type": "minecraft:custom_model_data","index": 0,"default": 4294967295}]}},
+					{"when": "jump","model": {"type": "minecraft:model","model": "minecraft:item/weapons/hammer/jump","tints": [{"type": "minecraft:custom_model_data","index": 0,"default": 4294967295}]}}                    ], "fallback": {"type": "minecraft:model","model": "minecraft:item/weapons/hammer/base","tints": [{"type": "minecraft:custom_model_data","index": 0,"default": 4294967295}]}}}
         ],"fallback": {"type": "minecraft:condition","property": "minecraft:custom_model_data","index": 1,
             "on_false": {"type": "minecraft:model","model": "minecraft:item/weapons/hammer/base"},
             "on_true": {"type": "minecraft:model","model": "minecraft:item/weapons/hammer/gray"}}}
