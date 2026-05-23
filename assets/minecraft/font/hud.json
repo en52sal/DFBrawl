@@ -12,7 +12,7 @@
             "file": "font/elements.png",
             "ascent": 9,
             "height": 10,
-            "chars": ["a"]
+            "chars": ["ab"]
         },
         { "type": "space", "advances": { "-": -2 } },
 		{ "type": "space", "advances": { "_": -1 } },
