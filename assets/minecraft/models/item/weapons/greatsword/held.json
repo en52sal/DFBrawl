@@ -1,0 +1,31 @@
+{
+	"format_version": "1.21.11",
+	"credit": "Made with Blockbench",
+	"parent": "item/generated",
+	"textures": {
+		"layer0": "item/weapons/greatsword/held"
+	},
+	"gui_light": "front",
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [0, 90, -40],
+			"translation": [0, 11.5, 2],
+			"scale": [1.7, 1.7, 0.85]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [0, -90, 40],
+			"translation": [0, 11.5, 2],
+			"scale": [1.7, 1.7, 0.85]
+		},
+		"firstperson_righthand": {
+			"rotation": [169.63, 69.29, 139.73],
+			"translation": [3.13, 6.5, -2],
+			"scale": [1.3, 1.3, 0.68]
+		},
+		"firstperson_lefthand": {
+			"rotation": [-18.17, -69.44, 27.82],
+			"translation": [3.13, 6.25, -2],
+			"scale": [1.3, 1.3, 0.68]
+		}
+	}
+}

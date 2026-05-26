@@ -11,6 +11,8 @@
   "key.keyboard.left.control": "↜leftcontrol",
   "key.keyboard.right.control": "↜rightcontrol",
   "key.keyboard.right.shift": "↝rightshift",
+  "key.keyboard.left.alt": "↞leftalt",
+  "key.keyboard.right.alt": "↟rightalt",
   "container.inventory": "",
   "soundCategory.music": "Vanilla Music",
   "soundCategory.record": "Plot Music"
