@@ -41,9 +41,10 @@ void main() {
 
         int x = int(mod(ditherInput.x, 4.0));
         int y = int(mod(ditherInput.y, 4.0));
-        float threshold = ditherMat[y][x] - (255 - tex.a * 255);
+        float threshold = ditherMat[y][x];
 
-        float a = length(vertexPosition) - 0.5;
+        // 255 - (tex.a * 16)
+        float a = min(length(vertexPosition) - 0.5, tex.a);
         if (a < threshold) discard;
 
         fragColor = vec4(baseColor.rgb, 1.);
