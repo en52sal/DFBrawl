@@ -20,24 +20,28 @@ in vec3 viewPos;
 
 out vec4 fragColor;
 
+const ivec3 DITHER_COLOR = ivec3(56, 51, 31);
 
-mat4 ditherMat = mat4(
+const mat4 ditherMat = mat4(
     0.0, 8.0, 2.0, 10.0,
     12.0, 4.0, 14.0, 6.0,
     3.0, 11.0, 1.0, 9.0,
     15.0, 7.0, 13.0, 5.0
 ) / 16.0;
 
+bool is_color(vec3 c, int r, int g, int b) {
+    return int(c.x * 255) == r && int(c.y * 255) == g && int(c.z * 255) == b;
+ }
 
 void main() {
-    vec3 tex = texture(Sampler0, texCoord0).rgb;
+    vec4 tex = texture(Sampler0, texCoord0);
 
-    if (tex.r >= 1. && tex.g >= 1. && tex.b >= 1.) {
+    if (is_color(tex.rgb, DITHER_COLOR.x, DITHER_COLOR.y, DITHER_COLOR.z)) {
         vec2 ditherInput = gl_FragCoord.xy / 2.0;
 
         int x = int(mod(ditherInput.x, 4.0));
         int y = int(mod(ditherInput.y, 4.0));
-        float threshold = ditherMat[y][x];
+        float threshold = ditherMat[y][x] - (255 - tex.a * 255);
 
         float a = length(vertexPosition) - 0.5;
         if (a < threshold) discard;
