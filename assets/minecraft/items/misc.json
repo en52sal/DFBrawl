@@ -15,6 +15,9 @@
 		},
 		{
 		"when": "bullet","model":{"type": "minecraft:model","model": "minecraft:item/misc/bullet","tints": [{"type": "minecraft:custom_model_data","index": 0,"default": 4294967295}]}
+		},
+		{
+		"when": "hidden_bullet","model":{"type": "minecraft:model","model": "minecraft:item/misc/hidden_bullet","tints": [{"type": "minecraft:custom_model_data","index": 0,"default": 4294967295}]}
 		}
 		
 		
