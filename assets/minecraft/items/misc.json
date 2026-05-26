@@ -12,6 +12,9 @@
         "cases": [
 		{
 		"when": "cryptid","model":{"type": "minecraft:model","model": "minecraft:item/relics/extra/cryptidhead"}
+		},
+		{
+		"when": "bullet","model":{"type": "minecraft:model","model": "minecraft:item/misc/bullet","tints": [{"type": "minecraft:custom_model_data","index": 0,"default": 4294967295}]}
 		}
 		
 		
