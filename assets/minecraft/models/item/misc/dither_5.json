@@ -2,8 +2,8 @@
 	"format_version": "1.21.11",
 	"credit": "Made with Blockbench",
 	"textures": {
-		"0": "item/misc/hidden_dither",
-		"particle": "item/misc/hidden_dither"
+		"0": "item/misc/dither_5",
+		"particle": "item/misc/dither_5"
 	},
 	"elements": [
 		{

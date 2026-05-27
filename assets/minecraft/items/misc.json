@@ -14,10 +14,16 @@
 		"when": "cryptid","model":{"type": "minecraft:model","model": "minecraft:item/relics/extra/cryptidhead"}
 		},
 		{
-		"when": "bullet","model":{"type": "minecraft:model","model": "minecraft:item/misc/bullet","tints": [{"type": "minecraft:custom_model_data","index": 0,"default": 4294967295}]}
-		},
-		{
-		"when": "hidden_bullet","model":{"type": "minecraft:model","model": "minecraft:item/misc/hidden_bullet","tints": [{"type": "minecraft:custom_model_data","index": 0,"default": 4294967295}]}
+		"when": "dither","model":{
+			  "type": "minecraft:range_dispatch","property": "minecraft:custom_model_data","index": 0,"entries": [
+			{"threshold": 1, "model": {"type": "minecraft:model","model": "minecraft:item/misc/dither_1","tints": [{"type": "minecraft:custom_model_data","index": 0,"default": 4294967295}]}},
+			{"threshold": 2, "model": {"type": "minecraft:model","model": "minecraft:item/misc/dither_2","tints": [{"type": "minecraft:custom_model_data","index": 0,"default": 4294967295}]}},
+			{"threshold": 3, "model": {"type": "minecraft:model","model": "minecraft:item/misc/dither_3","tints": [{"type": "minecraft:custom_model_data","index": 0,"default": 4294967295}]}},
+			{"threshold": 4, "model": {"type": "minecraft:model","model": "minecraft:item/misc/dither_4","tints": [{"type": "minecraft:custom_model_data","index": 0,"default": 4294967295}]}},
+			{"threshold": 5, "model": {"type": "minecraft:model","model": "minecraft:item/misc/dither_5","tints": [{"type": "minecraft:custom_model_data","index": 0,"default": 4294967295}]}}			
+			],
+			"fallback": { "type": "minecraft:model","model": "minecraft:item/misc/dither_0","tints": [{"type": "minecraft:custom_model_data","index": 0,"default": 4294967295}]}
+			}
 		}
 		
 		
