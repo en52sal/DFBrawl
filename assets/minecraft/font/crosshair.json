@@ -3,7 +3,7 @@
 		{
             "type": "bitmap",
             "file": "font/crosshair.png",
-            "ascent": 16,
+            "ascent": 0,
             "height": 16,
             "chars": [
                 "abcdefgh",

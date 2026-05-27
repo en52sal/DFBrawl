@@ -3,6 +3,7 @@
 #moj_import <minecraft:fog.glsl>
 #moj_import <minecraft:dynamictransforms.glsl>
 #moj_import <minecraft:projection.glsl>
+#moj_import <minecraft:globals.glsl>
 
 #define PI 3.14159265
 
@@ -40,6 +41,13 @@ out vec2 texCoord0;
 
 out float isTransition;
 
+const ivec3 TRANSITION_COLOR = ivec3(250, 250, 255);
+const ivec3 CENTER_COLOR = ivec3(250, 245, 255);
+
+bool is_color(vec4 c, ivec3 target) {
+    return int(c.x * 255) == target.x && int(c.y * 255) == target.y && int(c.z * 255) == target.z;
+}
+
 vec2 guiPixel(mat4 ProjMat) {
 	return vec2(ProjMat[0][0], ProjMat[1][1]) / 1.9;
 }
@@ -53,11 +61,18 @@ void main() {
     // Transition Code ////////////////////////////////////////
     vec4 sample = texture(Sampler0, UV0);
     isTransition = 0;
-    if(sample.rgb == vec3(250, 250, 255) / 255) {
+    if (is_color(sample, TRANSITION_COLOR)) {
         isTransition = 1;
         gl_Position.xy = corners[id];
     }
     ///////////////////////////////////////////////////////////
+
+    // Center
+    if (is_color(color, CENTER_COLOR)) {
+        gl_Position.xy += vec2(0.0, -1.0);
+        gl_Position.xy += guiPixel(ProjMat) * vec2(1, -70);
+        color = vec4(1, 1, 1, 1);
+    }
 
     
     // ANCHOR CODE ////////////////////////////////////////////
