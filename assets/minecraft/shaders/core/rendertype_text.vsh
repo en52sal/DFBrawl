@@ -77,7 +77,7 @@ void main() {
 
     // Below
     if (is_color(color, BELOW_COLOR)) {
-     gl_Position.xy += vec2(0.0, -1.1);
+     gl_Position.xy += vec2(0.0, -1.122);
      gl_Position.xy += guiPixel(ProjMat) * vec2(1, -70);
      color = vec4(1, 1, 1, 1);
     }
