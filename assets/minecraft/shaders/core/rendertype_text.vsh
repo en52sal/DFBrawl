@@ -43,6 +43,7 @@ out float isTransition;
 
 const ivec3 TRANSITION_COLOR = ivec3(250, 250, 255);
 const ivec3 CENTER_COLOR = ivec3(250, 245, 255);
+const ivec3 BELOW_COLOR = ivec3(250, 246, 255);
 
 bool is_color(vec4 c, ivec3 target) {
     return int(c.x * 255) == target.x && int(c.y * 255) == target.y && int(c.z * 255) == target.z;
@@ -74,8 +75,15 @@ void main() {
         color = vec4(1, 1, 1, 1);
     }
 
-    
-    // ANCHOR CODE ////////////////////////////////////////////
+    // Below
+    if (is_color(color, BELOW_COLOR)) {
+     gl_Position.xy += vec2(0.0, -1.1);
+     gl_Position.xy += guiPixel(ProjMat) * vec2(1, -70);
+     color = vec4(1, 1, 1, 1);
+    }
+
+
+// ANCHOR CODE ////////////////////////////////////////////
 //    int anchorCheck = int(Color.b * 255);
 //    int anchor = anchorCheck - 16 * 15; // #f1 -> #f9
 //
