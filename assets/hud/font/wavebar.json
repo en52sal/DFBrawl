@@ -2,18 +2,14 @@
     "providers": [
 		{
             "type": "bitmap",
-            "file": "font/crosshair.png",
+            "file": "hud:font/wavebar.png",
             "ascent": 0,
             "height": 16,
             "chars": [
                 "abcdefgh",
                 "ijklmnop",
                 "qrstuvwx",
-                "yz012345",
-                "6789!@#$",
-                "%^&*()[]",
-                "........",
-                "........"
+                "yz......"
             ]
         },
         { "type": "space", "advances": { "-": -2 } },

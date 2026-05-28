@@ -1,0 +1,18 @@
+{
+    "providers": [
+		{
+            "type": "bitmap",
+            "file": "hud:font/shield.png",
+            "ascent": 0,
+            "height": 12,
+            "chars": [
+                "abcdefg",
+                "hijklmn"
+            ]
+        },
+        { "type": "space", "advances": { "-": -2 } },
+		{ "type": "space", "advances": { "_": -1 } },
+		{ "type": "space", "advances": { "+": 1 } },
+		{ "type": "space", "advances": { "=": 2 } }
+    ]
+}

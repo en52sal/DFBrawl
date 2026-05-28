@@ -2,14 +2,16 @@
     "providers": [
 		{
             "type": "bitmap",
-            "file": "font/wavebar.png",
+            "file": "hud:font/circle.png",
             "ascent": 0,
             "height": 16,
             "chars": [
                 "abcdefgh",
                 "ijklmnop",
                 "qrstuvwx",
-                "yz......"
+                "yz012345",
+                "6789!@#$",
+                "%^&*()[]"
             ]
         },
         { "type": "space", "advances": { "-": -2 } },
