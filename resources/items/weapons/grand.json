@@ -1,12 +1,12 @@
 {
     "type": "weapon",
-    "name": "Chopper",
+    "name": "Grand",
     "icon": {
         "model": "gun",
-        "description": "Chopper <#fff00f>Desc <dmg>Woah",
+        "description": "Gun <#fff00f>Desc <dmg>Woah",
 
         "components": {
-            "swing_animation": {"duration": 5}
+            "swing_animation": { "duration": 5 }
         },
 
         "actions": {
@@ -20,39 +20,39 @@
 
     "weight": 2,
     "move_speed_modifier": 0.1,
-    "equip_speed": 10,
-    "cooldown": 14,
+    "equip_speed": 11,
+    "cooldown": 2,
 
-    "bullet_color": "#f5ff87",
+    "bullet_color": "#ff287e",
     "bullet_opacity": 5,
-    "shoot_animation": 6,
+    "shoot_animation": 3,
     
     "main_display": "ammo",
-    "max_ammo": 4,
-    "reloaded_per": 1,
-    "reload_ticks": 11,
-    "initial_reload_ticks": 9,
+    "max_ammo": 20,
+    "reloaded_per": 20,
+    "reload_ticks": 40,
+    "initial_reload_ticks": 0,
     
     "burst_count": 1,
     "burst_delay": 1,
-    "pellet_count": 9,
-    "inaccuracy": 0.097,
+    "pellet_count": 1,
+    "inaccuracy": 0.022,
     
-    "dmg": 9,
-    "min_dmg": 1,
-    "crit_multiplier": 1.25,
+    "dmg": 10,
+    "min_dmg": 3,
+    "crit_multiplier": 1.5,
     
     "projectile": "bullet",
-    "size": 0.2,
-    "gravity": [0,-0.001,0],
+    "size": 0.3,
+    "gravity": [0,-0.037,0],
     "power": 12,
     "mass": 1,
     "drag": 0,
     "friction": 1,
-    "restituion": 1,
-    "distance": 12,
-    "distance_falloff": 3.5,
-    "bounces": 0,
+    "restituion": 0,
+    "distance": 40,
+    "distance_falloff": 11,
+    "bounces" : 0,
     "right": "GUN:use",
     "offhand": "ITEM:reload"
     

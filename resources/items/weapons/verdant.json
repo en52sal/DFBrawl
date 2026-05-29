@@ -1,0 +1,61 @@
+{
+    "type": "weapon",
+    "name": "Verdant",
+    "icon": {
+        "model": "gun",
+        "description": "Gun <#fff00f>Desc <dmg>Woah",
+
+        "components": {
+            "swing_animation": { "duration": 5 },
+            "consumable": { "consume_seconds": 999, "animation": "none" },
+            "use_effects": { "can_sprint": true, "speed_multiplier": 1 }
+        },
+
+        "actions": {
+            "use": {
+                "title": "$$attack$ Fire"
+            }
+        }
+    },
+    "weapon_type": "gun",
+    "category": "large",
+
+    "weight": 2,
+    "move_speed_modifier": 0.05,
+    "equip_speed": 11,
+    "cooldown": 2,
+
+    "bullet_color": "#34c384",
+    "bullet_opacity": 5,
+    "shoot_animation": 3,
+    
+    "main_display": "ammo",
+    "max_ammo": 20,
+    "reloaded_per": 20,
+    "reload_ticks": 40,
+    "initial_reload_ticks": 0,
+    
+    "burst_count": 1,
+    "burst_delay": 1,
+    "pellet_count": 1,
+    "inaccuracy": 0.022,
+    
+    "dmg": 10,
+    "min_dmg": 3,
+    "crit_multiplier": 1.5,
+    
+    "projectile": "bullet",
+    "size": 0.3,
+    "gravity": [0,-0.037,0],
+    "power": 12,
+    "mass": 1,
+    "drag": 0,
+    "friction": 1,
+    "restituion": 0,
+    "distance": 40,
+    "distance_falloff": 11,
+    "bounces" : 0,
+    "right": "GUN:use",
+    "offhand": "ITEM:reload"
+    
+}
