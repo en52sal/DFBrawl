@@ -5,6 +5,7 @@ import base64
 import gzip
 import websocket
 import re
+import itemsgen
 
 SCRIPT_DIR = Path(__file__).parent
 MAX_LINE_LENGTH = 40
@@ -49,7 +50,7 @@ def create_template(name):
         ]
     }
 
-def template_create_list(varname, items):
+def template_set_var(action, varname, items):
     result = {
         "id": "block",
         "block": "set_var",
@@ -67,7 +68,7 @@ def template_create_list(varname, items):
                 }
             ]
         },
-        "action": "CreateList"
+        "action": action
     }
 
     for i, item in enumerate(items):
@@ -124,13 +125,19 @@ def create_item(data):
             ], "italic": False, "text": ""
         }
     }
+
     if "icon" in data:
         icon = data["icon"]
 
-        # SHORTCUTS
-        if "model" in icon:
-            components["item_model"] = icon["model"]
+        components["item_model"] = "minecraft:item"
+        components["custom_model_data"] = {
+            "strings": [data["id"]]
+        }
 
+        # SHORTCUTS
+        if "item_model" in icon:
+            components["item_model"] = icon["item_model"]
+        
         # LORE
         lore = []
         if "description" in icon:
@@ -140,8 +147,6 @@ def create_item(data):
         
         if "actions" in icon:
             for key, action in icon["actions"].items():
-                print(key, action)
-
                 line = {"bold": 0, "color": "white", "extra": [
                         {
                             "font": "minecraft:controls", "translate": "key", "with": [
@@ -180,7 +185,7 @@ def create_item(data):
         if "components" in icon:
             components.update(icon["components"])
 
-    print(json.dumps(components))
+    # print(json.dumps(components))
     return json.dumps({
         "components": components,
         "count": 1,
@@ -208,6 +213,9 @@ def main():
 
     args = []
     template = create_template("ITEM:data")
+    
+    itemsgen.create_items(items)
+
     for item in items:
         value_item = create_item(item)
         if "icon" in item:
@@ -218,8 +226,19 @@ def main():
 
         args.append(value_str)
         args.append(template_item_item(value_item))
+    
+    
+    first = True
+    while args:
+        # take 26 items at a time
+        segment = args[:26]
+        if first:
+            template["blocks"].append(template_set_var("CreateList", "data", segment))
+            first = False
+        else:
+            template["blocks"].append(template_set_var("AppendValue", "data", segment))
         
-    template["blocks"].append(template_create_list("data", args))
+        args = args[26:]
 
     b64 = encode_string(json.dumps(template))
     payload = {

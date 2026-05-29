@@ -1,19 +1,44 @@
 {
     "type": "weapon",
     "icon": {
-        "model": "gun",
+        "model": {
+            "type": "minecraft:condition",
+            "on_false": {
+                "type": "minecraft:model",
+                "model": "minecraft:item/relics/armor",
+                "tints": [
+                    {
+                        "type": "minecraft:custom_model_data",
+                        "index": 1,
+                        "default": 4294967295
+                    }
+                ]
+            },
+            "on_true": {
+                "type": "minecraft:model",
+                "model": "minecraft:item/relics/gray/armor",
+                "tints": [
+                    {
+                        "type": "minecraft:custom_model_data",
+                        "index": 1,
+                        "default": 4294967295
+                    }
+                ]
+            },
+            "property": "minecraft:custom_model_data",
+            "index": 1
+        },
+
         "description": "$dmg$ something something $main_display$ ooof $bulletcolor$, $type$, $weight$ yeah i just need more text here meow meowm eowm eowmeomewomeomwomeomwe oh how about $$fire$",
 
         "components": {
-            "item_model": "minecraft:weapon",
-            "custom_model_data":{"strings":["chopper"]},
             "swing_animation": {"duration": 5},
             "use_effects": {"can_sprint": true, "speed_multiplier": 1}
         },
 
         "actions": {
             "use": {
-                "title": "$$fire$ Fire",
+                "title": "\u23b7 Fire",
                 "description": "FIRE THE GUN"
             }
         },
@@ -29,31 +54,31 @@
     "move_speed_modifier": 0,
     "equip_speed": 10,
     "cooldown": 2,
-    
+	
     "main_display": "ammo",
     "max_ammo": 30,
     "reloaded_per": 30,
     "reload_ticks": 43,
     "initial_reload_ticks": 0,
-    
+	
     "burst_count": 1,
     "burst_delay": 1,
     "pellet_count": 1,
     "inaccuracy": 0.04,
-    
+	
     "dmg": 5,
     "min_dmg": 2,
     "crit_multiplier": 1.25,
-    
+	
     "size": 0.33,
     "distance": 30,
     "distance_falloff": 14,
     "gravity": [0,-0.037,0],
     "power": 12,
-    "mass": 1,
-    "drag": 0,
-    
-    "name": "Nailer",
+	"mass": 1,
+	"drag": 0,
+	
+    "name": "Test Weapon",
     "shoot_animation": 3,
     "bulletcolor": "#5d5d5d"
 }
