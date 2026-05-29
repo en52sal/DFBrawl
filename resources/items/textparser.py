@@ -219,19 +219,20 @@ def _wrap_segment(text: str, max_width: int) -> list[dict]:
     current_words: list[tuple[str, FormatState]] = []
     current_len = 0
 
-    for word, state in words:
+    for word, space_before, state in words:
         word_len = len(word)
-        needed = word_len if not current_words else word_len + 1
+        space_cost = 1 if (space_before and current_words) else 0
+        needed = word_len + space_cost
 
         if current_len + needed > max_width and current_words:
             lines.append(_words_to_component(current_words))
-            current_words = [(word, state)]
+            current_words = [(word, False, state)]  # no leading space on new line
             current_len = word_len
         else:
-            if current_words:
-                current_words.append((" ", state))
+            if space_before and current_words:
+                current_words.append((" ", False, state))
                 current_len += 1
-            current_words.append((word, state))
+            current_words.append((word, False, state))
             current_len += word_len
 
     if current_words:
@@ -240,8 +241,9 @@ def _wrap_segment(text: str, max_width: int) -> list[dict]:
     return lines if lines else [{"text": "", "italic": False}]
 
 
-def _tokens_to_words(tokens: list[TextToken]) -> list[tuple[str, FormatState]]:
-    chars: list[tuple[str, FormatState]] = []
+def _tokens_to_words(tokens: list[TextToken]) -> list[tuple[str, bool, FormatState]]:
+    words: list[tuple[str, bool, FormatState]] = []
+    pending_space = False
     for token in tokens:
         state = FormatState(
             color=token.color,
@@ -251,29 +253,19 @@ def _tokens_to_words(tokens: list[TextToken]) -> list[tuple[str, FormatState]]:
             strikethrough=token.strikethrough,
             obfuscated=token.obfuscated,
         )
-        for ch in token.text:
-            chars.append((ch, state))
-
-    words: list[tuple[str, FormatState]] = []
-    i = 0
-    while i < len(chars):
-        ch, state = chars[i]
-        if ch == " ":
-            i += 1
-            continue
-        word_chars = []
-        word_state = state
-        while i < len(chars) and chars[i][0] != " ":
-            word_chars.append(chars[i][0])
-            i += 1
-        words.append(("".join(word_chars), word_state))
-
+        parts = token.text.split(" ")
+        for i, part in enumerate(parts):
+            if part == "":
+                pending_space = True
+            else:
+                words.append((part, pending_space, state))
+                pending_space = i < len(parts) - 1
     return words
 
 
 def _words_to_component(words: list[tuple[str, FormatState]]) -> dict:
     tokens: list[TextToken] = []
-    for text, state in words:
+    for text, _space, state in words:
         if tokens and _state_matches(tokens[-1], state):
             tokens[-1] = TextToken(
                 text=tokens[-1].text + text,
