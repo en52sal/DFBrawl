@@ -1,0 +1,12 @@
+{
+    "type": "relic",
+    "name": "Blood Refill",
+    "icon": {
+        "model": "relic",
+        "description": "Instantly reload, cool, or refill your items upon a kill (full) or assist (half)."
+    },
+
+    "relic_type": "passive",
+    "tier": 2
+    
+}

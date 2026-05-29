@@ -1,0 +1,12 @@
+{
+    "type": "relic",
+    "name": "Extra Charge",
+    "icon": {
+        "model": "relic",
+        "description": "Grants Active Relics an extra charge."
+    },
+
+    "relic_type": "passive",
+    "tier": 3
+    
+}

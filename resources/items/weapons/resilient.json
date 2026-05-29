@@ -1,0 +1,12 @@
+{
+    "type": "relic",
+    "name": "Resilient",
+    "icon": {
+        "model": "relic",
+        "description": "One shot protection now triggers on fatal damage instead."
+    },
+
+    "relic_type": "passive",
+    "tier": 3
+
+}

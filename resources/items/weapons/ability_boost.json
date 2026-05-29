@@ -1,0 +1,12 @@
+{
+    "type": "relic",
+    "name": "Ability Boost",
+    "icon": {
+        "model": "relic",
+        "description": "Grants a unique boost to any weapon abilities."
+    },
+
+    "relic_type": "passive",
+    "tier": 3
+
+}

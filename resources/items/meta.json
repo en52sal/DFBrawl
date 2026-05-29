@@ -2,7 +2,7 @@
     "colors": {
         "name": "white",
         "desc": "gray",
-        
+        "hl": "#aee6ff",
         "dmg": "#ff0000"
     }
 }

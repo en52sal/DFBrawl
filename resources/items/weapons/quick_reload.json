@@ -1,0 +1,13 @@
+{
+    "type": "relic",
+    "name": "Quick Reload",
+    "icon": {
+        "model": "relic",
+        "description": "Increases reload and heat cooling speed by $percent$%"
+    },
+
+    "relic_type": "passive",
+    "tier": 1,
+
+    "percent": 50
+}
