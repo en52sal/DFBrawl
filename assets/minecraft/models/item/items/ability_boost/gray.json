@@ -1,6 +1,6 @@
 {
     "parent": "minecraft:item/generated",
     "textures": {
-        "layer0": "item/items/melee_boost/gray"
+        "layer0": "item/items/ability_boost/gray"
     }
 }

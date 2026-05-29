@@ -11,8 +11,7 @@
 
         "actions": {
             "use": {
-                "title": "$$fire$ Fire",
-                "description": "FIRE THE GUN"
+                "title": "$$attack$ Fire"
             }
         },
 
