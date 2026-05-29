@@ -203,6 +203,7 @@ def main():
 
     for json_file in json_files:
         item = json.load(json_file.open())
+        item["id"] = json_file.stem
         items.append(item)
 
     args = []
