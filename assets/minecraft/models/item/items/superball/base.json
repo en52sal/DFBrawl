@@ -1,6 +1,6 @@
 {
     "parent": "minecraft:item/generated",
     "textures": {
-        "layer0": "item/relics/superball"
+        "layer0": "item/items/superball/base"
     }
 }

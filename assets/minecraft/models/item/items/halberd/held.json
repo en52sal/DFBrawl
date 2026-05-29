@@ -2,7 +2,7 @@
   "gui_light": "front",
   "parent": "item/generated",
   "textures": {
-    "layer0": "item/weapons/halberd/held"
+    "layer0": "item/items/halberd/held"
     },
   "display": {
     "firstperson_righthand": {

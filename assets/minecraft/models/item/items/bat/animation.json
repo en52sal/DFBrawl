@@ -3,7 +3,7 @@
 	"credit": "Made with Blockbench",
 	"parent": "minecraft:item/handheld",
 	"textures": {
-		"layer0": "item/weapons/bat/base"
+		"layer0": "item/items/bat/base"
 	},
 	"display": {
 		"thirdperson_righthand": {

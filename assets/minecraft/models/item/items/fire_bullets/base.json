@@ -1,6 +1,6 @@
 {
     "parent": "minecraft:item/generated",
     "textures": {
-        "layer0": "item/relics/fire_bullets"
+        "layer0": "item/items/fire_bullets/base"
     }
 }

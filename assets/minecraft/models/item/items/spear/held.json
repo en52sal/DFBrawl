@@ -2,7 +2,7 @@
   "gui_light": "front",
   "parent": "item/generated",
   "textures": {
-    "layer0": "item/weapons/spear/held"
+    "layer0": "item/items/spear/held"
     },
   "display": {
     "firstperson_righthand": {

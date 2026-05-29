@@ -3,7 +3,7 @@
 	"credit": "Made with Blockbench",
 	"parent": "item/generated",
 	"textures": {
-		"layer0": "item/weapons/spear/held"
+		"layer0": "item/items/spear/held"
 	},
 	"gui_light": "front",
 	"display": {

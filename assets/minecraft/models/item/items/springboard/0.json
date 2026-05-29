@@ -3,7 +3,7 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [64, 64],
 	"textures": {
-		"2": "item/relics/extra/springboard"
+		"2": "item/items/springboard/model"
 	},
 	"elements": [
 		{

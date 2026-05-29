@@ -3,8 +3,8 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [32, 32],
 	"textures": {
-		"0": "item/relics/extra/flaregun",
-		"particle": "item/relics/extra/flaregun"
+		"0": "item/items/flaregun/model",
+		"particle": "item/items/flaregun/model"
 	},
 	"elements": [
 		{

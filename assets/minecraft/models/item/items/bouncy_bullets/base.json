@@ -1,6 +1,6 @@
 {
     "parent": "minecraft:item/generated",
     "textures": {
-        "layer0": "item/relics/bouncy_bullets"
+        "layer0": "item/items/bouncy_bullets/base"
     }
 }

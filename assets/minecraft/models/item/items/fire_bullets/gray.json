@@ -1,6 +1,6 @@
 {
     "parent": "minecraft:item/generated",
     "textures": {
-        "layer0": "item/relics/gray/fire_bullets"
+        "layer0": "item/items/fire_bullets/gray"
     }
 }

@@ -56,12 +56,12 @@ def create_item(item):
                 "type": "minecraft:condition",
                 "on_false": {
                     "type": "minecraft:model",
-                    "model": confirm_file(f"minecraft:item/items/{id}"),
+                    "model": confirm_file(f"minecraft:item/items/{id}/base"),
                     "tints": tints(1)
                 },
                 "on_true": {
                     "type": "minecraft:model",
-                    "model": confirm_file(f"minecraft:item/items/gray/{id}"),
+                    "model": confirm_file(f"minecraft:item/items/{id}/gray"),
                     "tints": tints(1)
                 },
                 "property": "minecraft:custom_model_data",

@@ -1,6 +1,6 @@
 {
     "parent": "minecraft:item/handheld",
     "textures": {
-        "layer0": "item/weapons/greatsword/base"
+        "layer0": "item/items/greatsword/base"
     }
 }

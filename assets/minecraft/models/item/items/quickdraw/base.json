@@ -1,6 +1,6 @@
 {
     "parent": "minecraft:item/generated",
     "textures": {
-        "layer0": "item/relics/quickdraw"
+        "layer0": "item/items/quickdraw/base"
     }
 }

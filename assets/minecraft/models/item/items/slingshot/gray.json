@@ -1,6 +1,6 @@
 {
     "parent": "minecraft:item/generated",
     "textures": {
-        "layer0": "item/weapons/slingshot/gray"
+        "layer0": "item/items/slingshot/gray"
     }
 }

@@ -3,7 +3,7 @@
 	"credit": "Made with Blockbench",
 	"parent": "item/generated",
 	"textures": {
-		"layer0": "item/weapons/greatsword/held"
+		"layer0": "item/items/greatsword/held"
 	},
 	"gui_light": "front",
 	"display": {

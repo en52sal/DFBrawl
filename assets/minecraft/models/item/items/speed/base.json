@@ -1,6 +1,6 @@
 {
     "parent": "minecraft:item/generated",
     "textures": {
-        "layer0": "item/relics/speed"
+        "layer0": "item/items/speed/base"
     }
 }

@@ -1,6 +1,6 @@
 {
     "parent": "minecraft:item/generated",
     "textures": {
-        "layer0": "item/relics/flaregun"
+        "layer0": "item/items/flaregun/base"
     }
 }

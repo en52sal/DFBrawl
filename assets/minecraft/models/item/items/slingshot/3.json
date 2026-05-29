@@ -1,7 +1,7 @@
 {
     "parent": "minecraft:item/handheld",
     "textures": {
-        "layer0": "item/weapons/slingshot/3"
+        "layer0": "item/items/slingshot/3"
     },
 	  "display": {
         "thirdperson_righthand": {

@@ -1,6 +1,6 @@
 {
     "parent": "minecraft:item/generated",
     "textures": {
-        "layer0": "item/relics/big_border"
+        "layer0": "item/items/arsenal/base"
     }
 }

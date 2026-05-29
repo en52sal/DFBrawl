@@ -1,6 +1,6 @@
 {
     "parent": "minecraft:item/generated",
     "textures": {
-        "layer0": "item/relics/refill"
+        "layer0": "item/items/refill/base"
     }
 }

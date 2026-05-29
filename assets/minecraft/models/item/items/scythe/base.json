@@ -1,6 +1,6 @@
 {
     "parent": "minecraft:item/handheld",
     "textures": {
-        "layer0": "item/weapons/scythe/base"
+        "layer0": "item/items/scythe/base"
     }
 }

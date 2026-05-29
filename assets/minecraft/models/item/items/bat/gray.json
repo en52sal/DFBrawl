@@ -1,6 +1,6 @@
 {
     "parent": "minecraft:item/generated",
     "textures": {
-        "layer0": "item/weapons/bat/gray"
+        "layer0": "item/items/bat/gray"
     }
 }

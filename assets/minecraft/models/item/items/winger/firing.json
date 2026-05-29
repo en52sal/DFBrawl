@@ -6,7 +6,7 @@
     32
   ],
   "textures": {
-    "1": "item/weapons/winger/base"
+    "1": "item/items/winger/base"
   },
   "elements": [
     {

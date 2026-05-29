@@ -1,6 +1,6 @@
 {
     "parent": "minecraft:item/generated",
     "textures": {
-        "layer0": "item/relics/see_healthbars"
+        "layer0": "item/items/see_healthbars/base"
     }
 }

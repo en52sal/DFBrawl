@@ -1,6 +1,6 @@
 {
     "parent": "minecraft:item/generated",
     "textures": {
-        "layer0": "item/relics/gray/taco_time"
+        "layer0": "item/items/taco_time/gray"
     }
 }

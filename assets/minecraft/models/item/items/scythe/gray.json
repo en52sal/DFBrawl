@@ -1,6 +1,6 @@
 {
     "parent": "minecraft:item/generated",
     "textures": {
-        "layer0": "item/weapons/scythe/gray"
+        "layer0": "item/items/scythe/gray"
     }
 }

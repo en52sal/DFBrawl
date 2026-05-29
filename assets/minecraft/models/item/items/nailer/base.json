@@ -6,8 +6,8 @@
     32
   ],
   "textures": {
-    "0": "item/weapons/nailer/base",
-    "particle": "item/weapons/nailer/base"
+    "0": "item/items/nailer/base",
+    "particle": "item/items/nailer/base"
   },
   "elements": [
     {

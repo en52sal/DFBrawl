@@ -6,8 +6,8 @@
     64
   ],
   "textures": {
-    "0": "item/weapons/verdant/gray",
-    "particle": "item/weapons/verdant/gray"
+    "0": "item/items/verdant/gray",
+    "particle": "item/items/verdant/gray"
   },
   "elements": [
     {

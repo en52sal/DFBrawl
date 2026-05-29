@@ -1,6 +1,6 @@
 {
     "parent": "minecraft:item/generated",
     "textures": {
-        "layer0": "item/weapons/greatsword/gray"
+        "layer0": "item/items/greatsword/gray"
     }
 }

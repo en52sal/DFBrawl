@@ -1,6 +1,6 @@
 {
     "parent": "minecraft:item/handheld",
     "textures": {
-        "layer0": "item/weapons/broadsword/animation"
+        "layer0": "item/items/broadsword/animation"
     }
 }
