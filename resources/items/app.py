@@ -6,10 +6,13 @@ import gzip
 import websocket
 import re
 import itemsgen
+import textparser
 
 SCRIPT_DIR = Path(__file__).parent
 MAX_LINE_LENGTH = 40
+META_FILE = SCRIPT_DIR / "meta.json"
 
+META = json.load(META_FILE.open())
 
 def create_template(name):
     return {
@@ -102,28 +105,12 @@ def template_item_item(item):
 def get_description_lines(data, desc):
     desc = re.sub(r"\$(\w+)\$", lambda m: str(data.get(m.group(1), f"${m.group(1)}$")), desc)
 
-    lines = []
-    while desc:
-        line = desc[:MAX_LINE_LENGTH]
-        if len(desc) > MAX_LINE_LENGTH:
-            last_space = line.rfind(" ")
-            if last_space != -1:
-                line = line[:last_space]
-        lines.append(line)
-        desc = desc[len(line):].lstrip()
-
-    result = []
-    for line in lines:
-        result.append({"color": "gray", "text": line, "italic": False})
-    return result
+    return textparser.parse_lore(f"<{META['colors']['desc']}>{desc}")
 
 def create_item(data):
     name = data.get("name", "Unnamed Item")
     components =  {
-        "custom_name": {"extra": [
-                {"color": "white","text": name}
-            ], "italic": False, "text": ""
-        }
+        "custom_name": textparser.parse_name(f"<{META['colors']['name']}>{name}")
     }
 
     if "icon" in data:
@@ -203,6 +190,7 @@ def main():
     json_files = []
     for folder in folders:
         json_files.extend(list(folder.glob("*.json")))
+
 
     items = []
 

@@ -1,0 +1,309 @@
+import re
+from dataclasses import dataclass, field
+from typing import Optional
+from pathlib import Path
+import json
+
+SCRIPT_DIR = Path(__file__).parent
+MAX_LINE_LENGTH = 40
+META_FILE = SCRIPT_DIR / "meta.json"
+PALETTE = json.load(META_FILE.open())["colors"]
+
+COLORS = {
+    "black", "dark_blue", "dark_green", "dark_aqua", "dark_red", "dark_purple",
+    "gold", "gray", "dark_gray", "blue", "green", "aqua", "red", "light_purple",
+    "yellow", "white",
+}
+
+STYLES = {"bold", "italic", "underlined", "strikethrough", "obfuscated"}
+
+LORE_MAX = 40
+
+@dataclass
+class TextToken:
+    text: str
+    color: Optional[str] = None
+    bold: bool = False
+    italic: bool = False
+    underlined: bool = False
+    strikethrough: bool = False
+    obfuscated: bool = False
+
+
+@dataclass
+class FormatState:
+    color: Optional[str] = None
+    bold: bool = False
+    italic: bool = False
+    underlined: bool = False
+    strikethrough: bool = False
+    obfuscated: bool = False
+
+    def copy(self):
+        return FormatState(
+            color=self.color,
+            bold=self.bold,
+            italic=self.italic,
+            underlined=self.underlined,
+            strikethrough=self.strikethrough,
+            obfuscated=self.obfuscated,
+        )
+
+    def reset(self):
+        self.color = None
+        self.bold = False
+        self.italic = False
+        self.underlined = False
+        self.strikethrough = False
+        self.obfuscated = False
+
+
+TAG_RE = re.compile(r"<(/?)(#[0-9a-fA-F]{6}|\w+)>")
+
+
+def _tokenize(text: str) -> list[TextToken]:
+    tokens: list[TextToken] = []
+    state = FormatState()
+    stack: list[tuple[str, FormatState]] = []
+
+    pos = 0
+    for m in TAG_RE.finditer(text):
+        start, end = m.start(), m.end()
+        closing = m.group(1) == "/"
+        raw_tag = m.group(2)
+        tag = raw_tag if raw_tag.startswith("#") else raw_tag.lower()
+
+        if start > pos:
+            run = text[pos:start]
+            if run:
+                tokens.append(_make_token(run, state))
+
+        pos = end
+
+        if tag == "reset":
+            if not closing:
+                state.reset()
+                stack.clear()
+        elif tag.startswith("#"):
+            if closing:
+                _pop_tag(stack, state, tag)
+            else:
+                stack.append((tag, state.copy()))
+                state.color = tag
+        elif tag in COLORS:
+            if closing:
+                _pop_tag(stack, state, tag)
+            else:
+                stack.append((tag, state.copy()))
+                state.color = tag
+        elif tag in STYLES:
+            if closing:
+                _pop_tag(stack, state, tag)
+            else:
+                stack.append((tag, state.copy()))
+                setattr(state, tag, True)
+        elif tag in PALETTE:
+            if closing:
+                _pop_tag(stack, state, tag)
+            else:
+                stack.append((tag, state.copy()))
+                state.color = PALETTE[tag]
+
+    if pos < len(text):
+        run = text[pos:]
+        if run:
+            tokens.append(_make_token(run, state))
+
+    return tokens
+
+
+def _make_token(text: str, state: FormatState) -> TextToken:
+    return TextToken(
+        text=text,
+        color=state.color,
+        bold=state.bold,
+        italic=state.italic,
+        underlined=state.underlined,
+        strikethrough=state.strikethrough,
+        obfuscated=state.obfuscated,
+    )
+
+
+def _pop_tag(stack: list, state: FormatState, tag: str):
+    for i in range(len(stack) - 1, -1, -1):
+        if stack[i][0] == tag:
+            _, saved = stack[i]
+            state.color = saved.color
+            state.bold = saved.bold
+            state.italic = saved.italic
+            state.underlined = saved.underlined
+            state.strikethrough = saved.strikethrough
+            state.obfuscated = saved.obfuscated
+            del stack[i:]
+            return
+
+
+def _token_to_dict(token: TextToken) -> dict | str:
+    has_style = (
+        token.color is not None
+        or token.bold
+        or token.italic
+        or token.underlined
+        or token.strikethrough
+        or token.obfuscated
+    )
+    if not has_style:
+        return token.text
+
+    d: dict = {"text": token.text}
+    if token.color:
+        d["color"] = token.color
+    if token.bold:
+        d["bold"] = True
+    if token.italic:
+        d["italic"] = True
+    if token.underlined:
+        d["underlined"] = True
+    if token.strikethrough:
+        d["strikethrough"] = True
+    if token.obfuscated:
+        d["obfuscated"] = True
+    return d
+
+
+def _tokens_to_component(tokens: list[TextToken]) -> dict:
+    extras = [_token_to_dict(t) for t in tokens]
+
+    if len(extras) == 1 and isinstance(extras[0], str):
+        return {"text": extras[0], "italic": False}
+
+    return {"text": "", "italic": False, "extra": extras}
+
+
+TEMPLATE_RE = re.compile(r"\$(\w+)\$")
+
+
+def _apply_templates(text: str, templates: dict[str, str]) -> str:
+    def replacer(m):
+        key = m.group(1)
+        return templates.get(key, m.group(0))
+    return TEMPLATE_RE.sub(replacer, text)
+
+
+def parse_name(text: str, templates: dict[str, str] | None = None) -> dict:
+    if templates:
+        text = _apply_templates(text, templates)
+    tokens = _tokenize(text)
+    return _tokens_to_component(tokens)
+
+
+def parse_lore(text: str, templates: dict[str, str] | None = None, max_width: int = LORE_MAX) -> list[dict]:
+    if templates:
+        text = _apply_templates(text, templates)
+
+    segments = text.split("\\n")
+    lines: list[dict] = []
+    for seg in segments:
+        lines.extend(_wrap_segment(seg, max_width))
+    return lines
+
+
+def _wrap_segment(text: str, max_width: int) -> list[dict]:
+    tokens = _tokenize(text)
+    if not tokens:
+        return [{"text": "", "italic": False}]
+
+    words = _tokens_to_words(tokens)
+
+    lines: list[dict] = []
+    current_words: list[tuple[str, FormatState]] = []
+    current_len = 0
+
+    for word, state in words:
+        word_len = len(word)
+        needed = word_len if not current_words else word_len + 1
+
+        if current_len + needed > max_width and current_words:
+            lines.append(_words_to_component(current_words))
+            current_words = [(word, state)]
+            current_len = word_len
+        else:
+            if current_words:
+                current_words.append((" ", state))
+                current_len += 1
+            current_words.append((word, state))
+            current_len += word_len
+
+    if current_words:
+        lines.append(_words_to_component(current_words))
+
+    return lines if lines else [{"text": "", "italic": False}]
+
+
+def _tokens_to_words(tokens: list[TextToken]) -> list[tuple[str, FormatState]]:
+    chars: list[tuple[str, FormatState]] = []
+    for token in tokens:
+        state = FormatState(
+            color=token.color,
+            bold=token.bold,
+            italic=token.italic,
+            underlined=token.underlined,
+            strikethrough=token.strikethrough,
+            obfuscated=token.obfuscated,
+        )
+        for ch in token.text:
+            chars.append((ch, state))
+
+    words: list[tuple[str, FormatState]] = []
+    i = 0
+    while i < len(chars):
+        ch, state = chars[i]
+        if ch == " ":
+            i += 1
+            continue
+        word_chars = []
+        word_state = state
+        while i < len(chars) and chars[i][0] != " ":
+            word_chars.append(chars[i][0])
+            i += 1
+        words.append(("".join(word_chars), word_state))
+
+    return words
+
+
+def _words_to_component(words: list[tuple[str, FormatState]]) -> dict:
+    tokens: list[TextToken] = []
+    for text, state in words:
+        if tokens and _state_matches(tokens[-1], state):
+            tokens[-1] = TextToken(
+                text=tokens[-1].text + text,
+                color=tokens[-1].color,
+                bold=tokens[-1].bold,
+                italic=tokens[-1].italic,
+                underlined=tokens[-1].underlined,
+                strikethrough=tokens[-1].strikethrough,
+                obfuscated=tokens[-1].obfuscated,
+            )
+        else:
+            tokens.append(TextToken(
+                text=text,
+                color=state.color,
+                bold=state.bold,
+                italic=state.italic,
+                underlined=state.underlined,
+                strikethrough=state.strikethrough,
+                obfuscated=state.obfuscated,
+            ))
+    return _tokens_to_component(tokens)
+
+
+def _state_matches(token: TextToken, state: FormatState) -> bool:
+    return (
+        token.color == state.color
+        and token.bold == state.bold
+        and token.italic == state.italic
+        and token.underlined == state.underlined
+        and token.strikethrough == state.strikethrough
+        and token.obfuscated == state.obfuscated
+    )
+

@@ -3,7 +3,7 @@
     "name": "Chopper",
     "icon": {
         "model": "gun",
-        "description": "Chopper Desc",
+        "description": "Chopper <#fff00f>Desc <dmg>Woah",
 
         "components": {
             "swing_animation": {"duration": 5}
