@@ -28,6 +28,7 @@
     "shoot_animation": 6,
     
     "main_display": "ammo",
+    "gun_resource": "ammo",
     "max_ammo": 4,
     "reloaded_per": 1,
     "reload_ticks": 11,
@@ -52,7 +53,7 @@
     "restituion": 1,
     "distance": 12,
     "distance_falloff": 3.5,
-    "bounces": 0,
+    "bounces" : 0,
     "right": "GUN:use",
     "offhand": "ITEM:reload"
     

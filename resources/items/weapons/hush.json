@@ -30,6 +30,7 @@
     "shoot_animation": 3,
     
     "main_display": "ammo",
+    "gun_resource": "ammo",
     "max_ammo": 20,
     "reloaded_per": 20,
     "reload_ticks": 40,
