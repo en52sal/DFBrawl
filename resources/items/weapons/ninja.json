@@ -1,0 +1,12 @@
+{
+    "type": "relic",
+    "name": "Ninja",
+    "icon": {
+        "model": "relic",
+        "description": "No longer make footstep sounds nor get slowed down by holding items."
+    },
+
+    "relic_type": "passive",
+    "tier": 3
+
+}

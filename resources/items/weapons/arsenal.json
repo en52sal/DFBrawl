@@ -1,0 +1,13 @@
+{
+    "type": "relic",
+    "name": "Arsenal",
+    "icon": {
+        "model": "relic",
+        "description": "Players drop their weapons upon death, which can be picked up."
+    },
+
+    "relic_type": "shared",
+    "shared_target": "global",
+    "tier": 3
+
+}

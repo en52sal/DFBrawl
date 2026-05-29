@@ -1,0 +1,15 @@
+{
+    "type": "relic",
+    "name": "Big Border",
+    "icon": {
+        "model": "relic",
+        "description": "Increases ally border size by <hl>3</hl> blocks."
+    },
+
+    "relic_type": "shared",
+    "shared_target": "ally",
+    "tier": 1,
+
+    "blocks": 3
+    
+}

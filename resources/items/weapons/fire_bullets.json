@@ -1,0 +1,15 @@
+{
+    "type": "relic",
+    "name": "Incendiary Rounds",
+    "icon": {
+        "model": "relic",
+        "description": "Weapon damage now builds up a spark on enemies, upon reaching <hl>$thresh$</hl>, the enemy is <hl>set on fire for $fire_duration$s</hl>."
+    },
+
+    "relic_type": "passive",
+    "tier": 1,
+
+    "thresh": 45,
+    "fire_duration": 4
+    
+}
