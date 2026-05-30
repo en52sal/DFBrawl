@@ -7,7 +7,7 @@
 
         "components": {
             "swing_animation": { "duration": 5 },
-            "consumable": { "consume_seconds": 999, "animation": "none" },
+           "consumable": { "consume_seconds": 999, "animation": "none", "sound": "minecraft:entity.player.attack.nodamage", "has_consume_particles": false },
             "use_effects": { "can_sprint": true, "speed_multiplier": 1 }
         },
 
@@ -22,27 +22,28 @@
 
     "weight": 2,
     "move_speed_modifier": 0.025,
-    "equip_speed": 11,
-    "cooldown": 2,
+    "equip_speed": 7,
+    "cooldown": 6,
 
     "bullet_color": "#b3871c",
-    "bullet_opacity": 2,
+    "bullet_opacity": 0,
     "shoot_animation": 3,
     
     "main_display": "ammo",
     "gun_resource": "ammo",
-    "max_ammo": 20,
-    "reloaded_per": 20,
+    "reload_resource": "ammo",
+    "max_ammo": 14,
+    "reloaded_per": 14,
     "reload_ticks": 40,
     "initial_reload_ticks": 0,
     
     "burst_count": 1,
     "burst_delay": 1,
     "pellet_count": 1,
-    "inaccuracy": 0.022,
+    "inaccuracy": 0.005,
     
-    "dmg": 10,
-    "min_dmg": 3,
+    "dmg": 13,
+    "min_dmg": 6,
     "crit_multiplier": 1.5,
     
     "projectile": "bullet",
@@ -53,8 +54,8 @@
     "drag": 0,
     "friction": 1,
     "restituion": 0,
-    "distance": 40,
-    "distance_falloff": 11,
+    "distance": 35,
+    "distance_falloff": 15,
     "bounces" : 0,
     "right": "GUN:use",
     "offhand": "ITEM:reload"

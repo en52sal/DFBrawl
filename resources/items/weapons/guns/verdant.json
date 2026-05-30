@@ -7,7 +7,7 @@
 
         "components": {
             "swing_animation": { "duration": 5 },
-            "consumable": { "consume_seconds": 999, "animation": "none" },
+           "consumable": { "consume_seconds": 999, "animation": "none", "sound": "minecraft:entity.player.attack.nodamage", "has_consume_particles": false },
             "use_effects": { "can_sprint": true, "speed_multiplier": 1 }
         },
 
@@ -22,8 +22,8 @@
 
     "weight": 2,
     "move_speed_modifier": 0.05,
-    "equip_speed": 11,
-    "cooldown": 2,
+    "equip_speed": 9,
+    "cooldown": 1,
 
     "bullet_color": "#34c384",
     "bullet_opacity": 5,
@@ -31,6 +31,7 @@
     
     "main_display": "ammo",
     "gun_resource": "ammo",
+    "reload_resource": "ammo",
     "max_ammo": 20,
     "reloaded_per": 20,
     "reload_ticks": 40,

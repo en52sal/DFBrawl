@@ -6,7 +6,9 @@
         "description": "Chopper <#fff00f>Desc <dmg>Woah",
 
         "components": {
-            "swing_animation": {"duration": 5}
+            "swing_animation": {"duration": 5},
+           "consumable": { "consume_seconds": 999, "animation": "none", "sound": "minecraft:entity.player.attack.nodamage", "has_consume_particles": false },
+            "use_effects": { "can_sprint": true, "speed_multiplier": 1 }
         },
 
         "actions": {
@@ -22,6 +24,7 @@
     "move_speed_modifier": 0.1,
     "equip_speed": 10,
     "cooldown": 14,
+    "semi_automatic": 1,
 
     "bullet_color": "#f5ff87",
     "bullet_opacity": 5,
@@ -29,6 +32,7 @@
     
     "main_display": "ammo",
     "gun_resource": "ammo",
+    "reload_resource": "ammo",
     "max_ammo": 4,
     "reloaded_per": 1,
     "reload_ticks": 11,

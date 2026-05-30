@@ -110,7 +110,7 @@ def create_item(item):
             sub_model = None
             if states is not None:
                 sub_model = {
-                    "type": "minecraft:select", "property": "minecraft:custom_model_data", "index": 1, "cases": [state(s, i+1) for s, i in states],
+                    "type": "minecraft:select", "property": "minecraft:custom_model_data", "index": 1, "cases":[state(s, i+1) for i, s in enumerate(states)],
                     "fallback": { "type": "minecraft:model", "model": confirm_file(f"minecraft:item/items/{id}/{fallback}"), "tints": tints(0) }
                 }
             else:
