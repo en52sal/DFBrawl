@@ -7,7 +7,10 @@ import json
 SCRIPT_DIR = Path(__file__).parent
 MAX_LINE_LENGTH = 40
 META_FILE = SCRIPT_DIR / "meta.json"
-PALETTE = json.load(META_FILE.open())["colors"]
+META = json.load(META_FILE.open())
+PALETTE = META["colors"]
+TEMPLATES = META["templates"]
+
 
 COLORS = {
     "black", "dark_blue", "dark_green", "dark_aqua", "dark_red", "dark_purple",
@@ -180,7 +183,7 @@ def _tokens_to_component(tokens: list[TextToken]) -> dict:
     return {"text": "", "italic": False, "extra": extras}
 
 
-TEMPLATE_RE = re.compile(r"\$(\w+)\$")
+TEMPLATE_RE = re.compile(r"\$\$(\w+)\$")
 
 
 def _apply_templates(text: str, templates: dict[str, str]) -> str:
@@ -190,26 +193,47 @@ def _apply_templates(text: str, templates: dict[str, str]) -> str:
     return TEMPLATE_RE.sub(replacer, text)
 
 
-def parse_name(text: str, templates: dict[str, str] | None = None) -> dict:
-    if templates:
-        text = _apply_templates(text, templates)
+def parse_name(text: str) -> dict:
+    if TEMPLATES:
+        text = _apply_templates(text, TEMPLATES)
     tokens = _tokenize(text)
     return _tokens_to_component(tokens)
 
 
-def parse_lore(text: str, templates: dict[str, str] | None = None, max_width: int = LORE_MAX) -> list[dict]:
-    if templates:
-        text = _apply_templates(text, templates)
+def parse_lore(text: str, max_width: int = LORE_MAX) -> list[dict]:
+    if TEMPLATES:
+        text = _apply_templates(text, TEMPLATES)
 
-    segments = text.split("\\n")
+    tokens = _tokenize(text)
+    segments = _split_tokens_by_newline(tokens)
     lines: list[dict] = []
     for seg in segments:
         lines.extend(_wrap_segment(seg, max_width))
     return lines
 
+def _split_tokens_by_newline(tokens: list[TextToken]) -> list[str]:
+    segments: list[list[TextToken]] = []
+    current: list[TextToken] = []
+    for token in tokens:
+        if "\n" not in token.text:
+            current.append(token)
+            continue
 
-def _wrap_segment(text: str, max_width: int) -> list[dict]:
-    tokens = _tokenize(text)
+        parts = token.text.split("\n")
+        for i, part in enumerate(parts):
+            if part:
+                current.append(TextToken(
+                    text=part,
+                    color=token.color, bold=token.bold, italic=token.italic, underlined=token.underlined,
+                    strikethrough=token.strikethrough, obfuscated=token.obfuscated,
+                ))
+            if i < len(parts) - 1:
+                segments.append(current)
+                current = []
+    segments.append(current)
+    return segments
+
+def _wrap_segment(tokens: list[TextToken], max_width: int) -> list[dict]:
     if not tokens:
         return [{"text": "", "italic": False}]
 

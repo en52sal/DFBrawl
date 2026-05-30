@@ -1,0 +1,39 @@
+{
+    "type": "weapon",
+    "name": "Bat",
+    "icon": {
+        "model": "melee",
+        "description": "Sweeping weapon with low cooldown and damage, but high knockback.",
+        
+        "actions": {
+            "attack": {
+                "title": "$$attack$ Swing",
+                "desc": "Can hit projectiles to deflect them."
+            },
+            "use": {
+                "title": "$$ability$ Homerun",
+                "desc": "Channel a powerful swing dealing enhanced knockback and damage.",
+                "prefix": "Hold "
+            }
+        },
+
+        "ability_boost": "Channels faster and enhances knockback even further"
+    },
+
+    "weapon_type": "melee",
+    "category": "light",
+
+    "dmg": 13,
+    "kb": [1, 0.5, 0],
+
+    "move_speed_modifier": 0,
+    "weight": 1,
+
+    "cooldown": 240,
+    "equip_speed": 5,
+    "swing_cooldown": 16,
+
+    "range": 2.4,
+    "radius": 1,
+    "attack_type": "slash"
+}

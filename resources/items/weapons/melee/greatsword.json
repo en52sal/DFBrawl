@@ -1,0 +1,25 @@
+{
+    "id": "greatsword",
+    "name": "Greatsword",
+    "category": "melee",
+    "weight": 2,
+    "move_speed_modifier": 0.2,
+    "dmg": 30,
+    "resource_type": "cooldown",
+    "resource_max": 0,
+    "resource_per": 0,
+    "resource_tick": 0,
+    "resource_tick_first": 0,
+    "cd": 280,
+    "equip_speed": 9,
+    "behaviour": "tap",
+    "swing_cooldown": 29,
+    "range": 0.1,
+    "radius": 1.5,
+    "attack_type": "slash",
+    "kb": [
+        0.32,
+        0.1,
+        0
+    ]
+}

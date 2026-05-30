@@ -43,6 +43,11 @@ def create_item(item):
         "when": id
     }
 
+    def state(state, tint_index):
+        return {
+            "when": state, "model": { "type": "minecraft:model", "model": confirm_file(f"minecraft:item/items/{id}/{state}"), "tints": tints(tint_index) }
+        }
+
     if "icon" in item and "model" in item["icon"]:
         model = item["icon"]["model"]
         if type(model) == dict:
@@ -70,15 +75,11 @@ def create_item(item):
             return case
         
         if model == "gun":
-            def state(state, tint_index):
-                return {
-                    "when": state, "model": { "type": "minecraft:model", "model": confirm_file(f"minecraft:item/items/{id}/{state}"), "tints": tints(tint_index) }
-                }
             case["model"] = {
                 "type": "minecraft:select", "property": "minecraft:display_context", "cases": [{
                     "when": ["thirdperson_lefthand", "thirdperson_righthand", "firstperson_lefthand", "firstperson_righthand", "ground", "none", "fixed"], "model": {
                         "type": "minecraft:select", "property": "minecraft:custom_model_data", "index": 1, "cases": [
-                            state("reload", 0), state("equip", 1), state("firing", 0)
+                            state("reload", 0), state("equip", 0), state("firing", 0)
                         ], "fallback": { "type": "minecraft:model", "model": confirm_file(f"minecraft:item/items/{id}/base"), "tints": tints(0) }
                     }
                 }
@@ -88,7 +89,35 @@ def create_item(item):
                     "on_true": { "type": "minecraft:model", "model": confirm_file(f"minecraft:item/items/{id}/gray") }
                 }
             }
+        
+        if model == "melee":
+            fallback = item["icon"].get("model_fallback", "base")
+            states = item["icon"].get("model_states", None)
 
+            print(states)
+
+            base_model = {
+                    "type": "minecraft:select", "property": "minecraft:display_context", "cases": [{
+                        "when": ["thirdperson_lefthand", "thirdperson_righthand", "firstperson_lefthand", "firstperson_righthand", "ground", "none", "fixed"],
+                        "model": {}
+                    }], "fallback": {
+                        "type": "minecraft:condition", "property": "minecraft:custom_model_data", "index": 1,
+                        "on_false": { "type": "minecraft:model", "model": confirm_file(f"minecraft:item/items/{id}/base") },
+                        "on_true": { "type": "minecraft:model", "model": confirm_file(f"minecraft:item/items/{id}/gray") }
+                    }
+                }
+            
+            sub_model = None
+            if states is not None:
+                sub_model = {
+                    "type": "minecraft:select", "property": "minecraft:custom_model_data", "index": 1, "cases": [state(s, i+1) for s, i in states],
+                    "fallback": { "type": "minecraft:model", "model": confirm_file(f"minecraft:item/items/{id}/{fallback}"), "tints": tints(0) }
+                }
+            else:
+                sub_model = { "type": "minecraft:model", "model": confirm_file(f"minecraft:item/items/{id}/{fallback}"), "tints": tints(0) }
+            
+            base_model["cases"][0]["model"] = sub_model
+            case["model"] = base_model
 
     if not "model" in case:
         case["model"] = {

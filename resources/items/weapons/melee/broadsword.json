@@ -1,0 +1,47 @@
+{
+    "type": "weapon",
+    "name": "Broadsword",
+    "icon": {
+        "model": "melee",
+        "model_states": ["animation"],
+        "model_fallback": "base",
+
+        "description": "Sweeping weapon with a slight cooldown and good damage.",
+
+        "actions": {
+            "attack": {
+                "title": "$$attack$ Swipe"
+            },
+            "use": {
+                "title": "$$ability$ Block",
+                "desc": "Hold your sword forward, blocking a portion of damage as long as your meter is filled.\n\nAbove 75% meter, you can perform perfect blocks, if damage is blocked while it's glowing, blocking all damage without consuming meter.",
+                "prefix": "Hold "
+            }
+        },
+
+        "ability_boost": "Increases max meter and decreases how much damage ignores the block."
+    },
+
+    "weapon_type": "melee",
+    "category": "light",
+
+    "dmg": 20.75,
+    "kb": [0.2, 0, 0],
+
+    "move_speed_modifier": 0,
+    "weight": 1,
+    
+    "resource_type": "meter",
+    "resource_max": 100,
+    "resource_per": 1,
+    "resource_tick": 0.5,
+    "resource_tick_first": 0,
+
+    "cooldown": 20,
+    "equip_speed": 5,
+    "swing_cooldown": 17,
+
+    "range": 2.4,
+    "radius": 1,
+    "attack_type": "slash"
+}

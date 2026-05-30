@@ -1,0 +1,25 @@
+{
+    "id": "hammer",
+    "name": "Hammer",
+    "category": "melee",
+    "weight": 1,
+    "move_speed_modifier": 0.2,
+    "dmg": 27,
+    "resource_type": "cooldown",
+    "resource_max": 0,
+    "resource_per": 0,
+    "resource_tick": 0,
+    "resource_tick_first": 0,
+    "cd": 240,
+    "equip_speed": 7,
+    "behaviour": "hold",
+    "swing_cooldown": 24,
+    "range": 2,
+    "radius": 1.35,
+    "attack_type": "slash",
+    "kb": [
+        0.32,
+        0.1,
+        0
+    ]
+}

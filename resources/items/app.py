@@ -134,6 +134,7 @@ def create_item(data):
         
         if "actions" in icon:
             for key, action in icon["actions"].items():
+
                 line = {"bold": 0, "color": "white", "extra": [
                         {
                             "font": "minecraft:controls", "translate": "key", "with": [
@@ -150,18 +151,24 @@ def create_item(data):
                         {
                             "color": "gray", "extra": [
                                 "- ",
-                                {
-                                    "color": "white", "text": action["title"]
-                                }
+                                textparser.parse_name("<white>" + action["title"])
                             ], "text": ""
                         }
                     ], "text": "", "italic": False
                 }
+                if "prefix" in action:
+                    line["extra"].insert(0, textparser.parse_name(action["prefix"]))
+                
                 lore.append(line)
 
                 if "desc" in action:
                     lore.extend(get_description_lines(data, action["desc"]))
                 lore.append({"text": ""})
+
+        if "ability_boost" in icon:
+            lore.append(textparser.parse_name("$$boost$ <white>Ability Boost"))
+            lore.extend(get_description_lines(data, icon["ability_boost"]))
+            lore.append({"text": ""})
         
         if lore:
             lore.pop()
@@ -189,7 +196,7 @@ def main():
     folders = [f for f in SCRIPT_DIR.iterdir() if f.is_dir()]
     json_files = []
     for folder in folders:
-        json_files.extend(list(folder.glob("*.json")))
+        json_files.extend(list(folder.rglob("*.json")))
 
 
     items = []

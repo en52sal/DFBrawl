@@ -4,5 +4,11 @@
         "desc": "gray",
         "hl": "#aee6ff",
         "dmg": "#ff0000"
+    },
+
+    "templates": {
+        "attack": "<#FF864A>\u23B7</#FF864A>",
+        "ability": "<#FF1988>\u239A</#FF1988>",
+        "boost": "<#FF1988>\u2399</#FF1988>"
     }
 }
