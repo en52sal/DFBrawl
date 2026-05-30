@@ -1,0 +1,62 @@
+{
+    "type": "weapon",
+    "name": "Quasar",
+    "icon": {
+        "model": "gun",
+        "description": "Heat Rifle",
+
+        "components": {
+            "swing_animation": { "duration": 5 },
+           "consumable": { "consume_seconds": 999, "animation": "none", "sound": "minecraft:entity.player.attack.nodamage", "has_consume_particles": false },
+            "use_effects": { "can_sprint": true, "speed_multiplier": 1 }
+        },
+
+        "actions": {
+            "use": {
+                "title": "$$attack$ Fire"
+            }
+        }
+    },
+    "weapon_type": "gun",
+    "category": "large",
+
+    "weight": 2,
+    "move_speed_modifier": 0.05,
+    "equip_speed": 9,
+    "cooldown": 4,
+
+    "bullet_color": "#ff2700",
+    "bullet_opacity": 3,
+    "shoot_animation": 3,
+    
+    "main_display": "heat",
+    "gun_resource": "heat",
+    "max_heat": 24,
+    "cooling_delay": 20,
+    "cooling_per_tick": 2,
+    
+    "burst_count": 2,
+    "burst_delay": 2,
+    "pellet_count": 1,
+    "inaccuracy": 0.009,
+    
+    "dmg": 11,
+    "min_dmg": 11,
+    "crit_multiplier": 1.25,
+    "pierce_entities" : 2,
+    
+    "projectile": "bullet",
+    "size": 0.4,
+    "gravity": [0,-0.019,0],
+    "power": 18,
+    "mass": 1,
+    "drag": 0,
+    "friction": 1,
+    "restituion": 0,
+    "distance": 45,
+    "distance_falloff": 45,
+    "bounces" : 0,
+    "right": "GUN:use",
+    "offhand": "ITEM:reload"
+    
+}
