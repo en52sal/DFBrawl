@@ -322,7 +322,8 @@
 			}
 		},
 	{
-	  "type": "minecraft:range_dispatch","property": "minecraft:custom_model_data","index": 0,"entries": [{"threshold": 0.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/0"}},
+	  "type": "minecraft:range_dispatch","property": "minecraft:custom_model_data","index": 0,"entries": [
+	{"threshold": 0.1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/0"}},
 	{"threshold": 1, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/1"}},
 	{"threshold": 2, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/2"}},
 	{"threshold": 3, "model": {"type":"minecraft:model","model":"minecraft:item/numbersgui/a/3"}},
