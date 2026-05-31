@@ -11,6 +11,8 @@ ITEMS_FOLDER = PACK_ROOT / "assets" / NAMESPACE / "items"
 ITEM_FILE = ITEMS_FOLDER / "item.json"
 ITEM_BOB_FILE = ITEMS_FOLDER / "item_bob.json"
 
+DEFAULT_FALLBACK_CONTEXT = ["thirdperson_lefthand", "thirdperson_righthand", "firstperson_lefthand", "firstperson_righthand", "ground", "none", "fixed", "head"]
+
 U = itemsgenutil.ItemUtility(PACK_ROOT)
 
 print(PACK_ROOT)
@@ -25,8 +27,9 @@ def create_item(item):
     def state(state, tint_index):
         return U.when(state, U.model(f"minecraft:item/items/{id}/{state}", tint_index))
 
-    if "icon" in item and "model" in item["icon"]:
-        model = item["icon"]["model"]
+    model = item.get("icon", {}).get("model", None)
+
+    if model:
         if type(model) == dict:
             U.confirm_model(model)
 
@@ -38,7 +41,6 @@ def create_item(item):
                 on_false=U.model(f"minecraft:item/items/{id}/base", 1),
                 on_true=U.model(f"minecraft:item/items/{id}/gray", 1)
             )
-            return case
         
         if model == "gun":
             case["model"] = U.select(index=1, cases=[
@@ -56,14 +58,27 @@ def create_item(item):
 
     if not "model" in case:
         case["model"] = U.model(None)
-
     else:
-        case["model"] = U.select(property="minecraft:display_context", cases=[
-            U.when(["thirdperson_lefthand", "thirdperson_righthand", "firstperson_lefthand", "firstperson_righthand", "ground", "none", "fixed"], case["model"])
-        ], fallback=U.condition(
-            on_false=U.model(f"minecraft:item/items/{id}/base", 5),
-            on_true=U.model(f"minecraft:item/items/{id}/gray", 5)
-        ))
+        # Add fallback
+        base_model_list = [] if model == "relic" else DEFAULT_FALLBACK_CONTEXT
+        exception_list = item["icon"].get("display_context", {})
+
+        base_model_list = [c for c in base_model_list if c not in exception_list]
+
+        cases = []
+        if base_model_list:
+            cases.append(U.when(base_model_list, case["model"]))
+
+        for context, model in exception_list.items():
+            if context == "base":
+                context = list(set(DEFAULT_FALLBACK_CONTEXT) - set(exception_list.keys()))
+            cases.append(U.when(context, U.model(f"minecraft:item/items/{id}/{model}", 5)))
+        
+        if cases:
+            case["model"] = U.select(property="minecraft:display_context", cases=cases, fallback=U.condition(
+                on_false=U.model(f"minecraft:item/items/{id}/base", 5),
+                on_true=U.model(f"minecraft:item/items/{id}/gray", 5)
+            ))
 
     return case
 

@@ -1,0 +1,18 @@
+{
+    "type": "relic",
+    "name": "Springboard",
+    "icon": {
+        "model": "relic",
+
+        "display_context": {
+            "head": "1",
+            "base": "0"
+        },
+
+        "description": "boing boing"
+    },
+
+    "relic_type": "active",
+    "tier": 3
+
+}
