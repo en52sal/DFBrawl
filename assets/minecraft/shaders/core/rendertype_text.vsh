@@ -40,10 +40,13 @@ out vec4 vertexColor;
 out vec2 texCoord0;
 
 out float isTransition;
+out float isMono;
 
 const ivec3 TRANSITION_COLOR = ivec3(250, 250, 255);
 const ivec3 CENTER_COLOR = ivec3(250, 245, 255);
 const ivec3 BELOW_COLOR = ivec3(250, 246, 255);
+
+const int AMMO_ALPHA = 204;
 
 bool is_color(vec4 c, ivec3 target) {
     return int(c.x * 255) == target.x && int(c.y * 255) == target.y && int(c.z * 255) == target.z;
@@ -51,6 +54,10 @@ bool is_color(vec4 c, ivec3 target) {
 
 vec2 guiPixel(mat4 ProjMat) {
 	return vec2(ProjMat[0][0], ProjMat[1][1]) / 1.9;
+}
+
+vec2 middleOffset(vec2 offset, vec2 size) {
+    return vec2(0, -1) + size * (vec2(1, -70) + offset);
 }
 
 void main() {
@@ -68,19 +75,26 @@ void main() {
     }
     ///////////////////////////////////////////////////////////
 
+    isMono = 0;
+    if (sample.a * 255 == AMMO_ALPHA) {
+        isMono = 1;
+        // gl_Position.xy += middleOffset(vec2(20.0, 20), guiPixel(ProjMat));
+        gl_Position.xy += middleOffset(vec2(0, 50), guiPixel(ProjMat));
+    } else
+
     // Center
     if (is_color(color, CENTER_COLOR)) {
-        gl_Position.xy += vec2(0.0, -1.0);
-        gl_Position.xy += guiPixel(ProjMat) * vec2(1, -70);
+        gl_Position.xy += middleOffset(vec2(0.0, 0.0), guiPixel(ProjMat));
         color = vec4(1, 1, 1, 1);
-    }
+    } else
 
     // Below
     if (is_color(color, BELOW_COLOR)) {
-     gl_Position.xy += vec2(0.0, -1.122);
-     gl_Position.xy += guiPixel(ProjMat) * vec2(1, -70);
-     color = vec4(1, 1, 1, 1);
+        gl_Position.xy += middleOffset(vec2(0.0, 20), guiPixel(ProjMat));
+        color = vec4(1, 1, 1, 1);
     }
+
+
 
 
 // ANCHOR CODE ////////////////////////////////////////////

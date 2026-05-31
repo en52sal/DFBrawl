@@ -1,0 +1,16 @@
+{
+    "providers": [
+		{
+            "type": "bitmap",
+            "file": "font/mono.png",
+            "ascent": 8,
+            "height": 8,
+            "chars": [
+                "0123456789/-",
+                "^.          "
+            ]
+        },
+		{ "type": "space", "advances": { "_": -5 } },
+		{ "type": "space", "advances": { "=": 2 } }
+    ]
+}
