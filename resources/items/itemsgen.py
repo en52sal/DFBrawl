@@ -20,67 +20,36 @@ print(PACK_ROOT)
 
 def create_item(item):
     id = item["id"]
-    case = {
-        "when": id
-    }
 
     def state(state, tint_index):
         return U.when(state, U.model(f"minecraft:item/items/{id}/{state}", tint_index))
 
-    model = item.get("icon", {}).get("model", None)
+    icon = item.get("icon", {})
+    model = U.condition(index=1,
+        on_false=U.model(f"minecraft:item/items/{id}/base", 0),
+        on_true=U.model(f"minecraft:item/items/{id}/gray", 0)
+    )
 
-    if model:
-        if type(model) == dict:
-            U.confirm_model(model)
-
-            case["model"] = model
-            return case
+    if "model" in icon and type(icon["model"]) == dict:
+            U.confirm_model(icon["model"])
+            return U.when(id, icon["model"])
         
-        if model == "relic":
-            case["model"] = U.condition(index=1,
-                on_false=U.model(f"minecraft:item/items/{id}/base", 1),
-                on_true=U.model(f"minecraft:item/items/{id}/gray", 1)
-            )
-        
-        if model == "gun":
-            case["model"] = U.select(index=1, cases=[
-                state("reload", 0), state("equip", 0), state("firing", 0)
-            ], fallback=U.model(f"minecraft:item/items/{id}/base", 0))
+    states = icon.get("states", [])
+    if states:
+        cases = [state(s, i) for i, s in enumerate(states)]
+        model = U.select(index=1, cases=cases, fallback=model)
 
-        if model == "melee":
-            fallback = item["icon"].get("model_fallback", "base")
-            states = item["icon"].get("model_states", None)
-            
-            if states is not None:
-                case["model"] = U.select(index=1, cases=[state(s, i+1) for i, s in enumerate(states)], fallback=U.model(f"minecraft:item/items/{id}/{fallback}", 0))
-            else:
-                case["model"] = U.model(f"minecraft:item/items/{id}/{fallback}", 0)
-
-    if not "model" in case:
-        case["model"] = U.model(None)
-    else:
-        # Add fallback
-        base_model_list = [] if model == "relic" else DEFAULT_FALLBACK_CONTEXT
-        exception_list = item["icon"].get("display_context", {})
-
-        base_model_list = [c for c in base_model_list if c not in exception_list]
-
+    display_context = icon.get("display_context", {})
+    if display_context:
         cases = []
-        if base_model_list:
-            cases.append(U.when(base_model_list, case["model"]))
-
-        for context, model in exception_list.items():
+        for context, m in display_context.items():
             if context == "base":
-                context = list(set(DEFAULT_FALLBACK_CONTEXT) - set(exception_list.keys()))
-            cases.append(U.when(context, U.model(f"minecraft:item/items/{id}/{model}", 5)))
+                context = list(set(DEFAULT_FALLBACK_CONTEXT) - set(display_context.keys()))
+            cases.append(U.when(context, U.model(f"minecraft:item/items/{id}/{m}", 5)))
         
-        if cases:
-            case["model"] = U.select(property="minecraft:display_context", cases=cases, fallback=U.condition(
-                on_false=U.model(f"minecraft:item/items/{id}/base", 5),
-                on_true=U.model(f"minecraft:item/items/{id}/gray", 5)
-            ))
+        model = U.select_display_context(cases=cases, fallback=model)
 
-    return case
+    return U.when(id, model)
 
 
 def create_addons(models):

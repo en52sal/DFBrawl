@@ -20,6 +20,19 @@ class ItemUtility:
         
         return path
 
+    def select_display_context(self, cases=[], fallback=None):
+        if fallback is None:
+            fallback = {
+                "type": "minecraft:model",
+                "model": "minecraft:item/none"
+            }
+        
+        return {
+            "type": "minecraft:select",
+            "property": "minecraft:display_context",
+            "cases": cases,
+            "fallback": fallback
+        }
 
     def select(self, index=0, cases=[], fallback=None, property="minecraft:custom_model_data"):
         if fallback is None:

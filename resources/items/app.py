@@ -193,6 +193,9 @@ def apply_presets(item):
             continue
         if value[1:] in presets:
             item[key] = presets[value[1:]][key]
+    
+    if "icon" in item:
+        apply_presets(item["icon"])
 
 def main():
     folders = [f for f in SCRIPT_DIR.iterdir() if f.is_dir()]
@@ -211,14 +214,16 @@ def main():
     args = []
     template = create_template("ITEM:data")
     
+    for item in items:
+        apply_presets(item)
+
     itemsgen.create_items(items)
 
     for item in items:
+
         value_item = create_item(item)
         if "icon" in item:
             del item["icon"]
-
-        apply_presets(item)
         
         item_data = encode_string(json.dumps(item))
         value_str = template_item_string(item_data)

@@ -24,6 +24,7 @@ const int MONO_ALPHA = 204;
 // Mono Red Flags (fragment)
 const int BACKGROUND_FLAG = 1;
 const int TRANSPARANT_FLAG = 2;
+const int TRANSPARANT_MORE_FLAG = 3;
 
 // Mono Green Flags (vertex)
 const int CENTER_FLAG = 1;
@@ -59,6 +60,7 @@ void main() {
 
         color = vertexColor * ColorModulator;
         if (flag(redFlag, TRANSPARANT_FLAG)) color.a = 0.7;
+        if (flag(redFlag, TRANSPARANT_MORE_FLAG)) color.a *= 0.4;
 
     } else {
         if (color.a < 0.1) {

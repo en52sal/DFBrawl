@@ -2,7 +2,7 @@
     "type": "weapon",
     "name": "Winger",
     "icon": {
-        "model": "gun",
+        "states": "$gun",
         "description": "Gun <#fff00f>Desc <dmg>Woah",
 
         "components": {
