@@ -14,7 +14,7 @@
     "tier": 3,
 
     "max_charge" : 700,
-    "charge_per_use": 700,
+    "min_charge": 700,
     "charge_per_tick": 1,
     "charge_per_kill": 1,
     "cooldown": 10,
