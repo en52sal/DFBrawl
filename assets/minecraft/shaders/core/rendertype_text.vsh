@@ -46,11 +46,31 @@ const ivec3 TRANSITION_COLOR = ivec3(250, 250, 255);
 const ivec3 CENTER_COLOR = ivec3(250, 245, 255);
 const ivec3 BELOW_COLOR = ivec3(250, 246, 255);
 
-const int AMMO_ALPHA = 204;
-
 bool is_color(vec4 c, ivec3 target) {
     return int(c.x * 255) == target.x && int(c.y * 255) == target.y && int(c.z * 255) == target.z;
 }
+
+int guiScale(mat4 ProjMat, vec2 ScreenSize) {
+    return int(round(ScreenSize.x * ProjMat[0][0] / 2));
+}
+
+bool flag(int value, int flag) {
+    return (value & flag) != 0;
+}
+
+
+const int MONO_ALPHA = 204;
+
+// Mono Red Flags (fragment)
+const int BACKGROUND_FLAG = 1;
+const int TRANSPARANT_FLAG = 2;
+
+// Mono Green Flags (vertex)
+const int CENTER_FLAG = 1;
+const int DOWN_5_FLAG = 2;
+const int DOWN_10_FLAG = 4;
+const int DOWN_20_FLAG = 8;
+const int DOWN_40_FLAG = 16;
 
 vec2 guiPixel(mat4 ProjMat) {
 	return vec2(ProjMat[0][0], ProjMat[1][1]) / 1.9;
@@ -76,10 +96,17 @@ void main() {
     ///////////////////////////////////////////////////////////
 
     isMono = 0;
-    if (sample.a * 255 == AMMO_ALPHA) {
+    if (sample.a * 255 == MONO_ALPHA) {
         isMono = 1;
-        // gl_Position.xy += middleOffset(vec2(20.0, 20), guiPixel(ProjMat));
-        gl_Position.xy += middleOffset(vec2(0, 50), guiPixel(ProjMat));
+
+        int greenF = int(sample.g * 255);
+        vec2 offset = vec2(0, 0);
+
+        if (flag(greenF, DOWN_5_FLAG)) offset.y += 5;
+        if (flag(greenF, DOWN_10_FLAG)) offset.y += 10;
+        if (flag(greenF, DOWN_20_FLAG)) offset.y += 20;
+        if (flag(greenF, DOWN_40_FLAG)) offset.y += 40;
+        if (flag(greenF, CENTER_FLAG)) gl_Position.xy += middleOffset(offset, guiPixel(ProjMat));
     } else
 
     // Center
