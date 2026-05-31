@@ -13,6 +13,14 @@
     },
 
     "relic_type": "active",
-    "tier": 3
+    "tier": 3,
+
+    "max_charge" : 700,
+    "charge_per_use": 700,
+    "charge_per_tick": 1,
+    "charge_per_kill": 1,
+    "cooldown": 10,
+
+    "launch_power": 8
 
 }

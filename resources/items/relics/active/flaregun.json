@@ -1,0 +1,58 @@
+{
+    "type": "relic",
+    "name": "Flare Gun",
+    "icon": {
+        "model": "relic",
+        "description": "fire fire",
+
+            "components": {
+            "swing_animation": {"duration": 5},
+           "consumable": { "consume_seconds": 999, "animation": "none", "sound": "minecraft:entity.player.attack.nodamage", "has_consume_particles": false },
+            "use_effects": { "can_sprint": true, "speed_multiplier": 1 }
+        }
+    },
+
+    "relic_type": "active",
+    "tier": 3,
+
+    "main_display": "charge",
+    "bar_display": "charge",
+    "number_display": "charge",
+
+    "equip_speed": 5,
+
+    "max_charge" : 1000,
+    "min_charge": 500,
+    "starting_charge": 1,
+    "charge_per_tick": 1,
+    "charge_per_kill": 1,
+    "cooldown": 10,
+
+    "gun_resource": "ammo",
+    "reload_resource": "ammo",
+    "finite_reload": "charge",
+    "max_ammo": 1,
+    "reload_ticks": 20,
+    "reloaded_per": 1,
+
+    "burst_count": 1,
+    "burst_delay": 1,
+    "pellet_count": 1,
+    "inaccuracy": 0.009,
+    
+    "dmg": 15,
+    
+    "projectile": "flare",
+    "size": 0.4,
+    "gravity": [0,-0.03,0],
+    "power": 3,
+    "mass": 0.8,
+    "drag": 0,
+    "friction": 1,
+    "restituion": 0,
+    "bounces" : 0,
+
+    "right": "GUN:use",
+    "offhand": "ITEM:reload"
+    
+}
