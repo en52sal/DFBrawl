@@ -136,24 +136,14 @@ def create_item(data):
             for key, action in icon["actions"].items():
 
                 line = {"bold": 0, "color": "white", "extra": [
-                        {
-                            "font": "minecraft:controls", "translate": "key", "with": [
-                                {
-                                    "extra": [
-                                        {
-                                            "keybind": f"key.{key}"
-                                        }
-                                    ], "text": ""
-                                }
-                            ]
-                        },
+                        {"font": "minecraft:controls", "translate": "key", "with": [
+                            {"extra": [{"keybind": f"key.{key}"}], "text": ""}
+                        ]},
                         " ",
-                        {
-                            "color": "gray", "extra": [
-                                "- ",
-                                textparser.parse_name("<white>" + action["title"])
-                            ], "text": ""
-                        }
+                        {"color": "gray", "extra": [
+                            "- ",
+                            textparser.parse_name("<white>" + action["title"])
+                        ], "text": ""}
                     ], "text": "", "italic": False
                 }
                 if "prefix" in action:
@@ -191,6 +181,18 @@ def encode_string(str):
     encoded = base64.b64encode(compressed).decode()
     return encoded
 
+def apply_presets(item):
+    presets = META.get("presets", {})
+    if not presets:
+        return
+    
+    for key, value in item.items():
+        if type(value) != str:
+            continue
+        if value[0] != "$":
+            continue
+        if value[1:] in presets:
+            item[key] = presets[value[1:]][key]
 
 def main():
     folders = [f for f in SCRIPT_DIR.iterdir() if f.is_dir()]
@@ -215,6 +217,8 @@ def main():
         value_item = create_item(item)
         if "icon" in item:
             del item["icon"]
+
+        apply_presets(item)
         
         item_data = encode_string(json.dumps(item))
         value_str = template_item_string(item_data)
