@@ -31,7 +31,7 @@
     "bullet_opacity": 5,
     "shoot_animation": 3,
     
-    "main_display": "ammo",
+    "main_display": "auto",
     "bar_display": "ammo",
     "number_display": "ammo",
     "gun_resource": "ammo",

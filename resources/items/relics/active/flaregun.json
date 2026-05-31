@@ -2,7 +2,10 @@
     "type": "relic",
     "name": "Flare Gun",
     "icon": {
-        "model": "relic",
+        "states": ["held","reload", "equip", "firing"],
+        "display_context": {
+            "base": "states"
+        },
         "description": "fire fire",
 
             "components": {
@@ -43,14 +46,6 @@
     "dmg": 15,
     
     "projectile": "flare",
-    "size": 0.4,
-    "gravity": [0,-0.03,0],
-    "power": 3,
-    "mass": 0.8,
-    "drag": 0,
-    "friction": 1,
-    "restituion": 0,
-    "bounces" : 0,
 
     "right": "GUN:use",
     "offhand": "ITEM:reload"

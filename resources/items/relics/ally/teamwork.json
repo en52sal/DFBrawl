@@ -2,7 +2,6 @@
     "type": "relic",
     "name": "Teamwork",
     "icon": {
-        "model": "relic",
         "description": "When an ally kills an enemy, all other allies earn an assist on them, proccing relics and granting stars. <dark_gray>(Does not count toward statistics)"
     },
 

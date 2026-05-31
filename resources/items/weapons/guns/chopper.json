@@ -2,7 +2,9 @@
     "type": "weapon",
     "name": "Chopper",
     "icon": {
-        "model": "gun",
+        "states": "$gun",
+        "display_context": "$gun",
+
         "description": "Chopper <#fff00f>Desc <dmg>Woah",
 
         "components": {
@@ -30,7 +32,7 @@
     "bullet_opacity": 5,
     "shoot_animation": 6,
     
-    "main_display": "ammo",
+    "main_display": "auto",
     "bar_display": "ammo",
     "number_display": "ammo",
     "gun_resource": "ammo",

@@ -2,8 +2,6 @@
     "type": "relic",
     "name": "Springboard",
     "icon": {
-        "model": "relic",
-
         "display_context": {
             "head": "1",
             "base": "0"

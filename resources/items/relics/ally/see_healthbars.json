@@ -2,7 +2,6 @@
     "type": "relic",
     "name": "Health Sight",
     "icon": {
-        "model": "relic",
         "description": "Allies can see enemy health bars."
     },
 

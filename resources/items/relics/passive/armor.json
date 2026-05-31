@@ -2,7 +2,6 @@
     "type": "relic",
     "name": "Armor",
     "icon": {
-        "model": "relic",
         "description": "Reduces damage based on the severity, damage above <hl>$dmg_max$ is reduced by $reduce_amount$</hl>, while <hl>damage equal or below is halved</hl>."
     },
 

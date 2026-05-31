@@ -2,7 +2,6 @@
     "type": "relic",
     "name": "Arsenal",
     "icon": {
-        "model": "relic",
         "description": "Players drop their weapons upon death, which can be picked up."
     },
 

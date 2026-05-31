@@ -2,7 +2,6 @@
     "type": "relic",
     "name": "Taco Time",
     "icon": {
-        "model": "relic",
         "description": "Randomly in a round, Taco Time will begin, forcing all players to eat some tacos, healing <hl>$heal$</hl> health, but <red>unable to act in the mean time</red>."
     },
 

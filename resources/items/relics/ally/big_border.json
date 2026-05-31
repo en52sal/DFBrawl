@@ -2,7 +2,6 @@
     "type": "relic",
     "name": "Big Border",
     "icon": {
-        "model": "relic",
         "description": "Increases ally border size by <hl>3</hl> blocks."
     },
 

@@ -2,7 +2,9 @@
     "type": "weapon",
     "name": "Quasar",
     "icon": {
-        "model": "gun",
+        "states": "$gun",
+        "display_context": "$gun",
+
         "description": "Heat Rifle",
 
         "components": {
