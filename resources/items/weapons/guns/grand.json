@@ -31,6 +31,8 @@
     "shoot_animation": 8,
     
     "main_display": "ammo",
+    "bar_display": "ammo",
+    "number_display": "ammo",
     "gun_resource": "ammo",
     "reload_resource": "ammo",
     "max_ammo": 5,

@@ -30,10 +30,13 @@
     "shoot_animation": 3,
     
     "main_display": "heat",
+    "bar_display": "heat",
+    "number_display": "heat",
+
     "gun_resource": "heat",
     "max_heat": 24,
     "cooling_delay": 7,
-    "cooling_per_tick": 3,
+    "cooling_per_tick": 0.3,
     
     "burst_count": 2,
     "burst_delay": 2,
