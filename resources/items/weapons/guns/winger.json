@@ -3,6 +3,8 @@
     "name": "Winger",
     "icon": {
         "states": "$gun",
+        "display_context": "$gun",
+        
         "description": "Gun <#fff00f>Desc <dmg>Woah",
 
         "components": {

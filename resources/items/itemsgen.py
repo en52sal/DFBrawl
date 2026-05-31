@@ -25,29 +25,46 @@ def create_item(item):
         return U.when(state, U.model(f"minecraft:item/items/{id}/{state}", tint_index))
 
     icon = item.get("icon", {})
-    model = U.condition(index=1,
+    if "model" in icon and type(icon["model"]) == dict:
+            U.confirm_model(icon["model"])
+            return U.when(id, icon["model"])
+    
+
+    standard = U.condition(index=0,
         on_false=U.model(f"minecraft:item/items/{id}/base", 0),
         on_true=U.model(f"minecraft:item/items/{id}/gray", 0)
     )
 
-    if "model" in icon and type(icon["model"]) == dict:
-            U.confirm_model(icon["model"])
-            return U.when(id, icon["model"])
+    model = None
         
     states = icon.get("states", [])
     if states:
         cases = [state(s, i) for i, s in enumerate(states)]
-        model = U.select(index=1, cases=cases, fallback=model)
-
+        model = U.select(index=1, cases=cases, fallback=standard)
+    
     display_context = icon.get("display_context", {})
     if display_context:
         cases = []
+        case_conditions = set()
         for context, m in display_context.items():
+            case_conditions.add(context)
             if context == "base":
                 context = list(set(DEFAULT_FALLBACK_CONTEXT) - set(display_context.keys()))
+                case_conditions.update(context)
+            if m == "states":
+                cases.append(U.when(context, model))
+                continue
+
             cases.append(U.when(context, U.model(f"minecraft:item/items/{id}/{m}", 5)))
         
-        model = U.select_display_context(cases=cases, fallback=model)
+        remaining_contexts = set(DEFAULT_FALLBACK_CONTEXT) - set(case_conditions)
+        if remaining_contexts:
+            cases.append(U.when(list(remaining_contexts), model))
+        
+        model = U.select_display_context(cases=cases, fallback=standard)
+
+    if model is None:
+        model = standard
 
     return U.when(id, model)
 

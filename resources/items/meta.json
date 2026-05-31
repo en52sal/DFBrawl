@@ -17,7 +17,10 @@
             "gravity": [0,-0.037,0]
         },
         "gun": {
-            "states": ["reload", "equip", "firing"]
+            "states": ["reload", "equip", "firing"],
+            "display_context": {
+                "base": "states"
+            }
         }
     }
 }
