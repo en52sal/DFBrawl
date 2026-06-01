@@ -31,7 +31,7 @@
     "bullet_opacity": 3,
     "shoot_animation": 3,
     
-    "main_display": "heat",
+    "main_display": "auto",
     "bar_display": "heat",
     "number_display": "heat",
 

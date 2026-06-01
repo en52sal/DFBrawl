@@ -2,7 +2,7 @@
     "type": "relic",
     "name": "Flare Gun",
     "icon": {
-        "states": ["held","reload", "equip", "firing"],
+        "states": ["held","reload", "equip", "firing", "flare"],
         "display_context": {
             "base": "states"
         },
@@ -18,14 +18,14 @@
     "relic_type": "active",
     "tier": 3,
 
-    "main_display": "charge",
+    "main_display": "auto",
     "bar_display": "charge",
     "number_display": "charge",
 
     "equip_speed": 5,
 
-    "max_charge" : 1000,
-    "min_charge": 500,
+    "max_charge" : 250,
+    "min_charge": 125,
     "starting_charge": 1,
     "charge_per_tick": 1,
     "charge_per_kill": 1,
