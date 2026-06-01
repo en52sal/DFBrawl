@@ -4,6 +4,7 @@
 #moj_import <minecraft:dynamictransforms.glsl>
 #moj_import <minecraft:projection.glsl>
 #moj_import <minecraft:globals.glsl>
+#moj_import <minecraft:util.glsl>
 
 #define PI 3.14159265
 
@@ -46,31 +47,6 @@ const ivec3 TRANSITION_COLOR = ivec3(250, 250, 255);
 const ivec3 CENTER_COLOR = ivec3(250, 245, 255);
 const ivec3 BELOW_COLOR = ivec3(250, 246, 255);
 
-bool is_color(vec4 c, ivec3 target) {
-    return int(c.x * 255) == target.x && int(c.y * 255) == target.y && int(c.z * 255) == target.z;
-}
-
-int guiScale(mat4 ProjMat, vec2 ScreenSize) {
-    return int(round(ScreenSize.x * ProjMat[0][0] / 2));
-}
-
-bool flag(int value, int flag) {
-    return (value & flag) != 0;
-}
-
-
-const int MONO_ALPHA = 204;
-
-// Mono Red Flags (fragment)
-const int BACKGROUND_FLAG = 1;
-const int TRANSPARANT_FLAG = 2;
-
-// Mono Green Flags (vertex)
-const int CENTER_FLAG = 1;
-const int DOWN_5_FLAG = 2;
-const int DOWN_10_FLAG = 4;
-const int DOWN_20_FLAG = 8;
-const int DOWN_40_FLAG = 16;
 
 vec2 guiPixel(mat4 ProjMat) {
 	return vec2(ProjMat[0][0], ProjMat[1][1]) / 1.9;
@@ -102,10 +78,9 @@ void main() {
         int greenF = int(sample.g * 255);
         vec2 offset = vec2(0, 0);
 
-        if (flag(greenF, DOWN_5_FLAG)) offset.y += 5;
-        if (flag(greenF, DOWN_10_FLAG)) offset.y += 10;
-        if (flag(greenF, DOWN_20_FLAG)) offset.y += 20;
-        if (flag(greenF, DOWN_40_FLAG)) offset.y += 40;
+        int line = maskValue(greenF, DOWN_MASK) << 1;;
+        offset.y += line * 4;
+
         if (flag(greenF, CENTER_FLAG)) gl_Position.xy += middleOffset(offset, guiPixel(ProjMat));
     } else
 
