@@ -70,7 +70,7 @@ class ItemUtility:
 
         return result
 
-    def when(self, condition, model):
+    def when(self, condition: str|list, model):
         return {
             "when": condition,
             "model": model

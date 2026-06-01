@@ -3,9 +3,7 @@
     "name": "Flare Gun",
     "icon": {
         "states": ["held","reload", "equip", "firing", "flare"],
-        "display_context": {
-            "base": "states"
-        },
+        "non_gui_fallback": "held",
         "description": "fire fire",
 
             "components": {

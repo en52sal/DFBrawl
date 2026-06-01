@@ -18,9 +18,7 @@
         },
         "gun": {
             "states": ["reload", "equip", "firing"],
-            "display_context": {
-                "base": "states"
-            }
+            "display_context": {}
         }
     }
 }

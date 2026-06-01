@@ -3,9 +3,9 @@
     "name": "Springboard",
     "icon": {
         "display_context": {
-            "head": "1",
-            "base": "0"
+            "head": "1"
         },
+        "non_gui_fallback": "0",
 
         "description": "boing boing"
     },
