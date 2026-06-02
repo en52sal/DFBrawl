@@ -1,0 +1,39 @@
+{
+    "type": "relic",
+    "name": "Superball",
+    "icon": {
+        "non_gui_fallback": "superball",
+
+        "description": "bounce on it bounce on it",
+
+        "actions": {
+            "use": {
+                "title": "$$ability$ Throw",
+                "desc": "Jump on the superball to launch yourself into the air, dealing <dmg>$dmg$</dmg> damage to nearby enemies. Can be used in the air to bounce off the superball and change your trajectory.",
+                "prefix": "Tap "
+            }
+        }
+    },
+
+    "relic_type": "active",
+    "tier": 3,
+
+    "main_display": "auto",
+    "bar_display": "charge",
+    "number_display": "charge",
+    "charge_display": "orb",
+
+    "max_charge" : 500,
+    "min_charge": 500,
+    "charge_per_tick": 1,
+    "charge_per_kill": 0.5,
+    "cooldown": 5,
+
+    "dmg": 30,
+
+    "right": "ITEM:tap",
+    "icon_color": "team"
+}
+
+
+
