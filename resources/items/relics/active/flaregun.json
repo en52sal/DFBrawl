@@ -17,7 +17,7 @@
 
     "main_display": "auto",
     "bar_display": "charge",
-    "number_display": "charge",
+    "number_display": "ammo",
     "charge_display": "ammo",
 
     "equip_speed": 5,

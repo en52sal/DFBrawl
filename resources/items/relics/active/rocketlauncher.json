@@ -2,6 +2,12 @@
     "type": "relic",
     "name": "Rocket Launcher",
     "icon": {
+                "description": "Shoot a rocket that explodes in a <hl>$aoe_radius$m radius</hl>, dealing <dmg>$min_dmg$-$max_dmg$ $$dmg$</dmg>\n\nReloads using <white>a Charges</white>, which recharge slowly overtime.",
+ "components": {
+            "swing_animation": { "duration": 5 },
+           "consumable": { "consume_seconds": 999, "animation": "none", "sound": "minecraft:entity.player.attack.nodamage", "has_consume_particles": false },
+            "use_effects": { "can_sprint": true, "speed_multiplier": 1 }
+        },
 
         "model":
         {"type": "minecraft:select","property": "minecraft:display_context","cases":
@@ -10,6 +16,7 @@
             ["thirdperson_lefthand","thirdperson_righthand","firstperson_lefthand","firstperson_righthand","ground","none","fixed" ],
         "model": {"type": "minecraft:select","property": "minecraft:custom_model_data","index": 1,"cases": [
                     {"when": "reload","model": {"type": "minecraft:model","model": "minecraft:item/items/rocketlauncher/reloading","tints": [{"type": "minecraft:custom_model_data","index": 0,"default": 4294967295}]}},
+                    {"when": "rocket","model": {"type": "minecraft:model","model": "minecraft:item/items/rocketlauncher/rocket","tints": [{"type": "minecraft:custom_model_data","index": 0,"default": 4294967295}]}},
 					{"when": "equip","model":
                      {
                         "type": "minecraft:range_dispatch",
@@ -23,7 +30,8 @@
                 },
 
 					{"when": "firing","model": {"type": "minecraft:model","model": "minecraft:item/items/rocketlauncher/shooting","tints": [{"type": "minecraft:custom_model_data","index": 0,"default": 4294967295}]}}
-                    ], "fallback": {                     
+                    ],
+                     "fallback": {                     
                         "type": "minecraft:range_dispatch",
                          "property":"minecraft:custom_model_data",
                           "index": 0, 
@@ -32,16 +40,28 @@
                         {"threshold": 1, "model": {"type": "minecraft:model","model": "minecraft:item/items/rocketlauncher/held_1","tints": [{"type": "minecraft:custom_model_data","index": 0,"default": 4294967295}]}}
                         ]
                     }}}
-        ],"fallback": {"type": "minecraft:condition","property": "minecraft:custom_model_data","index": 1,
-            "on_false": {"type": "minecraft:model","model": "minecraft:item/items/rocketlauncher/base"},
-            "on_true": {"type": "minecraft:model","model": "minecraft:item/items/rocketlauncher/gray"}}}
+        ],"fallback": {"type": "minecraft:condition","property": "minecraft:custom_model_data","index": 0,
+            "on_false": {"type": "minecraft:model","model": "minecraft:item/items/rocketlauncher/base","tints": [
+                                        {
+                                            "type": "minecraft:custom_model_data",
+                                            "index": 5,
+                                            "default": 4294967295
+                                        }
+                                    ]},
+            "on_true": {"type": "minecraft:model","model": "minecraft:item/items/rocketlauncher/gray","tints": [
+                                        {
+                                            "type": "minecraft:custom_model_data",
+                                            "index": 5,
+                                            "default": 4294967295
+                                        }
+                                    ]}}}
         },
     "relic_type": "active",
     "tier": 3,
 
     "main_display": "auto",
     "bar_display": "charge",
-    "number_display": "charge",
+    "number_display": "ammo",
     "charge_display": "ammo",
 
     "equip_speed": 20,
@@ -52,6 +72,7 @@
     "charge_per_tick": 1,
     "charge_per_kill": 0.5,
     "cooldown": 30,
+    "shoot_animation": 3,
 
     "gun_resource": "ammo",
     "reload_resource": "ammo",
