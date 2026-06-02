@@ -61,6 +61,7 @@
 
     "main_display": "auto",
     "bar_display": "charge",
+    "gray_display": "charge",
     "number_display": "ammo",
     "charge_display": "ammo",
 

@@ -4,32 +4,24 @@
     "icon": {
         "non_gui_fallback": "superball",
 
-        "description": "bounce on it bounce on it",
-
-        "actions": {
-            "use": {
-                "title": "$$ability$ Throw",
-                "desc": "Jump on the superball to launch yourself into the air, dealing <dmg>$dmg$</dmg> damage to nearby enemies. Can be used in the air to bounce off the superball and change your trajectory.",
-                "prefix": "Tap "
-            }
-        }
+        "description": "Throw a bouncy ball that lasts <hl>40s</hl> and deals <dmg>$hit_dmg$ $$dmg$</dmg> upon hitting something.\nCan be caught or picked up to retrieve early, or charges over time."
     },
-
     "relic_type": "active",
     "tier": 3,
 
     "main_display": "auto",
     "bar_display": "charge",
     "number_display": "charge",
+    "gray_display": "charge",
     "charge_display": "orb",
 
-    "max_charge" : 500,
-    "min_charge": 500,
+    "max_charge" : 800,
+    "min_charge": 800,
     "charge_per_tick": 1,
     "charge_per_kill": 0.5,
     "cooldown": 5,
 
-    "dmg": 30,
+    "hit_dmg": 10,
 
     "right": "ITEM:tap",
     "icon_color": "team"

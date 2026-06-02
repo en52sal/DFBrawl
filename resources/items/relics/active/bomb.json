@@ -22,9 +22,9 @@
     "charge_per_kill": 0.5,
     "cooldown": 5,
 
-    "min_dmg": 35,
-    "max_dmg": 115,
-    "aoe_radius": 7,
+    "min_dmg": 10,
+    "max_dmg": 100,
+    "aoe_radius": 6.5,
     "bomb_duration": 1,
 
     "right": "ITEM:tap",

@@ -23,13 +23,13 @@
 		"head": {
 			"scale": [0, 0, 0]
 		},
-		"fixed": {
-			"rotation": [0, -180, 0]
-		},
 		"on_shelf": {
 			"scale": [0, 0, 0]
 		},
 		"fixed": {
+			"scale": [0, 0, 0]
+		},
+		"none": {
 			"scale": [0, 0, 0]
 		}
 	}
