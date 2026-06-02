@@ -37,8 +37,8 @@
     "equip_speed": 9,
     "swing_cooldown": 29,
 
-    "range": 0.9,
-    "radius": 1.5,
+    "range": 2.4,
+    "angle": 60,
     "attack_type": "slash",
 
     "left": "MELEE:left"

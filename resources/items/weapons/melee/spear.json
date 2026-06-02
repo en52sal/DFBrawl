@@ -34,7 +34,7 @@
     "swing_cooldown": 17,
 
     "range": 3.5,
-    "radius": 0.5,
+    "angle": 20,
     "attack_type": "stab",
 
     "left": "MELEE:left"
