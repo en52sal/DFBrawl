@@ -5,11 +5,13 @@
         "states": ["held","reload", "equip", "firing", "flare"],
         "non_gui_fallback": "held",
         "description": "Shoot a flare that explodes in a <hl>$aoe_radius$m radius</hl>, dealing <dmg>$aoe_dmg$ $$dmg$</dmg> and inflicting <effect>$$effect$ Fire</effect> and <effect>$$effect$ Glowing</effect> for <hl>$effect_duration$s</hl>.\n\nReloads using <white>a Charges</white>, which recharge overtime or kill.",
-            "components": {
+        "components": {
             "swing_animation": {"duration": 5},
-           "consumable": { "consume_seconds": 999, "animation": "none", "sound": "minecraft:entity.player.attack.nodamage", "has_consume_particles": false },
+            "consumable": { "consume_seconds": 999, "animation": "none", "sound": "minecraft:entity.player.attack.nodamage", "has_consume_particles": false },
             "use_effects": { "can_sprint": true, "speed_multiplier": 1 }
-        }
+        },
+
+        "actions": "$gun"
     },
 
     "relic_type": "active",

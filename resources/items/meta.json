@@ -32,7 +32,15 @@
         },
         "gun": {
             "states": ["reload", "equip", "firing"],
-            "display_context": {}
+            "display_context": {},
+            "actions": {
+                "use": {
+                    "title": "$$attack$ Fire"
+                },
+                "swapHands": {
+                    "title": "$$reload$ Reload"
+                }
+            }
         }
     }
 }

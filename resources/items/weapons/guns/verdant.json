@@ -13,11 +13,7 @@
             "use_effects": { "can_sprint": true, "speed_multiplier": 1 }
         },
 
-        "actions": {
-            "use": {
-                "title": "$$attack$ Fire"
-            }
-        }
+        "actions": "$gun"
     },
     "weapon_type": "gun",
     "category": "large",

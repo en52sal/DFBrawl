@@ -4,7 +4,13 @@
     "icon": {
         "non_gui_fallback": "bomb",
 
-                "description": "Throw a bomb that explodes in a <hl>$aoe_radius$m radius</hl> after <hl>$bomb_duration$s</hl>, dealing <dmg>$min_dmg$-$max_dmg$ $$dmg$</dmg>\n\nUses charges that recharge overtime."
+        "description": "Throw a bomb that explodes in a <hl>$aoe_radius$m radius</hl> after <hl>$bomb_duration$s</hl>, dealing <dmg>$min_dmg$-$max_dmg$ $$dmg$</dmg>\n\nUses charges that recharge overtime.",
+
+        "actions": {
+            "use": {
+                "title": "$$ability$ Throw"
+            }
+        }
     },
 
     "relic_type": "active",
