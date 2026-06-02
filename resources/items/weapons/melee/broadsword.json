@@ -43,5 +43,7 @@
 
     "range": 2.4,
     "radius": 1,
-    "attack_type": "slash"
+    "attack_type": "slash",
+
+    "left": "MELEE:left"
 }

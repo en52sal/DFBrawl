@@ -35,6 +35,8 @@
 
     "range": 3.5,
     "radius": 0.5,
-    "attack_type": "stab"
+    "attack_type": "stab",
+
+    "left": "MELEE:left"
 
 }
