@@ -13,18 +13,24 @@
     "relic_type": "active",
     "tier": 3,
 
-    "max_charge" : 700,
-    "min_charge": 700,
-    "charge_per_tick": 1,
-    "charge_per_kill": 1,
+    "main_display": "auto",
+    "bar_display": "charge",
+    "number_display": "charge",
+    "charge_display": "orb",
+
+    "max_charge" : 900,
+    "min_charge": 900,
+    "charge_per_tick": 5,
+    "charge_per_kill": 0.5,
     "cooldown": 10,
 
     "launch_power": 1.3,
     "set_cooldown": 8,
-    "ray_radius": 0.6,
-    "ray_length": 0.5,
+    "ray_radius": 0.95,
+    "ray_length": 0.65,
 
-    "right": "ITEM:tap"
+    "right": "ITEM:tap",
+    "icon_color": "team"
 }
 
 

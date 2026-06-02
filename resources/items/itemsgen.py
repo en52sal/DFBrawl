@@ -31,8 +31,8 @@ def create_item(item):
     
 
     gui_fallback = U.condition(index=0,
-        on_false=U.model(f"minecraft:item/items/{id}/base", 0),
-        on_true=U.model(f"minecraft:item/items/{id}/gray", 0)
+        on_false=U.model(f"minecraft:item/items/{id}/base", 5),
+        on_true=U.model(f"minecraft:item/items/{id}/gray", 5)
     )
     non_gui_fallback = U.model(f"minecraft:item/items/{id}/{icon.get('non_gui_fallback', 'base')}", 0)
 
