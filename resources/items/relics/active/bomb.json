@@ -13,6 +13,7 @@
     "main_display": "auto",
     "bar_display": "charge",
     "number_display": "charge",
+    "gray_display": "charge",
     "charge_display": "orb",
 
     "max_charge" : 500,
