@@ -1,25 +1,40 @@
 {
-    "id": "spear",
+    "type": "weapon",
     "name": "Spear",
-    "category": "melee",
-    "weight": 1,
-    "move_speed_modifier": 0,
+    "icon": {
+        "model": "melee",
+        "description": "Stabbing weapon with good range and damage.",
+        "non_gui_fallback": "held",
+        
+        "actions": {
+            "attack": {
+                "title": "$$attack$ Stab"
+            },
+            "use": {
+                "title": "$$ability$ Lunge",
+                "desc": "Charge up a lunge then release to launch forward and damage enemies.",
+                "prefix": "Hold "
+            }
+        },
+
+        "ability_boost": "Channel faster, lunge further, and knockback enemies aswell."
+    },
+
+    "weapon_type": "melee",
+    "category": "light",
+
     "dmg": 17.5,
-    "resource_type": "cooldown",
-    "resource_max": 0,
-    "resource_per": 0,
-    "resource_tick": 0,
-    "resource_tick_first": 0,
-    "cd": 220,
+    "kb": [0.2, 0, 0],
+
+    "move_speed_modifier": 0,
+    "weight": 1,
+
+    "cooldown": 220,
     "equip_speed": 5,
-    "behaviour": "hold",
     "swing_cooldown": 17,
+
     "range": 3.5,
     "radius": 0.5,
-    "attack_type": "stab",
-    "kb": [
-        0.2,
-        0,
-        0
-    ]
+    "attack_type": "stab"
+
 }

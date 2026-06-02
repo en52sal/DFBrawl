@@ -1,25 +1,37 @@
 {
-    "id": "hammer",
+    "type": "weapon",
     "name": "Hammer",
-    "category": "melee",
-    "weight": 1,
-    "move_speed_modifier": 0.2,
+    "icon": {
+        "model": "melee",
+        "description": "Large sweeping weapon with heavy damage and cooldown.",
+        
+        "actions": {
+            "attack": {
+                "title": "$$attack$ Sweep"
+            },
+            "use": {
+                "title": "$$ability$ Power Slam",
+                "desc": "Quickly channel a power slam, launching you up to fall back down and slam enemies near you upon landing."
+            }
+        },
+
+        "ability_boost": "Cast time is removed, slam radius is increased, and deal critical (1.5x) damage to anyone in the center."
+    },
+
+    "weapon_type": "melee",
+    "category": "light",
+
     "dmg": 27,
-    "resource_type": "cooldown",
-    "resource_max": 0,
-    "resource_per": 0,
-    "resource_tick": 0,
-    "resource_tick_first": 0,
-    "cd": 240,
+    "kb": [0.32, 0.1, 0],
+
+    "move_speed_modifier": 0.2,
+    "weight": 1,
+
+    "cooldown": 240,
     "equip_speed": 7,
-    "behaviour": "hold",
     "swing_cooldown": 24,
+
     "range": 2,
     "radius": 1.35,
-    "attack_type": "slash",
-    "kb": [
-        0.32,
-        0.1,
-        0
-    ]
+    "attack_type": "slash"
 }

@@ -34,7 +34,8 @@ def create_item(item):
         on_false=U.model(f"minecraft:item/items/{id}/base", 5),
         on_true=U.model(f"minecraft:item/items/{id}/gray", 5)
     )
-    non_gui_fallback = U.model(f"minecraft:item/items/{id}/{icon.get('non_gui_fallback', 'base')}", 0)
+    non_gui_fallback_id = icon.get("non_gui_fallback", "base")
+    non_gui_fallback = U.model(f"minecraft:item/items/{id}/{non_gui_fallback_id}", 0)
 
     states_model = None
     states = icon.get("states", [])
@@ -44,7 +45,7 @@ def create_item(item):
     
     display_context_model = None
     display_context = icon.get("display_context", {})
-    if display_context or states:
+    if display_context or states or non_gui_fallback_id != "base":
         filtered_fallback_contexts = [c for c in DEFAULT_FALLBACK_CONTEXT if c not in display_context]
         
         display_cases = [U.when(c, U.model(f"minecraft:item/items/{id}/{v}", 0)) for c, v in display_context.items()]

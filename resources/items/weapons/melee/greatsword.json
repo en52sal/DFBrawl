@@ -1,25 +1,43 @@
 {
-    "id": "greatsword",
+    "type": "weapon",
     "name": "Greatsword",
-    "category": "melee",
-    "weight": 2,
-    "move_speed_modifier": 0.2,
+    "icon": {
+        "model": "melee",
+        "model_states": ["animation"],
+        "model_fallback": "base",
+
+        "description": "Sweeping weapon with high cooldown, damage, and size.",
+
+        "actions": {
+            "attack": {
+                "title": "$$attack$ Swipe"
+            },
+            "use": {
+                "title": "$$ability$ Summon the Road",
+                "desc": "Summon a highway that spawns cars to hit people with vehicular manslaughter.",
+                "prefix": "Hold "
+            }
+        },
+
+        "ability_boost": "Spawns trucks instead."
+    },
+
+    "weapon_type": "melee",
+    "category": "heavy",
+
     "dmg": 30,
+    "kb": [0.32, 0.1, 0],
+
+    "move_speed_modifier": 0.2,
+    "weight": 2,
+    
     "resource_type": "cooldown",
-    "resource_max": 0,
-    "resource_per": 0,
-    "resource_tick": 0,
-    "resource_tick_first": 0,
-    "cd": 280,
+
+    "cooldown": 280,
     "equip_speed": 9,
-    "behaviour": "tap",
     "swing_cooldown": 29,
-    "range": 0.1,
+
+    "range": 0.9,
     "radius": 1.5,
-    "attack_type": "slash",
-    "kb": [
-        0.32,
-        0.1,
-        0
-    ]
+    "attack_type": "slash"
 }
