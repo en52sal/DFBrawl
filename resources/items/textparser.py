@@ -5,7 +5,7 @@ from pathlib import Path
 import json
 
 SCRIPT_DIR = Path(__file__).parent
-MAX_LINE_LENGTH = 29
+MAX_LINE_LENGTH = 31
 META_FILE = SCRIPT_DIR / "meta.json"
 META = json.load(META_FILE.open())
 PALETTE = META["colors"]
@@ -20,7 +20,7 @@ COLORS = {
 
 STYLES = {"bold", "italic", "underlined", "strikethrough", "obfuscated"}
 
-LORE_MAX = 29
+LORE_MAX = 31
 
 @dataclass
 class TextToken:

@@ -7,7 +7,7 @@
         },
         "non_gui_fallback": "0",
 
-        "description": "boing boing"
+        "description": "Throw a <health>$healthMax$$$health$</health> springboard that attatches to surfaces, then launches anyone that touches it. "
     },
 
     "relic_type": "active",
@@ -20,7 +20,7 @@
 
     "max_charge" : 900,
     "min_charge": 900,
-    "charge_per_tick": 5,
+    "charge_per_tick": 1,
     "charge_per_kill": 0.5,
     "cooldown": 10,
 
@@ -28,6 +28,7 @@
     "set_cooldown": 8,
     "ray_radius": 0.95,
     "ray_length": 0.65,
+    "healthMax": 60,
 
     "right": "ITEM:tap",
     "icon_color": "team"

@@ -4,8 +4,7 @@
     "icon": {
         "states": ["held","reload", "equip", "firing", "flare"],
         "non_gui_fallback": "held",
-        "description": "fire fire",
-
+        "description": "Shoot a flare that explodes in a <hl>$aoe_radius$m radius</hl>, dealing <dmg>$aoe_dmg$ $$dmg$</dmg> and inflicting <effect>$$effect$ Fire</effect> and <effect>$$effect$ Glowing</effect> for <hl>$effect_duration$s</hl>.\n\nReloads using <white>a Charges</white>, which recharge overtime or kill.",
             "components": {
             "swing_animation": {"duration": 5},
            "consumable": { "consume_seconds": 999, "animation": "none", "sound": "minecraft:entity.player.attack.nodamage", "has_consume_particles": false },
@@ -26,7 +25,7 @@
     "max_charge" : 2000,
     "min_charge": 1000,
     "starting_charge": 1,
-    "charge_per_tick": 5,
+    "charge_per_tick": 1,
     "charge_per_kill": 0.5,
     "cooldown": 10,
 
@@ -42,7 +41,10 @@
     "pellet_count": 1,
     "inaccuracy": 0.009,
     
-    "dmg": 15,
+    "aoe_dmg": 10,
+    "aoe_radius": 1.5,
+    "effect_duration": 8,
+    
     
     "projectile": "flare",
 

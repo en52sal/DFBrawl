@@ -2,14 +2,28 @@
     "colors": {
         "name": "white",
         "desc": "gray",
+        "misc": "dark_gray",
         "hl": "#aee6ff",
-        "dmg": "#ff0000"
+
+        "dmg": "#ff4e33",
+        "effect":"#ff82c5",
+        "heal": "#88ff00",
+        "health": "#84ff81"
+
+
+
+
     },
 
     "templates": {
         "attack": "<#FF864A>\u23B7</#FF864A>",
         "ability": "<#FF1988>\u239A</#FF1988>",
-        "boost": "<#FF1988>\u2399</#FF1988>"
+        "boost": "<#FF1988>\u2399</#FF1988>",
+
+        "dmg": "\u2617",
+        "effect": "\u2618",
+        "heal": "\u261A",
+        "health": "\u261B"
     },
 
     "presets": {
