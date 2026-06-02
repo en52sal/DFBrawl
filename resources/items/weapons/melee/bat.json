@@ -8,7 +8,7 @@
         "actions": {
             "attack": {
                 "title": "$$attack$ Swing",
-                "desc": "Can hit projectiles to deflect them."
+                "desc": "Hit projectiles to deflect them."
             },
             "use": {
                 "title": "$$ability$ Homerun",

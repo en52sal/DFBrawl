@@ -19,6 +19,8 @@
         "attack": "<#FF864A>\u23B7</#FF864A>",
         "ability": "<#FF1988>\u239A</#FF1988>",
         "boost": "<#FF1988>\u2399</#FF1988>",
+        "reload": "<blue>\u2609</blue>",
+
 
         "dmg": "\u2617",
         "effect": "\u2618",
@@ -37,7 +39,7 @@
                 "use": {
                     "title": "$$attack$ Fire"
                 },
-                "swapHands": {
+                "swapOffhand": {
                     "title": "$$reload$ Reload"
                 }
             }

@@ -153,7 +153,7 @@ def create_item(data):
 
                 if "desc" in action:
                     lore.extend(get_description_lines(data, action["desc"]))
-                lore.append({"text": ""})
+            lore.append({"text": ""})
 
         if "ability_boost" in icon:
             lore.append(textparser.parse_name("$$boost$ <white>Ability Boost"))
