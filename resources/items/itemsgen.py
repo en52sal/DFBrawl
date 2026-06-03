@@ -75,21 +75,21 @@ def create_addons(models):
     
     # Numbers
     order = "1 2 3 4 5 6 7 8 9 stars weight ammo cart pound".split(" ")
-    for i, group in enumerate("abcde"):
+    for i, group in enumerate("abcdefghij"):
         addons = []
         add(group, 0.1, "0")
 
         for j, model in enumerate(order):
             add(group, j + 1, model)
         
-        models.append(U.range_dispatch(index=i, entries=addons))
+        models.append(U.range_dispatch(index=i+1, entries=addons))
 
     # Bar
     bars = []
     bars.append(U.threshold(0.1, U.model("minecraft:item/bar/0", 4)))
     bars.extend([U.threshold(i, U.model(f"minecraft:item/bar/{i}", 4)) for i in range(1, 15)])
     models.append(U.range_dispatch(
-        index=5,
+        index=0,
         entries=bars
     ))
 

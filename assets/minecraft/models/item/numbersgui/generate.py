@@ -1,6 +1,6 @@
 import os
 
-folders = ["a", "b", "c", "d","e"]
+folders = ["a", "b", "c", "d","e", "f", "g", "h", "i", "j"]
 letters = ["0","1","2","3","4","5","6","7","8","9","stars","weight","ammo","cart","pound"]
 
 base_output_dir = os.path.dirname(os.path.abspath(__file__))
