@@ -7,7 +7,7 @@
            "consumable": { "consume_seconds": 1.5, "animation": "eat", "sound": "minecraft:entity.player.attack.nodamage", "has_consume_particles": false }
         },
 
-        "description":"Take some time to enjoy a snack, healing <health>$base_heal$ + $missing_percent$% of missing health $$health$</health>.\n\nRecharges slowly over time."
+        "description":"Take some time to enjoy a snack, healing <health>$base_heal$ + $missing_percent$% of missing health $$health$</health>.\n\nRecharges very slowly over time, partially on kill."
     },
 
     "relic_type": "active",
@@ -17,10 +17,10 @@
     "bar_display": "charge",
     "number_display": "charge",
     "gray_display": "charge",
-    "charge_display": "orb",
+    "charge_display": "snack",
 
-    "max_charge" : 900,
-    "min_charge": 900,
+    "max_charge" : 1400,
+    "min_charge": 1400,
     "charge_per_tick": 1,
     "charge_per_kill": 0.5,
 
@@ -28,7 +28,7 @@
     "missing_percent": 40,
 
     "icon_color": "team",
-    "right": "ID:snack.use"
+    "right": "ITEM:use"
 }
 
 

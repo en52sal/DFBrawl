@@ -4,7 +4,7 @@
     "icon": {
         "non_gui_fallback": "superball",
 
-        "description": "Throw a bouncy ball that lasts <hl>40s</hl> and deals <dmg>$hit_dmg$ $$dmg$</dmg> upon hitting something.\nCan be caught or picked up to retrieve early, or charges over time.",
+        "description": "Throw a bouncy ball that lasts <hl>40s</hl> and deals <dmg>$hit_dmg$ $$dmg$</dmg> upon hitting something.\nCan be caught or picked up to retrieve early, or recharges over time.",
 
         "actions": {
             "use": {
@@ -29,7 +29,7 @@
 
     "hit_dmg": 10,
 
-    "right": "ITEM:tap",
+    "right": "ITEM:use",
     "icon_color": "team"
 }
 

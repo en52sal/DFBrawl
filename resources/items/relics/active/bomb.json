@@ -4,7 +4,7 @@
     "icon": {
         "non_gui_fallback": "bomb",
 
-        "description": "Throw a bomb that explodes in a <hl>$aoe_radius$m radius</hl> after <hl>$bomb_duration$s</hl>, dealing <dmg>$min_dmg$-$max_dmg$ $$dmg$</dmg>\n\nUses charges that recharge overtime.",
+        "description": "Throw a bomb that explodes in a <hl>$aoe_radius$m radius</hl> after <hl>$bomb_duration$s</hl>, dealing <dmg>$min_dmg$-$max_dmg$ $$dmg$</dmg>\n\nRecharges over time.",
 
         "actions": {
             "use": {
@@ -20,7 +20,7 @@
     "bar_display": "charge",
     "number_display": "charge",
     "gray_display": "charge",
-    "charge_display": "orb",
+    "charge_display": "bomb",
 
     "max_charge" : 500,
     "min_charge": 500,
@@ -33,7 +33,7 @@
     "aoe_radius": 6.5,
     "bomb_duration": 1,
 
-    "right": "ITEM:tap",
+    "right": "ITEM:use",
     "icon_color": "team"
 }
 
