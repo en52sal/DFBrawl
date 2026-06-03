@@ -19,7 +19,7 @@
     },
 
     "weapon_type": "melee",
-    "category": "light",
+    "category": "melee",
 
     "dmg": 27,
     "kb": [0.32, 0.1, 0],

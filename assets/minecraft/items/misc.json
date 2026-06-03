@@ -24,6 +24,12 @@
 			],
 			"fallback": { "type": "minecraft:model","model": "minecraft:item/misc/dither_0","tints": [{"type": "minecraft:custom_model_data","index": 0,"default": 4294967295}]}
 			}
+		},
+    {
+		"when": "disabled_slot","model":{"type": "minecraft:model","model": "minecraft:item/misc/disabled_slot"}
+		},
+    {
+		"when": "enabled_slot","model":{"type": "minecraft:model","model": "minecraft:item/misc/enabled_slot"}
 		}
 		
 		

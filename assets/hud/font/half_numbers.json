@@ -2,8 +2,8 @@
     "providers": [
 		{
             "type": "bitmap",
-            "file": "hud:font/armory_stars.png",
-            "ascent": 8,
+            "file": "hud:font/menu/numbers.png",
+            "ascent": -65,
             "height": 8,
             "chars": [
                 "0123456789/-",
