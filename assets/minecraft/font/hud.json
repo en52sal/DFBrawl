@@ -5,7 +5,7 @@
             "file": "font/menu/armory.png",
             "ascent": 17,
             "height": 256,
-            "chars": ["⁌⁍"]
+            "chars": ["10"]
         },
 		{
             "type": "bitmap",

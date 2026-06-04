@@ -3,7 +3,7 @@
 		{
             "type": "bitmap",
             "file": "hud:font/menu_numbers.png",
-            "ascent": -78,
+            "ascent": -91,
             "height": 6,
             "chars": [
                 "0123456789/+%"
