@@ -1,0 +1,161 @@
+{
+  "swap_animation_scale": 2,
+  "hand_animation_on_swap": false,
+  "oversized_in_gui": true,
+  "model": {
+    "type": "minecraft:composite",
+    "models": [
+      {
+			"type": "minecraft:range_dispatch","property": "minecraft:custom_model_data","index": 0,"entries": [
+      		{"threshold": 0.1, "model": {"type": "minecraft:model","model": "minecraft:item/numbersgui/a/armory_0"}},
+			{"threshold": 1, "model": {"type": "minecraft:model","model": "minecraft:item/numbersgui/a/armory_1"}},
+			{"threshold": 2, "model": {"type": "minecraft:model","model": "minecraft:item/numbersgui/a/armory_2"}},
+			{"threshold": 3, "model": {"type": "minecraft:model","model": "minecraft:item/numbersgui/a/armory_3"}},
+			{"threshold": 4, "model": {"type": "minecraft:model","model": "minecraft:item/numbersgui/a/armory_4"}},
+			{"threshold": 5, "model": {"type": "minecraft:model","model": "minecraft:item/numbersgui/a/armory_5"}},
+      		{"threshold": 6, "model": {"type": "minecraft:model","model": "minecraft:item/numbersgui/a/armory_6"}},
+			{"threshold": 7, "model": {"type": "minecraft:model","model": "minecraft:item/numbersgui/a/armory_7"}},
+			{"threshold": 8, "model": {"type": "minecraft:model","model": "minecraft:item/numbersgui/a/armory_8"}},
+			{"threshold": 9, "model": {"type": "minecraft:model","model": "minecraft:item/numbersgui/a/armory_9"}}
+			],
+			"fallback": { "type": "minecraft:model","model": "minecraft:item/none"}
+      },
+      {
+			"type": "minecraft:range_dispatch","property": "minecraft:custom_model_data","index": 1,"entries": [
+      		{"threshold": 0.1, "model": {"type": "minecraft:model","model": "minecraft:item/numbersgui/b/armory_0"}},
+			{"threshold": 1, "model": {"type": "minecraft:model","model": "minecraft:item/numbersgui/b/armory_1"}},
+			{"threshold": 2, "model": {"type": "minecraft:model","model": "minecraft:item/numbersgui/b/armory_2"}},
+			{"threshold": 3, "model": {"type": "minecraft:model","model": "minecraft:item/numbersgui/b/armory_3"}},
+			{"threshold": 4, "model": {"type": "minecraft:model","model": "minecraft:item/numbersgui/b/armory_4"}},
+			{"threshold": 5, "model": {"type": "minecraft:model","model": "minecraft:item/numbersgui/b/armory_5"}},
+      		{"threshold": 6, "model": {"type": "minecraft:model","model": "minecraft:item/numbersgui/b/armory_6"}},
+			{"threshold": 7, "model": {"type": "minecraft:model","model": "minecraft:item/numbersgui/b/armory_7"}},
+			{"threshold": 8, "model": {"type": "minecraft:model","model": "minecraft:item/numbersgui/b/armory_8"}},
+			{"threshold": 9, "model": {"type": "minecraft:model","model": "minecraft:item/numbersgui/b/armory_9"}}
+			],
+			"fallback": { "type": "minecraft:model","model": "minecraft:item/none"}
+      },
+	        {
+			"type": "minecraft:range_dispatch","property": "minecraft:custom_model_data","index": 2,"entries": [
+      		{"threshold": 0.1, "model": {"type": "minecraft:model","model": "minecraft:item/numbersgui/c/armory_0"}},
+			{"threshold": 1, "model": {"type": "minecraft:model","model": "minecraft:item/numbersgui/c/armory_1"}},
+			{"threshold": 2, "model": {"type": "minecraft:model","model": "minecraft:item/numbersgui/c/armory_2"}},
+			{"threshold": 3, "model": {"type": "minecraft:model","model": "minecraft:item/numbersgui/c/armory_3"}},
+			{"threshold": 4, "model": {"type": "minecraft:model","model": "minecraft:item/numbersgui/c/armory_4"}},
+			{"threshold": 5, "model": {"type": "minecraft:model","model": "minecraft:item/numbersgui/c/armory_5"}},
+      		{"threshold": 6, "model": {"type": "minecraft:model","model": "minecraft:item/numbersgui/c/armory_6"}},
+			{"threshold": 7, "model": {"type": "minecraft:model","model": "minecraft:item/numbersgui/c/armory_7"}},
+			{"threshold": 8, "model": {"type": "minecraft:model","model": "minecraft:item/numbersgui/c/armory_8"}},
+			{"threshold": 9, "model": {"type": "minecraft:model","model": "minecraft:item/numbersgui/c/armory_9"}}
+			],
+			"fallback": { "type": "minecraft:model","model": "minecraft:item/none"}
+      },
+	        {
+			"type": "minecraft:range_dispatch","property": "minecraft:custom_model_data","index": 3,"entries": [
+      		{"threshold": 0.1, "model": {"type": "minecraft:model","model": "minecraft:item/numbersgui/d/armory_0"}},
+			{"threshold": 1, "model": {"type": "minecraft:model","model": "minecraft:item/numbersgui/d/armory_1"}},
+			{"threshold": 2, "model": {"type": "minecraft:model","model": "minecraft:item/numbersgui/d/armory_2"}},
+			{"threshold": 3, "model": {"type": "minecraft:model","model": "minecraft:item/numbersgui/d/armory_3"}},
+			{"threshold": 4, "model": {"type": "minecraft:model","model": "minecraft:item/numbersgui/d/armory_4"}},
+			{"threshold": 5, "model": {"type": "minecraft:model","model": "minecraft:item/numbersgui/d/armory_5"}},
+      		{"threshold": 6, "model": {"type": "minecraft:model","model": "minecraft:item/numbersgui/d/armory_6"}},
+			{"threshold": 7, "model": {"type": "minecraft:model","model": "minecraft:item/numbersgui/d/armory_7"}},
+			{"threshold": 8, "model": {"type": "minecraft:model","model": "minecraft:item/numbersgui/d/armory_8"}},
+			{"threshold": 9, "model": {"type": "minecraft:model","model": "minecraft:item/numbersgui/d/armory_9"}}
+			],
+			"fallback": { "type": "minecraft:model","model": "minecraft:item/none"}
+      },
+	  	        {
+			"type": "minecraft:range_dispatch","property": "minecraft:custom_model_data","index": 4,"entries": [
+      		{"threshold": 0.1, "model": {"type": "minecraft:model","model": "minecraft:item/numbersgui/e/armory_0"}},
+			{"threshold": 1, "model": {"type": "minecraft:model","model": "minecraft:item/numbersgui/e/armory_1"}},
+			{"threshold": 2, "model": {"type": "minecraft:model","model": "minecraft:item/numbersgui/e/armory_2"}},
+			{"threshold": 3, "model": {"type": "minecraft:model","model": "minecraft:item/numbersgui/e/armory_3"}},
+			{"threshold": 4, "model": {"type": "minecraft:model","model": "minecraft:item/numbersgui/e/armory_4"}},
+			{"threshold": 5, "model": {"type": "minecraft:model","model": "minecraft:item/numbersgui/e/armory_5"}},
+      		{"threshold": 6, "model": {"type": "minecraft:model","model": "minecraft:item/numbersgui/e/armory_6"}},
+			{"threshold": 7, "model": {"type": "minecraft:model","model": "minecraft:item/numbersgui/e/armory_7"}},
+			{"threshold": 8, "model": {"type": "minecraft:model","model": "minecraft:item/numbersgui/e/armory_8"}},
+			{"threshold": 9, "model": {"type": "minecraft:model","model": "minecraft:item/numbersgui/e/armory_9"}}
+			],
+			"fallback": { "type": "minecraft:model","model": "minecraft:item/none"}
+      },
+	  	        {
+			"type": "minecraft:range_dispatch","property": "minecraft:custom_model_data","index": 5,"entries": [
+      		{"threshold": 0.1, "model": {"type": "minecraft:model","model": "minecraft:item/numbersgui/f/armory_0"}},
+			{"threshold": 1, "model": {"type": "minecraft:model","model": "minecraft:item/numbersgui/f/armory_1"}},
+			{"threshold": 2, "model": {"type": "minecraft:model","model": "minecraft:item/numbersgui/f/armory_2"}},
+			{"threshold": 3, "model": {"type": "minecraft:model","model": "minecraft:item/numbersgui/f/armory_3"}},
+			{"threshold": 4, "model": {"type": "minecraft:model","model": "minecraft:item/numbersgui/f/armory_4"}},
+			{"threshold": 5, "model": {"type": "minecraft:model","model": "minecraft:item/numbersgui/f/armory_5"}},
+      		{"threshold": 6, "model": {"type": "minecraft:model","model": "minecraft:item/numbersgui/f/armory_6"}},
+			{"threshold": 7, "model": {"type": "minecraft:model","model": "minecraft:item/numbersgui/f/armory_7"}},
+			{"threshold": 8, "model": {"type": "minecraft:model","model": "minecraft:item/numbersgui/f/armory_8"}},
+			{"threshold": 9, "model": {"type": "minecraft:model","model": "minecraft:item/numbersgui/f/armory_9"}}
+			],
+			"fallback": { "type": "minecraft:model","model": "minecraft:item/none"}
+      },
+	  	        {
+			"type": "minecraft:range_dispatch","property": "minecraft:custom_model_data","index": 6,"entries": [
+      		{"threshold": 0.1, "model": {"type": "minecraft:model","model": "minecraft:item/numbersgui/g/armory_0"}},
+			{"threshold": 1, "model": {"type": "minecraft:model","model": "minecraft:item/numbersgui/g/armory_1"}},
+			{"threshold": 2, "model": {"type": "minecraft:model","model": "minecraft:item/numbersgui/g/armory_2"}},
+			{"threshold": 3, "model": {"type": "minecraft:model","model": "minecraft:item/numbersgui/g/armory_3"}},
+			{"threshold": 4, "model": {"type": "minecraft:model","model": "minecraft:item/numbersgui/g/armory_4"}},
+			{"threshold": 5, "model": {"type": "minecraft:model","model": "minecraft:item/numbersgui/g/armory_5"}},
+      		{"threshold": 6, "model": {"type": "minecraft:model","model": "minecraft:item/numbersgui/g/armory_6"}},
+			{"threshold": 7, "model": {"type": "minecraft:model","model": "minecraft:item/numbersgui/g/armory_7"}},
+			{"threshold": 8, "model": {"type": "minecraft:model","model": "minecraft:item/numbersgui/g/armory_8"}},
+			{"threshold": 9, "model": {"type": "minecraft:model","model": "minecraft:item/numbersgui/g/armory_9"}}
+			],
+			"fallback": { "type": "minecraft:model","model": "minecraft:item/none"}
+      },
+	  	        {
+			"type": "minecraft:range_dispatch","property": "minecraft:custom_model_data","index": 7,"entries": [
+      		{"threshold": 0.1, "model": {"type": "minecraft:model","model": "minecraft:item/numbersgui/h/armory_0"}},
+			{"threshold": 1, "model": {"type": "minecraft:model","model": "minecraft:item/numbersgui/h/armory_1"}},
+			{"threshold": 2, "model": {"type": "minecraft:model","model": "minecraft:item/numbersgui/h/armory_2"}},
+			{"threshold": 3, "model": {"type": "minecraft:model","model": "minecraft:item/numbersgui/h/armory_3"}},
+			{"threshold": 4, "model": {"type": "minecraft:model","model": "minecraft:item/numbersgui/h/armory_4"}},
+			{"threshold": 5, "model": {"type": "minecraft:model","model": "minecraft:item/numbersgui/h/armory_5"}},
+      		{"threshold": 6, "model": {"type": "minecraft:model","model": "minecraft:item/numbersgui/h/armory_6"}},
+			{"threshold": 7, "model": {"type": "minecraft:model","model": "minecraft:item/numbersgui/h/armory_7"}},
+			{"threshold": 8, "model": {"type": "minecraft:model","model": "minecraft:item/numbersgui/h/armory_8"}},
+			{"threshold": 9, "model": {"type": "minecraft:model","model": "minecraft:item/numbersgui/h/armory_9"}}
+			],
+			"fallback": { "type": "minecraft:model","model": "minecraft:item/none"}
+      },
+	  	        {
+			"type": "minecraft:range_dispatch","property": "minecraft:custom_model_data","index": 8,"entries": [
+      		{"threshold": 0.1, "model": {"type": "minecraft:model","model": "minecraft:item/numbersgui/i/armory_0"}},
+			{"threshold": 1, "model": {"type": "minecraft:model","model": "minecraft:item/numbersgui/i/armory_1"}},
+			{"threshold": 2, "model": {"type": "minecraft:model","model": "minecraft:item/numbersgui/i/armory_2"}},
+			{"threshold": 3, "model": {"type": "minecraft:model","model": "minecraft:item/numbersgui/i/armory_3"}},
+			{"threshold": 4, "model": {"type": "minecraft:model","model": "minecraft:item/numbersgui/i/armory_4"}},
+			{"threshold": 5, "model": {"type": "minecraft:model","model": "minecraft:item/numbersgui/i/armory_5"}},
+      		{"threshold": 6, "model": {"type": "minecraft:model","model": "minecraft:item/numbersgui/i/armory_6"}},
+			{"threshold": 7, "model": {"type": "minecraft:model","model": "minecraft:item/numbersgui/i/armory_7"}},
+			{"threshold": 8, "model": {"type": "minecraft:model","model": "minecraft:item/numbersgui/i/armory_8"}},
+			{"threshold": 9, "model": {"type": "minecraft:model","model": "minecraft:item/numbersgui/i/armory_9"}},
+			{"threshold": 10, "model": {"type": "minecraft:model","model": "minecraft:item/numbersgui/i/armory_slash"}}
+			],
+			"fallback": { "type": "minecraft:model","model": "minecraft:item/none"}
+      },
+	  	        {
+			"type": "minecraft:range_dispatch","property": "minecraft:custom_model_data","index": 9,"entries": [
+      		{"threshold": 0.1, "model": {"type": "minecraft:model","model": "minecraft:item/numbersgui/j/armory_0"}},
+			{"threshold": 1, "model": {"type": "minecraft:model","model": "minecraft:item/numbersgui/j/armory_1"}},
+			{"threshold": 2, "model": {"type": "minecraft:model","model": "minecraft:item/numbersgui/j/armory_2"}},
+			{"threshold": 3, "model": {"type": "minecraft:model","model": "minecraft:item/numbersgui/j/armory_3"}},
+			{"threshold": 4, "model": {"type": "minecraft:model","model": "minecraft:item/numbersgui/j/armory_4"}},
+			{"threshold": 5, "model": {"type": "minecraft:model","model": "minecraft:item/numbersgui/j/armory_5"}},
+      		{"threshold": 6, "model": {"type": "minecraft:model","model": "minecraft:item/numbersgui/j/armory_6"}},
+			{"threshold": 7, "model": {"type": "minecraft:model","model": "minecraft:item/numbersgui/j/armory_7"}},
+			{"threshold": 8, "model": {"type": "minecraft:model","model": "minecraft:item/numbersgui/j/armory_8"}},
+			{"threshold": 9, "model": {"type": "minecraft:model","model": "minecraft:item/numbersgui/j/armory_9"}}
+			],
+			"fallback": { "type": "minecraft:model","model": "minecraft:item/none"}
+      }
+    ]
+  }
+}

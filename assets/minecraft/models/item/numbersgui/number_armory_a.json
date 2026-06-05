@@ -1,0 +1,10 @@
+{
+    "parent": "minecraft:item/generated",
+    "gui_light": "front",
+ 	"display": {
+		"gui": {
+			"translation": [-6, 8, 0],
+			"scale": [1, 1, 1]
+		}
+	}
+}
