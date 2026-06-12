@@ -35,8 +35,8 @@
     "equip_speed": 5,
     "swing_cooldown": 17,
 
-    "range": 3.5,
-    "angle": 20,
+    "range": 4,
+    "angle": 25,
     "attack_type": "stab",
 
     "left": "MELEE:left"
