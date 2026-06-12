@@ -8,7 +8,11 @@
         "dmg": "#ff4e33",
         "effect":"#ff82c5",
         "heal": "#88ff00",
-        "health": "#84ff81"
+        "health": "#84ff81",
+        
+        "kill": "#FF1616",
+        "assist": "#FF822B",
+        "death": "#DD2569"
 
 
 
@@ -20,6 +24,13 @@
         "ability": "<#FF1988>\u239A</#FF1988>",
         "boost": "<#FF1988>\u2399</#FF1988>",
         "reload": "<blue>\u2609</blue>",
+
+        "restore": "<#57ff7b>Restore \u2609</#57ff7b>",
+
+
+        "kill": "<#FF1616>\u204c</#FF1616>",
+        "assist": "<#FF822B>\u2055</#FF822B>",
+        "death": "<#DD2569>\u204D</#DD2569>",
 
 
         "dmg": "\u2617",

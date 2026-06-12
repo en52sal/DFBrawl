@@ -2,7 +2,7 @@
     "type": "relic",
     "name": "Graveyard",
     "icon": {
-        "description": "Allies turn into free flying spirits upon death, with the ability to <hl>ping</hl> and create mini shockwaves, <hl>knocking projectiles away.</hl>"
+        "description": "<death>Dead</death> $$death$ allies become free-flying spirits.\nSpirits can <hl>ping</hl> and have the ability to create small shockwaves, launching nearby projectiles away."
     },
 
     "relic_type": "shared",
