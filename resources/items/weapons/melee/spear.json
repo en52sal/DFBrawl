@@ -3,8 +3,10 @@
     "name": "Spear",
     "icon": {
         "model": "melee",
-        "description": "Stabbing weapon with good range and damage.",
+        "model_states": ["animation","lunge"],
         "non_gui_fallback": "held",
+
+        "description": "Stabbing weapon with medium cooldown, damage, and range.",
         
         "actions": {
             "attack": {

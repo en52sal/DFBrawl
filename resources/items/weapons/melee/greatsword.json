@@ -4,7 +4,7 @@
     "icon": {
         "model": "melee",
         "model_states": ["animation"],
-        "model_fallback": "base",
+        "non_gui_fallback": "held",
 
         "description": "Sweeping weapon with high cooldown, damage, and size.",
 
