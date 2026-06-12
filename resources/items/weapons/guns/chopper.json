@@ -19,8 +19,8 @@
     "category": "large",
 
     "weight": 2,
-    "move_speed_modifier": 0.1,
-    "equip_speed": 10,
+    "move_speed_modifier": "$heavy",
+    "equip_speed": "$medium",
     "cooldown": 14,
     "semi_automatic": 1,
 
@@ -50,7 +50,7 @@
     "projectile": "bullet",
     "size": 0.2,
     "gravity": [0,-0.001,0],
-    "power": 12,
+    "power": "$default",
     "mass": 1,
     "drag": 0,
     "friction": 1,

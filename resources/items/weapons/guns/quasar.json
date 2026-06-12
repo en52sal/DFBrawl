@@ -19,8 +19,8 @@
     "category": "large",
 
     "weight": 2,
-    "move_speed_modifier": 0.05,
-    "equip_speed": 9,
+    "move_speed_modifier": "$medium",
+    "equip_speed": "$medium",
     "cooldown": 4,
 
     "bullet_color": "#ff2700",
@@ -32,9 +32,9 @@
     "number_display": "heat",
 
     "gun_resource": "heat",
-    "max_heat": 24,
-    "cooling_delay": 7,
-    "cooling_per_tick": 0.3,
+    "max_heat": 22,
+    "cooling_delay": 11,
+    "cooling_per_tick": 0.2,
     
     "burst_count": 2,
     "burst_delay": 2,
@@ -47,7 +47,7 @@
     "pierce_entities" : 2,
     
     "projectile": "bullet",
-    "size": 0.4,
+    "size": "$default",
     "gravity": [0,-0.019,0],
     "power": 18,
     "mass": 1,

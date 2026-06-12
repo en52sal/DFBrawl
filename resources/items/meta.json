@@ -41,7 +41,21 @@
 
     "presets": {
         "default": {
-            "gravity": [0,-0.037,0]
+            "gravity": [0,-0.037,0],
+            "size": 0.3,
+            "power": 12
+        },
+        "light": {
+            "equip_speed": 7,
+            "move_speed_modifier": 0.025
+        },
+        "medium": {
+            "equip_speed": 10,
+            "move_speed_modifier": 0.05
+        },
+        "heavy": {
+            "equip_speed": 13,
+            "move_speed_modifier": 0.1
         },
         "gun": {
             "states": ["reload", "equip", "firing"],

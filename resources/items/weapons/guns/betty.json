@@ -19,8 +19,8 @@
     "category": "light",
 
     "weight": 1,
-    "move_speed_modifier": 0.05,
-    "equip_speed": 7,
+    "move_speed_modifier": "$light",
+    "equip_speed": "$light",
     "cooldown": 3,
 
     "bullet_color": "#3ddc57",
@@ -49,9 +49,9 @@
     "crit_multiplier": 1.5,
     
     "projectile": "bullet",
-    "size": 0.3,
-    "gravity": [0,-0.037,0],
-    "power": 12,
+    "size": "$default",
+    "gravity": "$default",
+    "power": "$default",
     "mass": 1,
     "drag": 0,
     "friction": 1,

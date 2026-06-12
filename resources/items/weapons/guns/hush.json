@@ -19,8 +19,8 @@
     "category": "light",
 
     "weight": 1,
-    "move_speed_modifier": 0.025,
-    "equip_speed": 7,
+    "move_speed_modifier": "$light",
+    "equip_speed": "$light",
     "cooldown": 6,
 
     "bullet_color": "#b3871c",
@@ -32,7 +32,7 @@
     "number_display": "ammo",
     "gun_resource": "ammo",
     "reload_resource": "ammo",
-    "max_ammo": 14,
+    "max_ammo": 11,
     "reloaded_per": 14,
     "reload_ticks": 40,
     "initial_reload_ticks": 0,
@@ -44,12 +44,12 @@
     
     "dmg": 13,
     "min_dmg": 6,
-    "crit_multiplier": 1.5,
+    "crit_multiplier": 1.8,
     
     "projectile": "bullet",
-    "size": 0.3,
-    "gravity": [0,-0.037,0],
-    "power": 12,
+    "size": "$default",
+    "gravity": "$default",
+    "power": "$default",
     "mass": 1,
     "drag": 0,
     "friction": 1,

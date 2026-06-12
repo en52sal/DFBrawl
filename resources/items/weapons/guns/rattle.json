@@ -19,8 +19,8 @@
     "category": "light",
 
     "weight": 2,
-    "move_speed_modifier": 0.025,
-    "equip_speed": 11,
+    "move_speed_modifier": "$light",
+    "equip_speed": "$medium",
     "cooldown": 5,
 
     "bullet_color": "#c9ffe4",
@@ -42,14 +42,14 @@
     "pellet_count": 1,
     "inaccuracy": 0.022,
     
-    "dmg": 10,
+    "dmg": 6,
     "min_dmg": 3,
     "crit_multiplier": 1.5,
     
     "projectile": "bullet",
-    "size": 0.3,
-    "gravity": [0,-0.037,0],
-    "power": 12,
+    "size": "$default",
+    "gravity": "$default",
+    "power": "$default",
     "mass": 1,
     "drag": 0,
     "friction": 1,

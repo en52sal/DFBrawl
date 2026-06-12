@@ -19,8 +19,8 @@
     "category": "large",
 
     "weight": 2,
-    "move_speed_modifier": 0.05,
-    "equip_speed": 9,
+    "move_speed_modifier": "$medium",
+    "equip_speed": "$medium",
     "cooldown": 6,
 
     "bullet_color": "#f78220",
@@ -47,9 +47,9 @@
     "crit_multiplier": 1.5,
     
     "projectile": "bullet",
-    "size": 0.3,
+    "size": "$default",
     "gravity": "$default",
-    "power": 12,
+    "power": "$default",
     "mass": 1,
     "drag": 0,
     "friction": 1,
