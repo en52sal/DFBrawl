@@ -3,7 +3,7 @@
 		{
             "type": "bitmap",
             "file": "hud:font/attack.png",
-            "ascent": 0,
+            "ascent": 4,
             "height": 4,
             "chars": [
                 "abcdefghi",
