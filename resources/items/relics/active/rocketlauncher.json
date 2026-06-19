@@ -190,7 +190,6 @@
     "min_charge": 2000,
     "starting_charge": 1,
     "charge_per_tick": 1,
-    "charge_per_kill": 0.5,
     "cooldown": 30,
     "shoot_animation": 3,
     "gun_resource": "ammo",

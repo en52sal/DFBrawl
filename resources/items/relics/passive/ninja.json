@@ -2,10 +2,10 @@
     "type": "relic",
     "name": "Ninja",
     "icon": {
-        "description": "No longer make footstep sounds nor get slowed down by holding items."
+        "description": "Footstep volume is reduced by <hl>100%</hl> and held item speed modifier is reduced by <hl>100%</hl>."
     },
 
     "relic_type": "passive",
-    "tier": 3
+    "tier": 2
 
 }

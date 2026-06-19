@@ -2,11 +2,11 @@
     "type": "relic",
     "name": "Health Sight",
     "icon": {
-        "description": "Allies can see enemy health bars."
+        "description": "Allies can see enemy health."
     },
 
     "relic_type": "shared",
     "shared_target": "ally",
-    "tier": 1
+    "tier": 2
 
 }

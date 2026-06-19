@@ -2,7 +2,7 @@
     "type": "relic",
     "name": "Blood Refill",
     "icon": {
-        "description": "Fully $$restore$ your equipment upon a <kill>kill</kill> $$kill$, and half on an <assist>assist</assist> $$assist$."
+        "description": "Fully $$restore$ your equipment upon a <kill>kill</kill> $$kill$, and $$restore$ half on an <assist>assist</assist> $$assist$."
     },
 
     "relic_type": "passive",

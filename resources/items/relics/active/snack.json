@@ -7,11 +7,11 @@
            "consumable": { "consume_seconds": 1.5, "animation": "eat", "sound": "minecraft:entity.player.attack.nodamage", "has_consume_particles": false }
         },
 
-        "description":"Take some time to enjoy a snack, healing <health>$base_heal$ + $missing_percent$% of missing health $$health$</health>.\n\nRecharges very slowly over time, partially on kill."
+        "description":"Take some time to enjoy a snack, healing <health>$base_heal$ + $missing_percent$% of missing health $$health$</health>.\n\nRecharges very slowly over time, partially on <kill>kill $$kill$</kill>."
     },
 
     "relic_type": "active",
-    "tier": 3,
+    "tier": 2,
 
     "main_display": "auto",
     "bar_display": "charge",

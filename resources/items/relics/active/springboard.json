@@ -11,7 +11,7 @@
     },
 
     "relic_type": "active",
-    "tier": 3,
+    "tier": 2,
 
     "main_display": "auto",
     "bar_display": "charge",
@@ -22,7 +22,6 @@
     "max_charge" : 900,
     "min_charge": 900,
     "charge_per_tick": 1,
-    "charge_per_kill": 0.5,
     "cooldown": 10,
 
     "launch_power": 1.3,

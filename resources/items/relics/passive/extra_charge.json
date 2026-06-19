@@ -2,7 +2,7 @@
     "type": "relic",
     "name": "Extra Charge",
     "icon": {
-        "description": "Grants Active Relics an extra charge."
+        "description": "Grants <hl>active relics</hl> an extra charge."
     },
 
     "relic_type": "passive",

@@ -2,13 +2,14 @@
     "type": "relic",
     "name": "Incendiary Rounds",
     "icon": {
-        "description": "Weapon damage now builds up a spark on enemies, upon reaching <hl>$thresh$</hl>, the enemy is <hl>set on fire for $fire_duration$s</hl>."
+        "description": "Dealing <gl>$threshold$ weapon damage</gl> to an enemy will set them on\n<effect>$$effect$ fire</effect> for $fire_duration$s.\n<dark_gray>Individual $cooldown$s cooldown."
     },
 
     "relic_type": "passive",
-    "tier": 1,
+    "tier": 3,
 
-    "thresh": 45,
-    "fire_duration": 4
+    "threshold": 30,
+    "fire_duration": 2,
+    "cooldown": 5
     
 }
