@@ -2,7 +2,8 @@
     "type": "weapon",
     "name": "Bat",
     "icon": {
-        "model": "melee",
+        "states": "$melee",
+        "display_context": "$melee",
         "description": "Sweeping weapon with low cooldown and damage, but high knockback.",
         
         "actions": {
@@ -12,31 +13,44 @@
             },
             "use": {
                 "title": "$$ability$ Homerun",
-                "desc": "Channel a powerful swing dealing enhanced knockback and damage.",
+                "desc": "Charge a powerful swing over <hl>$channel_time$t</hl> dealing enhanced directional knockback and <dmg>$ability_dmg$ $$ddmg$</dmg>.",
                 "prefix": "Hold "
             }
         },
 
-        "ability_boost": "Channels faster and enhances knockback even further."
+        "components": {
+            "swing_animation": { "duration": 6 },
+           "consumable": { "consume_seconds": 999, "animation": "spyglass", "sound": "minecraft:entity.player.attack.nodamage", "has_consume_particles": false },
+            "use_effects": { "can_sprint": true, "speed_multiplier": 0.9 }
+        },
+
+        "ability_boost": "Charge time reduced to <hl>$boost_channel_time$t</hl> and enhances knockback even further."
     },
 
     "weapon_type": "melee",
     "category": "melee",
 
     "dmg": 13,
-    "kb": [1, 0.5, 0],
+    "kb": [1.3, 0.55, 0],
+    "ability_dmg": 30,
+    "ability_kb" :[2.075, 0.4, 0],
+    "boost_ability_kb" :[2.7, 0.4, 0],
 
     "move_speed_modifier": 0,
     "weight": 1,
 
     "cooldown": 240,
-    "equip_speed": 5,
-    "swing_cooldown": 16,
+    "ability_cooldown": 180,
+    "equip_speed": 4,
+    "swing_cooldown": 18,
+
+    "channel_time": 20,
+    "boost_channel_time": 10,
 
     "range": 3.4,
     "angle": 45,
     "attack_type": "slash",
 
-    "right": "MELEE:ability",
+    "right": "MELEE:use",
     "left": "MELEE:left"
 }

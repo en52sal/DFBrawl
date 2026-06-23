@@ -7,7 +7,7 @@
         },
         "non_gui_fallback": "0",
 
-        "description": "Throw a <health>$healthMax$$$health$</health> springboard that attatches to surfaces, then launches anyone that touches it.\n\nRecharges slowly over time. "
+        "description": "Throw a <health>$healthMax$ $$hhealth$</health> springboard that attatches to surfaces, then launches anyone that touches it.\n\nRecharges slowly over time. "
     },
 
     "relic_type": "active",

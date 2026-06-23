@@ -34,10 +34,10 @@
         "death": "<#DD2569>\u204D</#DD2569>",
 
 
-        "dmg": "\u2617",
-        "effect": "\u2618",
-        "heal": "\u261A",
-        "health": "\u261B"
+        "ddmg": "\u2617",
+        "eeffect": "\u2618",
+        "hheal": "\u261A",
+        "hhealth": "\u261B"
     },
 
     "presets": {
@@ -69,6 +69,10 @@
                     "title": "$$reload$ Reload"
                 }
             }
+        },
+        "melee":{
+            "states": ["animation"],
+            "display_context": {}
         }
     }
 }

@@ -2,8 +2,8 @@
     "type": "weapon",
     "name": "Greatsword",
     "icon": {
-        "model": "melee",
-        "model_states": ["animation"],
+        "states": "$melee",
+        "display_context": "$melee",
         "non_gui_fallback": "held",
 
         "description": "Sweeping weapon with high cooldown, damage, and size.",
@@ -17,6 +17,11 @@
                 "desc": "Summon a highway that spawns cars to hit people with vehicular manslaughter.",
                 "prefix": "Hold "
             }
+        },
+            "components": {
+            "swing_animation": { "duration": 6 },
+           "consumable": { "consume_seconds": 999, "animation": "spyglass", "sound": "minecraft:entity.player.attack.nodamage", "has_consume_particles": false },
+            "use_effects": { "can_sprint": true, "speed_multiplier": 0.7 }
         },
 
         "ability_boost": "Spawns trucks instead."
@@ -34,12 +39,13 @@
     "resource_type": "cooldown",
 
     "cooldown": 280,
-    "equip_speed": 9,
+    "equip_speed": 16,
     "swing_cooldown": 29,
 
-    "range": 2.4,
+    "range": 2.7,
     "angle": 60,
     "attack_type": "slash",
 
+    "right": "MELEE:use",
     "left": "MELEE:left"
 }

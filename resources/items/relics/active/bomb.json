@@ -4,7 +4,7 @@
     "icon": {
         "non_gui_fallback": "bomb",
 
-        "description": "Throw a bomb that explodes in a <hl>$aoe_radius$m radius</hl> after <hl>$bomb_duration$s</hl>, dealing <dmg>$min_dmg$-$max_dmg$ $$dmg$</dmg>\n\nRecharges over time, partially on <kill>kill $$kill$</kill>.",
+        "description": "Throw a bomb that explodes in a <hl>$aoe_radius$m radius</hl> after <hl>$bomb_duration$s</hl>, dealing <dmg>$min_dmg$-$max_dmg$ $$ddmg$</dmg>\n\nRecharges over time, partially on <kill>kill $$kill$</kill>.",
 
         "actions": {
             "use": {

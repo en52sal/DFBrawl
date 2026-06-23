@@ -2,7 +2,7 @@
     "type": "relic",
     "name": "Incendiary Rounds",
     "icon": {
-        "description": "Dealing <gl>$threshold$ weapon damage</gl> to an enemy will set them on\n<effect>$$effect$ fire</effect> for $fire_duration$s.\n<dark_gray>Individual $cooldown$s cooldown."
+        "description": "Dealing <dmg>$threshold$ weapon $$ddmg$</dmg> to an enemy will set them on\n<effect>$$eeffect$ fire</effect> for $fire_duration$s.\n<dark_gray>Individual $cooldown$s cooldown."
     },
 
     "relic_type": "passive",

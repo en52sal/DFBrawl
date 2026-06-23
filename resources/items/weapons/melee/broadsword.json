@@ -2,9 +2,8 @@
     "type": "weapon",
     "name": "Broadsword",
     "icon": {
-        "model": "melee",
-        "model_states": ["animation"],
-        "model_fallback": "base",
+        "states": "$melee",
+        "display_context": "$melee",
 
         "description": "Sweeping weapon with a slight cooldown and good damage.",
 
@@ -14,36 +13,40 @@
             },
             "use": {
                 "title": "$$ability$ Block",
-                "desc": "Hold your sword forward, blocking a portion of damage as long as your meter is filled.\n\nAbove 75% meter, you can perform perfect blocks, if damage is blocked while it's glowing, blocking all damage without consuming meter.",
+                "desc": "Hold your sword forward, blocking a portion of damage as long as your meter is filled.",
                 "prefix": "Hold "
             }
         },
+            "components": {
+            "swing_animation": { "duration": 6 },
+           "consumable": { "consume_seconds": 999, "animation": "block", "sound": "minecraft:entity.player.attack.nodamage", "has_consume_particles": false },
+            "use_effects": { "can_sprint": true, "speed_multiplier": 0.6 }
+        },
 
-        "ability_boost": "Increases max meter and decreases how much damage ignores the block."
+        "ability_boost": "Increases max meter and blocks all damage."
     },
 
     "weapon_type": "melee",
     "category": "melee",
 
     "dmg": 20.75,
-    "kb": [0.2, 0, 0],
+    "kb": [0.35, 0.1, 0],
 
     "move_speed_modifier": 0,
     "weight": 1,
-    
-    "resource_type": "meter",
-    "resource_max": 100,
-    "resource_per": 1,
-    "resource_tick": 0.5,
-    "resource_tick_first": 0,
 
-    "cooldown": 20,
-    "equip_speed": 5,
+    "max_meter": 100,
+    "meter_delay": 20,
+    "meter_per_tick": 1,
+
+    "ability_cooldown": 5,
+    "equip_speed": 4,
     "swing_cooldown": 17,
 
     "range": 3.4,
     "angle": 45,
     "attack_type": "slash",
 
+    "right": "MELEE:use",
     "left": "MELEE:left"
 }
