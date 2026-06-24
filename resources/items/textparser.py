@@ -26,6 +26,7 @@ LORE_MAX = 37
 class TextToken:
     text: str
     color: Optional[str] = None
+    font: Optional[str] = None
     bold: bool = False
     italic: bool = False
     underlined: bool = False
@@ -36,6 +37,7 @@ class TextToken:
 @dataclass
 class FormatState:
     color: Optional[str] = None
+    font: Optional[str] = None
     bold: bool = False
     italic: bool = False
     underlined: bool = False
@@ -45,6 +47,7 @@ class FormatState:
     def copy(self):
         return FormatState(
             color=self.color,
+            font=self.font,
             bold=self.bold,
             italic=self.italic,
             underlined=self.underlined,
@@ -54,6 +57,7 @@ class FormatState:
 
     def reset(self):
         self.color = None
+        self.font = None
         self.bold = False
         self.italic = False
         self.underlined = False
@@ -61,7 +65,8 @@ class FormatState:
         self.obfuscated = False
 
 
-TAG_RE = re.compile(r"<(/?)(#[0-9a-fA-F]{6}|\w+)>")
+# TAG_RE = re.compile(r"<(/?)(#[0-9a-fA-F]{6}|\w+)(font:[^>]+)?>")
+TAG_RE = re.compile("<(/?)([#\w][^>]*)>")
 
 
 def _tokenize(text: str) -> list[TextToken]:
@@ -111,6 +116,12 @@ def _tokenize(text: str) -> list[TextToken]:
             else:
                 stack.append((tag, state.copy()))
                 state.color = PALETTE[tag]
+        elif tag.startswith("font"):
+            if closing:
+                _pop_argumented_tag(stack, state, tag)
+            else:
+                stack.append((tag, state.copy()))
+                state.font = tag[5:]
 
     if pos < len(text):
         run = text[pos:]
@@ -124,6 +135,7 @@ def _make_token(text: str, state: FormatState) -> TextToken:
     return TextToken(
         text=text,
         color=state.color,
+        font=state.font,
         bold=state.bold,
         italic=state.italic,
         underlined=state.underlined,
@@ -137,6 +149,22 @@ def _pop_tag(stack: list, state: FormatState, tag: str):
         if stack[i][0] == tag:
             _, saved = stack[i]
             state.color = saved.color
+            state.font = saved.font
+            state.bold = saved.bold
+            state.italic = saved.italic
+            state.underlined = saved.underlined
+            state.strikethrough = saved.strikethrough
+            state.obfuscated = saved.obfuscated
+            del stack[i:]
+            return
+
+def _pop_argumented_tag(stack: list, state: FormatState, tag: str):
+    prefix = tag.split(":", 1)[0] + ":"
+    for i in range(len(stack) - 1, -1, -1):
+        if stack[i][0].startswith(prefix):
+            _, saved = stack[i]
+            state.color = saved.color
+            state.font = saved.font
             state.bold = saved.bold
             state.italic = saved.italic
             state.underlined = saved.underlined
@@ -149,6 +177,7 @@ def _pop_tag(stack: list, state: FormatState, tag: str):
 def _token_to_dict(token: TextToken) -> dict | str:
     has_style = (
         token.color is not None
+        or token.font is not None
         or token.bold
         or token.italic
         or token.underlined
@@ -161,6 +190,8 @@ def _token_to_dict(token: TextToken) -> dict | str:
     d: dict = {"text": token.text}
     if token.color:
         d["color"] = token.color
+    if token.font:
+        d["font"] = token.font
     if token.bold:
         d["bold"] = True
     if token.italic:
@@ -224,7 +255,7 @@ def _split_tokens_by_newline(tokens: list[TextToken]) -> list[str]:
             if part:
                 current.append(TextToken(
                     text=part,
-                    color=token.color, bold=token.bold, italic=token.italic, underlined=token.underlined,
+                    color=token.color, font=token.font, bold=token.bold, italic=token.italic, underlined=token.underlined,
                     strikethrough=token.strikethrough, obfuscated=token.obfuscated,
                 ))
             if i < len(parts) - 1:
@@ -271,6 +302,7 @@ def _tokens_to_words(tokens: list[TextToken]) -> list[tuple[str, bool, FormatSta
     for token in tokens:
         state = FormatState(
             color=token.color,
+            font=token.font,
             bold=token.bold,
             italic=token.italic,
             underlined=token.underlined,
@@ -294,6 +326,7 @@ def _words_to_component(words: list[tuple[str, FormatState]]) -> dict:
             tokens[-1] = TextToken(
                 text=tokens[-1].text + text,
                 color=tokens[-1].color,
+                font=tokens[-1].font,
                 bold=tokens[-1].bold,
                 italic=tokens[-1].italic,
                 underlined=tokens[-1].underlined,
@@ -304,6 +337,7 @@ def _words_to_component(words: list[tuple[str, FormatState]]) -> dict:
             tokens.append(TextToken(
                 text=text,
                 color=state.color,
+                font=state.font,
                 bold=state.bold,
                 italic=state.italic,
                 underlined=state.underlined,
@@ -316,6 +350,7 @@ def _words_to_component(words: list[tuple[str, FormatState]]) -> dict:
 def _state_matches(token: TextToken, state: FormatState) -> bool:
     return (
         token.color == state.color
+        and token.font == state.font
         and token.bold == state.bold
         and token.italic == state.italic
         and token.underlined == state.underlined
@@ -323,3 +358,11 @@ def _state_matches(token: TextToken, state: FormatState) -> bool:
         and token.obfuscated == state.obfuscated
     )
 
+
+if __name__ == "__main__":
+    testStrs = [
+        "Shoot a rocket that explodes in a <hl>$aoe_radius$m radius</hl>, dealing <dmg>$min_dmg$-$max_dmg$ $$dmg$</dmg>\n\nReloads using <white><font:hi>a</font> Charges</white>, which recharge very slowly over time."
+    ]
+
+    for s in testStrs:
+        print(json.dumps(parse_name(s), indent=2))

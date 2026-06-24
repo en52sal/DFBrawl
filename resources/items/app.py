@@ -103,7 +103,15 @@ def template_item_item(item):
     }
 
 def get_description_lines(data, desc):
-    desc = re.sub(r"\$(\w+)\$", lambda m: str(data.get(m.group(1), f"${m.group(1)}$")), desc)
+    def _replace(match):
+        if match.group(0).endswith("$t"):
+            seconds = int(data.get(match.group(1), 0)) / 20
+            return f"{seconds:.1f}".rstrip("0").rstrip(".") + "s"
+        
+        key = match.group(1)
+        return str(data.get(key, f"${key}$"))
+    
+    desc = re.sub(r"\$(\w+)\$t?", _replace, desc)
 
     return textparser.parse_lore(f"<{META['colors']['desc']}>{desc}")
 
