@@ -7,10 +7,10 @@
             "height": 8,
             "chars": [
                 "0123456789/-",
-                "^.%         "
+                "^.%vs       "
             ]
         },
-		{ "type": "space", "advances": { "_": -5 } },
+		{ "type": "space", "advances": { "_": -3 } },
 		{ "type": "space", "advances": { "=": 2 } }
     ]
 }

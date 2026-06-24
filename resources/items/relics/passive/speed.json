@@ -2,7 +2,7 @@
     "type": "relic",
     "name": "Speed",
     "icon": {
-        "description": "Increases movement speed \nby <hl>$percent$%</hl>."
+        "description": "Increases movement speed by <hl>$percent$%</hl>."
     },
 
     "relic_type": "passive",

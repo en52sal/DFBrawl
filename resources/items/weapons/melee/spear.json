@@ -14,7 +14,7 @@
             },
             "use": {
                 "title": "$$ability$ Lunge",
-                "desc": "Charge up a lunge then release to launch forward and damage enemies.",
+                "desc": "Charge over <hl>$channel_time$t</hl> and release to lunge forward, dealing <dmg>$ability_dmg$ $$ddmg$</dmg> to enemies in your path.",
                 "prefix": "Hold "
             }
         },
@@ -24,7 +24,7 @@
             "use_effects": { "can_sprint": true, "speed_multiplier": 0.85 }
         },
 
-        "ability_boost": "Channel faster, lunge further, and knockback enemies aswell."
+        "ability_boost": "Charge over <hl>$boost_channel_time$t</hl>, launch further, and deal knockback to hit enemies."
     },
 
     "weapon_type": "melee",
@@ -48,8 +48,8 @@
     "channel_time": 20,
     "boost_channel_time": 10,
 
-    "range": 4.2,
-    "angle": 25,
+    "range": 4.5,
+    "angle": 20,
     "attack_type": "stab",
 
     "overlay_display": "item_cooldown,cooldown",

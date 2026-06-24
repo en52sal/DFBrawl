@@ -13,7 +13,7 @@
             },
             "use": {
                 "title": "$$ability$ Block",
-                "desc": "Hold your sword forward, blocking a portion of damage as long as your meter is filled.",
+                "desc": "Hold your sword forward, blocking <hl>$block_damage_percent$%</hl> of damage, tanking <dmg>$max_meter$ $$ddmg$</dmg> before your block breaks.",
                 "prefix": "Hold "
             }
         },
@@ -23,7 +23,7 @@
             "use_effects": { "can_sprint": true, "speed_multiplier": 0.6 }
         },
 
-        "ability_boost": "Increases max meter and blocks all damage."
+        "ability_boost": "Blocks <hl>$boost_block_damage_percent$%</hl> of damage and tanks <dmg>$boost_max_meter$ $$ddmg$</dmg> before your block breaks."
     },
 
     "weapon_type": "melee",
@@ -36,7 +36,7 @@
     "weight": 1,
 
     "max_meter": 100,
-    "boost_max_meter": 140,
+    "boost_max_meter": 160,
     "meter_delay": 30,
     "meter_per_tick": 0.85,
     "meter_drain": -0.45,
