@@ -41,10 +41,15 @@
     "cooldown": 280,
     "equip_speed": 16,
     "swing_cooldown": 29,
+    "cooldown_key": "ability",
 
     "range": 2.7,
     "angle": 60,
     "attack_type": "slash",
+
+    "overlay_display": "item_cooldown,cooldown",
+    "bar_display": "cooldown",
+    "number_display": "cooldown",
 
     "right": "MELEE:use",
     "left": "MELEE:left"

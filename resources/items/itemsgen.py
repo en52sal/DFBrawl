@@ -74,7 +74,7 @@ def create_addons(models):
         addons.append(U.threshold(threshold, U.model(f"minecraft:item/numbersgui/{group}/{model}", 3)))
     
     # Numbers
-    order = "1 2 3 4 5 6 7 8 9 stars weight ammo cart pound".split(" ")
+    order = "1 2 3 4 5 6 7 8 9 stars weight ammo cart zap timer".split(" ")
     for i, group in enumerate("abcdefghij"):
         addons = []
         add(group, 0.1, "0")

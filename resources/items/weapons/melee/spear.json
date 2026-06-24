@@ -18,9 +18,9 @@
                 "prefix": "Hold "
             }
         },
-            "components": {
+        "components": {
             "swing_animation": { "duration": 6 },
-           "consumable": { "consume_seconds": 999, "animation": "toot_horn", "sound": "minecraft:entity.player.attack.nodamage", "has_consume_particles": false },
+            "consumable": { "consume_seconds": 999, "animation": "bow", "sound": "minecraft:entity.player.attack.nodamage", "has_consume_particles": false },
             "use_effects": { "can_sprint": true, "speed_multiplier": 0.85 }
         },
 
@@ -32,6 +32,9 @@
 
     "dmg": 17.5,
     "kb": [0.2, 0, 0],
+    "ability_dmg": 12,
+    "lunge_kb" :[1.35, 0.02, 0],
+    "ability_kb" :[1.5, 0.25, 0],
 
     "move_speed_modifier": 0,
     "weight": 1,
@@ -39,10 +42,19 @@
     "cooldown": 195,
     "equip_speed": 7,
     "swing_cooldown": 17,
+    "ability_cooldown": 190,
+    "cooldown_key": "ability",
+
+    "channel_time": 20,
+    "boost_channel_time": 10,
 
     "range": 4.2,
     "angle": 25,
     "attack_type": "stab",
+
+    "overlay_display": "item_cooldown,cooldown",
+    "bar_display": "cooldown",
+    "number_display": "cooldown",
 
     "right": "MELEE:use",
     "left": "MELEE:left"

@@ -12,11 +12,11 @@
             },
             "use": {
                 "title": "$$ability$ Power Slam",
-                "desc": "After <hl>$channel_time$t</hl> launch into the air, upon landing deal <dmg>$ability_dmg$ $$ddmg$</dmg> to enemies within a <hl>$radius$m radius</hl>. <dmg>$critical_multiplier$x $$ddmg$</dmg> to enemies in the center."
+                "desc": "After <hl>$channel_time$t</hl> launch into the air, upon landing deal <dmg>$ability_dmg$ $$ddmg$</dmg> to enemies within a <hl>$radius$m max radius</hl>. <dmg>$critical_multiplier$x $$ddmg$</dmg> to enemies in the center.\nEffectiveness halved through walls."
             }
         },
 
-        "ability_boost": "Channel time reduced to <hl>$boost_channel_time$t</hl>, slam radius increased to <hl>$boost_radius$m</hl>, and crit multiplier increased to <dmg>$boost_critical_multiplier$x $$ddmg$</dmg>"
+        "ability_boost": "Channel time reduced to <hl>$boost_channel_time$t</hl>, max slam radius increased to <hl>$boost_radius$m</hl>, and crit multiplier increased to <dmg>$boost_critical_multiplier$x $$ddmg$</dmg>"
     },
 
     "weapon_type": "melee",
@@ -25,7 +25,7 @@
     "dmg": 27,
     "ability_dmg": 31,
     "kb": [0.32, 0.1, 0],
-    "ability_kb": [0, 0.8, 0],
+    "ability_kb": [0, 0.76, 0],
 
     "move_speed_modifier": 0.2,
     "weight": 1,
@@ -33,18 +33,23 @@
     "ability_cooldown": 240,
     "equip_speed": 13,
     "swing_cooldown": 24,
+    "cooldown_key": "ability",
     
     "critical_multiplier": 1.5,
     "boost_critical_multiplier": 1.75,
     
     "channel_time": 12,
-    "boost_channel_time": 5,
+    "boost_channel_time": 9,
     "radius": 4.2,
     "boost_radius": 6.2,
 
     "range": 3,
     "angle": 50,
     "attack_type": "slash",
+
+    "overlay_display": "item_cooldown,cooldown",
+    "bar_display": "cooldown",
+    "number_display": "cooldown",
 
     "right": "MELEE:use",
     "left": "MELEE:left"

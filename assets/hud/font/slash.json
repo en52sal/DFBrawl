@@ -2,14 +2,15 @@
     "providers": [
 		{
             "type": "bitmap",
-            "file": "hud:font/wavebar.png",
-            "ascent": 0,
-            "height": 16,
+            "file": "hud:font/slash.png",
+            "ascent": -20,
+            "height": 8,
             "chars": [
                 "abcdefgh",
-                "ijklmnop",
-                "qrstuvwx",
-                "yz......"
+				"ijklmnop",
+				"qrstuvwx",
+				"yz123456",
+				"7890!@, "
             ]
         },
         { "type": "space", "advances": { "-": -2 } },

@@ -13,7 +13,7 @@
     "relic_type": "active",
     "tier": 2,
 
-    "main_display": "auto",
+    "overlay_display": "charge",
     "bar_display": "charge",
     "gray_display": "charge",
     "number_display": "charge",

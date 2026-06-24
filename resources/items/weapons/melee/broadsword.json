@@ -36,16 +36,27 @@
     "weight": 1,
 
     "max_meter": 100,
-    "meter_delay": 20,
-    "meter_per_tick": 1,
+    "boost_max_meter": 140,
+    "meter_delay": 30,
+    "meter_per_tick": 0.85,
+    "meter_drain": -0.45,
 
-    "ability_cooldown": 5,
+    "block_damage_percent": 90,
+    "boost_block_damage_percent": 100,
+
+    "ability_cooldown": 18,
+    "ability_meter_cooldown": 75,
     "equip_speed": 4,
     "swing_cooldown": 17,
+    "cooldown_key": "ability",
 
     "range": 3.4,
     "angle": 45,
     "attack_type": "slash",
+
+    "overlay_display": "item_cooldown,cooldown,meter",
+    "bar_display": "meter",
+    "number_display": "meter,cooldown",
 
     "right": "MELEE:use",
     "left": "MELEE:left"
