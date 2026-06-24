@@ -39,7 +39,7 @@
     "boost_max_meter": 160,
     "meter_delay": 30,
     "meter_per_tick": 0.85,
-    "meter_drain": -0.45,
+    "meter_drain": -1,
 
     "block_damage_percent": 90,
     "boost_block_damage_percent": 100,
@@ -49,6 +49,7 @@
     "equip_speed": 4,
     "swing_cooldown": 17,
     "cooldown_key": "ability",
+    "break_cooldown": 200,
 
     "range": 3.4,
     "angle": 45,

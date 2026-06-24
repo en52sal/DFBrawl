@@ -31,6 +31,7 @@
     "category": "melee",
 
     "dmg": 17.5,
+    "critical_multiplier": 1.5,
     "kb": [0.2, 0, 0],
     "ability_dmg": 12,
     "lunge_kb" :[1.35, 0.02, 0],
