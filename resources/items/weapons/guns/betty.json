@@ -21,7 +21,7 @@
     "weight": 1,
     "move_speed_modifier": "$light",
     "equip_speed": "$light",
-    "cooldown": 3,
+    "cooldown": 4,
 
     "bullet_color": "#3ddc57",
     "bullet_opacity": 5,
@@ -56,7 +56,7 @@
     "drag": 0,
     "friction": 1,
     "restituion": 0,
-    "distance": 30,
+    "distance": 50,
     "distance_falloff": 11,
     "bounces" : 0,
     "right": "GUN:use",

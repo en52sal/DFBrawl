@@ -10,6 +10,7 @@
         "effect":"#ff82c5",
         "heal": "#88ff00",
         "health": "#84ff81",
+        "kb": "#4eff88",
         
         "kill": "#FF1616",
         "assist": "#FF822B",
@@ -36,15 +37,15 @@
 
         "ddmg": "\u2617",
         "eeffect": "\u2618",
-        "hheal": "\u261A",
+        "ccrit": "\u261A",
         "hhealth": "\u261B"
     },
 
     "presets": {
         "default": {
-            "gravity": [0,-0.037,0],
+            "gravity": [0,-0.026,0],
             "size": 0.3,
-            "power": 12
+            "power": 17
         },
         "light": {
             "equip_speed": 7,

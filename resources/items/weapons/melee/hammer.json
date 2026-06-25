@@ -12,11 +12,11 @@
             },
             "use": {
                 "title": "$$ability$ Power Slam",
-                "desc": "Launch into the air after <hl>$channel_time$t</hl>, growing your slam radius up to <hl>$radius$m</hl>.\nUpon landing deal <dmg>$ability_dmg$ $$ddmg$</dmg> and launch nearby enemies up. Enemies in the center take <dmg>$critical_multiplier$x crit $$ddmg$</dmg>.\nEffectiveness halved through blocks."
+                "desc": "Launch into the air after <hl>$channel_time$t</hl>, growing your slam radius up to <hl>$radius$m</hl>.\nUpon landing deal <dmg>$ability_dmg$ $$ddmg$</dmg> and <kb>launch up</kb> nearby enemies. Enemies in the center take <dmg>$critical_multiplier$x $$ccrit$</dmg>. Effectiveness halved through blocks."
             }
         },
 
-        "ability_boost": "Launch delay reduced to <hl>$boost_channel_time$t</hl>, max slam radius increased to <hl>$boost_radius$m</hl>, and enemies in the center take <dmg>$boost_critical_multiplier$x crit $$ddmg$</dmg>."
+        "ability_boost": "Launch delay reduced to <hl>$boost_channel_time$t</hl>, max slam radius increased to <hl>$boost_radius$m</hl>, and enemies in the center take <dmg>$boost_critical_multiplier$x $$ccrit$</dmg>."
     },
 
     "weapon_type": "melee",

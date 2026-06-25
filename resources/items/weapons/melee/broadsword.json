@@ -36,7 +36,7 @@
     "weight": 1,
 
     "max_meter": 100,
-    "boost_max_meter": 160,
+    "boost_max_meter": 165,
     "meter_delay": 30,
     "meter_per_tick": 0.85,
     "meter_drain": -1,

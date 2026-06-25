@@ -129,7 +129,7 @@ def create_items(items):
     with open(ITEM_FILE, "w") as f:
         json.dump(root, f)
 
-    root["swap_animation_scale"] = 1
+    root["swap_animation_scale"] = 1.15
     root["hand_animation_on_swap"] = True
     with open(ITEM_BOB_FILE, "w") as f:
         json.dump(root, f)

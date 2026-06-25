@@ -21,7 +21,7 @@
     "weight": 2,
     "move_speed_modifier": "$heavy",
     "equip_speed": "$medium",
-    "cooldown": 14,
+    "cooldown": 15,
     "semi_automatic": 1,
 
     "bullet_color": "#f5ff87",
