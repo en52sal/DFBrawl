@@ -104,14 +104,23 @@ def template_item_item(item):
 
 def get_description_lines(data, desc):
     def _replace(match):
-        if match.group(0).endswith("$t"):
+        last = match.group(0)[-1]
+        if last == "t":
             seconds = int(data.get(match.group(1), 0)) / 20
             return f"{seconds:.1f}".rstrip("0").rstrip(".") + "s"
-        
+        if last == "v":
+            vec = data.get(match.group(1), [0, 0, 0])
+            mag = sum(x**2 for x in vec) ** 0.5
+            return f"{mag:.1f}".rstrip("0").rstrip(".")
+        if last in "xyz":
+            vec = data.get(match.group(1), [0, 0, 0])
+            axis = "xyz".index(last)
+            return f"{vec[axis]:.1f}".rstrip("0").rstrip(".")
+
         key = match.group(1)
         return str(data.get(key, f"${key}$"))
     
-    desc = re.sub(r"\$(\w+)\$t?", _replace, desc)
+    desc = re.sub(r"\$(\w+)\$[tvxyz]?", _replace, desc)
 
     return textparser.parse_lore(f"<{META['colors']['desc']}>{desc}")
 
