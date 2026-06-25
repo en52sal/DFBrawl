@@ -2,7 +2,7 @@
     "type": "relic",
     "name": "Bouncy Bullets",
     "icon": {
-        "description": "Weapon projectiles can now bounce once, damage is <hl>reduced by $damage_reduction$% upon bounce</hl>."
+        "description": "<h>Weapon projectiles can now bounce once</h>, damage is reduced by <hl>$damage_reduction$</hl> upon bounce."
     },
 
     "relic_type": "passive",

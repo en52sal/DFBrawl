@@ -2,7 +2,7 @@
     "type": "relic",
     "name": "Quick Reload",
     "icon": {
-        "description": "Increases reload and heat cooling speed by $percent$%"
+        "description": "Increases <h>reload</h> and <h>heat cooling speeds</h> by <hl>$percent$%</hl>"
     },
 
     "relic_type": "passive",

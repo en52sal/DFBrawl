@@ -2,12 +2,13 @@
     "type": "relic",
     "name": "Taco Time",
     "icon": {
-        "description": "Randomly in a round, Taco Time will begin, forcing all players to eat some tacos, healing <hl>$heal$</hl> health, but <red>unable to act in the mean time</red>."
+        "description": "During a round, <h>Taco Time</h> will occur, causing all players to eat tacos becoming unable to act but healing <health>$heal$ $$hhealth$</health> over <hl>$duration$t</hl>."
     },
 
     "relic_type": "shared",
     "shared_target": "global",
     "tier": 3,
-    "heal": 15
+    "heal": 15,
+    "duration": 100
     
 }

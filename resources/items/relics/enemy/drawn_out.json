@@ -2,7 +2,7 @@
     "type": "relic",
     "name": "Drawn Out",
     "icon": {
-        "description": "Increases the closing phase duration for enemies by <hl>$percent$%</hl>."
+        "description": "Increases the <h>closing phase duration</h> for enemies by <hl>$percent$%</hl>."
     },
 
     "relic_type": "shared",

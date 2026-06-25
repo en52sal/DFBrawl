@@ -2,7 +2,7 @@
     "type": "relic",
     "name": "Arsenal",
     "icon": {
-        "description": "Players drop their weapons upon death, which can be picked up."
+        "description": "Players <h>drop their weapons</h> upon\n<death>death $$death$</death>, which can be <h>picked up</h>."
     },
 
     "relic_type": "shared",

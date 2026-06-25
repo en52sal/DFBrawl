@@ -2,12 +2,11 @@
     "type": "relic",
     "name": "Armor",
     "icon": {
-        "description": "Reduces damage based on the severity, damage above <hl>$dmg_max$ is reduced by $reduce_amount$</hl>, while <hl>damage equal or below is halved</hl>."
+        "description": "Reduces damage by <hl>50%</hl>, up to <dmg>$dmg_max$ $$ddmg$</dmg>."
     },
 
     "relic_type": "passive",
     "tier": 2,
 
-    "dmg_max": 14,
-    "reduce_amount": 7
+    "dmg_max": 8
 }

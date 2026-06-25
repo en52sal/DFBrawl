@@ -2,7 +2,7 @@
     "type": "relic",
     "name": "Teamwork",
     "icon": {
-        "description": "When an ally <kill>kills</kill> $$kill$ an enemy, all other allies earn an\n<assist>assist</assist> $$assist$ on the victim, triggering relics and granting stars. <dark_gray>(Does not count toward statistics)"
+        "description": "When an ally <kill>kills</kill> $$kill$ an enemy, all other allies earn a minor <assist>assist</assist> $$assist$ on the victim, triggering relics and granting stars. <dark_gray>\n(Does not count toward statistics)"
     },
 
     "relic_type": "shared",

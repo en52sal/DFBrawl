@@ -2,7 +2,7 @@
     "type": "relic",
     "name": "Entrapped",
     "icon": {
-        "description": "Increases enemy border's duration by <hl>$percent$%</hl>."
+        "description": "Increases <h>enemy border's\nduration</h> by <hl>$percent$%</hl>."
     },
 
     "relic_type": "shared",
