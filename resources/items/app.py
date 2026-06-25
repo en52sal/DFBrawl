@@ -112,15 +112,15 @@ def get_description_lines(data, desc):
             vec = data.get(match.group(1), [0, 0, 0])
             mag = sum(x**2 for x in vec) ** 0.5
             return f"{mag:.1f}".rstrip("0").rstrip(".")
-        if last in "xyz":
+        if last in "123":
             vec = data.get(match.group(1), [0, 0, 0])
-            axis = "xyz".index(last)
+            axis = "123".index(last)
             return f"{vec[axis]:.1f}".rstrip("0").rstrip(".")
 
         key = match.group(1)
         return str(data.get(key, f"${key}$"))
     
-    desc = re.sub(r"\$(\w+)\$[tvxyz]?", _replace, desc)
+    desc = re.sub(r"\$(\w+)\$[tv123]?", _replace, desc)
 
     return textparser.parse_lore(f"<{META['colors']['desc']}>{desc}")
 
