@@ -12,7 +12,7 @@
             },
             "use": {
                 "title": "$$ability$ Power Slam",
-                "desc": "Launch into the air after <hl>$channel_time$t</hl>, growing your slam radius up to <hl>$radius$m</hl>.\nUpon landing deal <dmg>$ability_dmg$ $$ddmg$</dmg> and <kb>launch up</kb> nearby enemies. Enemies in the center take <dmg>$critical_multiplier$x $$ccrit$</dmg>. Effectiveness halved through blocks."
+                "desc": "Launch into the air after <hl>$channel_time$t</hl>, growing your slam radius up to <hl>$radius$m</hl>.\nUpon landing deal <dmg>$ability_dmg$ $$ddmg$</dmg> and <kb>$ability_kb$y$$kby$</kb> nearby enemies. Enemies in the center take <dmg>$critical_multiplier$x $$ccrit$</dmg>. Effectiveness halved through blocks."
             }
         },
 

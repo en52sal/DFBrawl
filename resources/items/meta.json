@@ -28,6 +28,11 @@
         "boost": "<#FF1988>\u2399</#FF1988>",
         "reload": "<blue>\u2609</blue>",
 
+        "kbv": "<#4eff88>\u2622</#4eff88>",
+        "kbx": "<#4eff88>\u261D</#4eff88>",
+        "kby": "<#4eff88>\u261F</#4eff88>",
+        "kbz": "<#4eff88>\u2621</#4eff88>",
+
         "restore": "<#57ff7b>Restore \u2609</#57ff7b>",
 
 
