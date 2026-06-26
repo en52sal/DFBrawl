@@ -6,7 +6,8 @@
         "display_context": "$melee",
         "non_gui_fallback": "held",
 
-        "description": "Sweeping weapon with high cooldown, damage, and size.",
+        "description":
+         "Sweeping weapon with high cooldown,\n damage, and size.",
 
         "actions": {
             "attack": {
@@ -14,7 +15,8 @@
             },
             "use": {
                 "title": "$$ability$ Summon the Road",
-                "desc": "Summon a highway that spawns cars to hit people with vehicular manslaughter.",
+                "desc":
+                 "Summon a highway that spawns cars to hit people with vehicular manslaughter.",
                 "prefix": "Hold "
             }
         },

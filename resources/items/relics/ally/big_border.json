@@ -2,13 +2,14 @@
     "type": "relic",
     "name": "Big Border",
     "icon": {
-        "description": "Increases <h>ally border size</h> by <hl>3m</hl>."
+        "description":
+         "<hl>+$percent$%</hl> <h>ally border size</h>"
     },
 
     "relic_type": "shared",
     "shared_target": "ally",
     "tier": 2,
 
-    "blocks": 3
+    "percent": 2
     
 }

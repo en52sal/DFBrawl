@@ -4,7 +4,8 @@
     "icon": {
         "states": ["charging","jump"],
         "display_context": "$melee",
-        "description": "Large sweeping weapon with heavy damage and cooldown.",
+        "description":
+         "Large sweeping weapon with\nheavy damage and cooldown.",
         
         "actions": {
             "attack": {
@@ -12,11 +13,13 @@
             },
             "use": {
                 "title": "$$ability$ Power Slam",
-                "desc": "Launch into the air after <hl>$channel_time$t</hl>, growing your slam radius up to <hl>$radius$m</hl>.\nUpon landing deal <dmg>$ability_dmg$ $$ddmg$</dmg>\nand <kb>launch <kkb>$ability_kb$2$$kby$</kkb></kb> nearby enemies. Enemies in the center take <dmg>$critical_multiplier$x $$ccrit$</dmg>. Effectiveness halved through blocks."
+                "desc":
+                 "Launch into the air after <hl>$channel_time$t</hl>, \ngrowing your slam radius up to <hl>$radius$m</hl>.\nUpon landing deal <dmg>$ability_dmg$ $$ddmg$</dmg> and\n<kb>launch <kkb>$ability_kb$2$$kby$</kkb></kb> nearby enemies.\nEnemies in the center take <dmg>$critical_multiplier$x $$ccrit$</dmg>.\nEffectiveness halved through blocks."
             }
         },
 
-        "ability_boost": "Launch delay reduced to <hl>$boost_channel_time$t</hl>, max slam radius increased to <hl>$boost_radius$m</hl>, and enemies in the center take <dmg>$boost_critical_multiplier$x $$ccrit$</dmg>."
+        "ability_boost":
+         "Launch delay reduced to <hl>$boost_channel_time$t</hl>,\nmax slam radius increased to <hl>$boost_radius$m</hl>, and\nenemies in the center take <dmg>$boost_critical_multiplier$x $$ccrit$</dmg>."
     },
 
     "weapon_type": "melee",

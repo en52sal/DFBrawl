@@ -118,7 +118,7 @@ def get_description_lines(data, desc):
             return f"{vec[axis]:.1f}".rstrip("0").rstrip(".")
         if last == "%":
             val = data.get(match.group(1), 0)
-            return f"{val:.1%}".rstrip("0").rstrip(".")
+            return f"{val:.0%}".rstrip("0").rstrip(".")
 
         key = match.group(1)
         return str(data.get(key, f"${key}$"))

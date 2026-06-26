@@ -2,11 +2,13 @@
     "type": "relic",
     "name": "Quick Reload",
     "icon": {
-        "description": "Increases <h>reload</h> and <h>heat cooling speeds</h> by <hl>$percent$%</hl>"
+        "description":
+         "If applicable;\n<hl>+$reload_percent$%</hl><h> reload speed</h>\n<hl>+$cooling_percent$%</hl><h> cooling speed</h>"
     },
 
     "relic_type": "passive",
     "tier": 1,
 
-    "percent": 50
+    "reload_percent": 0.5,
+    "cooling_percent": 0.5
 }

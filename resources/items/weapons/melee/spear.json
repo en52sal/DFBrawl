@@ -6,7 +6,8 @@
         "states": ["animation","lunge"],
         "non_gui_fallback": "held",
 
-        "description": "Stabbing weapon with medium cooldown, damage, and range.",
+        "description":
+         "Stabbing weapon with medium cooldown,\n damage, and range.",
         
         "actions": {
             "attack": {
@@ -14,7 +15,8 @@
             },
             "use": {
                 "title": "$$ability$ Lunge",
-                "desc": "Charge over <hl>$channel_time$t</hl> and release to <kb>lunge forward <kkb>$lunge_kb$1$$kbx$</kkb></kb> dealing <dmg>$ability_dmg$ $$ddmg$</dmg> to enemies in your path.",
+                "desc":
+                 "Charge over <hl>$channel_time$t</hl> and release to\n<kb>lunge forward <kkb>$lunge_kb$1$$kbx$</kkb></kb> dealing <dmg>$ability_dmg$ $$ddmg$</dmg>\nto enemies in your path.",
                 "prefix": "Hold "
             }
         },
@@ -24,7 +26,8 @@
             "use_effects": { "can_sprint": true, "speed_multiplier": 0.85 }
         },
 
-        "ability_boost": "Charge over <hl>$boost_channel_time$t</hl>, <kb>lunge further <kkb>$boost_lunge_kb$1$$kbx$</kkb></kb>, and <kb>launch <kkb>$ability_kb$1$$kbx$ $ability_kb$2$$kby$</kkb></kb> hit enemies."
+        "ability_boost":
+         "Charge over <hl>$boost_channel_time$t</hl>, <kb>lunge further <kkb>$boost_lunge_kb$1$$kbx$</kkb></kb>,\nand <kb>launch <kkb>$ability_kb$1$$kbx$ $ability_kb$2$$kby$</kkb></kb> hit enemies."
     },
 
     "weapon_type": "melee",

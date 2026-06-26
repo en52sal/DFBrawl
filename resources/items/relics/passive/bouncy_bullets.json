@@ -2,12 +2,13 @@
     "type": "relic",
     "name": "Bouncy Bullets",
     "icon": {
-        "description": "<h>Weapon projectiles can now bounce once</h>, damage is reduced by <hl>$damage_reduction$</hl> upon bounce."
+        "description":
+         "<hl>+1</hl> <h>Weapon Projectile Bounce</h>\n<dmg>-$damage_reduction$% $$ddmg$</dmg> on bounce."
     },
 
     "relic_type": "passive",
     "tier": 2,
     
-    "damage_reduction": 10
+    "damage_reduction": 0.12
 
 }

@@ -2,10 +2,13 @@
     "type": "relic",
     "name": "Ninja",
     "icon": {
-        "description": "<h>Footstep volume</h> reduced by <hl>100%</hl> and <h>held item speed modifier</h> reduced by <hl>100%</hl>."
-    },
+        "description":
+         "<hl>-$footstep_reduction$%</hl><h> footstep volume</h>\n<hl>-$held_speed_reduction$%</hl><h> item slowdown</h>"
+    },  
 
     "relic_type": "passive",
-    "tier": 2
+    "tier": 2,
+    "footstep_reduction": 1,
+    "held_speed_reduction": 0.8
 
 }

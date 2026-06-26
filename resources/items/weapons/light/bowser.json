@@ -61,6 +61,7 @@
     "right": "GUN:use",
     "offhand": "ITEM:reload",
 
-    "recoil": [0.05, 0, 0]
+    "recoil": [-0.49, 0, 0],
+    "no_grounded_recoil": 1
     
 }

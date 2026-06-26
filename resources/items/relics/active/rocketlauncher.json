@@ -2,7 +2,8 @@
     "type": "relic",
     "name": "Rocket Launcher",
     "icon": {
-        "description": "Shoot a rocket that explodes in a <hl>$aoe_radius$m radius</hl>, dealing <dmg>$min_dmg$-$max_dmg$ $$ddmg$</dmg>\n\nReloads using<white><font:hi>a</font> Charges</white>, which recharge very slowly over time.",
+        "description":
+         "Shoot an explosive rocket hitting\nenemies within <hl>$aoe_radius$m</hl>, dealing <dmg>$min_dmg$-$max_dmg$ $$ddmg$</dmg>\nand <kb>knockback $$kbv$</kb>.\nSpeeds up during lifetime.\n\n<hl>+{{$charge_per_tick$*20}/$min_charge$} charge</hl> per second",
         "components": {
             "swing_animation": {
                 "duration": 5

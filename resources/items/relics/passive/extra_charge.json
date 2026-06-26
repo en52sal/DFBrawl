@@ -2,13 +2,14 @@
     "type": "relic",
     "name": "Extra Actives",
     "icon": {
-        "description": "Grants <h>active relics</h> <hl>+$extra_charge$</hl> <h>max charge</h>, <hl>+$extra_meter$%</hl> <h>max meter</h>, and <hl>+$extra_heat$%</hl> <h>max heat</h> if applicable."
+        "description":
+         "If applicable; <h>active relics gain<h>\n<hl>+$extra_charge$</hl> <h>max charge</h>\n<hl>+$extra_meter$%</hl> <h>max meter</h>\n<hl>+$extra_heat$%</hl> <h>max heat</h>"
     },
 
     "relic_type": "passive",
     "tier": 3,
     
     "extra_charge": 1,
-    "extra_meter": 50,
-    "extra_heat": 50
+    "extra_meter": 0.5,
+    "extra_heat": 0.5
 }

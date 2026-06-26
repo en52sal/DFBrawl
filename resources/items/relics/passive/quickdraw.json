@@ -2,12 +2,13 @@
     "type": "relic",
     "name": "Quickdraw",
     "icon": {
-        "description": "Increases <h>equip speed</h> by <hl>$percent$%</hl>."
+        "description":
+         "<hl>+$percent$%</hl><h> equip speed</h>"
     },
 
     "relic_type": "passive",
     "tier": 2,
 
-    "percent": 60
+    "percent": 0.6
     
 }

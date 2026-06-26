@@ -2,7 +2,8 @@
     "type": "relic",
     "name": "Ability Boost",
     "icon": {
-        "description": "Grants a <h>unique boost</h>\nto any <h>weapon abilities</h>."
+        "description":
+         "Grants a <hl>unique boost</hl>\nto any <h>weapon abilities</h>."
     },
 
     "relic_type": "passive",

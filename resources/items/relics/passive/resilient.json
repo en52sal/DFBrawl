@@ -2,7 +2,8 @@
     "type": "relic",
     "name": "Resilient",
     "icon": {
-        "description": "One shot protection now triggers on fatal damage instead."
+        "description":
+         "Once per round:\n<death>Death $$death$</death> triggers <gl>Saving Grace</gl>\nwithout consuming it."
     },
 
     "relic_type": "passive",

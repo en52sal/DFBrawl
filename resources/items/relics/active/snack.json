@@ -7,7 +7,8 @@
            "consumable": { "consume_seconds": 1.5, "animation": "eat", "sound": "minecraft:entity.player.attack.nodamage", "has_consume_particles": false }
         },
 
-        "description":"Take some time to enjoy a snack, healing <health>$base_heal$ + $missing_percent$% of missing health $$hhealth$</health>.\n\nRecharges very slowly over time, partially on <kill>kill $$kill$</kill>."
+        "description":
+        "Consume for <hl>$eat_duration$s</hl> to heal\n<health>$base_heal$ + $missing_percent$% of missing health $$hhealth$</health>.\n\n<hl>+{{$charge_per_tick$*20}/$min_charge$} charge</hl> per second\n<hl>+$charge_per_kill$% charge</hl> per <kill>kill $$kill$</kill>."
     },
 
     "relic_type": "active",
@@ -22,10 +23,11 @@
     "max_charge" : 1400,
     "min_charge": 1400,
     "charge_per_tick": 1,
-    "charge_per_kill": 0.5,
+    "charge_per_kill": 0.3,
 
     "base_heal": 10,
-    "missing_percent": 40,
+    "missing_percent": 0.4,
+    "eat_duration": 1.5,
 
     "icon_color": "team",
     "right": "ITEM:use"

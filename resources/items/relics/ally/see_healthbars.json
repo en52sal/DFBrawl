@@ -2,7 +2,8 @@
     "type": "relic",
     "name": "Health Sight",
     "icon": {
-        "description": "Allies can <h>see enemy health</h>."
+        "description":
+         "Allies can <h>see enemy health</h>."
     },
 
     "relic_type": "shared",

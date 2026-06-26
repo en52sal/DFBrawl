@@ -4,7 +4,8 @@
     "icon": {
         "states": "$melee",
         "display_context": "$melee",
-        "description": "Sweeping weapon with low cooldown and damage, but high knockback.",
+        "description":
+         "Sweeping weapon with low cooldown\n and damage, but high knockback.",
         
         "actions": {
             "attack": {
@@ -13,7 +14,8 @@
             },
             "use": {
                 "title": "$$ability$ Homerun",
-                "desc": "Charge a powerful swing over <hl>$channel_time$t</hl> <kb>directionally launching <kkb>$ability_kb$1$$kbx$ $ability_kb$2$$kby$</kkb></kb> and dealing <dmg>$ability_dmg$ $$ddmg$</dmg>.",
+                "desc":
+                 "Charge a powerful swing over <hl>$channel_time$t</hl>\n<kb>directionally launching <kkb>$ability_kb$1$$kbx$ $ability_kb$2$$kby$</kkb></kb>\nand dealing <dmg>$ability_dmg$ $$ddmg$</dmg>.",
                 "prefix": "Hold "
             }
         },
@@ -24,7 +26,8 @@
             "use_effects": { "can_sprint": true, "speed_multiplier": 0.9 }
         },
 
-        "ability_boost": "Charge time reduced to <hl>$boost_channel_time$t</hl> and <kb>directionally launching <kkb>$boost_ability_kb$1$$kbx$ $boost_ability_kb$2$$kby$</kkb></kb>."
+        "ability_boost":
+         "Charge time reduced to <hl>$boost_channel_time$t</hl>\nand <kb>directionally launching <kkb>$boost_ability_kb$1$$kbx$ $boost_ability_kb$2$$kby$</kkb></kb>."
     },
 
     "weapon_type": "melee",

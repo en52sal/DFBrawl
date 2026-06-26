@@ -2,13 +2,14 @@
     "type": "relic",
     "name": "Drawn Out",
     "icon": {
-        "description": "Increases the <h>closing phase duration</h> for enemies by <hl>$percent$%</hl>."
+        "description":
+         "<hl>+$percent$%</hl> <h>enemy closeout phase duration</h>\n<dark_gray>Upon only one team remaining, the\nround enters the closeout phase, if\nno teams remain in this phase the\nround results in a draw."
     },
 
     "relic_type": "shared",
     "shared_target": "enemy",
     "tier": 1,
 
-    "percent": 200
+    "percent": 2
     
 }

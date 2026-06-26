@@ -7,7 +7,8 @@
         },
         "non_gui_fallback": "0",
 
-        "description": "Throw a <health>$healthMax$ $$hhealth$</health> springboard that attatches to surfaces, then launches anyone that touches it.\n\nRecharges slowly over time. "
+        "description":
+         "Throw a springboard that\nattatches to surfaces.\n\nWhen attatched, any targets infront\nof it will be <kb>launched</kb> <kkb>$launch_power$ $$kbx$</kkb>.\n<hl>$cooldown$t</hl> launch cooldown\n\nHas <health>$healthMax$ $$hhealth$</health> and can be\ndestroyed by anyone.\n\n<hl>+{{$charge_per_tick$*20}/$min_charge$} charge</hl> per second"
     },
 
     "relic_type": "active",
@@ -29,6 +30,8 @@
     "ray_radius": 0.95,
     "ray_length": 0.65,
     "healthMax": 60,
+    "explosive_resist": 1,
+    "melee_resist": -1.5,
 
     "right": "ITEM:use",
     "icon_color": "team"

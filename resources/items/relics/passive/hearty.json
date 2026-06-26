@@ -2,7 +2,8 @@
     "type": "relic",
     "name": "Hearty",
     "icon": {
-        "description": "Increases <h>max health</h> by <hl>$amount$</hl>."
+        "description":
+         "<health>+$amount$ max $$hhealth$</health>"
     },
 
     "relic_type": "passive",
