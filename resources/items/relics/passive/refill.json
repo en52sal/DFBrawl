@@ -2,10 +2,13 @@
     "type": "relic",
     "name": "Blood Refill",
     "icon": {
-        "description": "Fully $$restore$ your equipment upon a <kill>kill</kill> $$kill$, and $$restore$ half on an <assist>assist</assist> $$assist$."
+        "description": "$$restore$ <hl>$kill_percent$%</hl> of equipment resources upon a <kill>kill</kill> $$kill$, and $$restore$ <hl>$assist_percent$%</hl> on an <assist>assist</assist> $$assist$."
     },
 
     "relic_type": "passive",
-    "tier": 3
+    "tier": 3,
+
+    "kill_percent": 100,
+    "assist_percent": 20
     
 }

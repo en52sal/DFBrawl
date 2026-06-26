@@ -14,7 +14,7 @@
             },
             "use": {
                 "title": "$$ability$ Lunge",
-                "desc": "Charge over <hl>$channel_time$t</hl> and release to lunge forward dealing <dmg>$ability_dmg$ $$ddmg$</dmg> to enemies in your path.",
+                "desc": "Charge over <hl>$channel_time$t</hl> and release to <kb>lunge forward <kkb>$lunge_kb$1$$kbx$</kkb></kb> dealing <dmg>$ability_dmg$ $$ddmg$</dmg> to enemies in your path.",
                 "prefix": "Hold "
             }
         },
@@ -24,7 +24,7 @@
             "use_effects": { "can_sprint": true, "speed_multiplier": 0.85 }
         },
 
-        "ability_boost": "Charge over <hl>$boost_channel_time$t</hl>, lunge further, and deal <kb>knockback</kb> to hit enemies."
+        "ability_boost": "Charge over <hl>$boost_channel_time$t</hl>, <kb>lunge further <kkb>$boost_lunge_kb$1$$kbx$</kkb></kb>, and <kb>launch <kkb>$ability_kb$1$$kbx$ $ability_kb$2$$kby$</kkb></kb> hit enemies."
     },
 
     "weapon_type": "melee",
@@ -35,6 +35,7 @@
     "kb": [0.2, 0, 0],
     "ability_dmg": 12,
     "lunge_kb" :[1.35, 0.02, 0],
+    "boost_lunge_kb" :[1.7, 0.02, 0],
     "ability_kb" :[1.5, 0.25, 0],
 
     "move_speed_modifier": 0,

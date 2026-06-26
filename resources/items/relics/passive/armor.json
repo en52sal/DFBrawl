@@ -2,7 +2,7 @@
     "type": "relic",
     "name": "Armor",
     "icon": {
-        "description": "Reduces damage by <hl>50%</hl> but\nonly up to <dmg>$dmg_max$ $$ddmg$</dmg>."
+        "description": "Reduces incoming damage by <hl>50%</hl>\nbut only up to <dmg>$dmg_max$ $$ddmg$</dmg>."
     },
 
     "relic_type": "passive",

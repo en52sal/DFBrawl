@@ -1,0 +1,63 @@
+{
+    "type": "weapon",
+    "name": "Winger",
+    "icon": {
+        "states": "$gun",
+        "display_context": "$gun",
+        
+        "description": "Hmmm should i make these good lores or very descriptive?",
+
+        "components": {
+            "swing_animation": { "duration": 5 },
+           "consumable": { "consume_seconds": 999, "animation": "none", "sound": "minecraft:entity.player.attack.nodamage", "has_consume_particles": false },
+            "use_effects": { "can_sprint": true, "speed_multiplier": 1 }
+        },
+
+        "actions": "$gun"
+    },
+    "weapon_type": "gun",
+    "category": "light",
+
+    "weight": 1,
+    "move_speed_modifier": "$light",
+    "equip_speed": "$light",
+    "cooldown": 2,
+
+    "bullet_color": "#ffc70c",
+    "bullet_opacity": 5,
+    "shoot_animation": 3,
+    
+    "overlay_display": "ammo",
+    "bar_display": "ammo",
+    "number_display": "ammo",
+    "gun_resource": "ammo",
+    "reload_resource": "ammo",
+    "max_ammo": 12,
+    "reloaded_per": 12,
+    "reload_ticks": 38,
+    "initial_reload_ticks": 0,
+    
+    "burst_count": 2,
+    "burst_delay": 2,
+    "pellet_count": 1,
+    "inaccuracy": 0.022,
+    
+    "dmg": 7.7,
+    "min_dmg": 3.5,
+    "crit_multiplier": 1.25,
+    
+    "projectile": "bullet",
+    "size": "$default",
+    "gravity": "$default",
+    "power": "$default",
+    "mass": 1,
+    "drag": 0,
+    "friction": 1,
+    "restituion": 0,
+    "distance": 60,
+    "distance_falloff": 11,
+    "bounces" : 0,
+    "right": "GUN:use",
+    "offhand": "ITEM:reload"
+    
+}
