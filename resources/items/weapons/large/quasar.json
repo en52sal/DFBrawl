@@ -30,6 +30,7 @@
     "overlay_display": "heat",
     "bar_display": "heat",
     "number_display": "heat",
+    "gray_display": "heat",
 
     "gun_resource": "heat",
     "max_heat": 22,

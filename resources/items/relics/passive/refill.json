@@ -9,7 +9,7 @@
     "relic_type": "passive",
     "tier": 3,
 
-    "kill_percent": 1,
+    "kill_percent": 0.75,
     "assist_percent": 0.2
     
 }

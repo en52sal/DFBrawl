@@ -4,7 +4,7 @@
     "icon": {
         "non_gui_fallback": "superball",
 
-        "description": "Throw a bouncy ball that lasts <hl>40s</hl>.\nOn enemy hit deal <dmg>$hit_dmg$ $$ddmg$</dmg> and\n<kb>launch</kb> <kkb>$kb$1$$kbx$ $kb$2$$kby$</kkb> enemies.\n\nWhile deployed, you can <h>catch\nthe ball</h> to retrieve early.\n<hl>+{{$charge_per_tick$*20}/$min_charge$} charge</hl> per second",
+        "description": "Throw a bouncy ball that lasts <hl>40s</hl>.\nOn enemy hit deal <dmg>$hit_dmg$ $$ddmg$</dmg> and\n<kb>launch</kb> <kkb>$kb$1$$kbx$ $kb$2$$kby$</kkb> enemies.\n\nWhile deployed, you can <h>catch\nthe ball</h> to retrieve early.\nSneak to catch easier.\n<hl>+{{$charge_per_tick$*20}/$min_charge$} charge</hl> per second",
 
         "actions": {
             "use": {

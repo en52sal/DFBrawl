@@ -10,5 +10,5 @@
     "tier": 1,
 
     "reload_percent": 0.5,
-    "cooling_percent": 0.5
+    "cooling_percent": 0.3
 }

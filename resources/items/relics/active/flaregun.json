@@ -20,7 +20,7 @@
 
     "overlay_display": "ammo,charge",
     "bar_display": "charge",
-    "gray_display": "charge",
+    "gray_display": "charge,ammo",
     "number_display": "ammo,charge",
     "charge_display": "ammo",
 

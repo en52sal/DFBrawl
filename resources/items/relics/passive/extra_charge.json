@@ -1,6 +1,6 @@
 {
     "type": "relic",
-    "name": "Extra Actives",
+    "name": "Active Resources",
     "icon": {
         "description":
          "If applicable; <h>active relics gain<h>\n<hl>+$extra_charge$</hl> <h>max charge</h>\n<hl>+$extra_meter$%</hl> <h>max meter</h>\n<hl>+$extra_heat$%</hl> <h>max heat</h>"
@@ -10,6 +10,6 @@
     "tier": 3,
     
     "extra_charge": 1,
-    "extra_meter": 0.5,
-    "extra_heat": 0.5
+    "extra_meter": 0.4,
+    "extra_heat": 0.4
 }
