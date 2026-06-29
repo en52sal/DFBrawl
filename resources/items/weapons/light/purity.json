@@ -21,7 +21,7 @@
     "weight": 1,
     "move_speed_modifier": "$light",
     "equip_speed": "$light",
-    "cooldown": 6,
+    "cooldown": 4,
 
     "bullet_color": "#e71515",
     "bullet_opacity": 5,
@@ -42,9 +42,9 @@
     "pellet_count": 1,
     "inaccuracy": 0.007,
     
-    "dmg": 10.75,
+    "dmg": 11.113,
     "min_dmg": 3,
-    "crit_multiplier": 1.5,
+    "crit_multiplier": 1.25,
     
     "projectile": "bullet",
     "size": "$default",

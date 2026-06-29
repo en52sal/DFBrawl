@@ -3,14 +3,14 @@
     "name": "Incendiary Rounds",
     "icon": {
         "description":
-         "Upon dealing <dmg>$threshold$+ weapon $$ddmg$</dmg>\nInflict <effect>$$eeffect$ fire</effect> for <hl>$fire_duration$t</hl>.\n<dark_gray>$cooldown$t cooldown per victim."
+         "Upon dealing <dmg>$threshold$+ weapon $$ddmg$</dmg>\nInflict <effect>$$eeffect$ fire</effect> for\n<hl>$fire_duration$t + total damage in ticks.</hl>\n<dark_gray>$cooldown$t cooldown per victim."
     },
 
     "relic_type": "passive",
     "tier": 3,
 
-    "threshold": 30,
-    "fire_duration": 40,
-    "cooldown": 100
+    "threshold": 35,
+    "fire_duration": 20,
+    "cooldown": 85
     
 }

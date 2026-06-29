@@ -44,7 +44,7 @@
     
     "dmg": 11,
     "min_dmg": 11,
-    "crit_multiplier": 1.25,
+    "crit_multiplier": 0,
     "pierce_entities" : 2,
     
     "projectile": "bullet",
