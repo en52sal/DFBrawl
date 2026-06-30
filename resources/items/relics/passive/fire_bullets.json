@@ -10,7 +10,7 @@
     "tier": 3,
 
     "threshold": 35,
-    "fire_duration": 20,
-    "cooldown": 85
+    "fire_duration": 10,
+    "cooldown": 90
     
 }

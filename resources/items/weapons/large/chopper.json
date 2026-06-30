@@ -25,7 +25,7 @@
     "semi_automatic": 1,
 
     "bullet_color": "#f5ff87",
-    "bullet_opacity": 5,
+    "bullet_opacity": 4,
     "shoot_animation": 6,
     
     "overlay_display": "ammo",

@@ -1,0 +1,14 @@
+{
+    "type": "relic",
+    "name": "Big Magazine",
+    "icon": {
+        "description":
+         "If applicable; <h>weapons gain<h>\n<hl>+$extra_ammo$%</hl> <h>max ammo</h>\n<hl>+$extra_heat$%</hl> <h>max heat</h>\n<dark_gray>Rounds up.</dark_gray>"
+    },
+
+    "relic_type": "passive",
+    "tier": 2,
+    
+    "extra_ammo": 0.5,
+    "extra_heat": 0.5
+}
