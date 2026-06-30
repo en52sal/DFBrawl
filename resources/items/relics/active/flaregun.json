@@ -47,7 +47,7 @@
     
     "aoe_dmg": 10,
     "aoe_radius": 1.5,
-    "effect_duration": 160,
+    "effect_duration": 140,
     
     
     "projectile": "flare",

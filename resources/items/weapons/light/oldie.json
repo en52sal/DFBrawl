@@ -2,7 +2,7 @@
     "type": "weapon",
     "name": "Oldie",
     "icon": {
-        "states": "$gun",
+        "states": ["reload", "equip", "firing", "delay"],
         "display_context": "$gun",
 
         "description": "Hmmm should i make these good lores or very descriptive?",
@@ -60,6 +60,6 @@
     "right": "GUN:use",
     "offhand": "ITEM:reload",
 
-    "use_delay": 8
+    "use_delay": 7
     
 }
