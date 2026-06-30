@@ -3,7 +3,7 @@
     "name": "Taco Time",
     "icon": {
         "description":
-         "Randomly during a round,\n<h>Taco Time</h> can occur for <hl>$duration$t</hl>\n\nDuring Taco Time:\n<h>Players cannot act</h> but heal\n<health>+$heal$ $$hhealth$</health> over the duration."
+         "not coded dont buy\nRandomly during a round,\n<h>Taco Time</h> can occur for <hl>$duration$t</hl>\n\nDuring Taco Time:\n<h>Players cannot act</h> but heal\n<health>+$heal$ $$hhealth$</health> over the duration."
     },
 
     "relic_type": "shared",

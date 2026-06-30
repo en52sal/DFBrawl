@@ -14,9 +14,9 @@
                 "title": "$$attack$ Swipe"
             },
             "use": {
-                "title": "$$ability$ Summon the Road",
+                "title": "$$ability$ WIP",
                 "desc":
-                 "Summon a highway that spawns cars to hit people with vehicular manslaughter.",
+                 "WIP WIP WIP WIP WIP WIP WIP WIP WIP WIP WIP WIP WIP WIP WIP ",
                 "prefix": "Hold "
             }
         },
@@ -41,12 +41,12 @@
     "resource_type": "cooldown",
 
     "cooldown": 280,
-    "equip_speed": 16,
+    "equip_speed": 12,
     "swing_cooldown": 29,
     "cooldown_key": "ability",
 
     "range": 2.7,
-    "angle": 60,
+    "angle": 70,
     "attack_type": "slash",
 
     "overlay_display": "item_cooldown,cooldown",

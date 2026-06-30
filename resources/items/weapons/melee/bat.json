@@ -23,7 +23,7 @@
         "components": {
             "swing_animation": { "duration": 6 },
            "consumable": { "consume_seconds": 999, "animation": "spyglass", "sound": "minecraft:entity.player.attack.nodamage", "has_consume_particles": false },
-            "use_effects": { "can_sprint": true, "speed_multiplier": 0.9 }
+            "use_effects": { "can_sprint": true, "speed_multiplier": 0.75 }
         },
 
         "ability_boost":
@@ -34,17 +34,17 @@
     "category": "melee",
 
     "dmg": 13,
-    "kb": [1.3, 0.55, 0],
+    "kb": [1, 0.3, 0],
     "ability_dmg": 30,
-    "ability_kb" :[3.075, 0.4, 0],
-    "boost_ability_kb" :[4, 0.5, 0],
+    "ability_kb" :[2.7, 0.4, 0],
+    "boost_ability_kb" :[3, 0.5, 0],
 
     "move_speed_modifier": 0,
     "weight": 1,
 
     "cooldown": 240,
     "ability_cooldown": 180,
-    "equip_speed": 4,
+    "equip_speed": 3,
     "swing_cooldown": 18,
     "cooldown_key": "ability",
 
@@ -52,7 +52,7 @@
     "boost_channel_time": 10,
 
     "range": 3.4,
-    "angle": 45,
+    "angle": 52,
     "attack_type": "slash",
 
     "overlay_display": "item_cooldown,cooldown",

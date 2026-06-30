@@ -47,7 +47,7 @@
     "crit_multiplier": 1.25,
     
     "projectile": "bullet",
-    "size": 0.35,
+    "size": "$default",
     "gravity": "$default",
     "power": 8,
     "mass": 1,

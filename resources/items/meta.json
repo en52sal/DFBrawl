@@ -51,7 +51,7 @@
     "presets": {
         "default": {
             "gravity": [0,-0.026,0],
-            "size": 0.3,
+            "size": 0.34,
             "power": 17
         },
         "light": {

@@ -3,7 +3,7 @@
     "name": "Arsenal",
     "icon": {
         "description":
-         "Upon <death>death $$death$</death>:\nPlayers drop one\nof their weapons."
+         "not coded dont buy\nUpon <death>death $$death$</death>:\nPlayers drop one\nof their weapons."
     },
 
     "relic_type": "shared",

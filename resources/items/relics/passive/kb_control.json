@@ -1,0 +1,16 @@
+{
+    "type": "relic",
+    "name": "Knockback Control",
+    "icon": {
+        "description":
+        "<hl>+$outgoing_kb_multiplier$%</hl> <h>outgoing knockback</h>\n<hl>-$incoming_kb_multiplier$%</hl> <h>incoming enemy knockback</h>\n<hl>+$self_kb_multiplier$%</hl> <h>self knockback*</h>\n<dark_gray>*Does not affect things like springboard,\nspear lunge, hammer launch, etc."
+    },
+
+    "relic_type": "passive",
+    "tier": 2,
+    
+    "self_kb_multiplier": 0.5,
+    "outgoing_kb_multiplier": 0.3,
+    "incoming_kb_multiplier": 0.2
+
+}
