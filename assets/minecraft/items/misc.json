@@ -11,7 +11,7 @@
         "index": 0,
         "cases": [
 		{
-		"when": "cryptid","model":{"type": "minecraft:model","model": "minecraft:item/relics/extra/cryptidhead"}
+		"when": "iron_door","model":{"type": "minecraft:model","model": "minecraft:item/misc/door_template"}
 		},
 		{
 		"when": "dither","model":{

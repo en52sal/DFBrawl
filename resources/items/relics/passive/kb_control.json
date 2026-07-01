@@ -10,7 +10,7 @@
     "tier": 2,
     
     "self_kb_multiplier": 0.5,
-    "outgoing_kb_multiplier": 0.3,
-    "incoming_kb_multiplier": 0.2
+    "outgoing_kb_multiplier": 0.35,
+    "incoming_kb_multiplier": 0.3
 
 }
