@@ -1,0 +1,13 @@
+{
+    "type": "relic",
+    "name": "Slip Away",
+    "icon": {
+        "description":
+        "When outside of enemy view, and you\nhaven't taken/dealt damage for atleast\n<hl>$duration$t</hl>, gain <effect>$$eeffect$ Evasive</effect>."
+    },
+
+    "relic_type": "passive",
+    "tier": 2,
+
+    "duration": 60
+}

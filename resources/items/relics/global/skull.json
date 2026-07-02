@@ -14,5 +14,6 @@
     "aoe_size": 0.3,
     "speed": 0.08,
     "drag": 0.9,
-    "speed_distance": 40
+    "speed_distance": 40,
+    "warning_distance":4.2
 }
