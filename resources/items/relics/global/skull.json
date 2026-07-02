@@ -1,0 +1,18 @@
+{
+    "type": "relic",
+    "name": "The Skull",
+    "icon": {
+        "description":
+         "Summons a <hl>floating skull</hl> that follows players\nand instantly <kill>kills $$kill$</kill> players on contact.\n\nThe Skull can be hit, but\n<dmg>damage</dmg> is converted into <kb>knockback $$kbv$</kb>."
+    },
+
+    "relic_type": "shared",
+    "shared_target": "global",
+    "tier": 3,
+
+    "knockback_multiplier": 0.5,
+    "aoe_size": 0.3,
+    "speed": 0.08,
+    "drag": 0.9,
+    "speed_distance": 40
+}
