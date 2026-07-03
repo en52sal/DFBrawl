@@ -33,9 +33,9 @@
     "weapon_type": "melee",
     "category": "melee",
 
-    "dmg": 20.5,
+    "melee_dmg": 20.5,
     "critical_multiplier": 1.5,
-    "kb": [0.6, 0.2, 0],
+    "melee_kb": [0.6, 0.2, 0],
     "ability_dmg": 12,
     "lunge_kb" :[1.35, 0.02, 0],
     "boost_lunge_kb" :[1.7, 0.02, 0],

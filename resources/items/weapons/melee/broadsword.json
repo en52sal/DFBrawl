@@ -32,8 +32,8 @@
     "weapon_type": "melee",
     "category": "melee",
 
-    "dmg": 20.75,
-    "kb": [0.35, 0.1, 0],
+    "melee_dmg": 20.75,
+    "melee_kb": [0.35, 0.1, 0],
 
     "move_speed_modifier": 0,
     "weight": 1,

@@ -1,0 +1,69 @@
+{
+    "type": "weapon",
+    "name": "Knife",
+    "icon": {
+        "states": "$melee",
+        "display_context": "$melee",
+        "description":
+         "Sweeping weapon with low cooldown\n and damage, but high knockback.",
+        
+        "actions": {
+            "attack": {
+                "title": "$$attack$ Gash"
+            },
+           "use": {
+                "title": "$$ability$ Assassinate",
+                "desc":
+                 "Charge up a slash over <hl>$channel_time$t</hl>\ndealing <dmg>$min_ability_dmg$-$max_ability_dmg$ + $min_hpdmg_modifier$%-$max_hpdmg_modifier$% of maxhp $$ddmg$</dmg>\nand inflicting <effect>Bleed $$eeffect$</effect> for <hl>$min_bleed_duration$t-$max_bleed_duration$t</hl>\nbased on the current charge power.\n\nDeals <dmg>$stealth_bonus$x $$ccrit$</dmg> if you're\noutside of the victim's view.",
+                "prefix": "Hold & Release "
+            }
+        },
+
+        "components": {
+            "swing_animation": { "duration": 6 },
+           "consumable": { "consume_seconds": 999, "animation": "spyglass", "sound": "minecraft:entity.player.attack.nodamage", "has_consume_particles": false },
+            "use_effects": { "can_sprint": true, "speed_multiplier": 0.75 }
+        },
+
+        "ability_boost":
+         "mhm"
+    },
+
+    "weapon_type": "melee",
+    "category": "melee",
+
+    "melee_dmg": 14,
+    "melee_kb": [0.1, 0.05, 0],
+
+    "min_ability_dmg": 14,
+    "max_ability_dmg": 27,
+    "stealth_bonus": 1.75,
+    "min_hpdmg_modifier": 0,
+    "max_hpdmg_modifier": 0.1,
+    "min_bleed_duration": 8,
+    "max_bleed_duration": 50,
+
+    "ability_range": 2.6,
+    "ability_angle": 32,
+
+    "move_speed_modifier": 0,
+    "weight": 1,
+
+    "ability_cooldown": 85,
+    "equip_speed": 3,
+    "swing_cooldown": 9,
+    "cooldown_key": "ability",
+
+    "channel_time": 17,
+
+    "range": 2.95,
+    "angle": 28,
+    "attack_type": "stab",
+
+    "overlay_display": "item_cooldown,cooldown",
+    "bar_display": "cooldown",
+    "number_display": "cooldown",
+
+    "right": "MELEE:use",
+    "left": "MELEE:left"
+}

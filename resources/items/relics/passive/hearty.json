@@ -3,11 +3,12 @@
     "name": "Hearty",
     "icon": {
         "description":
-         "<health>+$amount$ max $$hhealth$</health>"
+         "<health>+$amount$ max $$hhealth$</health>\n<dark_gray>Order: $order$</dark_gray>"
     },
 
     "relic_type": "passive",
     "tier": 1,
 
-    "amount": 35
+    "amount": 35,
+    "order": 1
 }
