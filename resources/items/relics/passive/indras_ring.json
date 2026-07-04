@@ -1,0 +1,14 @@
+{
+    "type": "relic",
+    "name": "Indra's Ring",
+    "icon": {
+        "description":
+         "on crit apply a charge, after \n%duration% seconds consume charges and zap"
+    },
+
+    "relic_type": "passive",
+    "tier": 1,
+
+    "duration": 5
+    
+}
