@@ -21,7 +21,7 @@
             }
         },
         "components": {
-            "swing_animation": { "duration": 6 },
+            "swing_animation": { "duration": 8, "type": "stab" },
             "consumable": { "consume_seconds": 999, "animation": "bow", "sound": "minecraft:entity.player.attack.nodamage", "has_consume_particles": false },
             "use_effects": { "can_sprint": true, "speed_multiplier": 0.82 }
         },
@@ -32,9 +32,9 @@
 
     "weapon_type": "melee",
     "category": "melee",
-
+    "bob": "true",
     "melee_dmg": 20.5,
-    "critical_multiplier": 1.5,
+    "crit_multiplier": 1.5,
     "melee_kb": [0.6, 0.2, 0],
     "ability_dmg": 12,
     "lunge_kb" :[1.35, 0.02, 0],
@@ -44,7 +44,6 @@
     "move_speed_modifier": 0,
     "weight": 1,
 
-    "cooldown": 195,
     "equip_speed": 5,
     "swing_cooldown": 17,
     "ability_cooldown": 190,
@@ -62,6 +61,7 @@
     "number_display": "cooldown",
 
     "right": "MELEE:use",
-    "left": "MELEE:left"
+    "left": "MELEE:left",
+    "melee_attack": 1
 
 }

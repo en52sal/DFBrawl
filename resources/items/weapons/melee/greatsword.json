@@ -31,7 +31,7 @@
 
     "weapon_type": "melee",
     "category": "melee",
-
+    "bob": "true",
     "melee_dmg": 30,
     "melee_kb": [0.32, 0.1, 0],
 
@@ -54,5 +54,7 @@
     "number_display": "cooldown",
 
     "right": "MELEE:use",
-    "left": "MELEE:left"
+    "left": "MELEE:left",
+    "melee_attack": 1,
+    "melee_delay": 5
 }

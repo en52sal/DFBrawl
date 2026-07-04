@@ -43,7 +43,7 @@
     "pellet_count": 1,
     "inaccuracy": 0.001,
     
-    "dmg": 37,
+    "dmg": 31,
     "min_dmg": 17.5,
     "crit_multiplier": 1.5,
     
