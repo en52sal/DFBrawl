@@ -53,6 +53,11 @@
     "range": 3.05,
     "angle": 25,
     "attack_type": "stab",
+    "melee_animation_frames": "1/1/4/4/4/4/2/2/3/3",
+    "melee_attack": 1,
+    "melee_delay":3,
+    "melee_item_recovery_cooldown": 10,
+    "left": "MELEE:left",
     
     "projectile": "bullet",
     "size": "$default",
@@ -66,11 +71,6 @@
     "distance_falloff": 20,
     "bounces" : 0,
     "right": "GUN:use",
-    "left": "MELEE:left",
-    "offhand": "ITEM:reload",
-    "melee_animation_frames": "1/4/4/4/4/2/2/3/3",
-    "melee_attack": 1,
-    "melee_delay":3,
-    "melee_item_recovery_cooldown": 10
+    "offhand": "ITEM:reload"
     
 }   

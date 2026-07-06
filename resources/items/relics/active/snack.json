@@ -8,7 +8,7 @@
         },
 
         "description":
-        "Consume for <hl>$eat_duration$s</hl> to heal\n<health>$base_heal$ + $missing_percent$% of missing health $$hhealth$</health>.\n\n<hl>+{{$charge_per_tick$*20}/$min_charge$} charge</hl> per second\n<hl>+$charge_per_kill$% charge</hl> per <kill>kill $$kill$</kill>."
+        "Consume for <hl>$eat_duration$s</hl> to heal\n<health>$base_heal$ + $missing_percent$% of missing health $$hhealth$</health>.\n\n<hl>+{{$charge_per_tick$*20}/$min_charge$} charge progress</hl> per second\n<hl>+$charge_per_kill$% charge progress</hl> per <kill>kill $$kill$</kill>."
     },
 
     "relic_type": "active",

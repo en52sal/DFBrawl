@@ -5,7 +5,7 @@
         "non_gui_fallback": "bomb",
 
         "description":
-         "Throw a bomb exploding after <hl>$bomb_duration$t</hl>\nhitting enemies within <hl>$aoe_radius$m</hl>, dealing\n<dmg>$min_dmg$-$max_dmg$ $$ddmg$</dmg> and <kb>knockback $$kbv$</kb>.\n\n<hl>+{{$charge_per_tick$*20}/$min_charge$} charge</hl> per second\n<hl>+$charge_per_kill$% charge</hl> per <kill>kill $$kill$</kill>.",
+         "Throw a bomb exploding after <hl>$bomb_duration$t</hl>\nhitting enemies within <hl>$aoe_radius$m</hl>, dealing\n<dmg>$min_dmg$-$max_dmg$ $$ddmg$</dmg> and <kb>knockback $$kbv$</kb>.\n\n<hl>+{{$charge_per_tick$*20}/$min_charge$} charge progress</hl> per second\n<hl>+$charge_per_kill$% charge progress</hl> per <kill>kill $$kill$</kill>.",
 
         "actions": {
             "use": {

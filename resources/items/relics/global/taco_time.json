@@ -9,7 +9,7 @@
     "relic_type": "shared",
     "shared_target": "global",
     "tier": 3,
-    "heal": 40,
-    "duration": 100
+    "heal": 60,
+    "duration": 200
     
 }

@@ -75,8 +75,8 @@
 			"translation": [1.25, 5.75, -6]
 		},
 		"firstperson_lefthand": {
-			"rotation": [2.16, 0.5, -16.69],
-			"translation": [1.5, 5.5, -4.5]
+			"rotation": [2.22, 1.06, -2.44],
+			"translation": [1.25, 5.75, -6]
 		},
 		"ground": {
 			"translation": [0, 3, 0],

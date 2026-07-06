@@ -7,8 +7,7 @@
     },
 
     "relic_type": "passive",
-    "tier": 2,
+    "tier": 1,
 
-    "percent": 0.45
-    
+    "percent": 0.70    
 }

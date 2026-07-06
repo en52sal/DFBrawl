@@ -5,7 +5,7 @@
         "states": ["held","reload", "equip", "firing", "flare"],
         "non_gui_fallback": "held",
         "description":
-         "Shoot a flare hitting enemies within\n <hl>$aoe_radius$m</hl>, dealing <dmg>$aoe_dmg$ $$ddmg$</dmg> and inflicting\n<effect>$$eeffect$ Fire</effect> + <effect>$$eeffect$ Glowing</effect> for <hl>$effect_duration$t</hl>.\n\n<hl>+{{$charge_per_tick$*20}/$min_charge$} charge</hl> per second\n<hl>+$charge_per_kill$% charge</hl> per <kill>kill $$kill$</kill>.",
+         "Shoot a flare hitting enemies within\n <hl>$aoe_radius$m</hl>, dealing <dmg>$aoe_dmg$ $$ddmg$</dmg> and inflicting\n<effect>$$eeffect$ Fire</effect> + <effect>$$eeffect$ Glowing</effect> for <hl>$effect_duration$t</hl>.\n\n<hl>+{{$charge_per_tick$*20}/$min_charge$} charge progress</hl> per second\n<hl>+$charge_per_kill$% charge progress</hl> per <kill>kill $$kill$</kill>.",
         "components": {
             "swing_animation": {"duration": 5},
             "consumable": { "consume_seconds": 999, "animation": "none", "sound": "minecraft:entity.player.attack.nodamage", "has_consume_particles": false },

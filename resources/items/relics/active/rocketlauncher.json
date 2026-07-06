@@ -3,7 +3,7 @@
     "name": "Rocket Launcher",
     "icon": {
         "description":
-         "Shoot an explosive rocket hitting\nenemies within <hl>$aoe_radius$m</hl>, dealing <dmg>$min_dmg$-$max_dmg$ $$ddmg$</dmg>\nand <kb>knockback $$kbv$</kb>.\nSpeeds up during lifetime.\n\n<hl>+{{$charge_per_tick$*20}/$min_charge$} charge</hl> per second",
+         "Shoot an explosive rocket hitting\nenemies within <hl>$aoe_radius$m</hl>, dealing <dmg>$min_dmg$-$max_dmg$ $$ddmg$</dmg>\nand <kb>knockback $$kbv$</kb>.\nSpeeds up during lifetime.\n\n<hl>+{{$charge_per_tick$*20}/$min_charge$} charge progress</hl> per second",
         "components": {
             "swing_animation": {
                 "duration": 5

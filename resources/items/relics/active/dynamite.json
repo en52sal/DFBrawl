@@ -1,0 +1,43 @@
+{
+    "type": "relic",
+    "name": "Dynamite",
+    "icon": {
+        "non_gui_fallback": "model",
+
+        "description":
+         "Throw a dynamite stick exploding \nwhen shot or after <hl>$duration$t</hl>. Deals\n<dmg>$min_dmg$-$max_dmg$ $$ddmg$</dmg>, and inflicts <effect>Fire $$eeffect$</effect>\nfor <hl>$effect_duration$t</hl> to targets within <hl>$aoe_radius$m</hl>\n\n<hl>+{{$charge_per_tick$*20}/$min_charge$} charge progress</hl> per second\n<hl>+$charge_per_kill$% charge progress</hl> per <kill>kill $$kill$</kill>.",
+
+        "actions": {
+            "use": {
+                "title": "$$attack$ Throw"
+            }
+        }
+    },
+
+    "relic_type": "active",
+    "tier": 2,
+
+    "overlay_display": "charge",
+    "bar_display": "charge",
+    "number_display": "charge",
+    "gray_display": "charge",
+    "charge_display": "dynamite",
+
+    "max_charge" : 600,
+    "min_charge": 600,
+    "charge_per_tick": 1,
+    "charge_per_kill": 0.5,
+    "cooldown": 5,
+
+    "min_dmg": 30,
+    "max_dmg": 75,
+    "aoe_radius": 5.75,
+    "duration": 120,
+    "effect_duration": 80,
+
+    "right": "ITEM:use",
+    "icon_color": "team"
+}
+
+
+

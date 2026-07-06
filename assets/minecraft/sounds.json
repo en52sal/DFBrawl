@@ -148,6 +148,7 @@
 	"sfx.music":{"sounds":[{"name":"sfx/roundmusic"},{"name":"sfx/roundmusic2"}]},
 	"sfx.lobbymusic":{"sounds":[{"name":"sfx/lobbytheme"}]},
 	"sfx.securing":{"sounds":[{"name":"sfx/securing"}]},
+	"sfx.tacotime":{"sounds":[{"name":"sfx/tacotime"}]},
 	"honk":
 	{
 		"sounds":[

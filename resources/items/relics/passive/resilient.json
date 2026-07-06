@@ -7,6 +7,7 @@
     },
 
     "relic_type": "passive",
-    "tier": 3
+    "tier": 3,
+    "conflict": "on_death"
 
 }
