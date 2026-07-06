@@ -9,7 +9,7 @@
     "relic_type": "passive",
     "tier": 2,
     
-    "self_kb_multiplier": 0.5,
+    "self_kb_multiplier": 0.6,
     "outgoing_kb_multiplier": 0.35,
     "incoming_kb_multiplier": 0.3
 

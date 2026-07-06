@@ -36,7 +36,7 @@
     "melee_kb": [0.32, 0.1, 0],
 
     "move_speed_modifier": 0.2,
-    "weight": 2,
+    "weight": 3,
     
     "resource_type": "cooldown",
 

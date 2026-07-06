@@ -34,15 +34,17 @@
     "category": "melee",
     "bob": "true",
     "melee_dmg": 20.5,
-    "crit_multiplier": 1.5,
     "melee_kb": [0.6, 0.2, 0],
     "ability_dmg": 12,
     "lunge_kb" :[1.35, 0.02, 0],
     "boost_lunge_kb" :[1.7, 0.02, 0],
     "ability_kb" :[1.5, 0.25, 0],
 
+    "sweetspot_radius": 0.25,
+    "sweetspot_multiplier": 1.5,
+
     "move_speed_modifier": 0,
-    "weight": 1,
+    "weight": 2,
 
     "equip_speed": 5,
     "swing_cooldown": 17,

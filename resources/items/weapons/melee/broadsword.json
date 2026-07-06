@@ -36,7 +36,7 @@
     "melee_kb": [0.35, 0.1, 0],
 
     "move_speed_modifier": 0,
-    "weight": 1,
+    "weight": 2,
 
     "max_meter": 100,
     "boost_max_meter": 165,

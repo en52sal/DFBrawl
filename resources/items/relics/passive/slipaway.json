@@ -3,7 +3,7 @@
     "name": "Slip Away",
     "icon": {
         "description":
-        "When outside of enemy view, and you\nhaven't taken/dealt damage for atleast\n<hl>$duration$t</hl>, gain <effect>$$eeffect$ Evasive</effect>."
+        "When outside of enemy view, and you\nhaven't taken/dealt damage for atleast\n<hl>$duration$t</hl>, gain <effect_evasive>$$effect_evasive$ Evasive</effect_evasive>."
     },
 
     "relic_type": "passive",

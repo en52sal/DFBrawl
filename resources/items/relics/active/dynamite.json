@@ -5,7 +5,7 @@
         "non_gui_fallback": "model",
 
         "description":
-         "Throw a dynamite stick exploding \nwhen shot or after <hl>$duration$t</hl>. Deals\n<dmg>$min_dmg$-$max_dmg$ $$ddmg$</dmg>, and inflicts <effect>Fire $$eeffect$</effect>\nfor <hl>$effect_duration$t</hl> to targets within <hl>$aoe_radius$m</hl>\n\n<hl>+{{$charge_per_tick$*20}/$min_charge$} charge progress</hl> per second\n<hl>+$charge_per_kill$% charge progress</hl> per <kill>kill $$kill$</kill>.",
+         "Throw a dynamite stick exploding \nwhen shot or after <hl>$duration$t</hl>. Deals\n<dmg>$min_dmg$-$max_dmg$ $$ddmg$</dmg>, and inflicts <effect_fire>$$effect_fire$ Fire</effect_fire>\nfor <hl>$effect_duration$t</hl> to targets within <hl>$aoe_radius$m</hl>\n\n<hl>+{{$charge_per_tick$*20}/$min_charge$} charge progress</hl> per second\n<hl>+$charge_per_kill$% charge progress</hl> per <kill>kill $$kill$</kill>.",
 
         "actions": {
             "use": {
@@ -29,11 +29,11 @@
     "charge_per_kill": 0.5,
     "cooldown": 5,
 
-    "min_dmg": 30,
-    "max_dmg": 75,
-    "aoe_radius": 5.75,
-    "duration": 120,
-    "effect_duration": 80,
+    "min_dmg": 17.5,
+    "max_dmg": 70,
+    "aoe_radius": 6,
+    "duration": 150,
+    "effect_duration": 90,
 
     "right": "ITEM:use",
     "icon_color": "team"

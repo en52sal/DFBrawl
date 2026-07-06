@@ -9,7 +9,7 @@
     "relic_type": "passive",
     "tier": 2,
     
-    "extra_hp": 0.115,
+    "extra_hp": 0.10,
     "order": 2
 
 }

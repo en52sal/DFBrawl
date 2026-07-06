@@ -1,0 +1,14 @@
+{
+    "type": "relic",
+    "name": "Leeching Shot",
+    "icon": {
+        "description":
+         "Upon dealing <dmg>$threshold$+ weapon $$ddmg$</dmg> to enemy\ntargets (halved on non-players)\nheal <health>$heal$ $$hhealth$</health>"
+    },
+
+    "relic_type": "passive",
+    "tier": 2,
+
+    "threshold": 30,
+    "heal": 8
+}

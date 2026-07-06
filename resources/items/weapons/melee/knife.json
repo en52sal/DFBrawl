@@ -14,7 +14,7 @@
            "use": {
                 "title": "$$ability$ Assassinate",
                 "desc":
-                 "Charge up a slash over <hl>$channel_time$t</hl>\ndealing <dmg>$min_ability_dmg$-$max_ability_dmg$ + $min_hpdmg_modifier$%-$max_hpdmg_modifier$% of maxhp $$ddmg$</dmg>\nand inflicting <effect>Bleed $$eeffect$</effect> for <hl>$min_bleed_duration$t-$max_bleed_duration$t</hl>\nbased on the current charge power.\n\nDeals <dmg>$stealth_bonus$x $$ccrit$</dmg> if you're\noutside of the victim's view.",
+                 "Charge up a slash over <hl>$channel_time$t</hl>\ndealing <dmg>$min_ability_dmg$-$max_ability_dmg$ + $min_hpdmg_modifier$%-$max_hpdmg_modifier$% of maxhp $$ddmg$</dmg>\nand inflicting <effect_bleed>$$effect_bleed$ Bleed</effect_bleed> for <hl>$min_bleed_duration$t-$max_bleed_duration$t</hl>\nbased on the current charge power.\n\nDeals <dmg>$stealth_bonus$x $$ccrit$</dmg> if you're\noutside of the victim's view.",
                 "prefix": "Hold & Release "
             }
         },
@@ -47,7 +47,7 @@
     "ability_angle": 32,
 
     "move_speed_modifier": 0,
-    "weight": 1,
+    "weight": 2,
 
     "ability_cooldown": 85,
     "equip_speed": 3,

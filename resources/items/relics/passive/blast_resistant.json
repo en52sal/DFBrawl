@@ -1,0 +1,14 @@
+{
+    "type": "relic",
+    "name": "Blast Resistant",
+    "icon": {
+        "description":
+        "<hl>-$percent$%</hl> <h>incoming explosion damage</hl>\n<hl>-100%</hl> self damage"
+    },
+
+    "relic_type": "passive",
+    "tier": 2,
+    
+    "percent": 0.4
+
+}

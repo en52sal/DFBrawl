@@ -8,7 +8,6 @@
         "h": "#b7b7dc",
 
         "dmg": "#ff4e33",
-        "effect":"#ff82c5",
         "heal": "#88ff00",
         "health": "#84ff81",
         "kb": "#4eff88",
@@ -16,9 +15,13 @@
         
         "kill": "#FF1616",
         "assist": "#FF822B",
-        "death": "#DD2569"
+        "death": "#DD2569",
 
-
+        "effect_fire":"#ed6b31",
+        "effect_bleed":"#c8183e",
+        "effect_poison":"#8a2bce",
+        "effect_evasive":"#a6e8d3",
+        "effect_glowing": "#faff93"
 
 
     },
@@ -43,9 +46,15 @@
 
 
         "ddmg": "\u2617",
-        "eeffect": "\u2618",
         "ccrit": "\u261A",
-        "hhealth": "\u261B"
+        "hhealth": "\u261B",
+
+
+        "effect_fire":"\u26B0",
+        "effect_bleed":"\u26B1",
+        "effect_poison":"\u26B2",
+        "effect_evasive":"\u0FBE",
+        "effect_glowing":"\u0FBF"
     },
 
     "presets": {

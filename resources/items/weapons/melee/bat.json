@@ -41,7 +41,7 @@
     "boost_ability_kb" :[3, 0.5, 0],
 
     "move_speed_modifier": 0,
-    "weight": 1,
+    "weight": 2,
 
     "cooldown": 240,
     "ability_cooldown": 180,

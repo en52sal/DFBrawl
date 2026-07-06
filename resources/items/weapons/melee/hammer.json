@@ -31,7 +31,7 @@
     "ability_kb": [0, 0.76, 0],
 
     "move_speed_modifier": 0.2,
-    "weight": 1,
+    "weight": 2,
 
     "ability_cooldown": 240,
     "equip_speed": 9,
