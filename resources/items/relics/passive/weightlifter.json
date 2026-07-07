@@ -3,11 +3,11 @@
     "name": "Weightlifter",
     "icon": {
         "description":
-         "Gain <hl>+$extra_weight$</hl> <white>Max \u2397</white>"
+         "<hl>+$extra_weight$</hl> <h>extra weapon slot of any category</h>"
     },
 
     "relic_type": "passive",
-    "tier": 2,
+    "tier": 3,
     
     "extra_weight": 1
 

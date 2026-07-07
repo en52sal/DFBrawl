@@ -1,0 +1,69 @@
+{
+    "type": "weapon",
+    "name": "Broadsword",
+    "icon": {
+        "states": "$melee",
+        "display_context": "$melee",
+
+        "description":
+         "Sweeping weapon with a slight\ncooldown and good damage.",
+
+        "actions": {
+            "attack": {
+                "title": "$$attack$ Swipe"
+            },
+            "use": {
+                "title": "$$ability$ Block",
+                "desc":
+                 "Hold your sword forward, blocking <hl>$block_damage_percent$%</hl>\n of damage, tanking <dmg>$max_meter$ $$ddmg$</dmg> before\nyour block breaks.",
+                "prefix": "Hold "
+            }
+        },
+            "components": {
+            "swing_animation": { "duration": 6 },
+           "consumable": { "consume_seconds": 999, "animation": "block", "sound": "minecraft:entity.player.attack.nodamage", "has_consume_particles": false },
+            "use_effects": { "can_sprint": true, "speed_multiplier": 0.6 }
+        },
+
+        "ability_boost":
+         "Blocks <hl>$boost_block_damage_percent$%</hl> of damage and tanks\n <dmg>$boost_max_meter$ $$ddmg$</dmg> before your block breaks."
+    },
+
+    "weapon_type": "melee",
+    "slot": 3,
+
+    "bob": "true",
+    "melee_dmg": 20.75,
+    "melee_kb": [0.35, 0.1, 0],
+
+    "move_speed_modifier": 0,
+    "weight": 2,
+
+    "max_meter": 100,
+    "boost_max_meter": 165,
+    "meter_delay": 30,
+    "meter_per_tick": 0.85,
+    "meter_drain": -1,
+
+    "block_damage_percent": 0.9,
+    "boost_block_damage_percent": 1,
+
+    "ability_cooldown": 18,
+    "ability_meter_cooldown": 75,
+    "equip_speed": 3,
+    "swing_cooldown": 17,
+    "cooldown_key": "ability",
+    "break_cooldown": 200,
+
+    "range": 3.4,
+    "angle": 52,
+    "attack_type": "slash",
+
+    "overlay_display": "item_cooldown,cooldown,meter",
+    "bar_display": "meter",
+    "number_display": "meter,cooldown",
+
+    "right": "MELEE:use",
+    "left": "MELEE:left",
+    "melee_attack": 1
+}

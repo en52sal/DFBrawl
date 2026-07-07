@@ -2,19 +2,21 @@
     "type": "relic",
     "name": "Martyrdom",
     "icon": {
+        "non_gui_fallback": "model",
 
         "description":
-    "Upon <death>Death $$death$</death> (nullified or not):\nDrop a small dynamite stick, exploding\nafter <hl>$bomb_duration$t</hl> and dealing <dmg>$min_dmg$-$max_dmg$ $$ddmg$</dmg>\nto enemies within <hl>$aoe_radius$m</hl>."
+    "Upon <death>Death $$death$</death> (nullified or not):\nDrop <hl>$bomb_count$ small bombs</hl>, each exploding\nafter <hl>$bomb_duration$t</hl> and dealing <dmg>$min_dmg$-$max_dmg$ $$ddmg$</dmg>\nto enemies within <hl>$aoe_radius$m</hl>."
     },
 
     "relic_type": "passive",
     "tier": 2,
 
-    "min_dmg": 40,
-    "max_dmg": 125,
+    "min_dmg": 30,
+    "max_dmg": 95,
     "aoe_radius": 4,
-    "bomb_duration": 11,
-    "kb_scale": 1.4
+    "bomb_duration": 14,
+    "bomb_count": 3,
+    "launch_power":0.172
 }
 
 

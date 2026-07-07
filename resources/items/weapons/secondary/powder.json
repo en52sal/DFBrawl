@@ -1,0 +1,66 @@
+{
+    "type": "weapon",
+    "name": "Hush",
+    "icon": {
+        "states": "$gun",
+        "display_context": "$gun",
+
+        "description": "Hmmm should i make these good lores or very descriptive?",
+
+        "components": {
+            "swing_animation": { "duration": 1, "type": "none" },
+           "consumable": { "consume_seconds": 999, "animation": "none", "sound": "minecraft:entity.player.attack.nodamage", "has_consume_particles": false },
+            "use_effects": { "can_sprint": true, "speed_multiplier": 1 }
+        },
+
+        "actions": "$gun"
+    },
+    "weapon_type": "gun",
+    "slot": 2,
+    
+    "weight": 2,
+    "move_speed_modifier": "$light",
+    "equip_speed": "$light",
+    "cooldown": 8,
+
+    "bullet_color": "#2e2b16",
+    "bullet_opacity": 3,
+    "shoot_animation": 7,
+    
+    "overlay_display": "ammo",
+    "bar_display": "ammo",
+    "number_display": "ammo",
+    "gun_resource": "ammo",
+    "reload_resource": "ammo",
+    "max_ammo": 1,
+    "reloaded_per": 1,
+    "reload_ticks": 40,
+    "initial_reload_ticks": 0,
+    
+    "burst_count": 1,
+    "burst_delay": 1,
+    "pellet_count": 1,
+    "inaccuracy": 0.001,
+    
+    "dmg": 20,
+    "min_dmg": 20,
+    "crit_multiplier": 2,
+    
+    "projectile": "bullet",
+    "size": 0.4,
+    "gravity": "$default",
+    "power": 8.5,
+    "mass": 1,
+    "drag": 0,
+    "friction": 1,
+    "restituion": 0,
+    "distance": 130,
+    "distance_falloff": 130,
+    "bounces" : 0,
+    "right": "GUN:use",
+    "offhand": "ITEM:reload",
+
+    "recoil": [-0.7, 0.15, 0],
+    "bullet_kb": [0.8, 0.43, 0]
+    
+}

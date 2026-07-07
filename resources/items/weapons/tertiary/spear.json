@@ -1,0 +1,70 @@
+{
+    "type": "weapon",
+    "name": "Spear",
+    "icon": {
+        "display_context": "$melee",
+        "states": ["animation","lunge"],
+        "non_gui_fallback": "held",
+
+        "description":
+         "Stabbing weapon with medium cooldown,\n damage, and range.",
+        
+        "actions": {
+            "attack": {
+                "title": "$$attack$ Stab"
+            },
+            "use": {
+                "title": "$$ability$ Lunge",
+                "desc":
+                 "Charge over <hl>$channel_time$t</hl> and release to\n<kb>lunge forward <kkb>$lunge_kb$1$$kbx$</kkb></kb> dealing <dmg>$ability_dmg$ $$ddmg$</dmg>\nto enemies in your path.",
+                "prefix": "Hold "
+            }
+        },
+        "components": {
+            "swing_animation": { "duration": 8, "type": "stab" },
+            "consumable": { "consume_seconds": 999, "animation": "bow", "sound": "minecraft:entity.player.attack.nodamage", "has_consume_particles": false },
+            "use_effects": { "can_sprint": true, "speed_multiplier": 0.82 }
+        },
+
+        "ability_boost":
+         "Charge over <hl>$boost_channel_time$t</hl>, <kb>lunge further <kkb>$boost_lunge_kb$1$$kbx$</kkb></kb>,\nand <kb>launch <kkb>$ability_kb$1$$kbx$ $ability_kb$2$$kby$</kkb></kb> hit enemies."
+    },
+
+    "weapon_type": "melee",
+    "slot": 3,
+
+    "bob": "true",
+    "melee_dmg": 20.5,
+    "melee_kb": [0.6, 0.2, 0],
+    "ability_dmg": 12,
+    "lunge_kb" :[1.35, 0.02, 0],
+    "boost_lunge_kb" :[1.7, 0.02, 0],
+    "ability_kb" :[1.5, 0.25, 0],
+
+    "sweetspot_radius": 0.25,
+    "sweetspot_multiplier": 1.5,
+
+    "move_speed_modifier": 0,
+    "weight": 2,
+
+    "equip_speed": 5,
+    "swing_cooldown": 17,
+    "ability_cooldown": 190,
+    "cooldown_key": "ability",
+
+    "channel_time": 20,
+    "boost_channel_time": 10,
+
+    "range": 4.5,
+    "angle": 28,
+    "attack_type": "stab",
+
+    "overlay_display": "item_cooldown,cooldown",
+    "bar_display": "cooldown",
+    "number_display": "cooldown",
+
+    "right": "MELEE:use",
+    "left": "MELEE:left",
+    "melee_attack": 1
+
+}

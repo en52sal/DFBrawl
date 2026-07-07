@@ -3,7 +3,7 @@
     "name": "Beefcake",
     "icon": {
         "description":
-         "Unspent <white>Weight \u2397</white> is\nconverted into <health>+$extra_hp$% max $$hhealth$</health>.\n<dark_gray>Order: $order$</dark_gray>"
+         "Unspent weapon slots are\nconverted into <health>+$extra_hp$% max $$hhealth$</health>.\n<dark_gray>Order: $order$</dark_gray>"
     },
 
     "relic_type": "passive",

@@ -1,0 +1,61 @@
+{
+    "type": "weapon",
+    "name": "Greatsword",
+    "icon": {
+        "states": "$melee",
+        "display_context": "$melee",
+        "non_gui_fallback": "held",
+
+        "description":
+         "Sweeping weapon with high cooldown,\n damage, and size.",
+
+        "actions": {
+            "attack": {
+                "title": "$$attack$ Swipe"
+            },
+            "use": {
+                "title": "$$ability$ WIP",
+                "desc":
+                 "WIP WIP WIP WIP WIP WIP WIP WIP WIP WIP WIP WIP WIP WIP WIP ",
+                "prefix": "Hold "
+            }
+        },
+            "components": {
+            "swing_animation": { "duration": 6 },
+           "consumable": { "consume_seconds": 999, "animation": "spyglass", "sound": "minecraft:entity.player.attack.nodamage", "has_consume_particles": false },
+            "use_effects": { "can_sprint": true, "speed_multiplier": 0.7 }
+        },
+
+        "ability_boost": "Spawns trucks instead."
+    },
+
+    "weapon_type": "melee",
+    "slot": 1,
+    
+    "bob": "true",
+    "melee_dmg": 30,
+    "melee_kb": [0.32, 0.1, 0],
+
+    "move_speed_modifier": 0.2,
+    "weight": 3,
+    
+    "resource_type": "cooldown",
+
+    "cooldown": 280,
+    "equip_speed": 12,
+    "swing_cooldown": 29,
+    "cooldown_key": "ability",
+
+    "range": 2.7,
+    "angle": 70,
+    "attack_type": "slash",
+
+    "overlay_display": "item_cooldown,cooldown",
+    "bar_display": "cooldown",
+    "number_display": "cooldown",
+
+    "right": "MELEE:use",
+    "left": "MELEE:left",
+    "melee_attack": 1,
+    "melee_delay": 5
+}

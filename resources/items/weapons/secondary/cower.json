@@ -1,0 +1,64 @@
+{
+    "type": "weapon",
+    "name": "Cower",
+    "icon": {
+        "states": ["reload", "equip", "firing", "melee1"],
+        "display_context": "$gun",
+
+        "description": "Hmmm should i make these good lores or very descriptive?",
+
+        "components": {
+            "swing_animation": { "duration": 1, "type": "none" },
+           "consumable": { "consume_seconds": 999, "animation": "none", "sound": "minecraft:entity.player.attack.nodamage", "has_consume_particles": false },
+            "use_effects": { "can_sprint": true, "speed_multiplier": 1 }
+        },
+
+        "actions": "$gun"
+    },
+    "weapon_type": "gun",
+    "slot": 2,
+    
+    "weight": 2,
+    "move_speed_modifier": "$light",
+    "equip_speed": "$medium",
+    "cooldown": 8,
+    "semi_automatic": 1,
+
+    "bullet_color": "#c1ebff",
+    "bullet_opacity": 4,
+    "shoot_animation": 6,
+    
+    "overlay_display": "ammo",
+    "bar_display": "ammo",
+    "number_display": "ammo",
+    "gun_resource": "ammo",
+    "reload_resource": "ammo",
+    "max_ammo": 4,
+    "reloaded_per": 4,
+    "reload_ticks": 45,
+    "initial_reload_ticks": 0,
+    
+    "burst_count": 1,
+    "burst_delay": 1,
+    "pellet_count": 4,
+    "inaccuracy": 0.023,
+    
+    "dmg": 8.9,
+    "min_dmg": 5,
+    "crit_multiplier": 1.5,
+    
+    "projectile": "bullet",
+    "size": 0.2,
+    "gravity": [0,-0.001,0],
+    "power": "$default",
+    "mass": 1,
+    "drag": 0,
+    "friction": 1,
+    "restituion": 1,
+    "distance": 20,
+    "distance_falloff": 5,
+    "bounces" : 0,
+    "right": "GUN:use",
+    "offhand": "ITEM:reload"
+    
+}

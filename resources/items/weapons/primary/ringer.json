@@ -1,0 +1,64 @@
+{
+    "type": "weapon",
+    "name": "Ringer",
+    "icon": {
+        "states": "$gun",
+        "display_context": "$gun",
+
+        "description": "Hmmm should i make these good lores or very descriptive?",
+
+        "components": {
+            "swing_animation": { "duration": 1, "type": "none" },
+           "consumable": { "consume_seconds": 999, "animation": "none", "sound": "minecraft:entity.player.attack.nodamage", "has_consume_particles": false },
+            "use_effects": { "can_sprint": true, "speed_multiplier": 1 }
+        },
+
+        "actions": "$gun"
+    },
+    "weapon_type": "gun",
+    "slot": 1,
+    
+    "weight": 3,
+    "move_speed_modifier": "$medium",
+    "equip_speed": "$medium",
+    "cooldown": 13,
+    "semi_automatic": 1,
+
+    "bullet_color": "#17a32c",
+    "bullet_opacity": 4,
+    "shoot_animation": 8,
+    
+    "overlay_display": "ammo",
+    "bar_display": "ammo",
+    "number_display": "ammo",
+    "gun_resource": "ammo",
+    "reload_resource": "ammo",
+    "max_ammo": 5,
+    "reloaded_per": 1,
+    "reload_ticks": 9,
+    "initial_reload_ticks": 12,
+    
+    "burst_count": 1,
+    "burst_delay": 1,
+    "pellet_count": 6,
+    "inaccuracy": 0.02,
+    
+    "dmg": 9.2,
+    "min_dmg": 4,
+    "crit_multiplier": 1.25,
+    
+    "projectile": "bullet",
+    "size": 0.25,
+    "gravity": [0,-0.001,0],
+    "power": "$default",
+    "mass": 1,
+    "drag": 0,
+    "friction": 1,
+    "restituion": 1,
+    "distance": 28,
+    "distance_falloff": 8,
+    "bounces" : 0,
+    "right": "GUN:use",
+    "offhand": "ITEM:reload"
+    
+}

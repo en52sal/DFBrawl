@@ -1,0 +1,67 @@
+{
+    "type": "weapon",
+    "name": "Bat",
+    "icon": {
+        "states": "$melee",
+        "display_context": "$melee",
+        "description":
+         "Sweeping weapon with low cooldown\n and damage, but high knockback.",
+        
+        "actions": {
+            "attack": {
+                "title": "$$attack$ Swing",
+                "desc": "Hit projectiles to deflect them."
+            },
+            "use": {
+                "title": "$$ability$ Homerun",
+                "desc":
+                 "Charge a powerful swing over <hl>$channel_time$t</hl>\n<kb>directionally launching <kkb>$ability_kb$1$$kbx$ $ability_kb$2$$kby$</kkb></kb>\nand dealing <dmg>$ability_dmg$ $$ddmg$</dmg>.",
+                "prefix": "Hold "
+            }
+        },
+
+        "components": {
+            "swing_animation": { "duration": 6 },
+           "consumable": { "consume_seconds": 999, "animation": "spyglass", "sound": "minecraft:entity.player.attack.nodamage", "has_consume_particles": false },
+            "use_effects": { "can_sprint": true, "speed_multiplier": 0.75 }
+        },
+
+        "ability_boost":
+         "Charge time reduced to <hl>$boost_channel_time$t</hl>\nand <kb>directionally launching <kkb>$boost_ability_kb$1$$kbx$ $boost_ability_kb$2$$kby$</kkb></kb>."
+    },
+
+    "weapon_type": "melee",
+    "slot": 3,
+    
+    "bob": "true",
+
+    "melee_dmg": 13,
+    "melee_kb": [1, 0.3, 0],
+    "ability_dmg": 30,
+    "ability_kb" :[2.7, 0.4, 0],
+    "boost_ability_kb" :[3, 0.5, 0],
+
+    "move_speed_modifier": 0,
+    "weight": 2,
+
+    "cooldown": 240,
+    "ability_cooldown": 180,
+    "equip_speed": 3,
+    "swing_cooldown": 18,
+    "cooldown_key": "ability",
+
+    "channel_time": 20,
+    "boost_channel_time": 10,
+
+    "range": 3.4,
+    "angle": 52,
+    "attack_type": "slash",
+
+    "overlay_display": "item_cooldown,cooldown",
+    "bar_display": "cooldown",
+    "number_display": "cooldown",
+
+    "right": "MELEE:use",
+    "left": "MELEE:left",
+    "melee_attack": 1
+}
