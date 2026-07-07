@@ -30,9 +30,14 @@
 		},
     {
 		"when": "enabled_slot","model":{"type": "minecraft:model","model": "minecraft:item/misc/enabled_slot"}
-		}
-		
-		
+		},
+		{
+		"when": "shifthover", "model": {
+			"type": "minecraft:condition",
+          "on_false": {"type": "minecraft:model","model": "minecraft:item/none"},
+          "on_true":{"type": "minecraft:model","model": "minecraft:item/misc/testing_slot"},
+		  "property": "minecraft:extended_view"
+		}}
         ],
 		  "fallback": {
 		"type": "minecraft:model",
