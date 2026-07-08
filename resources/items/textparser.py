@@ -1,6 +1,8 @@
+import ast
+import operator
 import re
-from dataclasses import dataclass, field
-from typing import Optional
+from dataclasses import dataclass
+from typing import Any, Optional
 from pathlib import Path
 import json
 
@@ -66,7 +68,22 @@ class FormatState:
 
 
 # TAG_RE = re.compile(r"<(/?)(#[0-9a-fA-F]{6}|\w+)(font:[^>]+)?>")
-TAG_RE = re.compile("<(/?)([#\w][^>]*)>")
+TAG_RE = re.compile(r"<(/?)([#\w][^>]*)>")
+VALUE_RE = re.compile(r"\$(\w+)\$([tv123%])?")
+LEGACY_EXPR_RE = re.compile(r"\{\{([^{}]+)\}([^{}]*)\}")
+EXPR_ALLOWED_BINOPS = {
+    ast.Add: operator.add,
+    ast.Sub: operator.sub,
+    ast.Mult: operator.mul,
+    ast.Div: operator.truediv,
+    ast.FloorDiv: operator.floordiv,
+    ast.Mod: operator.mod,
+    ast.Pow: operator.pow,
+}
+EXPR_ALLOWED_UNARYOPS = {
+    ast.UAdd: operator.pos,
+    ast.USub: operator.neg,
+}
 
 
 def _tokenize(text: str) -> list[TextToken]:
@@ -215,26 +232,149 @@ def _tokens_to_component(tokens: list[TextToken]) -> dict:
 
 
 TEMPLATE_RE = re.compile(r"\$\$(\w+)\$")
+PERCENT_VALUE_RE = re.compile(r"%(\w+)%")
 
 
 def _apply_templates(text: str, templates: dict[str, str]) -> str:
     def replacer(m):
         key = m.group(1)
         return templates.get(key, m.group(0))
-    return TEMPLATE_RE.sub(replacer, text)
+    
+    # Template values are allowed to reference other templates. Keep this
+    # bounded so cyclic template definitions stay visible instead of hanging.
+    for _ in range(16):
+        next_text = TEMPLATE_RE.sub(replacer, text)
+        if next_text == text:
+            return text
+        text = next_text
+    return text
 
 
-def parse_name(text: str) -> dict:
+def _format_number(value: Any) -> str:
+    if isinstance(value, bool):
+        return str(value)
+    if isinstance(value, int):
+        return str(value)
+    if isinstance(value, float):
+        if value.is_integer():
+            return str(int(value))
+        return f"{value:.6f}".rstrip("0").rstrip(".")
+    return str(value)
+
+
+def format_value(value: Any, suffix: str | None = None) -> str:
+    if suffix == "t":
+        return _format_number(float(value) / 20) + "s"
+    if suffix == "v":
+        vec = value if isinstance(value, list) else [0, 0, 0]
+        mag = sum(float(x) ** 2 for x in vec) ** 0.5
+        return _format_number(mag)
+    if suffix in {"1", "2", "3"}:
+        vec = value if isinstance(value, list) else [0, 0, 0]
+        axis = "123".index(suffix)
+        return _format_number(vec[axis] if axis < len(vec) else 0)
+    if suffix == "%":
+        return _format_number(float(value) * 100) + "%"
+    return _format_number(value)
+
+
+def _resolve_value_refs(text: str, values: dict[str, Any] | None = None, *, keep_missing: bool = True) -> str:
+    if not values:
+        return text
+
+    def replace_dollar(match: re.Match) -> str:
+        key = match.group(1)
+        suffix = match.group(2)
+        if key not in values:
+            return match.group(0) if keep_missing else ""
+        return format_value(values[key], suffix)
+
+    def replace_percent(match: re.Match) -> str:
+        key = match.group(1)
+        if key not in values:
+            return match.group(0) if keep_missing else ""
+        return format_value(values[key])
+
+    text = VALUE_RE.sub(replace_dollar, text)
+    return PERCENT_VALUE_RE.sub(replace_percent, text)
+
+
+def _normalize_legacy_expressions(text: str) -> str:
+    previous = None
+    while previous != text:
+        previous = text
+        text = LEGACY_EXPR_RE.sub(lambda m: "{" + m.group(1) + m.group(2) + "}", text)
+    return text
+
+
+def _eval_expr_node(node: ast.AST, names: dict[str, Any]) -> float | int:
+    if isinstance(node, ast.Expression):
+        return _eval_expr_node(node.body, names)
+    if isinstance(node, ast.Constant) and isinstance(node.value, (int, float)):
+        return node.value
+    if isinstance(node, ast.Name):
+        value = names.get(node.id)
+        if isinstance(value, bool):
+            raise ValueError(f"Boolean is not numeric: {node.id}")
+        if isinstance(value, (int, float)):
+            return value
+        raise ValueError(f"Not a numeric value: {node.id}")
+    if isinstance(node, ast.BinOp) and type(node.op) in EXPR_ALLOWED_BINOPS:
+        left = _eval_expr_node(node.left, names)
+        right = _eval_expr_node(node.right, names)
+        return EXPR_ALLOWED_BINOPS[type(node.op)](left, right)
+    if isinstance(node, ast.UnaryOp) and type(node.op) in EXPR_ALLOWED_UNARYOPS:
+        return EXPR_ALLOWED_UNARYOPS[type(node.op)](_eval_expr_node(node.operand, names))
+    raise ValueError(f"Unsupported expression: {ast.dump(node)}")
+
+
+def _eval_constant_expression(expr: str, values: dict[str, Any] | None = None) -> str:
+    names = values or {}
+    parsed = ast.parse(expr, mode="eval")
+    return _format_number(_eval_expr_node(parsed, names))
+
+
+def _apply_constant_expressions(text: str, values: dict[str, Any] | None = None) -> str:
+    text = _normalize_legacy_expressions(text)
+    result: list[str] = []
+    pos = 0
+    while pos < len(text):
+        start = text.find("{", pos)
+        if start == -1:
+            result.append(text[pos:])
+            break
+        end = text.find("}", start + 1)
+        if end == -1:
+            result.append(text[pos:])
+            break
+
+        result.append(text[pos:start])
+        expr = text[start + 1:end].strip()
+        try:
+            result.append(_eval_constant_expression(expr, values))
+        except Exception:
+            result.append(text[start:end + 1])
+        pos = end + 1
+    return "".join(result)
+
+
+def prepare_text(text: str, values: dict[str, Any] | None = None, *, evaluate_values: bool = True) -> str:
     if TEMPLATES:
         text = _apply_templates(text, TEMPLATES)
+    if evaluate_values:
+        text = _resolve_value_refs(text, values)
+        text = _apply_constant_expressions(text, values)
+    return text
+
+
+def parse_name(text: str, values: dict[str, Any] | None = None) -> dict:
+    text = prepare_text(text, values)
     tokens = _tokenize(text)
     return _tokens_to_component(tokens)
 
 
-def parse_lore(text: str, max_width: int = LORE_MAX) -> list[dict]:
-    if TEMPLATES:
-        text = _apply_templates(text, TEMPLATES)
-
+def parse_lore(text: str, values: dict[str, Any] | None = None, max_width: int = LORE_MAX) -> list[dict]:
+    text = prepare_text(text, values)
     tokens = _tokenize(text)
     segments = _split_tokens_by_newline(tokens)
     lines: list[dict] = []
@@ -242,7 +382,7 @@ def parse_lore(text: str, max_width: int = LORE_MAX) -> list[dict]:
         lines.extend(_wrap_segment(seg, max_width))
     return lines
 
-def _split_tokens_by_newline(tokens: list[TextToken]) -> list[str]:
+def _split_tokens_by_newline(tokens: list[TextToken]) -> list[list[TextToken]]:
     segments: list[list[TextToken]] = []
     current: list[TextToken] = []
     for token in tokens:
@@ -271,7 +411,7 @@ def _wrap_segment(tokens: list[TextToken], max_width: int) -> list[dict]:
     words = _tokens_to_words(tokens)
 
     lines: list[dict] = []
-    current_words: list[tuple[str, FormatState]] = []
+    current_words: list[tuple[str, bool, FormatState]] = []
     current_len = 0
 
     for word, space_before, state in words:
@@ -285,7 +425,7 @@ def _wrap_segment(tokens: list[TextToken], max_width: int) -> list[dict]:
             current_len = word_len
         else:
             if space_before and current_words:
-                current_words.append((" ", False, state))
+                current_words.append((" ", False, FormatState()))
                 current_len += 1
             current_words.append((word, False, state))
             current_len += word_len
@@ -319,7 +459,61 @@ def _tokens_to_words(tokens: list[TextToken]) -> list[tuple[str, bool, FormatSta
     return words
 
 
-def _words_to_component(words: list[tuple[str, FormatState]]) -> dict:
+def compile_dynamic_lore(text: str, values: dict[str, Any] | None = None, max_width: int = LORE_MAX) -> dict:
+    prepared = prepare_text(text, values, evaluate_values=False)
+    return {
+        "type": "minimessage_lore",
+        "source": text,
+        "template": prepared,
+        "max_width": max_width,
+        "refs": _collect_dynamic_refs(prepared),
+    }
+
+
+def compile_dynamic_name(text: str, values: dict[str, Any] | None = None) -> dict:
+    prepared = prepare_text(text, values, evaluate_values=False)
+    return {
+        "type": "minimessage_text",
+        "source": text,
+        "template": prepared,
+        "refs": _collect_dynamic_refs(prepared),
+    }
+
+
+def _collect_dynamic_refs(text: str) -> list[dict]:
+    refs: list[dict] = []
+    seen = set()
+    for match in VALUE_RE.finditer(text):
+        key = (match.group(1), match.group(2) or "")
+        if key not in seen:
+            seen.add(key)
+            refs.append({"name": key[0], "format": key[1]})
+    for match in PERCENT_VALUE_RE.finditer(text):
+        key = (match.group(1), "legacy_percent")
+        if key not in seen:
+            seen.add(key)
+            refs.append({"name": key[0], "format": key[1]})
+    for expr in _find_braced_expressions(_normalize_legacy_expressions(text)):
+        refs.append({"expression": expr})
+    return refs
+
+
+def _find_braced_expressions(text: str) -> list[str]:
+    exprs: list[str] = []
+    pos = 0
+    while pos < len(text):
+        start = text.find("{", pos)
+        if start == -1:
+            break
+        end = text.find("}", start + 1)
+        if end == -1:
+            break
+        exprs.append(text[start + 1:end].strip())
+        pos = end + 1
+    return exprs
+
+
+def _words_to_component(words: list[tuple[str, bool, FormatState]]) -> dict:
     tokens: list[TextToken] = []
     for text, _space, state in words:
         if tokens and _state_matches(tokens[-1], state):

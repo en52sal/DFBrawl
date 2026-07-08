@@ -4,7 +4,6 @@ from pathlib import Path
 import base64
 import gzip
 import websocket
-import re
 import itemsgen
 import textparser
 
@@ -103,34 +102,100 @@ def template_item_item(item):
     }
 
 def get_description_lines(data, desc):
-    def _replace(match):
-        last = match.group(0)[-1]
-        if last == "t":
-            seconds = int(data.get(match.group(1), 0)) / 20
-            return f"{seconds:.1f}".rstrip("0").rstrip(".") + "s"
-        if last == "v":
-            vec = data.get(match.group(1), [0, 0, 0])
-            mag = sum(x**2 for x in vec) ** 0.5
-            return f"{mag:.1f}".rstrip("0").rstrip(".")
-        if last in "123":
-            vec = data.get(match.group(1), [0, 0, 0])
-            axis = "123".index(last)
-            return f"{vec[axis]:.1f}".rstrip("0").rstrip(".")
-        if last == "%":
-            val = data.get(match.group(1), 0)
-            return f"{val:.0%}".rstrip("0").rstrip(".")
+    return textparser.parse_lore(f"<{META['colors']['desc']}>{desc}", data)
 
-        key = match.group(1)
-        return str(data.get(key, f"${key}$"))
-    
-    desc = re.sub(r"\$(\w+)\$[tv123%]?", _replace, desc)
 
-    return textparser.parse_lore(f"<{META['colors']['desc']}>{desc}")
+def parse_display_text(data, text, mode="name"):
+    if mode == "lore":
+        return textparser.parse_lore(text, data)
+    return textparser.parse_name(text, data)
+
+
+def normalize_text_component(data, value):
+    if isinstance(value, list):
+        return [normalize_text_component(data, item) for item in value]
+    if not isinstance(value, dict):
+        return value
+
+    if "minimessage" in value:
+        return textparser.parse_name(value["minimessage"], data)
+    if "minimessage_lore" in value:
+        return textparser.parse_lore(value["minimessage_lore"], data)
+    if "dynamic_minimessage" in value:
+        return textparser.compile_dynamic_name(value["dynamic_minimessage"], data)
+    if "dynamic_minimessage_lore" in value:
+        return textparser.compile_dynamic_lore(value["dynamic_minimessage_lore"], data)
+
+    return {key: normalize_text_component(data, child) for key, child in value.items()}
+
+
+def normalize_icon_components(data, components):
+    normalized = {}
+    for key, value in components.items():
+        if key in {"custom_name", "item_name"} and isinstance(value, str):
+            normalized[key] = parse_display_text(data, value)
+        elif key == "lore" and isinstance(value, str):
+            normalized[key] = parse_display_text(data, value, mode="lore")
+        elif key == "lore" and isinstance(value, list):
+            lore = []
+            for line in value:
+                if isinstance(line, str):
+                    lore.extend(parse_display_text(data, line, mode="lore"))
+                else:
+                    lore.append(normalize_text_component(data, line))
+            normalized[key] = lore
+        else:
+            normalized[key] = normalize_text_component(data, value)
+    return normalized
+
+
+def _append_dynamic_lore_entry(entries, data, source, section, key=None):
+    if source is None:
+        return
+    if isinstance(source, str):
+        entry = textparser.compile_dynamic_lore(source, data)
+    elif isinstance(source, dict):
+        raw = source.get("lore", source.get("text", source.get("minimessage", "")))
+        entry = textparser.compile_dynamic_lore(raw, data)
+        entry.update({k: v for k, v in source.items() if k not in {"lore", "text", "minimessage"}})
+    elif isinstance(source, list):
+        for item in source:
+            _append_dynamic_lore_entry(entries, data, item, section, key)
+        return
+    else:
+        return
+
+    entry["section"] = section
+    if key is not None:
+        entry["key"] = key
+    entries.append(entry)
+
+
+def collect_dynamic_lore(data):
+    icon = data.get("icon", {})
+    entries = []
+
+    _append_dynamic_lore_entry(entries, data, icon.get("dynamic_description"), "description")
+    _append_dynamic_lore_entry(entries, data, icon.get("dynamic_lore"), "lore")
+
+    for key, action in icon.get("actions", {}).items():
+        if isinstance(action, dict):
+            _append_dynamic_lore_entry(entries, data, action.get("dynamic_desc"), "action_desc", key)
+            if "dynamic_title" in action:
+                entries.append({
+                    **textparser.compile_dynamic_name(action["dynamic_title"], data),
+                    "section": "action_title",
+                    "key": key,
+                })
+
+    _append_dynamic_lore_entry(entries, data, icon.get("dynamic_ability_boost"), "ability_boost")
+
+    return entries
 
 def create_item(data):
     name = data.get("name", "Unnamed Item")
     components =  {
-        "custom_name": textparser.parse_name(f"<{META['colors']['name']}>{name}")
+        "custom_name": textparser.parse_name(f"<{META['colors']['name']}>{name}", data)
     }
 
     if "icon" in data:
@@ -162,12 +227,12 @@ def create_item(data):
                         " ",
                         {"color": "gray", "extra": [
                             "- ",
-                            textparser.parse_name("<white>" + action["title"])
+                            textparser.parse_name("<white>" + action["title"], data)
                         ], "text": ""}
                     ], "text": "", "italic": False
                 }
                 if "prefix" in action:
-                    line["extra"].insert(0, textparser.parse_name(action["prefix"]))
+                    line["extra"].insert(0, textparser.parse_name(action["prefix"], data))
                 
                 lore.append(line)
 
@@ -176,7 +241,7 @@ def create_item(data):
             lore.append({"text": ""})
 
         if "ability_boost" in icon:
-            lore.append(textparser.parse_name("$$boost$ <white>Ability Boost"))
+            lore.append(textparser.parse_name("$$boost$ <white>Ability Boost", data))
             lore.extend(get_description_lines(data, icon["ability_boost"]))
             lore.append({"text": ""})
         
@@ -187,7 +252,7 @@ def create_item(data):
 
         # OVERRIDE
         if "components" in icon:
-            components.update(icon["components"])
+            components.update(normalize_icon_components(data, icon["components"]))
 
     # print(json.dumps(components))
     return json.dumps({
@@ -242,6 +307,9 @@ def main():
     for item in items:
 
         value_item = create_item(item)
+        dynamic_lore = collect_dynamic_lore(item)
+        if dynamic_lore:
+            item["dynamic_lore"] = dynamic_lore
         if "icon" in item:
             del item["icon"]
         

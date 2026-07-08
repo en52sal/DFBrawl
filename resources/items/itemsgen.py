@@ -15,8 +15,6 @@ DEFAULT_FALLBACK_CONTEXT = ["thirdperson_lefthand", "thirdperson_righthand", "fi
 
 U = itemsgenutil.ItemUtility(PACK_ROOT)
 
-print(PACK_ROOT)
-
 
 def create_item(item):
     id = item["id"]
