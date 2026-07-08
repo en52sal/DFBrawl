@@ -184,10 +184,10 @@ def _dynamic_lore_line_entries(slots):
     for slot in slots:
         group_key = (slot.get("section"), slot.get("key"), slot["lore_index"])
         if group_key not in grouped:
-            grouped[group_key] = {
-                "index": slot["lore_index"],
-                "parts": slot["line_parts"],
-            }
+            grouped[group_key] = [
+                slot["lore_index"] + 1,
+                slot["line_parts"],
+            ]
     return list(grouped.values())
 
 

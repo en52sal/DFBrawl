@@ -3,7 +3,7 @@
     "name": "Bouncy Bullets",
     "icon": {
         "description":
-         "<sk>$stack$$$sk$</sk> <hl>+1</hl> <h>weapon projectile bounces</h> per stack\n<dmg>-$damage_reduction$% $$ddmg$</dmg> on first bonus bounce."
+         "$$sk$ <hl>+1</hl> <h>weapon projectile bounces</h> per stack\n<dmg>-$damage_reduction$% $$ddmg$</dmg> on first bonus bounce."
     },
 
     "relic_type": "passive",

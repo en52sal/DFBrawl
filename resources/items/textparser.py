@@ -440,14 +440,27 @@ def _attach_minimessage_lines(marker_refs: dict[str, dict], marked_text: str):
             if start == -1:
                 continue
             if start > pos:
-                parts.append(raw_line[pos:start])
+                parts.append(to_minimessage(raw_line[pos:start]))
             parts.append(ref["name"])
             pos = start + len(marker)
         if pos < len(raw_line):
-            parts.append(raw_line[pos:])
+            parts.append(to_minimessage(raw_line[pos:]))
 
         for marker in line_markers:
             marker_refs[marker]["line_parts"] = parts
+
+
+def to_minimessage(text: str) -> str:
+    def replace_tag(match: re.Match) -> str:
+        closing = match.group(1)
+        raw_tag = match.group(2)
+        tag = raw_tag if raw_tag.startswith("#") else raw_tag.lower()
+
+        if tag in PALETTE:
+            return f"<{closing}{PALETTE[tag]}>"
+        return match.group(0)
+
+    return TAG_RE.sub(replace_tag, text)
 
 def _split_tokens_by_newline(tokens: list[TextToken]) -> list[list[TextToken]]:
     segments: list[list[TextToken]] = []

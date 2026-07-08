@@ -22,8 +22,6 @@
         "effect_poison":"#8a2bce",
         "effect_evasive":"#a6e8d3",
         "effect_glowing": "#faff93"
-
-
     },
 
     "templates": {
@@ -49,7 +47,7 @@
         "ccrit": "\u261A",
         "hhealth": "\u261B",
 
-        "sk": "\u2623",
+        "sk": "<sk>$stack$dyn/$stack$\u2623</sk>",
 
 
         "effect_fire":"\u26B0",
