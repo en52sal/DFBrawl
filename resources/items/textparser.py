@@ -69,7 +69,8 @@ class FormatState:
 
 # TAG_RE = re.compile(r"<(/?)(#[0-9a-fA-F]{6}|\w+)(font:[^>]+)?>")
 TAG_RE = re.compile(r"<(/?)([#\w][^>]*)>")
-VALUE_RE = re.compile(r"\$(\w+)\$([tv123%])?")
+DYNAMIC_VALUE_RE = re.compile(r"\$(\w+)\$dyn\b")
+VALUE_RE = re.compile(r"\$(\w+)\$(?!dyn\b)([tv123%])?")
 LEGACY_EXPR_RE = re.compile(r"\{\{([^{}]+)\}([^{}]*)\}")
 EXPR_ALLOWED_BINOPS = {
     ast.Add: operator.add,
@@ -367,20 +368,86 @@ def prepare_text(text: str, values: dict[str, Any] | None = None, *, evaluate_va
     return text
 
 
+def _render_dynamic_placeholders(text: str, replacement: str = "") -> str:
+    return DYNAMIC_VALUE_RE.sub(replacement, text)
+
+
 def parse_name(text: str, values: dict[str, Any] | None = None) -> dict:
-    text = prepare_text(text, values)
+    text = _render_dynamic_placeholders(prepare_text(text, values))
     tokens = _tokenize(text)
     return _tokens_to_component(tokens)
 
 
 def parse_lore(text: str, values: dict[str, Any] | None = None, max_width: int = LORE_MAX) -> list[dict]:
-    text = prepare_text(text, values)
+    text = _render_dynamic_placeholders(prepare_text(text, values))
     tokens = _tokenize(text)
     segments = _split_tokens_by_newline(tokens)
     lines: list[dict] = []
     for seg in segments:
         lines.extend(_wrap_segment(seg, max_width))
     return lines
+
+
+def parse_lore_with_dynamic_slots(
+    text: str,
+    values: dict[str, Any] | None = None,
+    *,
+    start_index: int = 0,
+    max_width: int = LORE_MAX,
+    section: str = "lore",
+    key: str | None = None,
+) -> tuple[list[dict], list[dict]]:
+    marker_refs: dict[str, dict] = {}
+
+    def mark(match: re.Match) -> str:
+        name = match.group(1)
+        marker = f"__DYN_LORE_{len(marker_refs)}_{name}__"
+        marker_refs[marker] = {
+            "name": name,
+            "placeholder": match.group(0),
+            "section": section,
+        }
+        if key is not None:
+            marker_refs[marker]["key"] = key
+        return marker
+
+    prepared = prepare_text(text, values)
+    marked = DYNAMIC_VALUE_RE.sub(mark, prepared)
+    _attach_minimessage_lines(marker_refs, marked)
+    lines = parse_lore(marked, None, max_width)
+    cleaned_lines: list[dict] = []
+    slots: list[dict] = []
+
+    for local_index, line in enumerate(lines):
+        cleaned_line, line_slots = _clear_dynamic_markers(line, marker_refs, start_index + local_index)
+        cleaned_lines.append(cleaned_line)
+        slots.extend(line_slots)
+
+    return cleaned_lines, slots
+
+
+def _attach_minimessage_lines(marker_refs: dict[str, dict], marked_text: str):
+    for raw_line in marked_text.split("\n"):
+        line_markers = [marker for marker in marker_refs if marker in raw_line]
+        if not line_markers:
+            continue
+
+        parts = []
+        pos = 0
+        for marker in line_markers:
+            ref = marker_refs[marker]
+            start = raw_line.find(marker, pos)
+            if start == -1:
+                continue
+            if start > pos:
+                parts.append(raw_line[pos:start])
+            parts.append(ref["name"])
+            pos = start + len(marker)
+        if pos < len(raw_line):
+            parts.append(raw_line[pos:])
+
+        for marker in line_markers:
+            marker_refs[marker]["line_parts"] = parts
 
 def _split_tokens_by_newline(tokens: list[TextToken]) -> list[list[TextToken]]:
     segments: list[list[TextToken]] = []
@@ -459,6 +526,44 @@ def _tokens_to_words(tokens: list[TextToken]) -> list[tuple[str, bool, FormatSta
     return words
 
 
+def _clear_dynamic_markers(value: Any, marker_refs: dict[str, dict], line_index: int, path: list[Any] | None = None):
+    if path is None:
+        path = []
+    if isinstance(value, str):
+        cleaned = value
+        slots = []
+        for marker, ref in marker_refs.items():
+            if marker in cleaned:
+                slots.append({
+                    **ref,
+                    "lore_index": line_index,
+                    "display_lore_index": line_index + 1,
+                    "lore_path": ["components", "lore", line_index],
+                    "component_path": path.copy(),
+                    "component_text_path": ["components", "lore", line_index, *path],
+                    "marker": marker,
+                })
+                cleaned = cleaned.replace(marker, "")
+        return cleaned, slots
+    if isinstance(value, list):
+        cleaned_list = []
+        slots = []
+        for index, item in enumerate(value):
+            cleaned_item, item_slots = _clear_dynamic_markers(item, marker_refs, line_index, path + [index])
+            cleaned_list.append(cleaned_item)
+            slots.extend(item_slots)
+        return cleaned_list, slots
+    if isinstance(value, dict):
+        cleaned_dict = {}
+        slots = []
+        for key, child in value.items():
+            cleaned_child, child_slots = _clear_dynamic_markers(child, marker_refs, line_index, path + [key])
+            cleaned_dict[key] = cleaned_child
+            slots.extend(child_slots)
+        return cleaned_dict, slots
+    return value, []
+
+
 def compile_dynamic_lore(text: str, values: dict[str, Any] | None = None, max_width: int = LORE_MAX) -> dict:
     prepared = prepare_text(text, values, evaluate_values=False)
     return {
@@ -467,6 +572,7 @@ def compile_dynamic_lore(text: str, values: dict[str, Any] | None = None, max_wi
         "template": prepared,
         "max_width": max_width,
         "refs": _collect_dynamic_refs(prepared),
+        "slots": compile_dynamic_lore_slots(text, values, max_width=max_width),
     }
 
 
@@ -493,9 +599,25 @@ def _collect_dynamic_refs(text: str) -> list[dict]:
         if key not in seen:
             seen.add(key)
             refs.append({"name": key[0], "format": key[1]})
+    for match in DYNAMIC_VALUE_RE.finditer(text):
+        key = (match.group(1), "dyn")
+        if key not in seen:
+            seen.add(key)
+            refs.append({"name": key[0], "format": key[1]})
     for expr in _find_braced_expressions(_normalize_legacy_expressions(text)):
         refs.append({"expression": expr})
     return refs
+
+
+def compile_dynamic_lore_slots(
+    text: str,
+    values: dict[str, Any] | None = None,
+    *,
+    start_index: int = 0,
+    max_width: int = LORE_MAX,
+) -> list[dict]:
+    _, slots = parse_lore_with_dynamic_slots(text, values, start_index=start_index, max_width=max_width)
+    return slots
 
 
 def _find_braced_expressions(text: str) -> list[str]:

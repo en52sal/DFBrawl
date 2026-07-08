@@ -10,6 +10,8 @@ import textparser
 SCRIPT_DIR = Path(__file__).parent
 MAX_LINE_LENGTH = 40
 META_FILE = SCRIPT_DIR / "meta.json"
+MAX_SET_VARS_PER_TEMPLATE = 4
+SET_VAR_ITEM_LIMIT = 26
 
 META = json.load(META_FILE.open())
 
@@ -101,8 +103,82 @@ def template_item_item(item):
         "slot": 1
     }
 
+
+def template_call_func(name, varname="data"):
+    return {
+        "id": "block",
+        "block": "call_func",
+        "args": {
+            "items": []
+        },
+        "data": name
+    }
+
+
+def chunked(values, size):
+    for i in range(0, len(values), size):
+        yield values[i:i + size]
+
+
+def create_set_var_blocks(args):
+    blocks = []
+    first = True
+    for segment in chunked(args, SET_VAR_ITEM_LIMIT):
+        if first:
+            blocks.append(template_set_var("CreateList", "data", segment))
+            first = False
+        else:
+            blocks.append(template_set_var("AppendValue", "data", segment))
+    return blocks
+
+
+def create_templates_from_args(args, name="ITEM:data", max_set_vars=MAX_SET_VARS_PER_TEMPLATE):
+    set_var_blocks = create_set_var_blocks(args)
+    templates = []
+    block_groups = list(chunked(set_var_blocks, max_set_vars))
+    template_names = [
+        name if i == 0 else f"{name}.{i + 1}"
+        for i in range(len(block_groups))
+    ]
+
+    for i, blocks in enumerate(block_groups):
+        template = create_template(template_names[i])
+        template["blocks"].extend(list(blocks))
+        if i < len(block_groups) - 1:
+            template["blocks"].append(template_call_func(template_names[i + 1]))
+        templates.append(template)
+    return templates
+
+
+def send_templates(templates):
+    wsUrl = "ws://localhost:31321"
+    ws = websocket.create_connection(wsUrl)
+    try:
+        for template in templates:
+            payload = {
+                "type": "template",
+                "source": "The Great Importer",
+                "data": encode_string(json.dumps(template))
+            }
+            ws.send(json.dumps(payload))
+    finally:
+        ws.close()
+
 def get_description_lines(data, desc):
-    return textparser.parse_lore(f"<{META['colors']['desc']}>{desc}", data)
+    lines, _slots = get_description_lore(data, desc)
+    return lines
+
+
+def get_description_lore(data, desc, start_index=0, section="description", key=None):
+    desc_color = META["colors"]["desc"]
+    text = "\n".join(f"<{desc_color}>{line}" for line in desc.split("\n"))
+    return textparser.parse_lore_with_dynamic_slots(
+        text,
+        data,
+        start_index=start_index,
+        section=section,
+        key=key,
+    )
 
 
 def parse_display_text(data, text, mode="name"):
@@ -171,9 +247,21 @@ def _append_dynamic_lore_entry(entries, data, source, section, key=None):
     entries.append(entry)
 
 
+def _dynamic_lore_line_entries(slots):
+    grouped = {}
+    for slot in slots:
+        group_key = (slot.get("section"), slot.get("key"), slot["lore_index"])
+        if group_key not in grouped:
+            grouped[group_key] = {
+                "index": slot["lore_index"],
+                "parts": slot["line_parts"],
+            }
+    return list(grouped.values())
+
+
 def collect_dynamic_lore(data):
     icon = data.get("icon", {})
-    entries = []
+    entries = _dynamic_lore_line_entries(data.get("_dynamic_lore_slots", []))
 
     _append_dynamic_lore_entry(entries, data, icon.get("dynamic_description"), "description")
     _append_dynamic_lore_entry(entries, data, icon.get("dynamic_lore"), "lore")
@@ -212,9 +300,12 @@ def create_item(data):
         
         # LORE
         lore = []
+        dynamic_lore_slots = []
         if "description" in icon:
             desc = icon["description"]
-            lore.extend(get_description_lines(data, desc))
+            lines, slots = get_description_lore(data, desc, len(lore), "description")
+            lore.extend(lines)
+            dynamic_lore_slots.extend(slots)
             lore.append({"text": ""})
         
         if "actions" in icon:
@@ -237,12 +328,16 @@ def create_item(data):
                 lore.append(line)
 
                 if "desc" in action:
-                    lore.extend(get_description_lines(data, action["desc"]))
+                    lines, slots = get_description_lore(data, action["desc"], len(lore), "action_desc", key)
+                    lore.extend(lines)
+                    dynamic_lore_slots.extend(slots)
             lore.append({"text": ""})
 
         if "ability_boost" in icon:
             lore.append(textparser.parse_name("$$boost$ <white>Ability Boost", data))
-            lore.extend(get_description_lines(data, icon["ability_boost"]))
+            lines, slots = get_description_lore(data, icon["ability_boost"], len(lore), "ability_boost")
+            lore.extend(lines)
+            dynamic_lore_slots.extend(slots)
             lore.append({"text": ""})
         
         if lore:
@@ -253,6 +348,11 @@ def create_item(data):
         # OVERRIDE
         if "components" in icon:
             components.update(normalize_icon_components(data, icon["components"]))
+
+        if dynamic_lore_slots:
+            data["_dynamic_lore_slots"] = dynamic_lore_slots
+        else:
+            data.pop("_dynamic_lore_slots", None)
 
     # print(json.dumps(components))
     return json.dumps({
@@ -297,7 +397,6 @@ def main():
         items.append(item)
 
     args = []
-    template = create_template("ITEM:data")
     
     for item in items:
         apply_presets(item)
@@ -310,6 +409,7 @@ def main():
         dynamic_lore = collect_dynamic_lore(item)
         if dynamic_lore:
             item["dynamic_lore"] = dynamic_lore
+        item.pop("_dynamic_lore_slots", None)
         if "icon" in item:
             del item["icon"]
         
@@ -318,35 +418,15 @@ def main():
 
         args.append(value_str)
         args.append(template_item_item(value_item))
-    
-    
-    first = True
-    while args:
-        # take 26 items at a time
-        segment = args[:26]
-        if first:
-            template["blocks"].append(template_set_var("CreateList", "data", segment))
-            first = False
-        else:
-            template["blocks"].append(template_set_var("AppendValue", "data", segment))
-        
-        args = args[26:]
+    templates = create_templates_from_args(args)
 
-    b64 = encode_string(json.dumps(template))
-    payload = {
-        "type": "template",
-        "source": "The Great Importer",
-        "data": b64
-    }
+    print(
+        f"Sending {len(items)} items across {len(templates)} templates "
+        f"with max {MAX_SET_VARS_PER_TEMPLATE} set vars each..."
+    )
 
-    print(f"Sending {len(items)} items...")
-
-    wsUrl = "ws://localhost:31321"
-    ws = websocket.create_connection(wsUrl)
-    ws.send(json.dumps(payload))
-    ws.close()
+    send_templates(templates)
 
 
 if __name__ == "__main__":
     main()
-
