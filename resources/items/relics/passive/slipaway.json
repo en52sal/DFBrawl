@@ -8,6 +8,7 @@
 
     "relic_type": "passive",
     "tier": 2,
+    "stack": 1,
 
     "duration": 60
 }

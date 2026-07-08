@@ -1,5 +1,5 @@
 {
-    "parent": "minecraft:item/numbersgui/number_f",
+    "parent": "minecraft:item/numbersgui/f",
     "textures": {
         "layer0": "item/numbersgui/7"
     }

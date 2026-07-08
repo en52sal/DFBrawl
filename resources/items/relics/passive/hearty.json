@@ -8,6 +8,7 @@
 
     "relic_type": "passive",
     "tier": 1,
+    "stack": 1,
 
     "amount": 35,
     "order": 1

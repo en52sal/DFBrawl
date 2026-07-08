@@ -17,6 +17,7 @@
 
     "relic_type": "active",
     "tier": 2,
+    "stack": 1,
 
     "overlay_display": "ammo,charge",
     "bar_display": "charge",

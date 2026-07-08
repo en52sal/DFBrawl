@@ -8,6 +8,7 @@
 
     "relic_type": "shared",
     "shared_target": "global",
-    "tier": 3
+    "tier": 3,
+    "stack": 1
 
 }

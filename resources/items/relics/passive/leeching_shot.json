@@ -8,6 +8,7 @@
 
     "relic_type": "passive",
     "tier": 2,
+    "stack": 1,
 
     "threshold": 30,
     "heal": 8

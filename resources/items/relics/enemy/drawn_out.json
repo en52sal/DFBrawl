@@ -3,13 +3,15 @@
     "name": "Drawn Out",
     "icon": {
         "description":
-         "<hl>+$percent$%</hl> <h>enemy closeout phase duration</h>\n<dark_gray>Upon only one team remaining, the\nround enters the closeout phase, if\nno teams remain in this phase the\nround results in a draw."
+         "<hl>+$percent$%</hl> <h>enemy closeout phase duration</h>\n\n<sk>$stack$$$sk$</sk> <hl>+$stack_percent$%</hl> <h>duration</h> per stack\n<dark_gray>Upon only one team remaining, the\nround enters the closeout phase, if\nno teams remain in this phase the\nround results in a draw."
     },
 
     "relic_type": "shared",
     "shared_target": "enemy",
     "tier": 1,
+    "stack": 3,
 
-    "percent": 2
+    "percent": 2,
+    "stack_percent": 0.5
     
 }

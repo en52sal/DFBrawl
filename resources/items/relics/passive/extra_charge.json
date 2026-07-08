@@ -8,6 +8,7 @@
 
     "relic_type": "passive",
     "tier": 3,
+    "stack": 1,
     
     "extra_charge": 1,
     "extra_meter": 0.4

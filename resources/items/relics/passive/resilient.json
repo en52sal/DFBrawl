@@ -8,6 +8,7 @@
 
     "relic_type": "passive",
     "tier": 3,
+    "stack": 1,
     "conflict": "on_death"
 
 }

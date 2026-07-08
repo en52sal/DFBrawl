@@ -8,6 +8,7 @@
 
     "relic_type": "passive",
     "tier": 3,
+    "stack": 1,
 
     "kill_percent": 0.8,
     "assist_percent": 0.3

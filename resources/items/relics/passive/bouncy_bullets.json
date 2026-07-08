@@ -3,11 +3,12 @@
     "name": "Bouncy Bullets",
     "icon": {
         "description":
-         "<hl>+1</hl> <h>Weapon Projectile Bounce</h>\n<dmg>-$damage_reduction$% $$ddmg$</dmg> on bounce."
+         "<sk>$stack$$$sk$</sk> <hl>+1</hl> <h>weapon projectile bounces</h> per stack\n<dmg>-$damage_reduction$% $$ddmg$</dmg> on first bonus bounce."
     },
 
     "relic_type": "passive",
     "tier": 2,
+    "stack": 2,
     
     "damage_reduction": 0.12
 

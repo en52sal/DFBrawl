@@ -8,6 +8,7 @@
 
     "relic_type": "passive",
     "tier": 1,
+    "stack": 1,
 
     "reload_percent": 0.5,
     "cooling_percent": 0.3

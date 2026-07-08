@@ -1,0 +1,6 @@
+{
+    "parent": "minecraft:item/numbersgui/i",
+    "textures": {
+        "layer0": "item/numbersgui/21"
+    }
+}

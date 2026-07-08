@@ -1,0 +1,6 @@
+{
+    "parent": "minecraft:item/numbersgui/armory_e",
+    "textures": {
+        "layer0": "item/numbersgui/armory_slash"
+    }
+}

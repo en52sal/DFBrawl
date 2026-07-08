@@ -1,6 +1,0 @@
-{
-    "parent": "minecraft:item/numbersgui/number_h",
-    "textures": {
-        "layer0": "item/numbersgui/pound"
-    }
-}

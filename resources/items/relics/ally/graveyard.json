@@ -7,6 +7,7 @@
 
     "relic_type": "shared",
     "shared_target": "ally",
-    "tier": 3
+    "tier": 3,
+    "stack": 1
 
 }

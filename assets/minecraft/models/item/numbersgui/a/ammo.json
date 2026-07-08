@@ -1,6 +1,0 @@
-{
-    "parent": "minecraft:item/numbersgui/number_a",
-    "textures": {
-        "layer0": "item/numbersgui/ammo"
-    }
-}

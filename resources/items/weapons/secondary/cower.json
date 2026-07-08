@@ -5,7 +5,7 @@
         "states": ["reload", "equip", "firing", "melee1"],
         "display_context": "$gun",
 
-        "description": "Hmmm should i make these good lores or very descriptive?",
+        "description": "lore",
 
         "components": {
             "swing_animation": { "duration": 1, "type": "none" },

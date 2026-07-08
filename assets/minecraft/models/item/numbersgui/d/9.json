@@ -1,5 +1,5 @@
 {
-    "parent": "minecraft:item/numbersgui/number_d",
+    "parent": "minecraft:item/numbersgui/d",
     "textures": {
         "layer0": "item/numbersgui/9"
     }

@@ -13,6 +13,7 @@
 
     "relic_type": "active",
     "tier": 2,
+    "stack": 1,
 
     "overlay_display": "charge",
     "bar_display": "charge",

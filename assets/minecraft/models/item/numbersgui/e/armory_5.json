@@ -1,5 +1,5 @@
 {
-    "parent": "minecraft:item/numbersgui/number_armory_e",
+    "parent": "minecraft:item/numbersgui/armory_e",
     "textures": {
         "layer0": "item/numbersgui/armory_5"
     }

@@ -8,6 +8,7 @@
 
     "relic_type": "passive",
     "tier": 2,
+    "stack": 1,
     
     "extra_ammo": 0.5,
     "extra_heat": 0.5

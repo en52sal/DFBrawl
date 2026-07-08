@@ -74,7 +74,18 @@ def create_addons(models):
         addons.append(U.threshold(threshold, U.model(f"minecraft:item/numbersgui/{group}/{model}", 3)))
     
     # Numbers
-    order = "1 2 3 4 5 6 7 8 9 stars weight ammo cart zap timer".split(" ")
+    numbersgui_dir = PACK_ROOT / "assets" / NAMESPACE / "textures" / "item" / "numbersgui"
+    order = []
+    if numbersgui_dir.exists():
+        order = [
+            path.stem
+            for path in sorted(
+                numbersgui_dir.glob("*.png"),
+                key=lambda path: (0, int(path.stem)) if path.stem.isdigit() else (1, path.stem.lower())
+            )
+            if not path.stem.startswith("armory_") and path.stem != "0"
+        ]
+
     for i, group in enumerate("abcdefghij"):
         addons = []
         add(group, 0.1, "0")

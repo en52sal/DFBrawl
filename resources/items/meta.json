@@ -12,7 +12,7 @@
         "health": "#84ff81",
         "kb": "#4eff88",
         "kkb": "#60ab57",
-        
+        "sk":"#a1ffc1",
         "kill": "#FF1616",
         "assist": "#FF822B",
         "death": "#DD2569",
@@ -48,6 +48,8 @@
         "ddmg": "\u2617",
         "ccrit": "\u261A",
         "hhealth": "\u261B",
+
+        "sk": "\u2623",
 
 
         "effect_fire":"\u26B0",

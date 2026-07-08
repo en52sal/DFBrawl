@@ -3,13 +3,14 @@
     "name": "Taco Time",
     "icon": {
         "description":
-         "Randomly during a round,\n<h>Taco Time</h> can occur for <hl>$duration$t</hl>\n\nDuring Taco Time:\n<h>Players cannot act</h> but heal\n<health>+$heal$ $$hhealth$</health> over the duration."
+         "Randomly during a round,\n<h>Taco Time</h> can occur for <hl>$duration$t</hl>\n\nDuring Taco Time:\n<h>Players cannot act</h> but heal\n<health>+$heal$ $$hhealth$</health> over the duration.\n\n<sk>$stack$$$sk$</sk> <hl>+1</hl> <h>triggers</h> per stack"
     },
 
     "relic_type": "shared",
     "shared_target": "global",
     "tier": 3,
+    "stack": 2,
     "heal": 60,
-    "duration": 200
+    "duration": 180
     
 }
