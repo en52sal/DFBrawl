@@ -4,6 +4,7 @@ from pathlib import Path
 import base64
 import gzip
 import websocket
+from df.main import Block, Item, Template
 import itemsgen
 import textparser
 
@@ -16,103 +17,32 @@ SET_VAR_ITEM_LIMIT = 26
 META = json.load(META_FILE.open())
 
 def create_template(name):
-    return {
-        "blocks": [
-            {
-                "id": "block",
-                "block": "func",
-                "args": {
-                    "items": [
-                        {
-                            "item": {
-                                "id": "pn_el",
-                                "data": {
-                                    "name": "data",
-                                    "type": "var",
-                                    "plural": False,
-                                    "optional": False
-                                }
-                            },
-                            "slot": 0
-                        },
-                        {
-                            "item": {
-                                "id": "bl_tag",
-                                "data": {
-                                    "option": "False",
-                                    "tag": "Is Hidden",
-                                    "action": "dynamic",
-                                    "block": "func"
-                                }
-                            },
-                            "slot": 26
-                        }
-                    ]
-                },
-                "data": name
-            }
-        ]
-    }
+    template = Template(name)
+    template.add_parameter("data", "var")
+    template.blocks[0].add_tag(Item("bl_tag", {
+        "option": "False",
+        "tag": "Is Hidden",
+        "action": "dynamic",
+        "block": "func"
+    }))
+    return template
 
 def template_set_var(action, varname, items):
-    result = {
-        "id": "block",
-        "block": "set_var",
-        "args": {
-            "items": [
-                {
-                    "item": {
-                        "id": "var",
-                        "data": {
-                            "name": varname,
-                            "scope": "line"
-                        }
-                    },
-                    "slot": 0
-                }
-            ]
-        },
-        "action": action
-    }
-
-    for i, item in enumerate(items):
-        item["slot"] = i + 1
-        result["args"]["items"].append(item)
-    
-    return result
+    block = Block("set_var", None, action)
+    block.add_item(Item.Variable(varname))
+    for item in items:
+        block.add_item(item)
+    return block
 
 def template_item_string(value):
-    return {
-        "item": {
-            "id": "txt",
-            "data": {
-                "name": value
-            }
-        },
-        "slot": -1
-    }
+    return Item.String(value)
 
 def template_item_item(item):
-    return {
-        "item": {
-            "id": "item",
-            "data": {
-                "item": item
-            }
-        },
-        "slot": 1
-    }
+    return Item("item", {"item": item})
 
 
 def template_call_func(name, varname="data"):
-    return {
-        "id": "block",
-        "block": "call_func",
-        "args": {
-            "items": []
-        },
-        "data": name
-    }
+    return Block("call_func", name, None, [Item.Variable(varname)])
 
 
 def chunked(values, size):
@@ -143,9 +73,11 @@ def create_templates_from_args(args, name="ITEM:data", max_set_vars=MAX_SET_VARS
 
     for i, blocks in enumerate(block_groups):
         template = create_template(template_names[i])
-        template["blocks"].extend(list(blocks))
+        for block in blocks:
+            template.add_block(block)
         if i < len(block_groups) - 1:
-            template["blocks"].append(template_call_func(template_names[i + 1]))
+            call_func = template_call_func(template_names[i + 1])
+            template.add_block(call_func)
         templates.append(template)
     return templates
 
@@ -158,7 +90,7 @@ def send_templates(templates):
             payload = {
                 "type": "template",
                 "source": "The Great Importer",
-                "data": encode_string(json.dumps(template))
+                "data": encode_string(template.to_json())
             }
             ws.send(json.dumps(payload))
     finally:
