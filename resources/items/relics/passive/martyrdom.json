@@ -5,7 +5,7 @@
         "non_gui_fallback": "model",
 
         "description":
-    "Upon <death>Death $$death$</death> (nullified or not):\nDrop <hl>$bomb_count$ small bombs</hl>, each exploding\nafter <hl>$bomb_duration$t</hl> and dealing <dmg>$min_dmg$-$max_dmg$ $$ddmg$</dmg>\nto enemies within <hl>$aoe_radius$m</hl>.\n\n<sk>$stack$$$sk$</sk> <hl>+$stack_bomb_count$</hl> bombs per stack."
+    "Upon <death>Death $$death$</death> (nullified or not):\nDrop <hl>$bomb_count$ small bombs</hl>, each exploding\nafter <hl>$bomb_duration$t</hl> and dealing <dmg>$min_dmg$-$max_dmg$ $$ddmg$</dmg>\nto enemies within <hl>$aoe_radius$m</hl>.\n\n$$sk$ <hl>+$stack_bomb_count$</hl> bombs per stack."
     },
 
     "relic_type": "passive",

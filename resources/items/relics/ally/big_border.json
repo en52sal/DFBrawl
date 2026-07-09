@@ -3,7 +3,7 @@
     "name": "Big Border",
     "icon": {
         "description":
-         "<hl>+$percent$%</hl> <h>ally border size</h> with <=4 teams\n<hl>+$ffa_percent$%</hl> <h>ally border size</h> >4 teams.\n\n<sk>$stack$$$sk$</sk> <hl>+$stack_percent$%</hl> <h>ally border size</h> per stack"
+         "<hl>+$percent$%</hl> <h>ally border size</h> with <=4 teams\n<hl>+$ffa_percent$%</hl> <h>ally border size</h> >4 teams.\n\n$$sk$ <hl>+$stack_percent$%</hl> <h>ally border size</h> per stack"
     },
 
     "relic_type": "shared",

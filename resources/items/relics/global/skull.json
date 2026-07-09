@@ -3,7 +3,7 @@
     "name": "The Skull",
     "icon": {
         "description":
-         "Summons a <hl>floating skull</hl> that follows players\nand instantly <kill>kills $$kill$</kill> players on contact.\n\nThe Skull can be hit, but\n<dmg>damage</dmg> is converted into <kb>knockback $$kbv$</kb>.\n\n<sk>$stack$$$sk$</sk> <hl>+1</hl> <h>skull</h> per stack"
+         "Summons a <hl>floating skull</hl> that follows players\nand instantly <kill>kills $$kill$</kill> players on contact.\n\nThe Skull can be hit, but\n<dmg>damage</dmg> is converted into <kb>knockback $$kbv$</kb>.\n\n$$sk$ <hl>+1</hl> <h>skull</h> per stack"
     },
 
     "relic_type": "shared",
