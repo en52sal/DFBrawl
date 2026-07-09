@@ -1,0 +1,39 @@
+{
+	"format_version": "1.21.11",
+	"parent": "minecraft:item/guielements/background",
+	"textures": {
+		"layer0": "item/guielements/armory_slotx"
+	},
+	"display": {
+		"thirdperson_righthand": {
+			"scale": [0, 0, 0]
+		},
+		"thirdperson_lefthand": {
+			"scale": [0, 0, 0]
+		},
+		"firstperson_righthand": {
+			"scale": [0, 0, 0]
+		},
+		"firstperson_lefthand": {
+			"scale": [0, 0, 0]
+		},
+		"ground": {
+			"scale": [0, 0, 0]
+		},
+		"gui": {
+			"translation": [2, 10, -30]
+		},
+		"head": {
+			"scale": [0, 0, 0]
+		},
+		"on_shelf": {
+			"scale": [0, 0, 0]
+		},
+		"fixed": {
+			"scale": [0, 0, 0]
+		},
+		"none": {
+			"scale": [0, 0, 0]
+		}
+	}
+}
