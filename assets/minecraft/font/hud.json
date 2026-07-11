@@ -9,6 +9,13 @@
         },
 		{
             "type": "bitmap",
+            "file": "font/menu/play.png",
+            "ascent": 18,
+            "height": 256,
+            "chars": ["0"]
+        },
+		{
+            "type": "bitmap",
             "file": "font/elements.png",
             "ascent": 9,
             "height": 10,
