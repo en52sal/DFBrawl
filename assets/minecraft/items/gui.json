@@ -1,0 +1,48 @@
+{
+  "swap_animation_scale": 2,
+  "hand_animation_on_swap": false,
+  "oversized_in_gui": true,
+  "model": {
+    "type": "minecraft:composite",
+    "models": [
+      {
+        "type": "minecraft:select",
+        "property": "minecraft:custom_model_data",
+        "index": 0,
+        "cases": [
+		{
+		"when": "mapcard", "model": {
+		"type":"minecraft:composite",
+		 "models":[
+		{
+			"type": "minecraft:model",
+			"model": "minecraft:item/guielements/maps/cardbase",
+			"tints": [{"type": "minecraft:custom_model_data","index": 0,"default": 4294967295}]
+		},
+		{
+			"type": "minecraft:select","property": "minecraft:custom_model_data","index": 1,
+        	"cases": [
+				
+{"when": "citadel","model":{"type": "minecraft:model","model": "minecraft:item/guielements/maps/citadel","tints": [{"type": "minecraft:custom_model_data","index": 1,"default": 4294967295}]}},
+{"when": "frontier","model":{"type": "minecraft:model","model": "minecraft:item/guielements/maps/frontier","tints": [{"type": "minecraft:custom_model_data","index": 1,"default": 4294967295}]}},
+{"when": "frat_forts","model":{"type": "minecraft:model","model": "minecraft:item/guielements/maps/frat_forts","tints": [{"type": "minecraft:custom_model_data","index": 1,"default": 4294967295}]}},
+{"when": "shipyard","model":{"type": "minecraft:model","model": "minecraft:item/guielements/maps/shipyard","tints": [{"type": "minecraft:custom_model_data","index": 1,"default": 4294967295}]}},
+{"when": "menger_offices","model":{"type": "minecraft:model","model": "minecraft:item/guielements/maps/menger_offices","tints": [{"type": "minecraft:custom_model_data","index": 1,"default": 4294967295}]}}
+
+
+
+			]
+			}
+	]}
+		}
+
+
+        ],
+		  "fallback": {
+		"type": "minecraft:model",
+        "model": "minecraft:item/none"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,30 @@
+{
+	"format_version": "1.21.11",
+	"credit": "Made with Blockbench",
+	"texture_size": [208, 208],
+	"textures": {
+		"0": "item/guielements/cards",
+		"particle": "item/guielements/cards"
+	},
+	"elements": [
+		{
+			"from": [-12, -16, 0],
+			"to": [16, 14, 2],
+			"faces": {
+				"north": {"uv": [4.53846, 3.92307, 6.69231, 6.23077], "texture": "#0", "tintindex": 0},
+				"east": {"uv": [4.92308, 0.07692, 5, 0.07692], "texture": "#0"},
+				"south": {"uv": [4.92308, 0.07692, 5, 0.07692], "texture": "#0"},
+				"west": {"uv": [4.92308, 0.07692, 5, 0.07692], "texture": "#0"},
+				"up": {"uv": [4.92308, 0.07692, 5, 0.07692], "texture": "#0"},
+				"down": {"uv": [4.92308, 0.07692, 5, 0.07692], "texture": "#0"}
+			}
+		}
+	],
+	"gui_light": "front",
+	"display": {
+		"gui": {
+			"rotation": [0, -180, 0],
+			"translation": [-15, 36, 0]
+		}
+	}
+}
