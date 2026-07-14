@@ -1,0 +1,12 @@
+{
+    "parent": "minecraft:item/generated",
+    "gui_light": "front",
+		"textures": {
+		"layer0": "item/guielements/cards/modifier"
+	},
+ 	"display": {
+		"gui": {
+			"translation": [-3, 3.2, 1]
+		}
+	}
+}

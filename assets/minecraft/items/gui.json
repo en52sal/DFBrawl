@@ -16,26 +16,63 @@
 		 "models":[
 		{
 			"type": "minecraft:model",
-			"model": "minecraft:item/guielements/maps/cardbase",
+			"model": "minecraft:item/guielements/cards/card",
 			"tints": [{"type": "minecraft:custom_model_data","index": 0,"default": 4294967295}]
 		},
 		{
 			"type": "minecraft:select","property": "minecraft:custom_model_data","index": 1,
         	"cases": [
-				
-{"when": "citadel","model":{"type": "minecraft:model","model": "minecraft:item/guielements/maps/citadel","tints": [{"type": "minecraft:custom_model_data","index": 1,"default": 4294967295}]}},
-{"when": "frontier","model":{"type": "minecraft:model","model": "minecraft:item/guielements/maps/frontier","tints": [{"type": "minecraft:custom_model_data","index": 1,"default": 4294967295}]}},
-{"when": "frat_forts","model":{"type": "minecraft:model","model": "minecraft:item/guielements/maps/frat_forts","tints": [{"type": "minecraft:custom_model_data","index": 1,"default": 4294967295}]}},
-{"when": "shipyard","model":{"type": "minecraft:model","model": "minecraft:item/guielements/maps/shipyard","tints": [{"type": "minecraft:custom_model_data","index": 1,"default": 4294967295}]}},
-{"when": "menger_offices","model":{"type": "minecraft:model","model": "minecraft:item/guielements/maps/menger_offices","tints": [{"type": "minecraft:custom_model_data","index": 1,"default": 4294967295}]}}
-
-
-
-			]
-			}
-	]}
+				{"when": "citadel","model":{"type": "minecraft:model","model": "minecraft:item/guielements/cards/citadel"}},
+				{"when": "frontier","model":{"type": "minecraft:model","model": "minecraft:item/guielements/cards/frontier"}},
+				{"when": "frat_forts","model":{"type": "minecraft:model","model": "minecraft:item/guielements/cards/frat_forts"}},
+				{"when": "shipyard","model":{"type": "minecraft:model","model": "minecraft:item/guielements/cards/shipyard"}},
+				{"when": "menger_offices","model":{"type": "minecraft:model","model": "minecraft:item/guielements/cards/menger_offices"}}
+			],
+		  "fallback": {
+		"type": "minecraft:model",
+        "model": "minecraft:item/none"
+        }
+		},
+		{
+			"type": "minecraft:select","property": "minecraft:custom_model_data","index": 2,
+			"cases": [
+				{"when": "rounds","model":{"type": "minecraft:model","model": "minecraft:item/guielements/cards/rounds"}}
+	],
+		  "fallback": {
+		"type": "minecraft:model",
+        "model": "minecraft:item/none"
+        }},
+		{
+			"type": "minecraft:select","property": "minecraft:custom_model_data","index": 3,
+			"cases": [
+				{"when": "duel","model":{"type": "minecraft:model","model": "minecraft:item/guielements/cards/duel"}},
+				{"when": "teamfight","model":{"type": "minecraft:model","model": "minecraft:item/guielements/cards/teamfight"}}
+	],
+		  "fallback": {
+		"type": "minecraft:model",
+        "model": "minecraft:item/none"
+        }},
+		{
+			"type": "minecraft:condition","property": "minecraft:custom_model_data","index": 0,
+			"on_true": {"type": "minecraft:model","model": "minecraft:item/guielements/cards/mod1","tints": [{"type": "minecraft:custom_model_data","index": 1,"default": 4294967295}]},
+			"on_false": {"type": "minecraft:model", "model": "minecraft:item/none"}
+		},
+		{
+			"type": "minecraft:condition","property": "minecraft:custom_model_data","index": 1,
+			"on_true": {"type": "minecraft:model","model": "minecraft:item/guielements/cards/mod2","tints": [{"type": "minecraft:custom_model_data","index": 2,"default": 4294967295}]},
+			"on_false": {"type": "minecraft:model", "model": "minecraft:item/none"}
+		},
+		{
+			"type": "minecraft:condition","property": "minecraft:custom_model_data","index": 2,
+			"on_true": {"type": "minecraft:model","model": "minecraft:item/guielements/cards/mod3","tints": [{"type": "minecraft:custom_model_data","index": 3,"default": 4294967295}]},
+			"on_false": {"type": "minecraft:model", "model": "minecraft:item/none"}
+		},
+		{
+			"type": "minecraft:condition","property": "minecraft:custom_model_data","index": 3,
+			"on_true": {"type": "minecraft:model","model": "minecraft:item/guielements/cards/mod4","tints": [{"type": "minecraft:custom_model_data","index": 4,"default": 4294967295}]},
+			"on_false": {"type": "minecraft:model", "model": "minecraft:item/none"}
 		}
-
+		]}}
 
         ],
 		  "fallback": {

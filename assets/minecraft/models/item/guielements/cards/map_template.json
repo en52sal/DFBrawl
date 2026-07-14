@@ -1,0 +1,13 @@
+{
+    "parent": "minecraft:item/generated",
+    "gui_light": "front",
+		"textures": {
+		"layer0": "item/guielements/cards/template"
+	},
+ 	"display": {
+		"gui": {
+			"translation": [-9, 25.4, 1],
+			"scale": [2, 1.8, 1]
+		}
+	}
+}

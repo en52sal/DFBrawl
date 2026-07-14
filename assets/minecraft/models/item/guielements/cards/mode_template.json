@@ -1,0 +1,12 @@
+{
+    "parent": "minecraft:item/generated",
+    "gui_light": "front",
+		"textures": {
+		"layer0": "item/guielements/cards/rounds"
+	},
+ 	"display": {
+		"gui": {
+			"translation": [-15, 3, 1]
+		}
+	}
+}
