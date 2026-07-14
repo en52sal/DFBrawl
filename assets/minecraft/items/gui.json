@@ -1,6 +1,4 @@
 {
-  "swap_animation_scale": 2,
-  "hand_animation_on_swap": false,
   "oversized_in_gui": true,
   "model": {
     "type": "minecraft:composite",
@@ -25,7 +23,7 @@
 				{"when": "citadel","model":{"type": "minecraft:model","model": "minecraft:item/guielements/cards/citadel"}},
 				{"when": "frontier","model":{"type": "minecraft:model","model": "minecraft:item/guielements/cards/frontier"}},
 				{"when": "frat_forts","model":{"type": "minecraft:model","model": "minecraft:item/guielements/cards/frat_forts"}},
-				{"when": "shipyard","model":{"type": "minecraft:model","model": "minecraft:item/guielements/cards/shipyard"}},
+				{"when": "shipping_yard","model":{"type": "minecraft:model","model": "minecraft:item/guielements/cards/shipping_yard"}},
 				{"when": "menger_offices","model":{"type": "minecraft:model","model": "minecraft:item/guielements/cards/menger_offices"}}
 			],
 		  "fallback": {
@@ -71,7 +69,29 @@
 			"type": "minecraft:condition","property": "minecraft:custom_model_data","index": 3,
 			"on_true": {"type": "minecraft:model","model": "minecraft:item/guielements/cards/mod4","tints": [{"type": "minecraft:custom_model_data","index": 4,"default": 4294967295}]},
 			"on_false": {"type": "minecraft:model", "model": "minecraft:item/none"}
-		}
+		},
+		{
+		"type":"minecraft:range_dispatch", "property": "minecraft:custom_model_data", "index": 0, "entries": [
+			{"threshold": 0, "model": {"type": "minecraft:model", "model": "minecraft:item/guielements/cards/numbers/0"}},
+			{"threshold": 1, "model": {"type": "minecraft:model", "model": "minecraft:item/guielements/cards/numbers/1"}},
+			{"threshold": 2, "model": {"type": "minecraft:model", "model": "minecraft:item/guielements/cards/numbers/2"}},
+			{"threshold": 3, "model": {"type": "minecraft:model", "model": "minecraft:item/guielements/cards/numbers/3"}},
+			{"threshold": 4, "model": {"type": "minecraft:model", "model": "minecraft:item/guielements/cards/numbers/4"}},
+			{"threshold": 5, "model": {"type": "minecraft:model", "model": "minecraft:item/guielements/cards/numbers/5"}},
+			{"threshold": 6, "model": {"type": "minecraft:model", "model": "minecraft:item/guielements/cards/numbers/6"}},
+			{"threshold": 7, "model": {"type": "minecraft:model", "model": "minecraft:item/guielements/cards/numbers/7"}},
+			{"threshold": 8, "model": {"type": "minecraft:model", "model": "minecraft:item/guielements/cards/numbers/8"}},
+			{"threshold": 9, "model": {"type": "minecraft:model", "model": "minecraft:item/guielements/cards/numbers/9"}},
+			{"threshold": 10, "model": {"type": "minecraft:model", "model": "minecraft:item/guielements/cards/numbers/10"}},
+			{"threshold": 11, "model": {"type": "minecraft:model", "model": "minecraft:item/guielements/cards/numbers/11"}},
+			{"threshold": 12, "model": {"type": "minecraft:model", "model": "minecraft:item/guielements/cards/numbers/12"}},
+			{"threshold": 13, "model": {"type": "minecraft:model", "model": "minecraft:item/guielements/cards/numbers/13"}},
+			{"threshold": 14, "model": {"type": "minecraft:model", "model": "minecraft:item/guielements/cards/numbers/14"}},
+			{"threshold": 15, "model": {"type": "minecraft:model", "model": "minecraft:item/guielements/cards/numbers/15"}},
+			{"threshold": 16, "model": {"type": "minecraft:model", "model": "minecraft:item/guielements/cards/numbers/16"}},
+			{"threshold": 17, "model": {"type": "minecraft:model", "model": "minecraft:item/guielements/cards/numbers/17"}},
+			{"threshold": 18, "model": {"type": "minecraft:model", "model": "minecraft:item/guielements/cards/numbers/18"}}
+		]}
 		]}}
 
         ],

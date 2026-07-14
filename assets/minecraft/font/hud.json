@@ -9,10 +9,10 @@
         },
 		{
             "type": "bitmap",
-            "file": "font/menu/play.png",
+            "file": "font/menu/single_menus.png",
             "ascent": 18,
             "height": 256,
-            "chars": ["0"]
+            "chars": ["zy","xw"]
         },
 		{
             "type": "bitmap",

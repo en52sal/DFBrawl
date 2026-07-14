@@ -1,0 +1,7 @@
+{
+    "parent": "minecraft:item/guielements/cards/numbers/parent",
+    "gui_light": "front",
+		"textures": {
+		"layer0": "item/guielements/cards/numbers/6"
+	}
+}

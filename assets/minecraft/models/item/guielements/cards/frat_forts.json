@@ -1,8 +1,7 @@
 {
 	    "parent": "minecraft:item/guielements/cards/map_template",
 		"textures": {
-		"layer0":
-
+		"0":
 		 "item/guielements/cards/frat_forts"
 
 		 

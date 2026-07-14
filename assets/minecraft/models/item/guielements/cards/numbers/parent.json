@@ -1,0 +1,10 @@
+{
+    "parent": "minecraft:item/generated",
+    "gui_light": "front",
+		"textures": {
+		"layer0": "item/guielements/cards/numbers/0"
+	},
+	"display": {
+		"gui": {"translation": [14, 1, 1]}
+	}	
+}	

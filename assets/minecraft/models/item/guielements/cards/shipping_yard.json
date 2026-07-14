@@ -1,9 +1,8 @@
 {
 	    "parent": "minecraft:item/guielements/cards/map_template",
 		"textures": {
-		"layer0":
-
-		 "item/guielements/cards/shipyard"
+		"0":
+		 "item/guielements/cards/shipping_yard"
 
 		 
 	}
